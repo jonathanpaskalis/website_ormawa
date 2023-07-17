@@ -1,0 +1,211 @@
+.header {
+    --header-height: 7rem;
+    position: fixed;
+    display: grid;
+    grid-template-columns: calc(1.1*var(--header-height)) 1fr calc(7*var(--header-height));
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--hitam-bem);
+    box-shadow: 0 0 2rem var(--hitam-bem);
+    border-style: solid;
+    border-color: var(--putih-bem);
+    border-width: 0 0 0.15rem 0;
+    z-index: 100;
+}
+
+.header-logo {
+    aspect-ratio: 1.1/1;
+    height: var(--header-height);
+    display: flex;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: rgba(220, 220, 220, 1);
+    cursor: pointer;
+}
+
+.logo > img {
+    height: 100%;
+}
+
+.nama-organisasi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    overflow: hidden;
+}
+
+.nama-organisasi > p {
+    width: max-content;
+    font-family: Panton;
+    font-size: 1.5rem;
+    background-image: linear-gradient(315deg, var(--putih-bem) 0%, var(--putih-bem) 50%,
+                     var(--emas-bem) 75%, var(--oranye-bem) 100%);
+    background-size: 200%;
+    background-position: right;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+.nama-organisasi > p:hover {
+    background-position: left;
+}
+
+@media (max-width: 85rem) {
+    .nama-organisasi{
+        width: 0;
+    }
+}
+
+/* Navigation Bar */
+.align-nav-bar {
+    position: relative;
+    aspect-ratio: 7/1;
+    height: 100%;
+}
+
+.nav-bar {
+    position: absolute;
+    top: calc(0.32*var(--header-height));
+    left: 0;
+    right: 0;
+    margin-right: 2.5rem;
+    display: flex;
+    align-self: center;
+}
+
+.nav-bar-selection-dd,
+.nav-bar-selection {
+    flex: 1;
+    margin: 0 0.3rem 0 0.3rem;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    transition: 0.1s ease-in-out;
+}
+
+.nav-bar-selection-dd:hover,
+.nav-bar-selection:hover {
+    flex: 1.2;
+}
+
+.nav-bar-selection-dd > a,
+.nav-bar-selection > a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hitam-bem);
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-width: 0.15rem;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    border-color: rgba(255,124,68,1);
+    border-radius: 1.5rem;
+}
+
+.nav-bar-selection-dd > a {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav-bar-selection-dd:hover > a,
+.nav-bar-selection:hover > a {
+    border-style: solid;
+    box-shadow: 0 0 0.5em rgba(241,90,34,.5);
+}
+
+.nav-bar-selection-dd > a > p,
+.nav-bar-selection > a > p {
+    height: 100%;
+}
+
+.nav-bar-selection-dd > a > p,
+.nav-bar-selection > a > p {
+    height: 100%;
+    color: rgba(220, 220, 220, 1);
+    transition: all 0.1s ease-in-out;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.nav-bar-selection-dd:hover > a > p,
+.nav-bar-selection:hover > a > p {
+    color: var(--oranye-bem);
+}
+
+.nav-bar-selection-dd > a:active,
+.nav-bar-selection > a:active {
+    background-color: var(--oranye-bem);
+}
+
+.nav-bar-selection-dd > a:active > p,
+.nav-bar-selection > a:active > p {
+    color:rgba(220, 220, 220, 1);
+}
+
+.nav-bar-dropdown {
+    display: flex;
+    width: 100%;
+    height: 0;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.1s ease-in-out;
+    overflow: hidden;
+}
+
+.nav-bar-selection-dd:hover .nav-bar-dropdown,
+.nav-bar-selection:hover .nav-bar-dropdown {
+    height: 6rem;
+    box-shadow: 0 0 0.5em rgba(241,90,34,.5);
+    border-style: solid;
+    border-width: 0.15rem;
+    border-top-width: 0;
+    border-color: rgba(255,124,68,1);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+.nav-bar-dropdown > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 100%;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    background-color: var(--hitam-bem);
+    transition: all 0.1s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-bar-dropdown > a > p {
+    color: rgba(220, 220, 220, 1);
+    font-family: 'Poppins';
+    font-size: 1rem;
+    transition: all 0.1s;
+    display: block;
+}
+
+.nav-bar-dropdown > a:hover {
+    background-color: rgba(35,35,35,1);
+}
+
+.nav-bar-dropdown > a:hover > p {
+    color: var(--oranye-bem);
+}
+
+.nav-bar-dropdown > a:active {
+    background-color: var(--oranye-bem);
+}
+
+.nav-bar-dropdown > a:active > p{
+    color: rgba(220, 220, 220, 1);
+}
+/* Navigation Bar */

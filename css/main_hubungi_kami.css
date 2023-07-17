@@ -1,0 +1,74 @@
+.hubungi-kami {
+    background-color: var(--putih-bem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    box-shadow: 0 0 2rem var(--hitam-bem);
+}
+
+.hubungi-kami > span {
+    width: max-content;
+    color: var(--oranye-bem);
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 6.5rem;
+    text-align: center;
+    text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    animation: hubungi-kami-animation 1s ease-in-out;
+}
+
+@keyframes hubungi-kami-animation {
+    0% {
+        color: transparent;
+        text-shadow: none;
+    }
+    100% {
+        color: var(--oranye-bem);
+        text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    }
+}
+
+.hubungi-kami-sesi-kontak {
+    display: flex;
+    justify-content: center;
+}
+
+.hubungi-kami-sesi-kontak-bg {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background-color: rgba(20,20,20,0.7);
+    box-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    max-width: 75%;
+    min-width: 45rem;
+}
+
+.hubungi-kami-judul-kontak {
+    color: transparent;
+    background-image: linear-gradient(90deg, var(--oranye-bem) 25%, rgba(0,0,0,0) 75%);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    background-position: left;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 0 0 2rem rgba(220,220,220,0.1);
+    animation: hubungi-kami-kontak-animation 1s;
+}
+
+@keyframes hubungi-kami-kontak-animation {
+    0% {
+        background-position: right;
+    }
+    100% {
+        background-position: left;
+    }
+}
+
+.hubungi-kami-kontak > p {
+    font-size: 2rem;
+    text-shadow: 0 0 2rem rgba(220,220,220,0.1);
+}

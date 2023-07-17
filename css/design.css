@@ -1,0 +1,79 @@
+:root {
+    --oranye-bem: rgba(241,90,34,1);
+    --putih-bem: rgba(220,220,220,1);
+    --emas-bem: rgba(212,156,67,1);
+    --hitam-bem: rgba(20,20,20,1);
+    --warna-feb: rgba(225,204,0,1);
+    --warna-fiabikom: rgba(225,111,132,1);
+    --warna-fpb: rgba(9,113,171,1);
+    --warna-ft: rgba(17,72,150,1);
+    --warna-fh: rgba(223,0,36,1);
+    --warna-fkik: rgba(65,152,24,1);
+    --warna-fp: rgba(136,42,147,1);
+    --warna-ftb: rgba(103,154,209,1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: Panton;
+    src: url('../font/Panton-BlackCaps.otf');
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../font/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../font/Montserrat-VariableFont_wght.ttf');
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    padding-top: 7rem;
+}
+
+header, main, footer {
+    overflow-x: hidden;
+}
+
+main {
+    background-image: linear-gradient(60deg, var(--putih-bem) 0%,var(--emas-bem) 25%,
+    var(--oranye-bem) 100%);
+    position: relative;
+}
+
+body p, body span, body div{
+    color: var(--putih-bem);
+    font-family: 'Montserrat';
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+button, a {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.tab {
+    margin-left: 1rem;
+}

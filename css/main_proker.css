@@ -1,0 +1,243 @@
+.program-kerja {
+    background-color: var(--putih-bem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    box-shadow: 0 0 2rem var(--hitam-bem);
+}
+
+.judul-program-kerja {
+    width: max-content;
+    color: var(--oranye-bem);
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 6.5rem;
+    text-align: center;
+    text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    animation: program-kerja-animation 1s ease-in-out;
+}
+
+@keyframes program-kerja-animation {
+    0% {
+        color: transparent;
+        text-shadow: none;
+    }
+    100% {
+        color: var(--oranye-bem);
+        text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    }
+}
+
+.periode-kabinet {
+    font-size: 3rem;
+    color: var(--hitam-bem);
+    filter: drop-shadow(0 0 2rem rgba(20,20,20,0.4)); 
+}
+
+.program-kerja-align {
+    display: flex;
+    justify-content: center;
+}
+
+.program-kerja-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem 2rem 2rem;
+    background-color: rgba(20,20,20,0.7);
+    box-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    max-width: 75%;
+    min-width: 45rem;
+    position: relative;
+}
+
+/* Judul Carousel Program Kerja */
+.program-kerja-carousel-judul-show, .program-kerja-carousel-judul-hidden {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: min-content;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 2rem rgba(220,220,220,0.1));
+    overflow-y: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.program-kerja-carousel-judul-hidden {
+    transform: translateX(100%);
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.program-kerja-carousel-judul-proker {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 700;
+    color: var(--putih-bem);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.program-kerja-carousel-judul-proker > img {
+    width: 9rem;
+    justify-self: center;
+}
+
+.program-kerja-carousel-judul-proker > p {
+    font-size: 5rem;
+    text-align: center;
+}
+
+@media (max-width: 85rem) {
+    .program-kerja-carousel-judul-proker > p {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 65rem) {
+    .program-kerja-carousel-judul-proker > p {
+        font-size: 3rem;
+    }
+}
+/* Judul Carousel Program Kerja */
+
+/* Carousel Program Kerja */
+.program-kerja-carousel-show, .program-kerja-carousel-hidden {
+    display: grid;
+    grid-template-columns: 1.25fr 7.5fr 1.25fr;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 3rem;
+}
+
+.program-kerja-carousel-hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.program-kerja-carousel-slide {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.cover-program-kerja-carousel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 2rem rgba(20,20,20,0.8);
+}
+
+.button-program-kerja-carousel-left, .button-program-kerja-carousel-right {
+    font-family: Montserrat;
+    font-size: 6rem;
+    font-weight: 600;
+    color: rgba(220,220,220,1);
+    background-color: transparent;
+    text-shadow: 0 0 1rem rgba(20,20,20,1);
+    top:40%;
+    transition: color 0.1s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.button-program-kerja-carousel-left:hover, .button-program-kerja-carousel-right:hover {
+    color: rgba(20,20,20,1);
+    cursor: pointer;
+}
+
+.button-program-kerja-carousel-left:active, .button-program-kerja-carousel-right:active {
+    text-shadow: none;
+}
+
+@media (max-width: 85rem) {
+    .button-program-kerja-carousel-left, .button-program-kerja-carousel-right {
+        font-size: 5rem;
+    }
+}
+
+.program-kerja-carousel-foto {
+    width: 100%;
+    transition: 0.4s ease-in-out;
+}
+/* Carousel Program Kerja */
+
+/* Keterangan Carousel Program Kerja */
+.program-kerja-tujuan-deskripsi-show, .program-kerja-tujuan-deskripsi-hidden {
+    display: flex;
+    width: 100%;
+    height: min-content;
+    padding-top: 1rem;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.program-kerja-tujuan-deskripsi-hidden {
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.program-kerja-tujuan-deskripsi-proker {
+    width: 100%;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.program-kerja-tujuan, .program-kerja-deskripsi {
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.program-kerja-deskripsi {
+    margin-left: 20%;
+    margin-right: 5%;
+}
+
+.program-kerja-tujuan {
+    margin-right: 20%;
+    margin-left: 5%;
+}
+
+.sesi-program-kerja-judul {
+    font-weight: 800;
+    font-size: 3rem;
+    color: var(--putih-bem);
+    text-shadow: 0 0 2rem rgba(220,220,220,0.2);
+    margin-bottom: 1rem;
+}
+
+.program-kerja-tujuan > .sesi-program-kerja-judul {
+    text-align: left;
+}
+
+.program-kerja-deskripsi > .sesi-program-kerja-judul {
+    text-align: right;
+}
+
+.sesi-program-kerja-deskripsi {
+    display: flex;
+    text-align: justify;
+    font-size: 1.8rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    color: var(--hitam-bem);
+    text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    box-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    padding: 1.5rem;
+    background-color: rgba(220,220,220,0.8);
+}
+
+.program-kerja-deskripsi > .sesi-program-kerja-deskripsi {
+    border-top-right-radius: 0;
+}
+
+.program-kerja-tujuan > .sesi-program-kerja-deskripsi {
+    border-top-left-radius: 0;
+}
+/* Keterangan Carousel Program Kerja */

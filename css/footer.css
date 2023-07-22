@@ -20,15 +20,12 @@
 .footer-logo {
     display: flex;
     height: 6rem;
-    background-color: rgba(220,220,220,1);
-    border-radius: 2rem;
-    box-shadow: 0 0 2rem rgba(220,220,220,0.3);
     justify-content: center;
     align-items: center;
 }
 
 .footer-logo > img {
-    height: 90%;
+    height: 100%;
 } 
 
 .footer-sesi-kontak {

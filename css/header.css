@@ -173,7 +173,7 @@
 
 .nav-bar-selection-dd:hover .nav-bar-dropdown,
 .nav-bar-selection:hover .nav-bar-dropdown {
-    height: 6rem;
+    height: 9rem;
     box-shadow: 0 0 0.5em rgba(241,90,34,.5);
     border-top-width: 0;
     border-color: rgba(255,124,68,1);
@@ -198,7 +198,7 @@
 .nav-bar-dropdown > a > p {
     color: rgba(220, 220, 220, 1);
     font-family: 'Poppins';
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: all 0.1s ease-in-out;
     display: block;
 }

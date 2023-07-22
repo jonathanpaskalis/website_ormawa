@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
     <head>
         <title>BEM KM-UAJ</title>
         <link rel="stylesheet" href="css/design.css">
@@ -10,41 +10,40 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     </head>
     <body id="profile-body">
-        <header>
-            <div class="header">
-                <div class="header-logo">
-                    <img src="img/Logo_KM-UAJ.png">
-                </div>
-                <div class="nama-organisasi">
-                    <p>
-                        Badan Eksekutif Mahasiswa<br>
-                        Keluarga Mahasiswa-UAJ
-                    </p>
-                </div>
-                <div class="align-nav-bar">
-                    <nav class="nav-bar">
-                        <div class="nav-bar-selection">
-                            <a href="index.html"><p>BERANDA</p></a>
-                        </div>
-                        <div class="nav-bar-selection-dd">
-                            <a href="profil.html"><p>PROFIL</p><p class="navbar-dd-indicator">V</p></a>
-                            <div class="nav-bar-dropdown">
-                                <a href="profil.html"><p>Tentang Kami</p></a>
-                                <a href="profil.html#pengurus"><p>Struktur Kabinet</p></a>
-                            </div>
-                        </div>
-                        <div class="nav-bar-selection">
-                            <a href="program_kerja.html"><p>PROGRAM KERJA</p></a>
-                        </div>
-                        <div class="nav-bar-selection">
-                            <a href="hubungi_kami.html"><p>HUBUNGI KAMI</p></a>
-                        </div>
-                    </nav>
-                </div>
+        <div class="header">
+            <div class="header-logo">
+                <img src="img/Logo_KM-UAJ.png">
             </div>
-        </header>
+            <div class="nama-organisasi">
+                <p>
+                    Badan Eksekutif Mahasiswa<br>
+                    Keluarga Mahasiswa-UAJ
+                </p>
+            </div>
+            <div class="align-nav-bar">
+                <nav class="nav-bar">
+                    <div class="nav-bar-selection">
+                        <a href="index.html"><p>BERANDA</p></a>
+                    </div>
+                    <div class="nav-bar-selection-dd">
+                        <a><p>PROFIL</p><p class="navbar-dd-indicator">V</p></a>
+                        <div class="nav-bar-dropdown">
+                            <a href="#html"><p>Tentang Kami</p></a>
+                            <a href="#struktur-kabinet"><p>Struktur Kabinet</p></a>
+                            <a href="#komposisi-pengurus"><p>Komposisi Pengurus</p></a>
+                        </div>
+                    </div>
+                    <div class="nav-bar-selection">
+                        <a href="program_kerja.html"><p>PROGRAM KERJA</p></a>
+                    </div>
+                    <div class="nav-bar-selection">
+                        <a href="hubungi_kami.html"><p>HUBUNGI KAMI</p></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
         <main>
-            <div class="kabinet" id="kabinet">
+            <div class="kabinet" id="tentang-kami">
                 <span class="nama-kabinet">
                     KABINET ASICS #1
                 </span>
@@ -70,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="daftar-pengurus" id="pengurus">
+            <div class="daftar-pengurus" id="struktur-kabinet">
                 <div class="daftar-pengurus-align">
                     <p class="judul-jabatan-hidden">
                         Ketua & Wakil Ketua
@@ -437,7 +436,7 @@
                     </div>
                 </div>
             </div>
-            <div class="komposisi-pengurus">
+            <div class="komposisi-pengurus" id="komposisi-pengurus">
                 <div class="komposisi-pengurus-align">
                     <p class="judul-komposisi-pengurus">Komposisi Pengurus</p>
                     <div class="tabel-komposisi-pengurus">

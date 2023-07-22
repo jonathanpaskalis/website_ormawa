@@ -80,15 +80,10 @@
 .nav-bar-selection-dd,
 .nav-bar-selection {
     flex: 1;
-    margin: 0 0.3rem 0 0.3rem;
+    margin: 0 0.1rem 0 0.1rem;
     padding-left: 0.5%;
     padding-right: 0.5%;
     transition: 0.1s ease-in-out;
-}
-
-.nav-bar-selection-dd:hover,
-.nav-bar-selection:hover {
-    flex: 1.2;
 }
 
 .nav-bar-selection-dd > a,
@@ -104,7 +99,8 @@
     transition: all 0.1s ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    border-color: rgba(255,124,68,1);
+    border-style: solid;
+    border-color: transparent;
     border-radius: 1.5rem;
 }
 
@@ -115,7 +111,7 @@
 
 .nav-bar-selection-dd:hover > a,
 .nav-bar-selection:hover > a {
-    border-style: solid;
+    border-color: rgba(255,124,68,1);
     box-shadow: 0 0 0.5em rgba(241,90,34,.5);
 }
 
@@ -134,6 +130,12 @@
     font-size: 1.2rem;
 }
 
+.nav-bar-selection-dd > a > .navbar-dd-indicator {
+    font-weight: 100;
+    font-size: 1rem;
+    padding-left: 8%;
+}
+
 .nav-bar-selection-dd:hover > a > p,
 .nav-bar-selection:hover > a > p {
     color: var(--oranye-bem);
@@ -142,6 +144,13 @@
 .nav-bar-selection-dd > a:active,
 .nav-bar-selection > a:active {
     background-color: var(--oranye-bem);
+}
+
+.nav-bar-selection-dd:hover > a > .navbar-dd-indicator,
+.nav-bar-selection:hover > a > .navbar-dd-indicator {
+    padding: 0;
+    width: 0;
+    opacity: 0;
 }
 
 .nav-bar-selection-dd > a:active > p,
@@ -157,14 +166,15 @@
     align-items: center;
     transition: 0.1s ease-in-out;
     overflow: hidden;
+    border-width: 0 0.15rem 0.15rem 0.15rem;
+    border-style: solid;
+    border-color: transparent;
 }
 
 .nav-bar-selection-dd:hover .nav-bar-dropdown,
 .nav-bar-selection:hover .nav-bar-dropdown {
     height: 6rem;
     box-shadow: 0 0 0.5em rgba(241,90,34,.5);
-    border-style: solid;
-    border-width: 0.15rem;
     border-top-width: 0;
     border-color: rgba(255,124,68,1);
     border-bottom-left-radius: 1.5rem;
@@ -180,7 +190,7 @@
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     background-color: var(--hitam-bem);
-    transition: all 0.1s;
+    transition: all 0.1s ease-in-out;
     cursor: pointer;
     text-decoration: none;
 }
@@ -189,7 +199,7 @@
     color: rgba(220, 220, 220, 1);
     font-family: 'Poppins';
     font-size: 1rem;
-    transition: all 0.1s;
+    transition: all 0.1s ease-in-out;
     display: block;
 }
 

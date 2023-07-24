@@ -43,13 +43,10 @@ body {
 }
 
 main {
-    overflow-x: hidden;
-}
-
-main {
     background-image: linear-gradient(60deg, var(--putih-bem) 0%,var(--emas-bem) 25%,
     var(--oranye-bem) 100%);
     position: relative;
+    overflow-x: hidden;
 }
 
 body p, body span, body div{
@@ -77,3 +74,58 @@ p {
 .tab {
     margin-left: 1rem;
 }
+
+/* Page Up Button */
+
+.page-top-button {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    right: 2rem;
+    bottom: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--hitam-bem);
+    padding: 0.2rem;
+    border-width: 0.15rem;
+    transition: all 0.1s ease-in-out, opacity 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    border-style: solid;
+    border-color: var(--putih-bem);
+    border-radius: 0.5rem;
+}
+
+.page-top-button:hover {
+    border-color: rgba(255,124,68,1);
+    box-shadow: 0 0 0.5em rgba(241,90,34,.5);
+}
+
+.page-top-button:active {
+    background-color: var(--oranye-bem);
+}
+
+.page-top-button > p {
+    height: 100%;
+    color: rgba(220, 220, 220, 1);
+    transition: all 0.1s ease-in-out;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.page-top-button:hover > p {
+    color: var(--oranye-bem);
+}
+
+.page-top-button:active > p {
+    color: var(--putih-bem);
+}
+
+.button-hidden {
+    opacity: 0;
+    cursor: default;
+}
+
+/* Page Up Button */

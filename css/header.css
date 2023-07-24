@@ -155,7 +155,7 @@ header {
 
 .nav-bar-selection-dd > a:active > p,
 .nav-bar-selection > a:active > p {
-    color:rgba(220, 220, 220, 1);
+    color: var(--putih-bem);
 }
 
 .nav-bar-dropdown {

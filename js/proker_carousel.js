@@ -1,8 +1,8 @@
 let indexProker=0;
 const fotoCarouselProker = document.getElementsByClassName("carousel-proker-foto");
 const judulCarouselProker = document.getElementsByClassName("carousel-proker-judul");
-let buttonCarouselProkerLeft = document.getElementById("button-carousel-proker-left");
-let buttonCarouselProkerRight = document.getElementById("button-carousel-proker-right");
+const buttonCarouselProkerLeft = document.getElementById("button-carousel-proker-left");
+const buttonCarouselProkerRight = document.getElementById("button-carousel-proker-right");
 
 let intervalCarouselProker = setInterval(homeProkerCarouselNav, 5000, -1);
 
@@ -21,7 +21,7 @@ function homeProkerCarouselNav(indexProkerNav) {
             fotoCarouselProker[i].style.transform = "translateX("+(indexProker*100)+"%)";
         }
         fotoCarouselProker[i].style.transform = "translateX("+((-(fotoCarouselProker.length-1))*100)+"%)";
-        indexProker=-2;
+        indexProker=-(fotoCarouselProker.length-1);
         setTimeout(function () {   
             for (i = 0; i<(fotoCarouselProker.length); i++ ) {
                 fotoCarouselProker[i].style.transition = "none";
@@ -46,12 +46,12 @@ function homeProkerCarouselNav(indexProkerNav) {
     }
 
     else {
-        if (indexProker==-1) for (i = 0; i<fotoCarouselProker.length-1; i++ ) fotoCarouselProker[i].style.transition = "0.4s ease-in-out";
+        if (indexProker===-1) for (i = 0; i<fotoCarouselProker.length-1; i++ ) fotoCarouselProker[i].style.transition = "0.4s ease-in-out";
         else for (i = 0; i<fotoCarouselProker.length; i++ ) fotoCarouselProker[i].style.transition = "0.4s ease-in-out";
         for (i = 0; i<fotoCarouselProker.length; i++ ) fotoCarouselProker[i].style.transform = "translateX("+(indexProker*100)+"%)";       
     }
 
-    if (indexProker==0) {
+    if (indexProker===0) {
         setTimeout(function () {   
             fotoCarouselProker[fotoCarouselProker.length-1].style.transition = "none";
             fotoCarouselProker[fotoCarouselProker.length-1].style.transform = "translateX("+((-fotoCarouselProker.length)*100)+"%)";
@@ -59,7 +59,7 @@ function homeProkerCarouselNav(indexProkerNav) {
         }, 400);
     }
 
-    else if (indexProker==-(fotoCarouselProker.length-1)) {
+    else if (indexProker===-(fotoCarouselProker.length-1)) {
         setTimeout(function () {   
             fotoCarouselProker[0].style.transition = "none";
             fotoCarouselProker[0].style.transform = "translateX("+(100)+"%)";

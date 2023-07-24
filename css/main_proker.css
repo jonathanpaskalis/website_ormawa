@@ -62,7 +62,7 @@
     margin-bottom: 2rem;
     filter: drop-shadow(0 0 2rem rgba(220,220,220,0.1));
     overflow-y: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .program-kerja-carousel-judul-hidden {
@@ -165,7 +165,7 @@
 
 .program-kerja-carousel-foto {
     width: 100%;
-    transition: 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 /* Carousel Program Kerja */
 

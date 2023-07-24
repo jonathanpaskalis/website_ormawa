@@ -16,6 +16,7 @@ function homeProkerCarouselNav(indexProkerNav) {
     buttonCarouselProkerRight.disabled = true;
 
     indexProker += indexProkerNav;
+    console.log(indexProker);
 
     if (indexProker>0) {
         fotoCarouselProker[fotoCarouselProker.length-1].style.transition = "0.4s ease-in-out";
@@ -23,7 +24,7 @@ function homeProkerCarouselNav(indexProkerNav) {
             fotoCarouselProker[i].style.transform = "translateX("+(indexProker*100)+"%)";
         }
         fotoCarouselProker[i].style.transform = "translateX("+((-(fotoCarouselProker.length-1))*100)+"%)";
-        indexProker=-2;
+        indexProker=-(fotoCarouselProker.length-1);
         setTimeout(function () {   
             for (i = 0; i<(fotoCarouselProker.length); i++ ) {
                 fotoCarouselProker[i].style.transition = "none";
@@ -48,24 +49,24 @@ function homeProkerCarouselNav(indexProkerNav) {
     }
 
     else {
-        if (indexProker==-1) for (i = 0; i<fotoCarouselProker.length-1; i++ ) fotoCarouselProker[i].style.transition = "0.4s ease-in-out";
+        if (indexProker===-1) for (i = 0; i<fotoCarouselProker.length-1; i++ ) fotoCarouselProker[i].style.transition = "0.4s ease-in-out";
         else for (i = 0; i<fotoCarouselProker.length; i++ ) fotoCarouselProker[i].style.transition = "0.4s ease-in-out";
         for (i = 0; i<fotoCarouselProker.length; i++ ) fotoCarouselProker[i].style.transform = "translateX("+(indexProker*100)+"%)";       
     }
 
-    if (indexProker==0) {
-        setTimeout(function () {   
-            fotoCarouselProker[fotoCarouselProker.length-1].style.transition = "none";
-            fotoCarouselProker[fotoCarouselProker.length-1].style.transform = "translateX("+((-fotoCarouselProker.length)*100)+"%)";
-            fotoCarouselProker[0].style.transition = "0.4s ease-in-out";
-        }, 400);
-    }
-
-    else if (indexProker==-(fotoCarouselProker.length-1)) {
+    if (indexProker===-(fotoCarouselProker.length-1)) {
         setTimeout(function () {   
             fotoCarouselProker[0].style.transition = "none";
             fotoCarouselProker[0].style.transform = "translateX("+(100)+"%)";
             fotoCarouselProker[fotoCarouselProker.length-1].style.transition = "0.4s ease-in-out";
+        }, 400);
+    }
+
+    else if (indexProker===0) {
+        setTimeout(function () {   
+            fotoCarouselProker[fotoCarouselProker.length-1].style.transition = "none";
+            fotoCarouselProker[fotoCarouselProker.length-1].style.transform = "translateX("+((-fotoCarouselProker.length)*100)+"%)";
+            fotoCarouselProker[0].style.transition = "0.4s ease-in-out";
         }, 400);
     }
     

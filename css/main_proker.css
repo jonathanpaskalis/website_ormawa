@@ -141,7 +141,7 @@
     font-family: Montserrat;
     font-size: 6rem;
     font-weight: 600;
-    color: rgba(220,220,220,1);
+    color: var(--putih-bem);
     background-color: transparent;
     text-shadow: 0 0 1rem rgba(20,20,20,1);
     top:40%;
@@ -149,7 +149,7 @@
 }
 
 .button-program-kerja-carousel-left:hover, .button-program-kerja-carousel-right:hover {
-    color: rgba(20,20,20,1);
+    color: var(--hitam-bem);
     cursor: pointer;
 }
 

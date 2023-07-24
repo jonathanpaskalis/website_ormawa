@@ -119,8 +119,8 @@
     font-size: 3rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     text-align: center;
-    background-image: linear-gradient(120deg, rgba(220,220,220,1) 0%,
-                                    rgba(212,156,67,1) 18.75%,rgba(241,90,34,1) 100%);
+    background-image: linear-gradient(120deg, var(--putih-bem) 0%,
+                                    var(--emas-bem) 18.75%, var(--oranye-bem) 100%);
     border-radius: 2rem;
     text-shadow: 0 0 0.5rem rgba(220,220,220,0.5);
     animation: selamat-datang 1.2s ease-in-out;
@@ -219,7 +219,7 @@
 .sesi-home-judul-deskripsi {
     font-weight: 800;
     font-size: 3rem;
-    color: rgba(20,20,20,1);
+    color: var(--hitam-bem);
     text-shadow: 0 0 2rem rgba(20,20,20,0.5);
     margin-bottom: 1rem;
 }
@@ -324,7 +324,7 @@
     justify-self: center;
     font-weight: 800;
     font-size: 4rem;
-    color: rgba(20,20,20,1);
+    color: var(--hitam-bem);
     text-shadow: 0 0 2rem rgba(20,20,20,0.5);
     transition: all 0.5s ease-in-out;
 }
@@ -372,7 +372,7 @@
     font-family: Montserrat;
     font-size: 4rem;
     font-weight: 600;
-    color: rgba(220,220,220,1);
+    color: var(--putih-bem);
     background-color: transparent;
     background-size: 200%;
     text-shadow: 0 0 1rem rgba(20,20,20,1);
@@ -394,7 +394,7 @@
 }
 
 .button-carousel-proker-left:hover, .button-carousel-proker-right:hover {
-    color: rgba(20,20,20,1);
+    color: var(--hitam-bem);
     cursor: pointer;
 }
 
@@ -432,7 +432,7 @@
     height: 3rem;
     font-weight: 700;
     font-size: 2rem;
-    color: rgba(20,20,20,1);
+    color: var(--hitam-bem);
     filter: drop-shadow(0 0 2rem rgba(20,20,20,0.8));
     text-shadow: 0 0 2rem rgba(20,20,20,0.4);
     transition: opacity 0.2s ease-in-out;

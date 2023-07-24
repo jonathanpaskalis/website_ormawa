@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 15rem;
+    height: 12rem;
     box-shadow: 0 0 2rem var(--hitam-bem);
 }
 
@@ -16,7 +16,7 @@
     background-size: 400%;
     font-family: Poppins;
     font-weight: 600;
-    font-size: 6.5rem;
+    font-size: 5rem;
     color: transparent;
     text-align: center;
     -webkit-background-clip: text;
@@ -36,7 +36,7 @@
 }
 
 .periode-kabinet {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--hitam-bem);
     filter: drop-shadow(0 0 2rem rgba(10,10,10,0.4)); 
 }
@@ -52,7 +52,7 @@
     padding: 2rem 0 2rem 0;
     background-color: rgba(10,10,10,0.7);
     box-shadow: 0 0 2rem rgba(10,10,10,0.4);
-    max-width: 75%;
+    max-width: 60%;
     min-width: 45rem;
 }
 
@@ -91,7 +91,7 @@
 
 .sesi-profil-judul {
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--putih-bem);
     text-shadow: 0 0 2rem rgba(230,230,230,0.2);
     margin-bottom: 1rem;
@@ -110,7 +110,7 @@
 .sesi-profil-deskripsi {
     display: flex;
     text-align: justify;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     border-radius: 2rem;
     font-weight: 500;
     color: var(--putih-bem);
@@ -143,14 +143,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    max-width: 75%;
+    max-width: 60%;
     min-width: 45rem;
 }
 
 .judul-departemen-show, .judul-departemen-hidden, 
 .judul-jabatan-show, .judul-jabatan-hidden {
     font-family: Panton;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     color: transparent;
     -webkit-background-clip: text;
@@ -216,8 +216,8 @@
     justify-self: center;
     flex-direction: column;
     align-items: center;
-    width: 18rem;
-    height: 28rem;
+    width: 15rem;
+    height: 23rem;
     transition: 0.5s ease-in-out, filter 0.2s ease-in-out;
     border-style: solid;
     border-radius: 2rem;
@@ -283,11 +283,11 @@
 
 .departemen-keuangan > div > div > .jabatan-pengurus,
 .departemen-internal > div > div > .jabatan-pengurus {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .departemen-pmo > div > div > .jabatan-pengurus {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .foto-pengurus {
@@ -345,7 +345,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 75%;
+    width: 60%;
     min-width: 45rem;
     background-color: rgba(10,10,10,0.8);
     box-shadow: 0 0 2rem rgba(10,10,10,0.4);
@@ -354,7 +354,7 @@
 
 .judul-komposisi-pengurus {
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 3rem;
     text-align: center;
     text-shadow: 0 0 2rem rgba(230,230,230,0.2);

@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 15rem;
+    height: 12rem;
     box-shadow: 0 0 2rem var(--hitam-bem);
 }
 
@@ -13,7 +13,7 @@
     color: var(--oranye-bem);
     font-family: Poppins;
     font-weight: 600;
-    font-size: 6.5rem;
+    font-size: 5rem;
     text-align: center;
     text-shadow: 0 0 2rem rgba(10,10,10,0.4);
     animation: hubungi-kami-animation 1s ease-in-out;
@@ -54,7 +54,7 @@
     -webkit-background-clip: text;
     background-position: left;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-shadow: 0 0 2rem rgba(230,230,230,0.1);
     animation: hubungi-kami-kontak-animation 1s;
 }
@@ -69,6 +69,6 @@
 }
 
 .hubungi-kami-kontak > p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-shadow: 0 0 2rem rgba(230,230,230,0.1);
 }

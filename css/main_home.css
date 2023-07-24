@@ -45,7 +45,7 @@
 
 .cover-carousel > div {
     display: flex;
-    max-width: 75%;
+    max-width: 60%;
     min-width: 45rem;
     max-height: 85%;
     min-height: 25rem;
@@ -178,7 +178,7 @@
 }
 
 .home-intro-bg {
-    max-width: 75%;
+    max-width: 60%;
     min-width: 45rem;
     padding: 2rem 0 2rem 0;
     background-color: rgba(220,220,220,0.7);
@@ -218,7 +218,7 @@
 
 .sesi-home-judul-deskripsi {
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--hitam-bem);
     text-shadow: 0 0 2rem rgba(20,20,20,0.5);
     margin-bottom: 1rem;
@@ -237,7 +237,7 @@
 .sesi-home-deskripsi {
     display: flex;
     text-align: justify;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     background-color: rgba(10,10,10,0.8);
     border-radius: 2rem;
     box-shadow: 0 0 2rem rgba(10,10,10,0.4);
@@ -266,7 +266,7 @@
 .home-bagan-judul-show, .home-bagan-judul-hidden {
     margin-top: 4rem;
     margin-bottom: 4rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
     text-shadow: 0 0 1rem rgba(230,230,230,0.4);
@@ -295,8 +295,8 @@
 
 .home-bagan-gambar-show > img,
 .home-bagan-gambar-hidden > img {
-    width: 80%;
-    min-width: calc(10 / 8 * 35rem);
+    width: 60%;
+    min-width: 45rem;
 }
 /* Bagan */
 
@@ -311,7 +311,7 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-content: center;
-    max-width: 75%;
+    max-width: 60%;
     min-width: 45rem;
     padding: 3rem 0 6rem 0;
     background-color: rgba(230,230,230,0.7);
@@ -323,7 +323,7 @@
     width: 70%;
     justify-self: center;
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: var(--hitam-bem);
     text-shadow: 0 0 2rem rgba(10,10,10,0.5);
     transition: all 0.5s ease-in-out;
@@ -370,7 +370,7 @@
     bottom: 0;
     position: absolute;
     font-family: Montserrat;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 600;
     color: var(--putih-bem);
     background-color: transparent;

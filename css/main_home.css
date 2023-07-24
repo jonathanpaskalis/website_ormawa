@@ -366,15 +366,31 @@
 }
 
 .button-carousel-proker-left, .button-carousel-proker-right {
+    top: 0;
+    bottom: 0;
+    position: absolute;
     font-family: Montserrat;
     font-size: 4rem;
     font-weight: 600;
     color: rgba(220,220,220,1);
     background-color: transparent;
-    position: absolute;
+    background-size: 200%;
     text-shadow: 0 0 1rem rgba(20,20,20,1);
-    top:40%;
-    transition: color 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.button-carousel-proker-left {
+    left: 0;
+    right: 90%;
+    background-image: linear-gradient(90deg, rgba(20,20,20,0.6) 0%, transparent 50%, transparent 100%);
+    background-position: right;
+}
+
+.button-carousel-proker-right {
+    right: 0;
+    left: 90%;
+    background-image: linear-gradient(270deg, rgba(20,20,20,0.6) 0%, transparent 50%, transparent 100%);
+    background-position: left;
 }
 
 .button-carousel-proker-left:hover, .button-carousel-proker-right:hover {
@@ -386,13 +402,12 @@
     text-shadow: none;
 }
 
-.button-carousel-proker-left {
-    left: 2.5%;
+.button-carousel-proker-left:hover {
+    background-position: left;
 }
 
-
-.button-carousel-proker-right {
-    right: 2.5%;
+.button-carousel-proker-right:hover {
+    background-position: right;
 }
 
 .carousel-proker-foto {

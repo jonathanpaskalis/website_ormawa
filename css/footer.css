@@ -2,7 +2,7 @@ footer {
     display: flex;
     justify-content: center;
     background-color: var(--hitam-bem);
-    box-shadow: 0 0 2rem rgba(20,20,20,0.8);
+    box-shadow: 0 0 2rem rgba(10,10,10,0.8);
 }
 
 footer > div {

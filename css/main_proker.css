@@ -15,7 +15,7 @@
     font-weight: 600;
     font-size: 6.5rem;
     text-align: center;
-    text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    text-shadow: 0 0 2rem rgba(10,10,10,0.4);
     animation: program-kerja-animation 1s ease-in-out;
 }
 
@@ -26,14 +26,14 @@
     }
     100% {
         color: var(--oranye-bem);
-        text-shadow: 0 0 2rem rgba(20,20,20,0.4);
+        text-shadow: 0 0 2rem rgba(10,10,10,0.4);
     }
 }
 
 .periode-kabinet {
     font-size: 3rem;
     color: var(--hitam-bem);
-    filter: drop-shadow(0 0 2rem rgba(20,20,20,0.4)); 
+    filter: drop-shadow(0 0 2rem rgba(10,10,10,0.4)); 
 }
 
 .program-kerja-align {
@@ -46,8 +46,8 @@
     flex-direction: column;
     align-items: center;
     padding: 4rem 2rem 2rem 2rem;
-    background-color: rgba(20,20,20,0.7);
-    box-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    background-color: rgba(10,10,10,0.7);
+    box-shadow: 0 0 2rem rgba(10,10,10,0.4);
     max-width: 75%;
     min-width: 45rem;
     position: relative;
@@ -60,7 +60,7 @@
     justify-content: center;
     height: min-content;
     margin-bottom: 2rem;
-    filter: drop-shadow(0 0 2rem rgba(220,220,220,0.1));
+    filter: drop-shadow(0 0 2rem rgba(230,230,230,0.1));
     overflow-y: hidden;
     transition: all 0.2s ease-in-out;
 }
@@ -134,7 +134,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: inset 0 0 2rem rgba(20,20,20,0.8);
+    box-shadow: inset 0 0 2rem rgba(10,10,10,0.8);
 }
 
 .button-program-kerja-carousel-left, .button-program-kerja-carousel-right {
@@ -143,13 +143,13 @@
     font-weight: 600;
     color: var(--putih-bem);
     background-color: transparent;
-    text-shadow: 0 0 1rem rgba(20,20,20,1);
+    text-shadow: 0 0 1rem rgba(10,10,10,1);
     top:40%;
     transition: color 0.1s ease-in-out, font-size 0.2s ease-in-out;
 }
 
 .button-program-kerja-carousel-left:hover, .button-program-kerja-carousel-right:hover {
-    color: var(--hitam-bem);
+    color: var(--oranye-bem);
     cursor: pointer;
 }
 
@@ -208,7 +208,7 @@
     font-weight: 800;
     font-size: 3rem;
     color: var(--putih-bem);
-    text-shadow: 0 0 2rem rgba(220,220,220,0.2);
+    text-shadow: 0 0 2rem rgba(230,230,230,0.2);
     margin-bottom: 1rem;
 }
 
@@ -227,10 +227,10 @@
     border-radius: 2rem;
     font-weight: 500;
     color: var(--hitam-bem);
-    text-shadow: 0 0 2rem rgba(20,20,20,0.4);
-    box-shadow: 0 0 2rem rgba(20,20,20,0.4);
+    text-shadow: 0 0 2rem rgba(10,10,10,0.4);
+    box-shadow: 0 0 2rem rgba(10,10,10,0.4);
     padding: 1.5rem;
-    background-color: rgba(220,220,220,0.8);
+    background-color: rgba(230,230,230,0.8);
 }
 
 .program-kerja-deskripsi > .sesi-program-kerja-deskripsi {

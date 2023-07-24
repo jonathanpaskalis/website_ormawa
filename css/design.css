@@ -1,8 +1,8 @@
 :root {
     --oranye-bem: rgba(241,90,34,1);
-    --putih-bem: rgba(220,220,220,1);
+    --putih-bem: rgba(230,230,230,1);
     --emas-bem: rgba(212,156,67,1);
-    --hitam-bem: rgba(20,20,20,1);
+    --hitam-bem: rgba(10,10,10,1);
     --warna-feb: rgba(225,204,0,1);
     --warna-fiabikom: rgba(225,111,132,1);
     --warna-fpb: rgba(9,113,171,1);
@@ -108,7 +108,7 @@ p {
 
 .page-top-button > p {
     height: 100%;
-    color: rgba(220, 220, 220, 1);
+    color: var(--putih-bem);
     transition: all 0.1s ease-in-out;
     font-family: 'Poppins';
     font-weight: 700;

@@ -1,4 +1,4 @@
-.header {
+header {
     --header-height: 7rem;
     position: fixed;
     display: grid;

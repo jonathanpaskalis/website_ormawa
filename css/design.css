@@ -42,7 +42,7 @@ body {
     padding-top: 7rem;
 }
 
-header, main, footer {
+main {
     overflow-x: hidden;
 }
 

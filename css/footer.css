@@ -1,11 +1,11 @@
-.footer {
+footer {
     display: flex;
     justify-content: center;
     background-color: rgba(20,20,20,1);
     box-shadow: 0 0 2rem rgba(20,20,20,0.8);
 }
 
-.footer > div {
+footer > div {
     display: grid;
     grid-template-columns: 6rem 1fr;
     height: min-content;

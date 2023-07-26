@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id" id="html">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>BEM KM-UAJ</title>
         <link rel="icon" href="img/Logo_BEM_KM-UAJ.webp" type="image/x-icon">
         <link rel="stylesheet" href="css/design.css">
@@ -22,12 +24,15 @@
                 <img src="img/Logo_KM-UAJ.webp">
             </div>
             <div class="nama-organisasi">
-                <p>
+                <p id="nama-organisasi-long">
                     Badan Eksekutif Mahasiswa<br>
                     Keluarga Mahasiswa-UAJ
                 </p>
+                <p id="nama-organisasi-short">
+                    BEM KM-UAJ
+                </p>
             </div>
-            <nav>
+            <nav class="navbar-desktop">
                 <div class="navbar-selection js-navbar-selection">
                     <a><p>BERANDA</p></a>
                 </div>
@@ -48,6 +53,13 @@
                 <!-- <div class="navbar-selection">
                     <a><p>PEMILU</p></a>
                 </div> -->
+                <button class="button-navbar-mobile">
+                    <div></div>
+                    <div></div>
+                </button>
+            </nav>
+            <nav class="navbar-mobile">
+
             </nav>
         </header>
         <main>
@@ -121,7 +133,7 @@
             <div class="home-proker">
                 <div class="home-proker-bg">
                     <p class="judul-proker-hidden">
-                        Program<br>Kerja
+                        Program Kerja
                     </p>
                     <div class="carousel-proker-hidden">
                         <div class="carousel-proker-slide">

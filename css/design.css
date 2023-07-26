@@ -40,6 +40,13 @@ html {
 body {
     margin: 0;
     padding-top: 6rem;
+    transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 50rem) {
+    body {
+        padding-top: 4rem;
+    }
 }
 
 main {

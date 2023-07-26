@@ -12,10 +12,10 @@ footer > div {
     grid-template-columns: 6rem 1fr;
     height: min-content;
     max-width: 60%;
-    min-width: 45rem;
+    min-width: 15rem;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     column-gap: 2rem;
 }
 
@@ -25,7 +25,7 @@ footer > .copyright {
     width: 100%;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
     background-color: var(--putih-bem);
     color: var(--hitam-bem);
@@ -53,12 +53,6 @@ footer > .copyright {
     justify-content: space-evenly;
 }
 
-@media (max-width: 65rem) {
-    .footer-sesi-kontak {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 .footer-kontak {
     display: flex;
     flex-direction: column;
@@ -71,5 +65,31 @@ footer > .copyright {
 }
 
 .footer-kontak > p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 85rem) {
+    .footer-sesi-kontak {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer > div {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 50rem) {
+    footer > div {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 35rem) {
+    footer > div, .footer-sesi-kontak {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-logo{
+        display: none;
+    }
 }

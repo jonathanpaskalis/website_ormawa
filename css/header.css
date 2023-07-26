@@ -14,16 +14,17 @@ header {
     border-color: var(--putih-bem);
     border-width: 0 0 0.15rem 0;
     z-index: 100;
+    transition: all 0.1s ease-in-out;
 }
 
 .header-logo {
     aspect-ratio: 1.1/1;
     height: var(--header-height);
     display: flex;
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    border-radius: 0 2rem 2rem 0;
     background-color: var(--putih-bem);
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
 }
 
 .logo > img {
@@ -48,21 +49,19 @@ header {
     background-position: right;
     -webkit-background-clip: text;
     color: transparent;
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out, font-size 0.1s ease-in-out;
 }
 
 .nama-organisasi > p:hover {
     background-position: left;
 }
 
-@media (max-width: 85rem) {
-    .nama-organisasi{
-        width: 0;
-    }
+#nama-organisasi-short {
+    display: none;
 }
 
 /* Navigation Bar */
-nav {
+.navbar-desktop {
     display: flex;
     width: 100%;
     height: 100%;
@@ -212,4 +211,88 @@ nav {
 .navbar-dropdown > a:active > p{
     color: var(--putih-bem);
 }
+
+.button-navbar-mobile {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--hitam-bem);
+    padding: 0.2rem;
+    border-width: 0.15rem;
+    transition: all 0.1s ease-in-out, opacity 0.2s ease-in-out;
+    cursor: pointer;
+    border-style: solid;
+    border-color: var(--putih-bem);
+    border-radius: 0.5rem;
+}
+
+.button-navbar-mobile > div {
+    background-color: var(--putih-bem);
+    height: 0.6rem;
+    width: 3rem;
+    border-radius: 0.3rem;
+}
 /* Navigation Bar */
+
+/* Responsive */
+
+@media (min-width: 85.0625rem) {
+    .button-navbar-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 85rem) {
+    .navbar-selection, .navbar-selection-dd {
+        display: none;
+    }
+}
+
+@media (max-width: 50rem) {
+    header {
+        --header-height: 4rem;
+    }
+
+    .header-logo {
+        border-radius: 0 1.5rem 1.5rem 0;
+    }
+
+    .nama-organisasi {
+        padding-left: 1rem;
+    }
+
+    .nama-organisasi > p {
+        font-size: 1rem;
+    }
+
+    .button-navbar-mobile {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .button-navbar-mobile > div {
+        height: 0.3rem;
+        width: 1.5rem;
+        border-radius: 0.15rem;
+    }
+}
+
+@media (max-width: 35rem) {
+    #nama-organisasi-long {
+        display: none;
+    }
+
+    #nama-organisasi-short {
+        display: block;
+    }
+
+    .nama-organisasi > p {
+        font-size: 2rem;
+    }
+}
+
+/* Responsive */

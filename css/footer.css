@@ -1,6 +1,8 @@
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: var(--hitam-bem);
     box-shadow: 0 0 2rem rgba(10,10,10,0.8);
 }
@@ -15,6 +17,22 @@ footer > div {
     justify-content: center;
     padding: 1rem;
     column-gap: 2rem;
+}
+
+footer > .copyright {
+    display: block;
+    max-width: none;
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--putih-bem);
+    color: var(--hitam-bem);
+}
+
+.copyright > span {
+    color: var(--oranye-bem);
 }
 
 .footer-logo {

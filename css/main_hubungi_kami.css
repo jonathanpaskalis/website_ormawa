@@ -1,4 +1,4 @@
-.hubungi-kami {
+.contact-us {
     background-color: var(--putih-bem);
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     box-shadow: 0 0 2rem var(--hitam-bem);
 }
 
-.hubungi-kami > span {
+.contact-us > span {
     width: max-content;
     color: var(--oranye-bem);
     font-family: Poppins;
@@ -16,10 +16,10 @@
     font-size: 5rem;
     text-align: center;
     text-shadow: 0 0 2rem rgba(10,10,10,0.4);
-    animation: hubungi-kami-animation 1s ease-in-out;
+    animation: contact-us-animation 1s ease-in-out;
 }
 
-@keyframes hubungi-kami-animation {
+@keyframes contact-us-animation {
     0% {
         color: transparent;
         text-shadow: none;
@@ -30,12 +30,12 @@
     }
 }
 
-.hubungi-kami-sesi-kontak {
+.contact-us-session-contact {
     display: flex;
     justify-content: center;
 }
 
-.hubungi-kami-sesi-kontak-bg {
+.contact-us-session-contact-bg {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 2rem;
@@ -47,7 +47,7 @@
     min-width: 45rem;
 }
 
-.hubungi-kami-judul-kontak {
+.contact-us-title-contact {
     color: transparent;
     background-image: linear-gradient(90deg, var(--oranye-bem) 25%, transparent 75%);
     background-size: 400%;
@@ -56,10 +56,10 @@
     font-weight: 700;
     font-size: 2rem;
     text-shadow: 0 0 2rem rgba(230,230,230,0.1);
-    animation: hubungi-kami-kontak-animation 1s;
+    animation: contact-us-contact-animation 1s;
 }
 
-@keyframes hubungi-kami-kontak-animation {
+@keyframes contact-us-kontak-animation {
     0% {
         background-position: right;
     }
@@ -68,7 +68,144 @@
     }
 }
 
-.hubungi-kami-kontak > p {
+.contact-us-contact-maps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 18rem;
+}
+
+.contact-us-contact {
+    justify-self: left;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.contact-us-contact > div {
+    display: flex;
+    align-items: center;
+}
+
+.contact-us-maps {
+    margin-left: 0.5rem;
+}
+
+.contact-us-name-email  {
+    display: flex;
+}
+
+.contact-us-segment {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-us-segment > p {
     font-size: 1.5rem;
     text-shadow: 0 0 2rem rgba(230,230,230,0.1);
+}
+
+.contact-us-segment > input, .contact-us-segment > textarea {
+    font-size: 1rem;
+    background-color: var(--putih-bem);
+    border: none;
+    font-family: 'Poppins';
+}
+
+.contact-us-segment > textarea {
+    height: 5rem;
+    resize: none;
+}
+
+#contact-us-name {
+    margin-right: 0.5rem;
+}
+
+#contact-us-email {
+    margin-left: 0.5rem;
+}
+
+.street-view {
+    height: 100%;
+    width: 100%;
+}
+
+.button-send, .button-contact {
+    height: 3rem;
+    background-color: transparent;
+    padding: 0.2rem;
+    border-width: 0.15rem;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    border-style: solid;
+    border-color: var(--putih-bem);
+    color: var(--putih-bem);
+    border-radius: 1.5rem;
+}
+
+.button-send {
+    justify-self: center;
+    width: 8rem;
+}
+
+.button-contact {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    width: 8rem;
+    margin-right: 1rem;
+}
+
+.button-contact > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.button-send > span, .button-contact > a > span {
+    font-family: 'Panton';
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.button-contact > a > span {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.button-send:hover, .button-contact:hover {
+    background-color: var(--hitam-bem);
+    border-color: rgba(255,124,68,1);
+    box-shadow: 0 0 0.5em rgba(241,90,34,.5);
+}
+
+.button-send:hover > span, .button-contact:hover > a > span {
+    color: var(--oranye-bem);
+}
+
+.button-contact:hover .span-contact {
+    color: var(--oranye-bem);
+}
+
+.button-send:active, .button-contact:active {
+    background-color: var(--oranye-bem);
+}
+
+.button-send:active > span, .button-contact:active > a > span {
+    color: var(--putih-bem);
+}
+
+.span-contact {
+    font-size: 1.2rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.span-contact-hover {
+    color: var(--oranye-bem);
+    font-weight: 500;
 }

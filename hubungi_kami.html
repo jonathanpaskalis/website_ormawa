@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="css/footer.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="js/page_top_button.js" defer></script>
+        <script src="js/hubungi_kami.js" defer></script>
     </head>
     <body>
         <header>
@@ -42,61 +44,73 @@
             </nav>
         </header>
         <main>
-            <div class="hubungi-kami">
+            <div class="contact-us">
                 <span>
                     HUBUNGI KAMI
                 </span>
             </div>
-            <div class="hubungi-kami-sesi-kontak">
-                <div class="hubungi-kami-sesi-kontak-bg">
-                    <div class="hubungi-kami-kontak">
-                        <span class="hubungi-kami-judul-kontak">
+            <div class="contact-us-session-contact">
+                <div class="contact-us-session-contact-bg">
+                    <div class="contact-us-segment">
+                        <span class="contact-us-title-contact">
                             ALAMAT
                         </span>
                         <p>
                             Jl. Raya Cisauk Lapan, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345
                         </p>
                     </div>
-                    <div class="hubungi-kami-kontak">
-                        <span class="hubungi-kami-judul-kontak">
-                            EMAIL
-                        </span>
-                        <p>
-                            bem.km@atmajaya.ac.id
-                        </p>
+                    <div class="contact-us-contact-maps">
+                        <div class="contact-us-contact">
+                            <div>
+                                <div class="button-contact">
+                                    <a href="mailto: bem.km@atmajaya.ac.id"><span>Email</span></a>                                    
+                                </div>                                
+                                <span class="span-contact">bem.km@atmajaya.ac.id</span>
+                            </div>
+                            <div>
+                                <div class="button-contact">
+                                    <a href="https://wa.me/6287721859106" target="_blank"><span>Eksternal</span></a>                                    
+                                </div>
+                                <span class="span-contact">+62 87721859106 (Josia)</span>
+                            </div>
+                            <div>
+                                <div class="button-contact">
+                                    <a href="https://wa.me/628118209287" target="_blank"><span>Internal</span></a>                                    
+                                </div>
+                                <span class="span-contact">+62 8118209287 (Jo)</span>
+                            </div>
+                            <div>
+                                <div class="button-contact">
+                                    <a href="https://wa.me/6288808374177" target="_blank"><span>Aspirasi</span></a>                                    
+                                </div>
+                                <span class="span-contact">+62 88808374177 (Michelle)</span>
+                            </div>
+                        </div>
+                        <div class="contact-us-maps">
+                            <iframe class="street-view" src="https://www.google.com/maps/embed?pb=!4v1690294942130!6m8!1m7!1smms5t2mTyDD8LJQi6Sk_gw!2m2!1d-6.318058307835942!2d106.6505173535916!3f205.4769897449964!4f9.82345676993208!5f1.5080392418408253" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
-                    <div class="hubungi-kami-kontak">
-                        <span class="hubungi-kami-judul-kontak">
-                            INSTAGRAM
-                        </span>
-                        <p>
-                            bem.kmuaj
-                        </p>
+                    <div class="contact-us-name-email">
+                        <div id="contact-us-name" class="contact-us-segment">
+                            <span class="contact-us-judul-contact">
+                                Nama
+                            </span>
+                            <input id="input-name" type="text">
+                        </div>
+                        <div id="contact-us-email" class="contact-us-segment">
+                            <span class="contact-us-judul-contact">
+                                Email
+                            </span>
+                            <input id="input-email" type="text">
+                        </div>
                     </div>
-                    <div class="hubungi-kami-kontak">
-                        <span class="hubungi-kami-judul-kontak">
-                            EKSTERNAL
+                    <div class="contact-us-segment">
+                        <span class="contact-us-judul-contact">
+                            Pesan
                         </span>
-                        <p>
-                            +62 87721859106 (Josia)
-                        </p>
+                        <textarea id="input-message"></textarea>
                     </div>
-                    <div class="hubungi-kami-kontak">
-                        <span class="hubungi-kami-judul-kontak">
-                            INTERNAL
-                        </span>
-                        <p>
-                            +62 8118209287 (Jo)
-                        </p>
-                    </div>
-                    <div class="hubungi-kami-kontak">
-                        <span class="hubungi-kami-judul-kontak">
-                            ASPIRASI MAHASISWA
-                        </span>
-                        <p>
-                            +62 88808374177 (Michelle)
-                        </p>
-                    </div>
+                    <button id="button-send" class="button-send"><span>Kirim</span></button>
                 </div>
             </div>
             <a class="page-top-button button-hidden"><p>^</p></a>
@@ -157,7 +171,11 @@
                     </div>
                 </div>
             </div>
+            <div class="copyright">
+                © 2023 <span>BEM KM-UAJ</span>
+            </div>
         </footer>
-        <script src="js/page_top_button.js"></script>
+        
+
     </body>
 </html>

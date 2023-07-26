@@ -49,6 +49,10 @@ main {
     overflow-x: hidden;
 }
 
+footer {
+    overflow: hidden;
+}
+
 body p, body span, body div{
     color: var(--putih-bem);
     font-family: 'Montserrat';
@@ -83,7 +87,7 @@ p {
     align-items: center;
     justify-content: center;
     right: 2rem;
-    bottom: 2rem;
+    bottom: 4.5rem;
     width: 3.5rem;
     height: 3.5rem;
     background-color: var(--hitam-bem);

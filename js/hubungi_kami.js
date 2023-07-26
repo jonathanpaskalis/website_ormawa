@@ -26,3 +26,15 @@ buttonSend.addEventListener("click", () => {
     inputEmail.value="";
     inputMessage.value="";
 });
+
+// Form Submit
+
+// Improved Button
+
+const aSend = buttonSend.querySelector("a");
+
+    buttonSend.addEventListener("click", () => {
+        aSend.click();
+    })
+
+// Improved Button

@@ -1,3 +1,5 @@
+/* Contact Us */
+
 .contact-us {
     background-color: var(--putih-bem);
     display: flex;
@@ -30,6 +32,10 @@
     }
 }
 
+/* Contact Us */
+
+/* Address and Contact Information */
+
 .contact-us-session-contact {
     display: flex;
     justify-content: center;
@@ -59,7 +65,7 @@
     animation: contact-us-contact-animation 1s;
 }
 
-@keyframes contact-us-kontak-animation {
+@keyframes contact-us-contact-animation {
     0% {
         background-position: right;
     }
@@ -83,6 +89,14 @@
     margin-right: 0.5rem;
 }
 
+@media (max-width: 95rem) {
+    .contact-us-contact-maps{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        height: 36rem;
+    }
+}
+
 .contact-us-contact > div {
     display: flex;
     align-items: center;
@@ -91,6 +105,10 @@
 .contact-us-maps {
     margin-left: 0.5rem;
 }
+
+/* Address and Contact Information */
+
+/* Contact Form */
 
 .contact-us-name-email  {
     display: flex;
@@ -209,3 +227,5 @@
     color: var(--oranye-bem);
     font-weight: 500;
 }
+
+/* Contact Form */

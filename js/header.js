@@ -10,3 +10,13 @@ navbarSelection.forEach((element, index) => {
 });
 
 // Improved Button
+
+// Navbar Mobile
+
+const navbarSelectionDDMobile  = document.querySelector(".navbar-selection-dd-mobile");
+const navbarDropdownMobile = document.querySelector("navbar-dropdown-mobile");
+
+navbarSelectionDDMobile.addEventListener("mouseenter", () => {
+    navbarDropdownMobile.style.display="flex";
+})
+// Navbar Mobile

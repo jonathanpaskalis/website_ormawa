@@ -110,11 +110,6 @@ header {
 .navbar-selection-dd > a > p,
 .navbar-selection > a > p {
     height: 100%;
-}
-
-.navbar-selection-dd > a > p,
-.navbar-selection > a > p {
-    height: 100%;
     color: var(--putih-bem);
     transition: all 0.1s ease-in-out;
     font-family: 'Poppins';
@@ -164,8 +159,7 @@ header {
     border-color: transparent;
 }
 
-.navbar-selection-dd:hover .navbar-dropdown,
-.navbar-selection:hover .navbar-dropdown {
+.navbar-selection-dd:hover .navbar-dropdown {
     height: 7.5rem;
     box-shadow: 0 0 0.5em rgba(241,90,34,.5);
     border-top-width: 0;
@@ -236,6 +230,158 @@ header {
     width: 3rem;
     border-radius: 0.3rem;
 }
+
+.navbar-mobile {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 8rem 8rem 8rem;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba( 10, 10, 10, 0.95);
+    z-index: 99;
+    transition: all 0.1s ease-in-out;
+}
+
+.navbar-selection-dd-mobile,
+.navbar-selection-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
+    border-left: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid var(--hitam-bem);
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.navbar-selection-dd-mobile > a,
+.navbar-selection-mobile > a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+}
+
+.navbar-selection-dd-mobile:hover,
+.navbar-selection-mobile:hover {
+    border-color: rgba(255,124,68,1);
+    box-shadow: 0 0 0.5em rgba(241,90,34,.5);
+}
+
+.navbar-selection-dd-mobile > a > p,
+.navbar-selection-mobile > a > p {
+    height: 100%;
+    color: var(--putih-bem);
+    transition: all 0.1s ease-in-out;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 2.25rem;
+}
+
+.navbar-selection-dd-mobile > a > .navbar-dd-indicator {
+    font-weight: 100;
+    font-size: 1.75rem;
+    padding-left: 1rem;
+}
+
+.navbar-selection-dd-mobile:hover,
+.navbar-selection-mobile:hover {
+    background-color: var(--hitam-bem);
+}
+
+.navbar-selection-dd-mobile:hover > a > p,
+.navbar-selection-mobile:hover > a > p {
+    color: var(--oranye-bem);
+}
+
+.navbar-selection-dd-mobile:active,
+.navbar-selection-mobile:active {
+    background-color: var(--oranye-bem);
+}
+
+.navbar-selection-dd-mobile > a:active,
+.navbar-selection-mobile > a:active {
+    background-color: var(--oranye-bem);
+}
+
+.navbar-selection-dd-mobile:hover > a > .navbar-dd-indicator,
+.navbar-selection-mobile:hover > a > .navbar-dd-indicator {
+    padding: 0;
+    width: 0;
+    opacity: 0;
+}
+
+.navbar-selection-dd-mobile > a:active > p,
+.navbar-selection-mobile > a:active > p {
+    color: var(--putih-bem);
+}
+
+.navbar-dropdown-mobile {
+    display: none;
+    width: 9.5rem;
+    height: 0;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.1s ease-in-out;
+    overflow: hidden;
+    border-width: 0 0.15rem 0.15rem 0.15rem;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.navbar-selection-dd-mobile:hover .navbar-dropdown-mobile {
+    height: 100%;
+    box-shadow: 0 0 0.5em rgba(241,90,34,.5);
+    border-top-width: 0;
+    border-color: rgba(255,124,68,1);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+.navbar-dropdown-mobile > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--hitam-bem);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar-dropdown-mobile > a > p {
+    color: var(--putih-bem);
+    font-family: 'Poppins';
+    font-size: 0.8rem;
+    transition: all 0.1s ease-in-out;
+    display: block;
+}
+
+.navbar-dropdown-mobile > a:hover {
+    background-color: rgba(35,35,35,1);
+}
+
+.navbar-dropdown-mobile > a:hover > p {
+    color: var(--oranye-bem);
+}
+
+.navbar-dropdown-mobile > a:active {
+    background-color: var(--oranye-bem);
+}
+
+.navbar-dropdown-mobile > a:active > p{
+    color: var(--putih-bem);
+}
+
 /* Navigation Bar */
 
 /* Responsive */

@@ -41,11 +41,11 @@
           <div class="
             grid grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-8 
           ">
-            <NuxtLink v-for="program in period.programs" :key="`program-${program.name}`" class="
+            <NuxtLink :to="`/program/${period.name}/${program.name}`" v-for="program in period.programs" :key="`program-${program.name}`" class="
               flex justify-center items-center justify-self-center
               w-[7rem] xs:w-[10rem] sm:w-[15rem]
               p-4
-              border-solid border-2 sm:border-4 border-transparent hover:border-bemkmuaj-orange-glow rounded-[1rem]
+              border-solid border-2 sm:border-4 border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
               bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
               hover:shadow-bemkmuaj-orange-shadow
               transition-all duration-200 ease-in-out
@@ -62,6 +62,7 @@
 </template>
 
 <script setup lang="ts">
+
 definePageMeta({
   pageTransition: {
     name: 'slide-right',
@@ -72,6 +73,10 @@ definePageMeta({
       if (from.fullPath === '/' || from.fullPath === '/profile') {
         (from.meta.pageTransition as {name:string}).name = 'slide-left';
         (to.meta.pageTransition as {name:string}).name = 'slide-left';
+      }
+      else if (from.fullPath.slice(0,8) ==='/program') {
+        (from.meta.pageTransition as {name:string}).name = 'fade';
+        (to.meta.pageTransition as {name:string}).name = 'fade';
       }
       else {
         (from.meta.pageTransition as {name:string}).name = 'slide-right';
@@ -134,7 +139,7 @@ const periods = [
         logo: '/program_logos/Logo_Mata.webp',
       },
     ]
-  }
+  },
 ]
 
 </script>

@@ -248,7 +248,7 @@
           PROFIL
           <span class="
             material-symbols-outlined
-            scale-[130%] rotate-0
+            scale-[130%]
             transition-transform duration-100 ease-in-out
             " :class="{ '-rotate-180' : !hideProfileMNav }">
             expand_more

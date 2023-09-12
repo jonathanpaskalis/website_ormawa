@@ -176,6 +176,7 @@
       </div>
     </section>
     <section id="board-composition" class="
+      scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       w-full
     ">

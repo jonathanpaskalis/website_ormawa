@@ -89,7 +89,7 @@
             rounded-[2rem] rounded-tr-none
             bg-bemkmuaj-black bg-opacity-80
             shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
           ">
             Badan Eksekutif Mahasiswa Keluarga Mahasiswa Universitas Katolik Indonesia Atma Jaya
             atau secara singkat BEM KM-UAJ merupakan lembaga eksekutif KM-UAJ
@@ -158,7 +158,7 @@
     ">
       <div class="
         container-bemkmuaj
-        flex flex-col gap-y-8 lg:gap-y-16
+        flex flex-col items-center gap-y-8 lg:gap-y-16
       ">
         <h2 class="
           text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-white text-center font-Montserrat-SemiBold
@@ -170,6 +170,22 @@
         <div class="">
           <img src="~/assets/img/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
         </div>
+        <NuxtLink to="/profile" class="
+          flex justify-center items-center
+          w-28 sm:w-32 h-14 sm:h-16
+          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
+          bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
+          text-bemkmuaj-black hover:text-bemkmuaj-orange
+          hover:shadow-bemkmuaj-orange-shadow-sm
+          transition-all duration-200 ease-in-out
+        ">
+          <span class="
+            material-symbols-outlined
+            scale-[250%] sm:scale-[300%]
+          ">
+            trending_flat
+          </span>
+        </NuxtLink>
       </div>
     </section>
     <section id="home-program-highlight" class="
@@ -177,18 +193,37 @@
     ">
       <div class="
         container-bemkmuaj
-        flex flex-col xl:flex-row justify-between gap-x-8 gap-y-4
+        flex flex-col xl:flex-row items-center xl:justify-between gap-x-8 gap-y-4
         bg-bemkmuaj-white bg-opacity-75
         shadow-bemkmuaj-black-shadow
       ">
-        <h2 class="
-          flex justify-center items-center
-          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-black text-center xl:text-left font-Montserrat-ExtraBold
-          drop-shadow-bemkmuaj-black-shadow 
+        <div class="
+          flex flex-col justify-center items-center xl:items-start xl:gap-8
         ">
-          Program<br v-if="isXLScreen">
-          Kerja
-        </h2>
+          <h2 class="
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-black text-center xl:text-left font-Montserrat-ExtraBold
+            drop-shadow-bemkmuaj-black-shadow 
+          ">
+            Program<br v-if="isXLScreen">
+            Kerja
+          </h2>
+          <NuxtLink v-if="isXLScreen" to="/program" class="
+            flex justify-center items-center
+            w-32 h-16
+            border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
+            bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
+            text-bemkmuaj-white hover:text-bemkmuaj-orange
+            hover:shadow-bemkmuaj-orange-shadow-sm
+            transition-all duration-200 ease-in-out
+          ">
+            <span class="
+              material-symbols-outlined
+              scale-[300%]
+            ">
+              trending_flat
+            </span>
+          </NuxtLink>
+        </div>
         <div class="
           relative
           w-full xl:w-[60%]
@@ -309,6 +344,22 @@
           ">
           </div>
         </div>
+        <NuxtLink v-if="!isXLScreen" to="/program" class="
+          flex justify-center items-center
+          w-28 sm:w-32 h-14 sm:h-16
+          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
+          bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
+          text-bemkmuaj-white hover:text-bemkmuaj-orange
+          hover:shadow-bemkmuaj-orange-shadow-sm
+          transition-all duration-200 ease-in-out
+        ">
+          <span class="
+            material-symbols-outlined
+            scale-[250%] sm:scale-[300%]
+          ">
+            trending_flat
+          </span>
+        </NuxtLink>
       </div>
     </section>
   </div>

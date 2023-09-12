@@ -20,8 +20,15 @@ useHead({
   .slide-right-enter-active,
   .slide-right-leave-active,
   .slide-left-enter-active,
-  .slide-left-leave-active {
+  .slide-left-leave-active,
+  .fade-enter-active,
+  .fade-leave-active {
     @apply transition-all duration-200 ease-in-out;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    @apply opacity-0 blur-lg;
   }
 
   .slide-right-enter-from,

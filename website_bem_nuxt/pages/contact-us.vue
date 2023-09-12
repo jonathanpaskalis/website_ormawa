@@ -53,10 +53,10 @@
                 <NuxtLink to="mailto: bem.km@atmajaya.ac.id" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  hover:bg-bemkmuaj-black
+                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
+                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-white hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Email
@@ -77,10 +77,10 @@
                 <NuxtLink to="https://instagram.com/bem_kmuaj" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  hover:bg-bemkmuaj-black
+                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
+                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-white hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Instagram
@@ -101,10 +101,10 @@
                 <NuxtLink to="https://wa.me/6287721859106" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  hover:bg-bemkmuaj-black
+                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
+                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-white hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Eksternal
@@ -125,10 +125,10 @@
                 <NuxtLink to="https://wa.me/628118209287" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  hover:bg-bemkmuaj-black
+                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
+                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-white hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Internal
@@ -149,10 +149,10 @@
                 <NuxtLink to="https://wa.me/6288808374177" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  hover:bg-bemkmuaj-black
+                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
+                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-white hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Aspirasi

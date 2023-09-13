@@ -47,12 +47,13 @@
       flex items-center gap-[0.1rem]
       w-full h-full
     ">
-      <div class="
+      <div v-for="nav in navs" :key="`nav-${nav.name}`" class="
         selection
-        relative
         hidden lg:block
-      ">
-        <NuxtLink to="/" class="
+      " :class="{
+        'relative': nav.subnavs
+      }">
+        <NuxtLink :to="nav.url" class="
           nuxtlink
           flex justify-center items-center
           w-[9.5rem]
@@ -61,27 +62,12 @@
           bg-bemkmuaj-black
           text-bemkmuaj-white font-Poppins-SemiBold
           transition-all duration-100 ease-in-out
-        ">
-          BERANDA
-        </NuxtLink>
-      </div>
-      <div class="
-        selection
-        relative
-        hidden lg:block
-      ">
-        <NuxtLink to="/profile" class="
-          nuxtlink
-          flex justify-center items-center
-          w-[9.5rem]
-          p-[0.2rem_0.1rem_0.2rem_0.1rem]
-          border-solid border-[0.15rem] border-transparent rounded-[1.5rem_1.5rem_0_0]
-          bg-bemkmuaj-black
-          text-bemkmuaj-white font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          PROFIL
-          <span class="
+        " :class="{
+          'rounded-[1.5rem_1.5rem_0_0]': nav.subnavs,
+          'rounded-[1.5rem]': !nav.subnavs
+        }">
+          {{ nav.name.toUpperCase() }}
+          <span v-if="nav.subnavs" class="
             material-symbols-outlined
             transition-transform duration-100 ease-in-out
             overflow-hidden
@@ -89,7 +75,7 @@
             expand_more
           </span>
         </NuxtLink>
-        <div class="
+        <div v-if="nav.subnavs" class="
           absolute
           flex flex-col justify-center items-center
           w-[9.5rem] h-0
@@ -97,7 +83,7 @@
           transition-all duration-100 ease-in-out
           overflow-hidden
         ">
-          <NuxtLink to="/profile" class="
+          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" :to="{ path: nav.url, hash: subnav.hash }" class="
             flex justify-center items-center
             w-full h-12
             p-[0.2rem 0 0.2rem 0]
@@ -105,83 +91,9 @@
             text-[0.8rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
             transition-all duration-100 ease-in-out
           ">
-            Tentang Kami
-          </NuxtLink>
-          <NuxtLink :to="{ path:'/profile', hash: '#ministry-structure' }" class="
-            flex justify-center items-center
-            w-full h-12
-            p-[0.2rem 0 0.2rem 0]
-            bg-bemkmuaj-black hover:bg-bemkmuaj-dark-gray
-            text-[0.8rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
-            transition-all duration-100 ease-in-out
-          ">
-            Struktur Kabinet
-          </NuxtLink>
-          <NuxtLink :to="{ path:'/profile', hash: '#board-composition' }" class="
-            flex justify-center items-center
-            w-full h-12
-            p-[0.2rem 0 0.2rem 0]
-            bg-bemkmuaj-black hover:bg-bemkmuaj-dark-gray
-            text-[0.8rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
-            transition-all duration-100 ease-in-out
-          ">
-            Komposisi Pengurus
+            {{ subnav.name }}
           </NuxtLink>
         </div>
-      </div>
-      <div class="
-        selection
-        relative
-        hidden lg:block
-      ">
-        <NuxtLink to="/program" class="
-          nuxtlink
-          flex justify-center items-center
-          w-[9.5rem]
-          p-[0.2rem_0.1rem_0.2rem_0.1rem]
-          border-solid border-[0.15rem] border-transparent rounded-[1.5rem]
-          bg-bemkmuaj-black
-          text-bemkmuaj-white font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          PROGRAM KERJA
-        </NuxtLink>
-      </div>
-      <div class="
-        selection
-        relative
-        hidden lg:block
-      ">
-        <NuxtLink to="/contact-us" class="
-          nuxtlink
-          flex justify-center items-center
-          w-[9.5rem]
-          p-[0.2rem_0.1rem_0.2rem_0.1rem]
-          border-solid border-[0.15rem] border-transparent rounded-[1.5rem]
-          bg-bemkmuaj-black
-          text-bemkmuaj-white font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          HUBUNGI KAMI
-        </NuxtLink>
-      </div>
-      <div class="
-        selection
-        relative
-        hidden lg:block
-      ">
-        <NuxtLink to="/election" class="
-          nuxtlink
-          flex justify-center items-center
-          w-[9.5rem]
-          p-[0.2rem_0.1rem_0.2rem_0.1rem]
-          border-solid border-[0.15rem] border-transparent rounded-[1.5rem]
-          bg-bemkmuaj-black
-          text-bemkmuaj-white font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          PEMILU
-        </NuxtLink>
       </div>
       <button @click.prevent="toggleMNav" class="
         navmbtn
@@ -215,11 +127,10 @@
       transition-all duration-200 ease-in-out
       lg:-translate-x-full
       " :class="{'-translate-x-full' : hideMNav}">
-      <div class="
+      <div v-for="nav in navs" class="
         mselection
-        relative
       ">
-        <NuxtLink @click.prevent="closeMNav" to="/" class="
+        <NuxtLink v-if="!nav.subnavs" @click.prevent="closeMNav" :to="nav.url" class="
           nuxtlink
           flex justify-center items-center
           w-full h-16
@@ -228,16 +139,11 @@
           text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-SemiBold
           transition-all duration-100 ease-in-out
         ">
-          BERANDA
+          {{ nav.name }}
         </NuxtLink>
-      </div>
-      <div class="
-        mselection
-        relative
-      ">
-        <NuxtLink @click.prevent="toggleProfileMNav"  class="
+        <NuxtLink v-else @click.prevent="toggleMSubNav(nav)" class="
           nuxtlink
-          flex justify-center items-center gap-x-2
+          flex justify-center items-center
           w-full h-16
           border-solid border-b border-bemkmuaj-white
           hover:bg-bemkmuaj-dark-gray
@@ -245,99 +151,33 @@
           transition-all duration-100 ease-in-out
           cursor-pointer
         ">
-          PROFIL
+          {{ nav.name }}
           <span class="
             material-symbols-outlined
             scale-[130%]
             transition-transform duration-100 ease-in-out
-            " :class="{ '-rotate-180' : !hideProfileMNav }">
+            " :class="{ '-rotate-180' : !nav.hideSubNav }">
             expand_more
           </span>
         </NuxtLink>
-        <div class="
+        <div v-if="nav.subnavs" class="
           h-0
           border-solid border-bemkmuaj-white
           transition-all duration-100 ease-in-out
           overflow-hidden
         " :class="{ 
-          'h-36 border-b' : !hideProfileMNav
+          'h-36 border-b' : !nav.hideSubNav
           }">
-          <NuxtLink @click.prevent="closeMNav" to="/profile" class="
+          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" @click.prevent="closeMNav" :to="{ path: nav.url, hash: subnav.hash }" class="
             w-full h-12
             flex justify-center items-center
             hover:bg-bemkmuaj-dark-gray
             text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
             transition-all duration-100 ease-in-out
           ">
-            Tentang Kami
-          </NuxtLink>
-          <NuxtLink @click.prevent="closeMNav" :to="{ path:'/profile', hash: '#ministry-structure' }" class="
-            w-full h-12
-            flex justify-center items-center
-            hover:bg-bemkmuaj-dark-gray
-            text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
-            transition-all duration-100 ease-in-out
-          ">
-            Struktur Kabinet
-          </NuxtLink>
-          <NuxtLink @click.prevent="closeMNav" :to="{ path:'/profile', hash: '#board-composition' }" class="
-            w-full h-12
-            flex justify-center items-center
-            hover:bg-bemkmuaj-dark-gray
-            text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
-            transition-all duration-100 ease-in-out
-          ">
-            Komposisi Pengurus
+            {{ subnav.name }}
           </NuxtLink>
         </div>
-      </div>
-      <div class="
-        mselection
-        relative
-      ">
-        <NuxtLink @click.prevent="closeMNav" to="/program" class="
-          nuxtlink
-          flex justify-center items-center
-          w-full h-16
-          border-solid border-b border-bemkmuaj-white
-          hover:bg-bemkmuaj-dark-gray
-          text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          PROGRAM KERJA
-        </NuxtLink>
-      </div>
-      <div class="
-        mselection
-        relative
-      ">
-        <NuxtLink @click.prevent="closeMNav" to="/contact-us" class="
-          nuxtlink
-          flex justify-center items-center
-          w-full h-16
-          border-solid border-b border-bemkmuaj-white
-          hover:bg-bemkmuaj-dark-gray
-          text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          HUBUNGI KAMI
-        </NuxtLink>
-      </div>
-      <div class="
-        mselection
-        relative
-      ">
-        <NuxtLink @click.prevent="closeMNav" to="/election" class="
-          nuxtlink
-          flex justify-center items-center
-          w-full h-16
-          border-solid border-b border-bemkmuaj-white
-          hover:bg-bemkmuaj-dark-gray
-          text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-SemiBold
-          transition-all duration-100 ease-in-out
-        ">
-          PEMILU
-        </NuxtLink>
       </div>
     </nav>
   </header>
@@ -345,24 +185,72 @@
 
 <script setup>
   const hideMNav = ref(true);
-  const hideProfileMNav = ref(true);
 
   const toggleMNav = () => {
     hideMNav.value = !hideMNav.value;
-    closeProfileMNav();
+    closeMSubNav();
   }
 
   const closeMNav = () => {
     hideMNav.value = true;
+    closeMSubNav();
   }
 
-  const toggleProfileMNav = () => {
-    hideProfileMNav.value = !hideProfileMNav.value;
+  const toggleMSubNav = (nav) => {
+    nav.hideSubNav = !nav.hideSubNav;
   }
 
-  const closeProfileMNav = () => {
-    hideProfileMNav.value = true;
+  const closeMSubNav = () => {
+    navs.value.forEach((nav) => {
+      nav.hideSubNav = true;
+    })
   }
+
+  const navs = ref([
+    {
+      name: 'Beranda',
+      url: '/',
+      subnavs: false,
+      hideSubNav: true,
+    },
+    {
+      name: 'Profil',
+      url: '/profile',
+      subnavs: [
+        {
+          name: 'Tentang Kami',
+          hash: '',
+        },
+        {
+          name: 'Struktur Kabinet',
+          hash: '#ministry-structure',
+        },
+        {
+          name: 'Komposisi Pengurus',
+          hash: '#board-composition',
+        },
+      ],
+      hideSubNav: true,
+    },
+    {
+      name: 'Program Kerja',
+      url: '/program',
+      subnavs: false,
+      hideSubNav: true,
+    },
+    {
+      name: 'Hubungi Kami',
+      url: '/contact-us',
+      subnavs: false,
+      hideSubNav: true,
+    },
+    {
+      name: 'Pemilu',
+      url: '/election',
+      subnavs: false,
+      hideSubNav: true,
+    },
+  ]);
 </script>
 
 <style lang="scss" scoped>

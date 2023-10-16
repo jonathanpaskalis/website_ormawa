@@ -452,7 +452,7 @@ onUnmounted(() => {
   .carousel__next,
   .carousel__prev {
     @apply scale-[150%] lg:scale-[200%];
-    @apply border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[0.25rem];
+    @apply border-solid border-[0.1rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[0.25rem];
     @apply bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100;
     @apply hover:shadow-bemkmuaj-orange;
     @apply text-bemkmuaj-white hover:text-bemkmuaj-orange;

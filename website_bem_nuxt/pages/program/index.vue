@@ -86,6 +86,10 @@ definePageMeta({
   }
 })
 
+useHead({
+  title: 'Program | BEM KM-UAJ'
+})
+
 const periods = [
   {
     name: '2022-2023',

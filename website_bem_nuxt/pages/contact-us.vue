@@ -277,7 +277,7 @@ definePageMeta({
   },
   middleware(to, from) {
     if(to.meta.pageTransition) {
-      if (from.fullPath === '/' || from.fullPath === '/profile' || from.fullPath === '/program') {
+      if (from.fullPath === '/' || from.fullPath === '/profile' || from.fullPath.slice(0,8) ==='/program') {
         (from.meta.pageTransition as {name:string}).name = 'slide-left';
         (to.meta.pageTransition as {name:string}).name = 'slide-left';
       }
@@ -290,7 +290,7 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Hubungi Kami | BEM KM-UAJ'
+  title: 'Contact Us | BEM KM-UAJ'
 })
 
 const formData = ref({

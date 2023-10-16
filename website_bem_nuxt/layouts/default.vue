@@ -36,10 +36,20 @@
 
 <script setup lang="ts">
 
+const password = process.env.PASSWORD;
+
+const promptPassword = () => {
+  const userPassword = window.prompt("Password:");
+  if (userPassword !== password) {
+    promptPassword();
+  }
+};
+
 const hideToTopBtn = ref(true);
 
 onMounted(() => {
-  
+  // promptPassword();
+
   window.addEventListener('scroll', () => {
     if(window.scrollY >= 750) hideToTopBtn.value = false;
     if (window.scrollY < 750) hideToTopBtn.value = true;

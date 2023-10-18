@@ -188,7 +188,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section id="home-program-highlight" class="
+    <section v-if="period" id="home-program-highlight" class="
       flex justify-center
     ">
       <div class="
@@ -228,15 +228,15 @@
           relative
           w-full xl:w-[60%]
         ">
-          <Carousel ref="myCarousel" :wrap-around="true" :mouse-drag="false">
-            <Slide key="1">
+          <Carousel :wrap-around="true" :mouse-drag="false">
+            <Slide v-for="program in period.programs" :key="`program-${program.name}`">
               <div class="
                 carousel__item
                 relative
                 flex flex-col
               ">
-                <img src="~/assets/img/home_program_carousel/Festival_Mural.webp" alt="">
-                <img src="~/assets/img/program_logo/Logo_Festival_Mural.webp" alt="" class="
+                <img :src="program.documentation" alt="">
+                <img :src="program.logo" alt="" class="
                   absolute bottom-0
                   w-[4.5rem] h-[4rem]
                   p-2 pr-4
@@ -252,84 +252,6 @@
                   transition-all duration-100 ease-in-out
                 ">
                   Fesival Mural
-                </NuxtLink>
-              </div>
-            </Slide>
-            <Slide key="2">
-              <div class="
-                carousel__item
-                relative
-                flex flex-col
-              ">
-                <img src="~/assets/img/home_program_carousel/Mahasiswa_Talks.webp" alt="">
-                <img src="~/assets/img/program_logo/Logo_Mata.webp" alt="" class="
-                  absolute bottom-0
-                  w-[4.5rem] h-[4rem]
-                  p-2 pr-4
-                  rounded-r-[1.5rem] 
-                  bg-bemkmuaj-white
-                ">
-                <NuxtLink to="/program" class="
-                  flex justify-start items-center
-                  h-[4rem]
-                  pl-20
-                  bg-bemkmuaj-black 
-                  text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold    
-                  transition-all duration-100 ease-in-out
-                ">
-                  Mahasiswa Talks
-                </NuxtLink>
-              </div>
-            </Slide>
-            <Slide key="3">
-              <div class="
-                carousel__item
-                relative
-                flex flex-col
-              ">
-                <img src="~/assets/img/home_program_carousel/AJCC.webp" alt="">
-                <img src="~/assets/img/program_logo/Logo_AJCC.webp" alt="" class="
-                  absolute bottom-0
-                  w-[4.5rem] h-[4rem]
-                  p-2 pr-4
-                  rounded-r-[1.5rem] 
-                  bg-bemkmuaj-white
-                ">
-                <NuxtLink to="/program" class="
-                  flex justify-start items-center
-                  h-[4rem]
-                  pl-20
-                  bg-bemkmuaj-black 
-                  text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold  
-                  transition-all duration-100 ease-in-out
-                ">
-                  Atma Jaya Christmas Carol
-                </NuxtLink>
-              </div>
-            </Slide>
-            <Slide key="4">
-              <div class="
-                carousel__item
-                relative
-                flex flex-col
-              ">
-                <img src="~/assets/img/home_program_carousel/Atma_DVICE.webp" alt="">
-                <img src="~/assets/img/program_logo/Logo_Atma_DVICE.webp" alt="" class="
-                absolute bottom-0
-                  w-[4.5rem] h-[4rem]
-                  p-2 pr-4
-                  rounded-r-[1.5rem] 
-                  bg-bemkmuaj-white
-                ">
-                <NuxtLink to="/program" class="
-                  flex justify-start items-center
-                  h-[4rem]
-                  pl-20
-                  bg-bemkmuaj-black 
-                  text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold   
-                  transition-all duration-100 ease-in-out
-                ">
-                  Atma D'VICE
                 </NuxtLink>
               </div>
             </Slide>
@@ -366,7 +288,7 @@
 </template>
 
 <script setup lang="ts">
-import { Carousel, Pagination, Navigation, Slide } from 'vue3-carousel'
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
 
 useHead({
   title: 'BEM KM-UAJ'
@@ -387,7 +309,20 @@ definePageMeta({
 
 const welcomeCarousel = ref<HTMLDivElement | null>(null);
 
+const period = ref<any>(null);
+
+import { doc, onSnapshot } from "firebase/firestore";
+
+onMounted(async() => {
+  const { db } = useFirebase();
+  const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
+  onSnapshot(docRef, (snap) => {
+      period.value = snap.data();
+  });
+});
+
 onMounted(() => {
+
   let currentI = 0;
 
   const welcomeCarouselImages = welcomeCarousel.value!.querySelectorAll('img')
@@ -405,6 +340,9 @@ onMounted(() => {
       welcomeCarouselImages[currentI].classList.add('min-h-full');
     }, 1000)
   }, 30000)
+
+  isXLScreen.value = window.innerWidth >= 1280;
+  window.addEventListener('resize', updateScreenSize)
 })
 
 defineComponent({
@@ -416,31 +354,11 @@ defineComponent({
   }
 })
 
-interface CarouselObject {
-  data: {
-    currentSlide: {value: number},
-  }
-  restartCarousel: () => void,
-}
-
-const myCarousel = ref<CarouselObject | null>(null);
-
-let currentSlide = 0;
-
 const isXLScreen = ref(false);
 
 const updateScreenSize = () => {
   isXLScreen.value = window.innerWidth >= 1280;
 }
-
-onMounted(() => {
-  watch(() => myCarousel.value!.data.currentSlide.value, (currentValue) => {
-    currentSlide = currentValue;
-  })
-
-  isXLScreen.value = window.innerWidth >= 1280;
-  window.addEventListener('resize', updateScreenSize)
-});
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);

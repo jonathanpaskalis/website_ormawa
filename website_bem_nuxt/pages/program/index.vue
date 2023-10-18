@@ -16,7 +16,7 @@
         PROGRAM KERJA
       </h1>
     </section>
-    <section title="program-list" class="
+    <section v-if="period" title="program-list" class="
       flex justify-center
     ">
       <div class="
@@ -26,7 +26,7 @@
         shadow-bemkmuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
-        <div v-for="period in periods" :key="`period-${period.name}`" class="
+        <div class="
           flex flex-col gap-4
         ">
           <h2 class="
@@ -63,6 +63,10 @@
 
 <script setup lang="ts">
 
+useHead({
+  title: 'Program | BEM KM-UAJ'
+})
+
 definePageMeta({
   pageTransition: {
     name: 'slide-right',
@@ -86,65 +90,17 @@ definePageMeta({
   }
 })
 
-useHead({
-  title: 'Program | BEM KM-UAJ'
-})
+import { doc, onSnapshot } from "firebase/firestore";
 
-const periods = [
-  {
-    name: '2022-2023',
-    programs: [
-      {
-        name: 'Festival Mural',
-        nickname: 'Festival Mural',
-        objectives: [
-          'Memberi wadah untuk mahasiswa Universitas Katolik Indonesia Atma Jaya untuk mengekspresikan diri melalui mural.',
-          'Meningkatkan kesadaran mahasiswa melalui mural terkait pentingnya menjaga lingkungan',
-        ],
-        description: 'Terwujudnya mahasiswa Unika Atma Jaya yang sesuai dengan pembuatan mural di tiga kampus Unika Atma Jaya melibatkan mahasiswa dalam pembuatan desain dan mural.',
-        logo: '/program_logos/Logo_Festival_Mural.webp',
-      },
-      {
-        name: 'Atma Jaya Chrismast Carol',
-        nickname: 'AJCC',
-        objectives: [
-          'Mempererat ikatan tali persaudaraan dalam kristus dan menjalin rasa keakraban antar Civitas Akademica Universitas Atma Jaya dengan  Universitas-universitas yang berada di Jakarta.',
-        ],
-        description: 'Acara akan dihadiri Civitas Academica Atma Jaya dan Universitas-universitas se-Jakarta. Acara akan diawali dengan Perayaan Ekaristi yang akan dipimpin oleh Romo. Setelah itu akan dilanjutkan dengan Ramah tamah dan juga persembahan acara dari UKM.',
-        logo: '/program_logos/Logo_AJCC.webp',
-      },
-      {
-        name: 'Atma Jaya Dance and Vocal Internal Competition for the Enthusiast',
-        nickname: "Atma D'VICE",
-        objectives: [
-          'Memberi wadah untuk mahasiswa/i Universitas Katolik Indonesia Atma Jaya untuk menyalurkan minat dan bakat dalam bidang seni tari dan seni vokal.',
-          'Meningkatkan kesadaran mahasiswa pentingnya pengembangan minat dan bakat.'
-        ],
-        description: 'Perlombaan antar mahasiswa/i Unika Atma Jaya dengan tema kegiatan perlombaan seni tari dan seni vokal',
-        logo: '/program_logos/Logo_Atma_DVICE.webp',
-      },
-      {
-        name: 'Badan Eksekutif Mahasiswa Muda Keluarga Mahasiswa UAJ',
-        nickname: 'BEM Muda KM-UAJ',
-        objectives: [
-          'Memperkenalkan sistem kerja BEM KM-UAJ kepadamahasiswa UAJ',
-          'Mempersiapkan anggota BEM MUDA sebagai calonpengurus BEM KM-UAJ berikutnya',
-        ],
-        description: 'Seluruh anggota BEM MUDA akan mengikuti pelatihan yang terdiri dari dari pengenalan sistem kerja BEM KM-UAJ dan pelatihan merumuskan sebuah acara di bawah BEM KM-UAJ. Seluruh anggota BEM Muda akan dikumpulkan dalam beberapa kelompok untuk mengerjakan tugas-tugas yang diberikan oleh koordinator departemen BEM KM-UAJ sehingga dapat merumuskan sebuah acara seseuai aspirasi atau kasus yang diberikan.',
-        logo: '/program_logos/Logo_BEM_Muda.webp',
-      },
-      {
-        name: 'Mahasiswa Talks',
-        nickname: 'Mata',
-        objectives: [
-          'Mendengar aspirasi dari mahasiswa Unika Atma Jaya yang berprestasi di bidang akademis maupun non akademis.',
-        ],
-        description: 'Membuat podcast berisikan tanya jawab saran kegiatan untuk BEM KM UAJ serta tips and tricks cara mencapai prestasi yang digapai mahasiswa berprestasi di bidang akademis maupun non akademis.',
-        logo: '/program_logos/Logo_Mata.webp',
-      },
-    ]
-  },
-]
+const period = ref<any>(null);
+
+onMounted(async() => {
+  const { db } = useFirebase();
+  const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
+  onSnapshot(docRef, (snap) => {
+      period.value = snap.data();
+  });
+});
 
 </script>
 

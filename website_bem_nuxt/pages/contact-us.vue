@@ -270,6 +270,11 @@
 </template>
 
 <script setup lang="ts">
+
+useHead({
+  title: 'Contact Us | BEM KM-UAJ'
+})
+
 definePageMeta({
   pageTransition: {
     name: 'slide-right',
@@ -287,10 +292,6 @@ definePageMeta({
       }
     }
   }
-})
-
-useHead({
-  title: 'Contact Us | BEM KM-UAJ'
 })
 
 const formData = ref({

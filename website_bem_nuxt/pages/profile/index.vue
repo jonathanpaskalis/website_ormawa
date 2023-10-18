@@ -1,6 +1,6 @@
 <template>
   <div id="body">
-    <section id="title" class="
+    <section v-if="period" id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
       bg-bemkmuaj-white
@@ -16,7 +16,7 @@
         transition-all duration-100 ease-in-out
         animate-[slide-fill-animation_1s_ease-in-out] 
       ">
-        KABINET {{ period._rawValue.ministry.toUpperCase() }} #1
+        KABINET {{ period.ministry.toUpperCase() }} #1
       </h1>
       <span class="
         text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black 
@@ -25,7 +25,7 @@
         PERIODE 2022-2023
       </span>
     </section>
-    <section id="intro" class="
+    <section v-if="period" id="intro" class="
       flex justify-center
     ">
       <div class="
@@ -85,7 +85,7 @@
         </div>
       </div>
     </section>
-    <section id="ministry-structure" class="
+    <section v-if="period" id="ministry-structure" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       bg-bemkmuaj-black
@@ -96,7 +96,7 @@
         flex flex-col justify-center gap-16
         transition-all duration-100 ease-in-out
       ">
-        <div v-for="department in period._rawValue.departments" :key="`department-${department.name}`" class="
+        <div v-for="department in period!.departments" :key="`department-${department.name}`" class="
           flex flex-col gap-4
         ">
           <h2 class="
@@ -175,7 +175,7 @@
         </div>
       </div>
     </section>
-    <section id="board-composition" class="
+    <section v-if="period && boardComposition" id="board-composition" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       w-full
@@ -253,35 +253,18 @@ definePageMeta({
   }
 })
 
-
-import { doc, onSnapshot } from 'firebase/firestore';
+import { doc, onSnapshot } from "firebase/firestore";
 
 const period = ref<any>(null);
 
-// const fetchData = async () => {
-//   try {
-//     const { data } = await useFetch('/api/periods');
-//     period.value = data;
-//     boardComposition.value = countComposition();
-//     console.log(period.value);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-const fetchData = async () => {
-  try {
-    const { db } = useFirebase();
-    const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
-    onSnapshot(docRef, (snap) => {
-        period.value = snap.data();
-    });
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-fetchData();
+onMounted(async() => {
+  const { db } = useFirebase();
+  const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
+  onSnapshot(docRef, (snap) => {
+    period.value = snap.data();
+    boardComposition.value = countComposition();
+  });
+});
 
 const countComposition = () => {
   const boardComposition = {
@@ -330,18 +313,18 @@ const countComposition = () => {
     maxMembers: 0,
   }
 
-  period.value._rawValue.departments.forEach((department:any) => {
-    department.members.forEach((member:any) => {
-      if (member.faculty === 'FEB') boardComposition.faculties[0].members++;
-      if (member.faculty === 'FIABIKOM') boardComposition.faculties[1].members++;
-      if (member.faculty === 'FPB') boardComposition.faculties[2].members++;
-      if (member.faculty === 'FT') boardComposition.faculties[3].members++;
-      if (member.faculty === 'FH') boardComposition.faculties[4].members++;
-      if (member.faculty === 'FKIK') boardComposition.faculties[5].members++;
-      if (member.faculty === 'FP') boardComposition.faculties[6].members++;
-      if (member.faculty === 'FTB') boardComposition.faculties[7].members++;
-    });
-  })
+    period.value?.departments.forEach((department:any) => {
+      department.members.forEach((member:any) => {
+        if (member.faculty === 'FEB') boardComposition.faculties[0].members++;
+        if (member.faculty === 'FIABIKOM') boardComposition.faculties[1].members++;
+        if (member.faculty === 'FPB') boardComposition.faculties[2].members++;
+        if (member.faculty === 'FT') boardComposition.faculties[3].members++;
+        if (member.faculty === 'FH') boardComposition.faculties[4].members++;
+        if (member.faculty === 'FKIK') boardComposition.faculties[5].members++;
+        if (member.faculty === 'FP') boardComposition.faculties[6].members++;
+        if (member.faculty === 'FTB') boardComposition.faculties[7].members++;
+      });
+    })
 
   boardComposition.faculties.forEach((faculty) => {
     if (faculty.members > boardComposition.maxMembers) boardComposition.maxMembers = faculty.members
@@ -350,7 +333,10 @@ const countComposition = () => {
   return boardComposition;
 }
 
-const boardComposition = ref<any>(null);
+const boardComposition = ref<{
+  faculties: { name: string; members: number; widthClass: string }[];
+  maxMembers: number;
+} | null>(null);
 
 </script>
 

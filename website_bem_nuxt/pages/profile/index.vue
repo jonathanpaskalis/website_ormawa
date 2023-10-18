@@ -16,7 +16,7 @@
         transition-all duration-100 ease-in-out
         animate-[slide-fill-animation_1s_ease-in-out] 
       ">
-        KABINET ASIX #1
+        KABINET {{ period._rawValue.ministry.toUpperCase() }} #1
       </h1>
       <span class="
         text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black 
@@ -96,7 +96,7 @@
         flex flex-col justify-center gap-16
         transition-all duration-100 ease-in-out
       ">
-        <div v-for="department in periods[0].departments" :key="`department-${department.name}`" class="
+        <div v-for="department in period._rawValue.departments" :key="`department-${department.name}`" class="
           flex flex-col gap-4
         ">
           <h2 class="
@@ -229,6 +229,7 @@
 </template>
 
 <script setup lang="ts">
+
 useHead({
   title: 'Profile | BEM KM-UAJ'
 })
@@ -252,392 +253,37 @@ definePageMeta({
   }
 })
 
-const periods = [
-  {
-    name: '2022-2023',
-    kabinet: 'Asix',
-    programs: [
-      {
-        name: 'Festival Mural',
-        nickname: 'Festival Mural',
-        objectives: [
-          'Memberi wadah untuk mahasiswa Universitas Katolik Indonesia Atma Jaya untuk mengekspresikan diri melalui mural.',
-          'Meningkatkan kesadaran mahasiswa melalui mural terkait pentingnya menjaga lingkungan',
-        ],
-        description: 'Terwujudnya mahasiswa Unika Atma Jaya yang sesuai dengan pembuatan mural di tiga kampus Unika Atma Jaya melibatkan mahasiswa dalam pembuatan desain dan mural.',
-        logo: '/program_logos/Logo_Festival_Mural.webp',
-      },
-      {
-        name: 'Atma Jaya Chrismast Carol',
-        nickname: 'AJCC',
-        objectives: [
-          'Mempererat ikatan tali persaudaraan dalam kristus dan menjalin rasa keakraban antar Civitas Akademica Universitas Atma Jaya dengan  Universitas-universitas yang berada di Jakarta.',
-        ],
-        description: 'Acara akan dihadiri Civitas Academica Atma Jaya dan Universitas-universitas se-Jakarta. Acara akan diawali dengan Perayaan Ekaristi yang akan dipimpin oleh Romo. Setelah itu akan dilanjutkan dengan Ramah tamah dan juga persembahan acara dari UKM.',
-        logo: '/program_logos/Logo_AJCC.webp',
-      },
-      {
-        name: 'Atma Jaya Dance and Vocal Internal Competition for the Enthusiast',
-        nickname: "Atma D'VICE",
-        objectives: [
-          'Memberi wadah untuk mahasiswa/i Universitas Katolik Indonesia Atma Jaya untuk menyalurkan minat dan bakat dalam bidang seni tari dan seni vokal.',
-          'Meningkatkan kesadaran mahasiswa pentingnya pengembangan minat dan bakat.'
-        ],
-        description: 'Perlombaan antar mahasiswa/i Unika Atma Jaya dengan tema kegiatan perlombaan seni tari dan seni vokal',
-        logo: '/program_logos/Logo_Atma_DVICE.webp',
-      },
-      {
-        name: 'Badan Eksekutif Mahasiswa Muda Keluarga Mahasiswa UAJ',
-        nickname: 'BEM Muda KM-UAJ',
-        objectives: [
-          'Memperkenalkan sistem kerja BEM KM-UAJ kepadamahasiswa UAJ',
-          'Mempersiapkan anggota BEM MUDA sebagai calonpengurus BEM KM-UAJ berikutnya',
-        ],
-        description: 'Seluruh anggota BEM MUDA akan mengikuti pelatihan yang terdiri dari dari pengenalan sistem kerja BEM KM-UAJ dan pelatihan merumuskan sebuah acara di bawah BEM KM-UAJ. Seluruh anggota BEM Muda akan dikumpulkan dalam beberapa kelompok untuk mengerjakan tugas-tugas yang diberikan oleh koordinator departemen BEM KM-UAJ sehingga dapat merumuskan sebuah acara seseuai aspirasi atau kasus yang diberikan.',
-        logo: '/program_logos/Logo_BEM_Muda.webp',
-      },
-      {
-        name: 'Mahasiswa Talks',
-        nickname: 'Mata',
-        objectives: [
-          'Mendengar aspirasi dari mahasiswa Unika Atma Jaya yang berprestasi di bidang akademis maupun non akademis.',
-        ],
-        description: 'Membuat podcast berisikan tanya jawab saran kegiatan untuk BEM KM UAJ serta tips and tricks cara mencapai prestasi yang digapai mahasiswa berprestasi di bidang akademis maupun non akademis.',
-        logo: '/program_logos/Logo_Mata.webp',
-      },
-    ],
-    departments: [
-      {
-        name: 'Ketua dan Wakil Ketua',
-        members: [
-          {
-            nickname: 'Angel',
-            position: 'Ketua',
-            photo: '/board_members/Ketua_Angel.png',
-            campusID: '202003540003',
-            faculty: 'FPB',
-            major: 'Bimbingan dan Konseling',
-          },
-          {
-            nickname: 'Felix',
-            position: 'Wakil Ketua',
-            photo: '/board_members/Wakil_Ketua_Felix.png',
-            campusID: '201901020258',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          }
-        ]
-      },
-      {
-        name: 'Kesekretariatan',
-        members: [
-          {
-            nickname: 'Joy',
-            position: 'Koordinator',
-            photo: '/board_members/Kesekretariatan_Joy.png',
-            campusID: '201907000072',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Dea',
-            position: 'Staf',
-            photo: '/board_members/Kesekretariatan_Dea.png',
-            campusID: '201901020135',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Dwi',
-            position: 'Staf',
-            photo: '/board_members/Kesekretariatan_Dwi.png',
-            campusID: '202001020121',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Joce',
-            position: 'Staf',
-            photo: '/board_members/Kesekretariatan_Joce.png',
-            campusID: '202101020021',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Maria',
-            position: 'Staf',
-            photo: '/board_members/Kesekretariatan_Maria.png',
-            campusID: '201903050024',
-            faculty: 'FPB',
-            major: 'Pendidikan Guru Sekolah Dasar',
-          },
-          {
-            nickname: 'Yora',
-            position: 'Staf',
-            photo: '/board_members/Kesekretariatan_Yora.png',
-            campusID: '202007000154',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Yoseph',
-            position: 'Staf',
-            photo: '/board_members/Kesekretariatan_Yoseph.png',
-            campusID: '201901020256',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-        ]
-      },
-      {
-        name: 'Keuangan',
-        members: [
-          {
-            nickname: 'Gerry',
-            position: 'Koordinator',
-            photo: '/board_members/Keuangan_Gerry.png',
-            campus: '202004530005',
-            faculty: 'FT',
-            major: 'Teknik Industri',
-          },
-          {
-            nickname: 'Atta',
-            position: 'Staf',
-            photo: '/board_members/Keuangan_Atta.png',
-            campusID: '201901520056',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Bianca',
-            position: 'Staf',
-            photo: '/board_members/Keuangan_Bianca.png',
-            campusID: '201901520056',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Dini',
-            position: 'Staf',
-            photo: '/board_members/Keuangan_Dini.png',
-            campusID: '202107000177',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Nancy',
-            position: 'Staf',
-            photo: '/board_members/Keuangan_Nancy.png',
-            campusID: '202001020082',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Tere',
-            position: 'Staf',
-            photo: '/board_members/Keuangan_Tere.png',
-            campusID: '202001520043',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-        ]
-      },
-      {
-        name: 'Internal',
-        members: [
-          {
-            nickname: 'Jopas',
-            position: 'Koordinator',
-            photo: '/board_members/Internal_Jopas.png',
-            campusID: '202004520031',
-            faculty: 'FT',
-            major: 'Teknik Elektro',
-          },
-          {
-            nickname: 'Debby',
-            position: 'Staf',
-            photo: '/board_members/Internal_Debby.png',
-            campusID: '202007510087',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Agatha',
-            position: 'Staf',
-            photo: '/board_members/Internal_Agatha.png',
-            campusID: '202007510100',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Michelle',
-            position: 'Staf',
-            photo: '/board_members/Internal_Michelle.png',
-            campusID: '202103040016',
-            faculty: 'FPB',
-            major: 'Bimbingan dan Konseling',
-          },
-          {
-            nickname: 'There',
-            position: 'Staf',
-            photo: '/board_members/Internal_There.png',
-            campusID: '202006000167',
-            faculty: 'FKIK',
-            major: 'Kedokteran Umum',
-          },
-          {
-            nickname: 'Yo',
-            position: 'Staf',
-            photo: '/board_members/Internal_Yo.png',
-            campusID: '202106020008',
-            faculty: 'FKIK',
-            major: 'Farmasi',
-          },
-        ]
-      },
-      {
-        name: 'Hubungan Masyarakat',
-        members: [
-          {
-            nickname: 'Josia',
-            position: 'Koordinator',
-            photo: '/board_members/Humas_Josia.png',
-            campusID: '201901020226',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Filbert',
-            position: 'Staf',
-            photo: '/board_members/Humas_Filbert.png',
-            campusID: '202002020014',
-            faculty: 'FIABIKOM',
-            major: 'Ilmu Komunikasi',
-          },
-          {
-            nickname: 'Gaby',
-            position: 'Staf',
-            photo: '/board_members/Humas_Gaby.png',
-            campusID: '201907000050',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Grace',
-            position: 'Staf',
-            photo: '/board_members/Humas_Grace.png',
-            campusID: '202002520025',
-            faculty: 'FIABIKOM',
-            major: 'Ilmu Komunikasi',
-          },
-          {
-            nickname: 'Jolau',
-            position: 'Staf',
-            photo: '/board_members/Humas_Jolau.png',
-            campusID: '201901020122',
-            faculty: 'FEB',
-            major: 'Akuntansi',
-          },
-          {
-            nickname: 'Joshu',
-            position: 'Staf',
-            photo: '/board_members/Humas_Joshu.png',
-            campusID: '202002020070',
-            faculty: 'FIABIKOM',
-            major: 'Ilmu Komunikasi',
-          },
-          {
-            nickname: 'Lina',
-            position: 'Staf',
-            photo: '/board_members/Humas_Lina.png',
-            campusID: '202001510009',
-            faculty: 'FEB',
-            major: 'Manajemen',
-          },
-          {
-            nickname: 'Sasa',
-            position: 'Staf',
-            photo: '/board_members/Humas_Sasa.png',
-            campusID: '202101010091',
-            faculty: 'FEB',
-            major: 'Manajemen',
-          },
-        ]
-      },
-      {
-        name: 'Pengembangan Mutu Organisasi',
-        members: [
-          {
-            nickname: 'Claren',
-            position: 'Koordinator',
-            photo: '/board_members/PMO_Claren.png',
-            campusID: '201907000025',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Andre',
-            position: 'Staf',
-            photo: '/board_members/PMO_Andre.png',
-            campusID: '201908520020',
-            faculty: 'FTB',
-            major: 'Teknologi Pangan',
-          },
-          {
-            nickname: 'Ayxie',
-            position: 'Staf',
-            photo: '/board_members/PMO_Ayxie.png',
-            campusID: '202007000075',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Gabby',
-            position: 'Staf',
-            photo: '/board_members/PMO_Gabby.png',
-            campusID: '202007510059',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Laura',
-            position: 'Staf',
-            photo: '/board_members/PMO_Laura.png',
-            campusID: '201907000243',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Lucas',
-            position: 'Staf',
-            photo: '/board_members/PMO_Lucas.png',
-            campusID: '202001030020',
-            faculty: 'FEB',
-            major: 'Ekonomi Pembangunan',
-          },
-          {
-            nickname: 'Rosa',
-            position: 'Staf',
-            photo: '/board_members/PMO_Rosa.png',
-            campusID: '201907000066',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-          {
-            nickname: 'Tobi',
-            position: 'Staf',
-            photo: '/board_members/PMO_Tobi.png',
-            campusID: '201907000091',
-            faculty: 'FP',
-            major: 'Psikologi',
-          },
-        ]
-      },
-    ],
-  },
-]
 
-const countComposition = (period: number) => {
+import { doc, onSnapshot } from 'firebase/firestore';
+
+const period = ref<any>(null);
+
+// const fetchData = async () => {
+//   try {
+//     const { data } = await useFetch('/api/periods');
+//     period.value = data;
+//     boardComposition.value = countComposition();
+//     console.log(period.value);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+const fetchData = async () => {
+  try {
+    const { db } = useFirebase();
+    const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
+    onSnapshot(docRef, (snap) => {
+        period.value = snap.data();
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchData();
+
+const countComposition = () => {
   const boardComposition = {
     faculties: [
       {
@@ -684,8 +330,8 @@ const countComposition = (period: number) => {
     maxMembers: 0,
   }
 
-  periods[period].departments.forEach((department) => {
-    department.members.forEach((member) => {
+  period.value._rawValue.departments.forEach((department:any) => {
+    department.members.forEach((member:any) => {
       if (member.faculty === 'FEB') boardComposition.faculties[0].members++;
       if (member.faculty === 'FIABIKOM') boardComposition.faculties[1].members++;
       if (member.faculty === 'FPB') boardComposition.faculties[2].members++;
@@ -704,7 +350,7 @@ const countComposition = (period: number) => {
   return boardComposition;
 }
 
-const boardComposition = countComposition(0)
+const boardComposition = ref<any>(null);
 
 </script>
 

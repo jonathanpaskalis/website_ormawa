@@ -22,3 +22,7 @@ logs
 .env
 .env.*
 !.env.example
+
+bem-km-uaj-official-website-firebase-adminsdk-c0gmu-8c1afdb835.json
+
+pages/test.vue

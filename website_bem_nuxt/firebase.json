@@ -3,12 +3,13 @@
     {
       "source": ".output/server",
       "runtime": "nodejs18",
-      "codebase": "nuxt",
+      "codebase": "default",
       "ignore": [
         "node_modules",
         ".git",
         "firebase-debug.log",
-        "firebase-debug.*.log"
+        "firebase-debug.*.log",
+        ".env"
       ]
     }
   ],
@@ -24,5 +25,9 @@
         }
       ]
     }
-  ]
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
 }

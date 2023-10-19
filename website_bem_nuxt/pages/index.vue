@@ -309,9 +309,9 @@ definePageMeta({
 
 const welcomeCarousel = ref<HTMLDivElement | null>(null);
 
-const period = ref<any>(null);
-
 import { doc, onSnapshot } from "firebase/firestore";
+
+const period = ref<any>(null);
 
 onMounted(async() => {
   const { db } = useFirebase();

@@ -14,7 +14,7 @@ export const useFirebase = () => {
     storageBucket: config.public.FB_STORAGE_BUCKET,
     messagingSenderId: config.public.FB_MESSAGING_SENDER_ID,
     appId: config.public.FB_APP_ID,
-    measurementId: config.public.FB_MEASUREMENT_ID
+    measurementId: config.public.FB_MEASUREMENT_ID,
   };
 
   const firebaseApp = initializeApp(firebaseConfig);

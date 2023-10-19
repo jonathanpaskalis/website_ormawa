@@ -7,13 +7,18 @@
 </template>
 
 <script setup lang="ts">
-useHead({
+  useHead({
     link: [
       {
         rel: 'icon', type: 'image/webp', href:'/Logo_BEM_KM-UAJ.webp'
       }
     ]
   })
+
+  onMounted(() => {
+    const { analytics } = useFirebase();
+  })
+    
 </script>
 
 <style lang="scss">

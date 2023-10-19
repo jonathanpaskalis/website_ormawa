@@ -17,7 +17,7 @@
       bg-bemkmuaj-white
       transition-all duration-100
       ">
-      <img src="~/assets/img/Logo_KM-UAJ.webp" alt="" class="
+      <img src="/Logo_KM-UAJ.webp" alt="" class="
         h-full">
     </NuxtLink>
     <NuxtLink to="/" class="

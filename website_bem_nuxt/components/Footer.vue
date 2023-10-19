@@ -11,7 +11,7 @@
         hidden sm:flex justify-center items-center
         h-24
       ">
-        <img src="~/assets/img/Logo_BEM_KM-UAJ_Footer.webp" alt="" class="h-full">
+        <img src="Logo_BEM_KM-UAJ_Footer.webp" alt="" class="h-full">
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center gap-x-8">
         <div class="

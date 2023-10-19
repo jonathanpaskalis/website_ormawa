@@ -11,9 +11,9 @@
         w-full h-full
         overflow-hidden
       ">
-        <img src="~/assets/img/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out">
-        <img src="~/assets/img/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-        <img src="~/assets/img/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+        <img src="/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out">
+        <img src="/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+        <img src="/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
       </div>
       <div class="
         absolute
@@ -36,7 +36,7 @@
             max-w-[50%] h-full
             drop-shadow-bemkmuaj-black-shadow
           ">
-            <img src="~/assets/img/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full">
+            <img src="/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full">
           </div>
           <div class="
             flex flex-col justify-center items-center
@@ -47,8 +47,8 @@
               flex justify-center
               w-full max-h-full
             ">
-              <img src="/board_members/Ketua_Angel.png" alt="" class="w-[40%]">
-              <img src="/board_members/Wakil_Ketua_Felix.png" alt="" class="w-[40%]">
+              <img src="/board_members/Ketua_Angel.webp" alt="" class="w-[40%]">
+              <img src="/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]">
             </div>
             <h1 class="
               w-full
@@ -168,7 +168,7 @@
           BEM KM-UAJ
         </h2>
         <div class="">
-          <img src="~/assets/img/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
+          <img src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
         </div>
         <NuxtLink to="/profile" class="
           flex justify-center items-center
@@ -244,14 +244,14 @@
                   bg-bemkmuaj-white
                 ">
                 <NuxtLink to="/program" class="
-                  flex justify-start items-center
-                  h-[4rem]
+                  flex justify-center items-center
+                  w-full h-[4rem]
                   pl-20
                   bg-bemkmuaj-black 
                   text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold
                   transition-all duration-100 ease-in-out
                 ">
-                  Fesival Mural
+                  {{ program.nickname }}
                 </NuxtLink>
               </div>
             </Slide>

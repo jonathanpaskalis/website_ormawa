@@ -73,7 +73,7 @@
       bg-bemkmuaj-white
       text-[0.9rem] text-center text-bemkmuaj-black
     ">
-      © 2023 <span class="text-bemkmuaj-orange">BEM KM-UAJ</span>
+      © 2023 <span class="text-bemkmuaj-orange font-Montserrat-Bold">BEM KM-UAJ</span>
     </div>
   </footer>  
 </template>

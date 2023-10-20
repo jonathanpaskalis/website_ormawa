@@ -25,7 +25,7 @@
         PERIODE 2022-2023
       </span>
     </section>
-    <section v-if="period" id="intro" class="
+    <section id="intro" class="
       flex justify-center
     ">
       <div class="

@@ -175,16 +175,13 @@
           w-28 sm:w-32 h-14 sm:h-16
           border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
           bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          text-bemkmuaj-black hover:text-bemkmuaj-orange
+          fill-bemkmuaj-black hover:fill-bemkmuaj-orange
           hover:shadow-bemkmuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <span class="
-            material-symbols-outlined
-            scale-[250%] sm:scale-[300%]
-          ">
-            trending_flat
-          </span>
+          <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+            <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+          </svg>
         </NuxtLink>
       </div>
     </section>
@@ -212,16 +209,13 @@
             w-32 h-16
             border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
             bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-            text-bemkmuaj-white hover:text-bemkmuaj-orange
+            fill-bemkmuaj-white hover:fill-bemkmuaj-orange
             hover:shadow-bemkmuaj-orange-shadow-sm
             transition-all duration-200 ease-in-out
           ">
-            <span class="
-              material-symbols-outlined
-              scale-[300%]
-            ">
-              trending_flat
-            </span>
+            <svg class="h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+              <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+            </svg>
           </NuxtLink>
         </div>
         <div class="
@@ -271,16 +265,13 @@
           w-28 sm:w-32 h-14 sm:h-16
           border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
           bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          text-bemkmuaj-white hover:text-bemkmuaj-orange
+          fill-bemkmuaj-white hover:fill-bemkmuaj-orange
           hover:shadow-bemkmuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <span class="
-            material-symbols-outlined
-            scale-[250%] sm:scale-[300%]
-          ">
-            trending_flat
-          </span>
+          <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+            <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+          </svg>
         </NuxtLink>
       </div>
     </section>

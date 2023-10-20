@@ -22,6 +22,7 @@
     </NuxtLink>
     <NuxtLink to="/" class="
       flex flex-col justify-center
+      w-max
       p-4 xl:pl-8
       overflow-hidden">
       <p class="
@@ -256,7 +257,7 @@
   .mselection {
     &:hover {
       .nuxtlink {
-        @apply bg-bemkmuaj-dark-gray text-bemkmuaj-orange;
+        @apply bg-bemkmuaj-dark-gray text-bemkmuaj-orange fill-bemkmuaj-orange;
       }
     }
   }

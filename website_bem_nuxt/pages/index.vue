@@ -168,7 +168,7 @@
           BEM KM-UAJ
         </h2>
         <div class="">
-          <img src="~/assets/img/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
+          <img src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
         </div>
         <NuxtLink to="/profile" class="
           flex justify-center items-center

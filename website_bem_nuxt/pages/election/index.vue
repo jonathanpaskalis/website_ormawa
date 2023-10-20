@@ -301,10 +301,10 @@
                   px-6 py-2 
                   border-bemkmuaj-black
                   bg-bemkmuaj-orange
-                  text-[0.75rem] sm:text-[1rem] text-left text-bemkmuaj-black font-Montserrat-ExtraBold 
+                  text-[0.75rem] sm:text-[1rem] text-bemkmuaj-black font-Montserrat-ExtraBold 
                 " :class="{
-                  'border-r' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
-                  'border-l' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
+                  'border-r justify-start' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
+                  'border-l justify-end' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
                 }">
                   {{ SLJPillar.name }}
                 </div>
@@ -312,13 +312,16 @@
                   flex justify-center items-center
                   w-[50%]
                   px-6 py-2 
-                  border-l border-bemkmuaj-black
+                  border-bemkmuaj-black
                 " :class="{
                   'border-l' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
                   'border-r' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
                 }">
-                  <svg v-if="SLJPillar.isTrue" class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                  <svg v-if="SLJPillar.isTrue" class="h-[1rem] fill-green-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
                     <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+                  </svg>
+                  <svg v-else class="h-[1rem] fill-red-700 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+                    <path d="m1.4,14l-1.4-1.4,5.6-5.6L0,1.4,1.4,0l5.6,5.6L12.6,0l1.4,1.4-5.6,5.6,5.6,5.6-1.4,1.4-5.6-5.6L1.4,14Z"/>
                   </svg>
                 </div>
               </div>
@@ -421,7 +424,8 @@
               " :class="{
                 'border-r-2 rounded-tl-[2rem]' : index%2===0,
                 'border-l-2 rounded-tr-[2rem]' : index%2===1,
-                'bg-gradient-to-tl' :  !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                'bg-gradient-to-tl' : index%2===0 && !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                'bg-gradient-to-tr' : index%2===1 && !is3XLScreen && !returnShowValue(candidate.number, member.position),
               }">
                 <button @click="showCandidate(candidate.number, member.position)" class="
                   w-full h-full
@@ -441,6 +445,7 @@
                 col-span-2 3xl:col-span-1 flex flex-col items-center gap-4
                 w-full
                 p-4
+                3xl:mb-8
                 border-bemkmuaj-black
               " :class="{
                 'hidden' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
@@ -621,8 +626,6 @@ onUnmounted(() => {
 
 // P: President, VP: Vice President
 const candidates = {
-  showBothCandidates: ref(true),
-  showCandidate1: ref(true),
   showPCandidate1: ref(true),
   showPCandidate2: ref(true),
 }
@@ -633,10 +636,6 @@ const showCandidate = (number:string, position:string) => {
   if (number==='2' && position==='Calon Ketua') candidates.showPCandidate2.value=true;
   if (number==='2' && position==='Calon Wakil Ketua') candidates.showPCandidate2.value=false;
 }
-
-const showPCandidate1 = () => candidates.showPCandidate1.value=true;
-
-const showVPCandidate1 = () => candidates.showPCandidate1.value=false;
 
 const returnShowValue = (number:string, position:string) => {
   if (number==='1' && position==='Calon Ketua') return candidates.showPCandidate1.value;

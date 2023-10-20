@@ -11,9 +11,9 @@
         w-full h-full
         overflow-hidden
       ">
-        <img src="/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out">
-        <img src="/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-        <img src="/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+        <img src="~/assets/img/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out">
+        <img src="~/assets/img/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+        <img src="~/assets/img/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
       </div>
       <div class="
         absolute
@@ -36,7 +36,7 @@
             max-w-[50%] h-full
             drop-shadow-bemkmuaj-black-shadow
           ">
-            <img src="/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full">
+            <img src="~/assets/img/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full">
           </div>
           <div class="
             flex flex-col justify-center items-center
@@ -47,8 +47,8 @@
               flex justify-center
               w-full max-h-full
             ">
-              <img src="/board_members/Ketua_Angel.webp" alt="" class="w-[40%]">
-              <img src="/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]">
+              <img src="/board_members/Ketua_Angel.png" alt="" class="w-[40%]">
+              <img src="/board_members/Wakil_Ketua_Felix.png" alt="" class="w-[40%]">
             </div>
             <h1 class="
               w-full
@@ -168,23 +168,20 @@
           BEM KM-UAJ
         </h2>
         <div class="">
-          <img src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
+          <img src="~/assets/img/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
         </div>
         <NuxtLink to="/profile" class="
           flex justify-center items-center
           w-28 sm:w-32 h-14 sm:h-16
           border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
           bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          text-bemkmuaj-black hover:text-bemkmuaj-orange
+          fill-bemkmuaj-black hover:fill-bemkmuaj-orange
           hover:shadow-bemkmuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <span class="
-            material-symbols-outlined
-            scale-[250%] sm:scale-[300%]
-          ">
-            trending_flat
-          </span>
+          <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+            <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+          </svg>
         </NuxtLink>
       </div>
     </section>
@@ -212,16 +209,13 @@
             w-32 h-16
             border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
             bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-            text-bemkmuaj-white hover:text-bemkmuaj-orange
+            fill-bemkmuaj-white hover:fill-bemkmuaj-orange
             hover:shadow-bemkmuaj-orange-shadow-sm
             transition-all duration-200 ease-in-out
           ">
-            <span class="
-              material-symbols-outlined
-              scale-[300%]
-            ">
-              trending_flat
-            </span>
+            <svg class="h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+              <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+            </svg>
           </NuxtLink>
         </div>
         <div class="
@@ -244,14 +238,14 @@
                   bg-bemkmuaj-white
                 ">
                 <NuxtLink to="/program" class="
-                  flex justify-center items-center
-                  w-full h-[4rem]
+                  flex justify-start items-center
+                  h-[4rem]
                   pl-20
                   bg-bemkmuaj-black 
                   text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold
                   transition-all duration-100 ease-in-out
                 ">
-                  {{ program.nickname }}
+                  Fesival Mural
                 </NuxtLink>
               </div>
             </Slide>
@@ -271,16 +265,13 @@
           w-28 sm:w-32 h-14 sm:h-16
           border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
           bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          text-bemkmuaj-white hover:text-bemkmuaj-orange
+          fill-bemkmuaj-white hover:fill-bemkmuaj-orange
           hover:shadow-bemkmuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <span class="
-            material-symbols-outlined
-            scale-[250%] sm:scale-[300%]
-          ">
-            trending_flat
-          </span>
+          <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+            <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+          </svg>
         </NuxtLink>
       </div>
     </section>
@@ -309,9 +300,9 @@ definePageMeta({
 
 const welcomeCarousel = ref<HTMLDivElement | null>(null);
 
-import { doc, onSnapshot } from "firebase/firestore";
-
 const period = ref<any>(null);
+
+import { doc, onSnapshot } from "firebase/firestore";
 
 onMounted(async() => {
   const { db } = useFirebase();

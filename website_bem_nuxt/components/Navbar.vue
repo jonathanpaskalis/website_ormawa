@@ -55,7 +55,7 @@
       }">
         <NuxtLink :to="nav.url" class="
           nuxtlink
-          flex justify-center items-center
+          flex justify-center items-center gap-2
           w-[9.5rem]
           p-[0.2rem_0.1rem_0.2rem_0.1rem]
           border-solid border-[0.15rem] border-transparent rounded-[1.5rem]
@@ -67,13 +67,9 @@
           'rounded-[1.5rem]': !nav.subnavs
         }">
           {{ nav.name.toUpperCase() }}
-          <span v-if="nav.subnavs" class="
-            material-symbols-outlined
-            transition-transform duration-100 ease-in-out
-            overflow-hidden
-            ">
-            expand_more
-          </span>
+          <svg v-if="nav.subnavs" class="h-[0.5rem] transition-transform duration-100 ease-in-out fill-bemkmuaj-white overflow-hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7.4">
+            <path d="m6,7.4L0,1.4,1.4,0l4.6,4.6L10.6,0l1.4,1.4-6,6Z"/>
+          </svg>
         </NuxtLink>
         <div v-if="nav.subnavs" class="
           absolute
@@ -103,20 +99,12 @@
         border-solid border-[0.15rem] border-bemkmuaj-white rounded-[0.5rem]
         bg-bemkmuaj-black
       ">
-        <span v-if="hideMNav" class="
-          material-symbols-outlined
-          text-[4rem] text-white
-          scale-150 
-        ">
-          menu
-        </span>
-        <span v-else class="
-          material-symbols-outlined
-          text-[4rem] text-white
-          scale-150 
-        ">
-          close
-        </span>
+        <svg v-if="hideMNav" class="w-[85%] fill-bemkmuaj-white stroke-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12">
+          <path d="m0,12v-2h18v2H0Zm0-5v-2h18v2H0ZM0,2V0h18v2H0Z"/>
+        </svg>
+        <svg v-else class="w-[85%] fill-bemkmuaj-white stroke-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+          <path d="m1.4,14l-1.4-1.4,5.6-5.6L0,1.4,1.4,0l5.6,5.6L12.6,0l1.4,1.4-5.6,5.6,5.6,5.6-1.4,1.4-5.6-5.6L1.4,14Z"/>
+        </svg>
       </button>
     </nav>
 
@@ -143,22 +131,18 @@
         </NuxtLink>
         <NuxtLink v-else @click.prevent="toggleMSubNav(nav)" class="
           nuxtlink
-          flex justify-center items-center
+          flex justify-center items-center gap-2
           w-full h-16
           border-solid border-b border-bemkmuaj-white
           hover:bg-bemkmuaj-dark-gray
-          text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-SemiBold
+          text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange fill-bemkmuaj-white hover:fill-bemkmuaj-orange font-Poppins-SemiBold
           transition-all duration-100 ease-in-out
           cursor-pointer
         ">
           {{ nav.name }}
-          <span class="
-            material-symbols-outlined
-            scale-[130%]
-            transition-transform duration-100 ease-in-out
-            " :class="{ '-rotate-180' : !nav.hideSubNav }">
-            expand_more
-          </span>
+          <svg class="h-[0.65rem] transition-transform duration-100 ease-in-out overflow-hidden" :class="{ '-rotate-180' : !nav.hideSubNav }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7.4">
+            <path d="m6,7.4L0,1.4,1.4,0l4.6,4.6L10.6,0l1.4,1.4-6,6Z"/>
+          </svg>
         </NuxtLink>
         <div v-if="nav.subnavs" class="
           h-0
@@ -259,8 +243,8 @@
     &:hover {
       .nuxtlink {
         @apply border-bemkmuaj-orange-glow shadow-bemkmuaj-orange-shadow-sm text-bemkmuaj-orange;
-        span {
-          @apply -rotate-180
+        svg {
+          @apply -rotate-180 fill-bemkmuaj-orange
         }
       }
       div {
@@ -272,7 +256,7 @@
   .mselection {
     &:hover {
       .nuxtlink {
-        @apply bg-bemkmuaj-dark-gray text-bemkmuaj-orange
+        @apply bg-bemkmuaj-dark-gray text-bemkmuaj-orange;
       }
     }
   }
@@ -280,8 +264,8 @@
   .navmbtn {
     &:hover {
       @apply border-bemkmuaj-orange-glow shadow-bemkmuaj-orange-shadow-sm;
-      span {
-        @apply text-bemkmuaj-orange;
+      svg {
+        @apply fill-bemkmuaj-orange;
       }
     }
   }

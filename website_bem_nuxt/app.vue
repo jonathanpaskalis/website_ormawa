@@ -12,7 +12,10 @@
       {
         rel: 'icon', type: 'image/webp', href:'/Logo_BEM_KM-UAJ.webp'
       }
-    ]
+    ],
+    htmlAttrs: {
+      lang: 'id',
+    }
   })
 
   onMounted(() => {

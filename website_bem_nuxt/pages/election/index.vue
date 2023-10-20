@@ -381,12 +381,9 @@
               px-6 py-2 
               border-l border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -402,12 +399,9 @@
               px-6 py-2 
               border-l border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -423,12 +417,9 @@
               px-6 py-2
               border-l border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -444,12 +435,9 @@
               px-6 py-2
               border-l border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -465,12 +453,9 @@
               px-6 py-2
               border-l border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -522,12 +507,9 @@
               px-6 py-2 
               border-r border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -540,15 +522,12 @@
             </div>
             <div class="
               flex justify-center items-center
-              px-6 py-2 
+              px-6 py-2
               border-r border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -564,12 +543,9 @@
               px-6 py-2
               border-r border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -585,12 +561,9 @@
               px-6 py-2
               border-r border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -606,12 +579,9 @@
               px-6 py-2
               border-r border-bemkmuaj-black
             ">
-              <span class="
-                material-symbols-outlined
-                text-bemkmuaj-black
-              ">
-                done
-              </span>
+              <svg class="h-[1rem] fill-bemkmuaj-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.3 12.03">
+                <path d="m5.7,12.03L0,6.33l1.43-1.43,4.28,4.28L14.88,0l1.43,1.43L5.7,12.03Z" style="stroke-width: 0px;"/>
+              </svg>
             </div>
             <div class="
               flex
@@ -627,7 +597,7 @@
       </div>
     </div>
   </section>
-  <section id="biodata" class="
+  <section id="vote" class="
     scroll-mt-[4rem] xl:scroll-mt-[6rem]
     flex justify-center
     bg-gradient-to-b from-bemkmuaj-dark-gray via-bemkmuaj-black to-bemkmuaj-dark-gray
@@ -651,320 +621,369 @@
         flex flex-col gap-16
       ">
         <div class="
-          grid grid-cols-1 sm:grid-cols-2 gap-8
-          pt-8
+          flex flex-col
           rounded-[2rem]
-          bg-gradient-to-t from-bemkmuaj-white from-[50%] to-transparent to-[105%]
           overflow-hidden
         ">
           <div class="
-            board-member-profile
-            flex flex-col justify-self-center
-            w-[15rem] h-[23rem]
-            border-solid border-4 border-bemkmuaj-black rounded-[2rem]
-            hover:shadow-bemkmuaj-black-shadow
+            grid grid-cols-1 sm:grid-cols-2 gap-8
+            p-8
+            bg-gradient-to-t from-bemkmuaj-white to-transparent to-[105%]
           ">
-            <div class="
-              relative
-              flex justify-center
-              w-full h-[17.5rem]
-              bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
-              shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
-              rounded-t-[1.6rem]
+            <div v-if="isSmallScreen || candidates.showPCandidate1.value" class="
+              board-member-profile
+              flex flex-col justify-self-center
+              w-[15rem] h-[23rem]
+              border-solid border-4 border-bemkmuaj-black rounded-[2rem]
+              hover:shadow-bemkmuaj-black-shadow
             ">
-              <img src="../../assets/img/election/person.png" alt="" class="
-                absolute bottom-0
-                w-[90%]
-                transition-all duration-200 ease-in-out
+              <div class="
+                relative
+                flex justify-center
+                w-full h-[17.5rem]
+                bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
+                shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
+                rounded-t-[1.6rem]
               ">
+                <img src="../../assets/img/election/person.png" alt="" class="
+                  absolute bottom-0
+                  w-[90%]
+                  transition-all duration-200 ease-in-out
+                ">
+              </div>
+              <div class="
+                flex flex-col justify-center items-center
+                w-full h-[5.5rem]
+                rounded-b-[1.6rem]
+                bg-bemkmuaj-black
+              ">
+                <h3 class="
+                  drop-shadow-bemkmuaj-black-shadow
+                  text-center text-bemkmuaj-white font-Panton-BlackCaps
+                  transition-all duration-200 ease-in-out
+                ">
+                  Calon Ketua
+                </h3>
+                <span class="
+                  drop-shadow-bemkmuaj-black-shadow
+                  text-[1.3rem] text-center text-bemkmuaj-white font-Montserrat-Medium
+                  transition-all duration-200 ease-in-out
+                ">
+                  Nama Caket 1
+                </span>
+              </div>
             </div>
-            <div class="
-              flex flex-col justify-center items-center
-              w-full h-[5.5rem]
-              rounded-b-[1.6rem]
-              bg-bemkmuaj-black
+            <div v-if="isSmallScreen || !candidates.showPCandidate1.value" class="
+              board-member-profile
+              flex flex-col justify-self-center
+              w-[15rem] h-[23rem]
+              border-solid border-4 border-bemkmuaj-black rounded-[2rem]
+              hover:shadow-bemkmuaj-black-shadow
             ">
-              <h3 class="
-                drop-shadow-bemkmuaj-black-shadow
-                text-center text-bemkmuaj-white font-Panton-BlackCaps
-                transition-all duration-200 ease-in-out
+              <div class="
+                relative
+                flex justify-center
+                w-full h-[17.5rem]
+                bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
+                shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
+                rounded-t-[1.6rem]
               ">
-                Calon Ketua
-              </h3>
-              <span class="
-                drop-shadow-bemkmuaj-black-shadow
-                text-[1.3rem] text-center text-bemkmuaj-white font-Montserrat-Medium
-                transition-all duration-200 ease-in-out
+                <img src="../../assets/img/election/person.png" alt="" class="
+                  absolute bottom-0
+                  w-[90%]
+                  transition-all duration-200 ease-in-out
+                ">
+              </div>
+              <div class="
+                flex flex-col justify-center items-center
+                w-full h-[5.5rem]
+                rounded-b-[1.6rem]
+                bg-bemkmuaj-black
               ">
-                Nama Caket 1
-              </span>
+                <h3 class="
+                  drop-shadow-bemkmuaj-black-shadow
+                  text-center text-bemkmuaj-white font-Panton-BlackCaps
+                  transition-all duration-200 ease-in-out
+                ">
+                  Calon Wakil Ketua
+                </h3>
+                <span class="
+                  drop-shadow-bemkmuaj-black-shadow
+                  text-[1.3rem] text-center text-bemkmuaj-white font-Montserrat-Medium
+                  transition-all duration-200 ease-in-out
+                ">
+                  Nama Cawaket 1
+                </span>
+              </div>
             </div>
           </div>
           <div class="
-            board-member-profile
-            flex flex-col justify-self-center
-            w-[15rem] h-[23rem]
-            border-solid border-4 border-bemkmuaj-black rounded-[2rem]
-            hover:shadow-bemkmuaj-black-shadow
-          ">
-            <div class="
-              relative
-              flex justify-center
-              w-full h-[17.5rem]
-              bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
-              shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
-              rounded-t-[1.6rem]
-            ">
-              <img src="../../assets/img/election/person.png" alt="" class="
-                absolute bottom-0
-                w-[90%]
-                transition-all duration-200 ease-in-out
-              ">
-            </div>
-            <div class="
-              flex flex-col justify-center items-center
-              w-full h-[5.5rem]
-              rounded-b-[1.6rem]
-              bg-bemkmuaj-black
-            ">
-              <h3 class="
-                drop-shadow-bemkmuaj-black-shadow
-                text-center text-bemkmuaj-white font-Panton-BlackCaps
-                transition-all duration-200 ease-in-out
-              ">
-                Calon Wakil Ketua
-              </h3>
-              <span class="
-                drop-shadow-bemkmuaj-black-shadow
-                text-[1.3rem] text-center text-bemkmuaj-white font-Montserrat-Medium
-                transition-all duration-200 ease-in-out
-              ">
-                Nama Cawaket 1
-              </span>
-            </div>
-          </div>
-          <div class="
-            sm:col-span-2
-            flex flex-col items-center gap-4
-            w-full
-            p-4
+            grid grid-cols-2
+            p-4 sm:p-8
             bg-gradient-to-br from-bemkmuaj-orange via-bemkmuaj-gold to-bemkmuaj-white to-[125%]
           ">
-            <span class="
-              justify-self-center
-              text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black font-Panton-BlackCaps
-            ">
-              Calon Ketua 1
-            </span>
             <div class="
-              grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
-            ">
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Nama<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                Nama Calon Ketua 2<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                NIM<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                20XX-XXXX-XXXX<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Fakultas<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                Fakultas XXXX<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Program Studi<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                XXXX<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Pengalaman<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                XXXX<br>
-                XXXX<br>
-                XXXX<br>
-              </span>
+              justify-self-center
+              w-full
+              border-r-2 border-bemkmuaj-black rounded-tl-[2rem]
+              from-bemkmuaj-black
+              overflow-hidden
+              transition-all  duration-100 ease-in-out
+            " :class="{
+              'bg-gradient-to-tl' :  !is3XLScreen && !candidates.showPCandidate1.value,
+            }">
+              <button @click="showPCandidate1()" class="
+                w-full h-full
+                p-4
+                border-b-4
+                text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-center text-bemkmuaj-black font-Panton-BlackCaps
+                transition-all  duration-100 ease-in-out
+              " :class="{
+                'border-transparent' : is3XLScreen || candidates.showPCandidate1.value,
+                'border-bemkmuaj-black text-bemkmuaj-white hover:text-bemkmuaj-light-gray' : !is3XLScreen && !candidates.showPCandidate1.value,
+                'border-bemkmuaj-black text-bemkmuaj-black' : !is3XLScreen && candidates.showPCandidate1.value
+              }">
+                Calon Ketua 1
+              </button>
             </div>
-            <span class="
-              justify-self-center
-              text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black font-Panton-BlackCaps
-            ">
-              Calon Wakil Ketua 1
-            </span>
             <div class="
-              grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
+              justify-self-center
+              w-full
+              border-l-2 border-bemkmuaj-black rounded-tr-[2rem]
+              from-bemkmuaj-black
+              overflow-hidden
+            " :class="{
+              'bg-gradient-to-tr' :  !is3XLScreen && candidates.showPCandidate1.value,
+            }">
+              <button @click.prevent="showVPCandidate1()" class="
+                w-full h-full
+                p-4
+                border-b-4
+                text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-center font-Panton-BlackCaps
+                transition-all  duration-100 ease-in-out
+              " :class="{
+                'border-transparent text-bemkmuaj-black' : is3XLScreen || !candidates.showPCandidate1.value,
+                'border-bemkmuaj-black text-bemkmuaj-white hover:text-bemkmuaj-light-gray' : !is3XLScreen && candidates.showPCandidate1.value,
+                'border-bemkmuaj-black text-bemkmuaj-black' : !is3XLScreen && !candidates.showPCandidate1.value
+              }">
+                Calon Wakil Ketua 1
+              </button>
+            </div>
+            <div v-if="is3XLScreen || candidates.showPCandidate1.value" class="
+              col-span-2 3xl:col-span-1 flex flex-col items-center gap-4
+              w-full
+              p-4
+              3xl:border-r-2 border-bemkmuaj-black
+            " :class="{
+              'hidden' : !is3XLScreen && !candidates.showPCandidate1
+            }">
+              <div class="
+                grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
+              ">
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Nama<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  Nama Calon Ketua 1<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  NIM<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  20XX-XXXX-XXXX<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Fakultas<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  Fakultas XXXX<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Program Studi<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  XXXX<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Pengalaman<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  XXXX<br>
+                  XXXX<br>
+                  XXXX<br>
+                </span>
+              </div>
+            </div>
+            <div v-if="is3XLScreen || !candidates.showPCandidate1.value" class="
+              col-span-2 3xl:col-span-1 flex flex-col items-center gap-4
+              w-full
+              p-4
+              3xl:border-l-2 border-bemkmuaj-black
             ">
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+              <div class="
+                grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
               ">
-                Nama<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                Nama Calon Ketua 1<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                NIM<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                20XX-XXXX-XXXX<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Fakultas<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                Fakultas XXXX<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Program Studi<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                XXXX<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
-              ">
-                Pengalaman<br>
-              </span>
-              <span class="
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
-              ">
-                :<br>
-              </span>
-              <span class="
-                col-span-2 sm:col-span-1
-                text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
-              ">
-                XXXX<br>
-                XXXX<br>
-                XXXX<br>
-              </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Nama<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  Nama Wakil Calon Ketua 1<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  NIM<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  20XX-XXXX-XXXX<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Fakultas<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  Fakultas XXXX<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Program Studi<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  XXXX<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                ">
+                  Pengalaman<br>
+                </span>
+                <span class="
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                ">
+                  :<br>
+                </span>
+                <span class="
+                  col-span-2 sm:col-span-1
+                  text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                ">
+                  XXXX<br>
+                  XXXX<br>
+                  XXXX<br>
+                </span>
+              </div>
             </div>
             <div class="
               vote-div
+              col-span-2 justify-self-center
               flex justify-center
               w-56 sm:w-64
             ">
               <button class="
                 vote-btn
-                flex justify-center items-center
+                flex justify-center items-center gap-10
                 w-56 sm:w-64 h-14 sm:h-16
                 border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
                 bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                text-bemkmuaj-white hover:text-bemkmuaj-orange
+                text-bemkmuaj-white hover:text-bemkmuaj-orange fill-bemkmuaj-white hover:fill-bemkmuaj-orange
                 hover:shadow-bemkmuaj-orange-shadow-sm
                 transition-all duration-100 ease-in-out
               ">
                 <span class="
                   vote-span
-                  pr-10
                   text-[2.5rem]
                   transition-all duration-100 ease-in-out
                   overflow-hidden
                 ">
                   Pilih
                 </span>
-                <span class="
-                  material-symbols-outlined
-                  scale-[250%] sm:scale-[300%]
-                  transition-all duration-100 ease-in-out
-                ">
-                  trending_flat
-                </span>
+                <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+                  <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+                </svg>
               </button>
             </div>
           </div>
@@ -1260,30 +1279,25 @@
             ">
               <button class="
                 vote-btn
-                flex justify-center items-center
+                flex justify-center items-center gap-10
                 w-56 sm:w-64 h-14 sm:h-16
                 border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
                 bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                text-bemkmuaj-white hover:text-bemkmuaj-orange
+                text-bemkmuaj-white hover:text-bemkmuaj-orange fill-bemkmuaj-white hover:fill-bemkmuaj-orange
                 hover:shadow-bemkmuaj-orange-shadow-sm
                 transition-all duration-100 ease-in-out
               ">
                 <span class="
                   vote-span
-                  pr-10
                   text-[2.5rem]
                   transition-all duration-100 ease-in-out
                   overflow-hidden
                 ">
                   Pilih
                 </span>
-                <span class="
-                  material-symbols-outlined
-                  scale-[250%] sm:scale-[300%]
-                  transition-all duration-100 ease-in-out
-                ">
-                  trending_flat
-                </span>
+                <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
+                  <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
+                </svg>
               </button>
             </div>
           </div>
@@ -1309,20 +1323,39 @@ definePageMeta({
   }
 })
 
+const isSmallScreen = ref(false);
 const isXLScreen = ref(false);
+const is3XLScreen = ref(false);
 
 const updateScreenSize = () => {
+  isSmallScreen.value = window.innerWidth >= 640;
   isXLScreen.value = window.innerWidth >= 1280;
+  is3XLScreen.value = window.innerWidth >= 1920;
 }
 
 onMounted(() => {
+  isSmallScreen.value = window.innerWidth >= 640;
   isXLScreen.value = window.innerWidth >= 1280;
+  is3XLScreen.value = window.innerWidth >= 1920;
   window.addEventListener('resize', updateScreenSize)
 });
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);
 })
+
+
+// P: President, VP: Vice President
+const candidates = {
+  showBothCandidates: ref(true),
+  showCandidate1: ref(true),
+  showPCandidate1: ref(true),
+  showPCandidate2: ref(true),
+}
+
+const showPCandidate1 = () => candidates.showPCandidate1.value=true;
+
+const showVPCandidate1 = () => candidates.showPCandidate1.value=false;
 
 </script>
 
@@ -1364,9 +1397,9 @@ onUnmounted(() => {
   .vote-div {
     &:hover {
       .vote-btn {
-        @apply w-28 sm:w-32;
+        @apply  gap-0 w-28 sm:w-32;
         .vote-span {
-          @apply w-0 pr-0 opacity-0;
+          @apply w-0 opacity-0;
         }
       }
     }

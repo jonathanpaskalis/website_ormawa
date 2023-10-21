@@ -70,12 +70,11 @@
               'flex-row-reverse' : candidate.number==='1'
             }">
               <img v-for="member in candidate.members" :src="member.photo" alt="" class="
-                cawaket
-                w-[30%] h-min
+                h-min
                 transition-all duration-100 ease-in-out
               " :class="{
-                'w-[50%]' : member.position==='Calon Ketua',
-                'w-[30%]' : member.position==='Calon Wakil Ketua',
+                'caket w-[50%]' : member.position==='Calon Ketua',
+                'cawaket w-[30%]' : member.position==='Calon Wakil Ketua',
               }">
             </div>
             <div class="

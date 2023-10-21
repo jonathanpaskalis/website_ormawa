@@ -221,8 +221,9 @@
         <div class="
           relative
           w-full xl:w-[60%]
+          bg-bemkmuaj-black
         ">
-          <Carousel :wrap-around="true" :mouse-drag="false">
+          <Carousel :wrap-around="true" :mouse-drag="false" :autoplay="5000">
             <Slide v-for="program in period.programs" :key="`program-${program.name}`">
               <div class="
                 carousel__item
@@ -238,19 +239,20 @@
                   bg-bemkmuaj-white
                 ">
                 <NuxtLink to="/program" class="
-                  flex justify-start items-center
+                  flex justify-center items-center
                   h-[4rem]
-                  pl-20
+                  px-20
                   bg-bemkmuaj-black 
                   text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold
                   transition-all duration-100 ease-in-out
                 ">
-                  Fesival Mural
+                  {{ program.nickname }}
                 </NuxtLink>
               </div>
             </Slide>
             <template #addons>
               <Navigation />
+              <Pagination />
             </template>
           </Carousel>
           <div class="
@@ -279,7 +281,7 @@
 </template>
 
 <script setup lang="ts">
-import { Carousel, Navigation, Slide } from 'vue3-carousel'
+import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
 useHead({
   title: 'BEM KM-UAJ'
@@ -342,6 +344,7 @@ defineComponent({
     Carousel,
     Slide,
     Navigation,
+    Pagination,
   }
 })
 
@@ -375,5 +378,17 @@ onUnmounted(() => {
 
   .carousel__next{
     @apply right-4;
+  }
+
+  .carousel__pagination-button {
+    &::after{
+      @apply bg-bemkmuaj-white hover:bg-bemkmuaj-light-gray;
+    }
+  }
+
+  .carousel__pagination-button--active {
+    &::after{
+      @apply bg-bemkmuaj-orange hover:bg-bemkmuaj-orange-glow;
+    }
   }
 </style>

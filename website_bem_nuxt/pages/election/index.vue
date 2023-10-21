@@ -67,18 +67,16 @@
               h-24 xs:h-32 sm:h-48 2xl:h-72
               transition-all duration-100 ease-in-out
             " :class="{
-              'flex-row-reverse' : candidate.number==='2'
+              'flex-row-reverse' : candidate.number==='1'
             }">
-              <img src="../../assets/img/election/person.png" alt="" class="
+              <img v-for="member in candidate.members" :src="member.photo" alt="" class="
                 cawaket
                 w-[30%] h-min
                 transition-all duration-100 ease-in-out
-              ">
-              <img src="../../assets/img/election/person.png" alt="" class="
-                caket
-                w-[50%] h-min
-                transition-all duration-100 ease-in-out
-              ">
+              " :class="{
+                'w-[50%]' : member.position==='Calon Ketua',
+                'w-[30%]' : member.position==='Calon Wakil Ketua',
+              }">
             </div>
             <div class="
               paslon-name

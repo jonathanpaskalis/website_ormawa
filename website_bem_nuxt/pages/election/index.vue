@@ -343,7 +343,7 @@
           bg-clip-text
           drop-shadow-bemkmuaj-orange-shadow
           text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
-          transition-all duration-100
+          transition-all duration-100 ease-in-out
         ">
           PILIH
         </h2>
@@ -362,7 +362,8 @@
               <div v-for="member in candidate.members" :key="`member-${candidate.number}-${member.name}`" class="
                 board-member-profile
                 flex flex-col justify-self-center
-                transition-all  duration-100 ease-in-out
+                w-[15rem] h-[17.5rem]
+                transition-all duration-200 ease-in-out
               " :class="{
                 'hidden' : !isSmallScreen && !returnShowValue(candidate.number, member.position),
                 'drop-shadow-bemkmuaj-black-shadow' : !is3XLScreen && returnShowValue(candidate.number, member.position),
@@ -370,7 +371,7 @@
                 <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
                   relative
                   flex justify-center
-                  w-[15rem] h-[17.5rem]
+                  w-full h-full
                 ">
                   <img :src="member.photo" alt="" class="
                     absolute bottom-0
@@ -641,7 +642,7 @@ const returnShowValue = (number:string, position:string) => {
 
   .board-member-profile {
     &:hover {
-      div {
+      button {
         img {
           @apply w-[95%];
         }

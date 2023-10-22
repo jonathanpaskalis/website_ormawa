@@ -1,5 +1,5 @@
 <template>
-  <div ref="electionPage">
+  <div>
     <section v-if="period" id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
@@ -356,33 +356,29 @@
             overflow-hidden
           ">
             <div class="
+              grid grid-cols-1 sm:grid-cols-2
               bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
             ">
-              <Carousel :ref="returnCandidateCarousel(candidate.number)" :itemsToShow="returnShowNumber()" :mouseDrag="false" :touchDrag="!isSmallScreen">
-                <Slide v-for="member in candidate.members" :key="`member-${candidate.number}-${member.name}`" class="
-                  board-member-profile
-                  flex flex-col justify-self-center
-                  transition-all  duration-100 ease-in-out
-                " :class="{
-                  'drop-shadow-bemkmuaj-black-shadow' : !is3XLScreen && returnShowValue(candidate.number, member.position),
-                }">
-                  <div @click="showCandidate(candidate.number, member.position)" class="
-                    relative
-                    flex justify-center
-                    w-[15rem] h-[17.5rem]
-                    cursor-pointer
+              <div v-for="member in candidate.members" :key="`member-${candidate.number}-${member.name}`" class="
+                board-member-profile
+                flex flex-col justify-self-center
+                transition-all  duration-100 ease-in-out
+              " :class="{
+                'hidden' : !isSmallScreen && !returnShowValue(candidate.number, member.position),
+                'drop-shadow-bemkmuaj-black-shadow' : !is3XLScreen && returnShowValue(candidate.number, member.position),
+              }">
+                <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
+                  relative
+                  flex justify-center
+                  w-[15rem] h-[17.5rem]
+                ">
+                  <img :src="member.photo" alt="" class="
+                    absolute bottom-0
+                    w-[90%]
+                    transition-all duration-200 ease-in-out
                   ">
-                    <img :src="member.photo" alt="" class="
-                      absolute bottom-0
-                      w-[90%]
-                      transition-all duration-200 ease-in-out
-                    ">
-                  </div>
-                </Slide>
-                <template #addons>
-                  <Pagination v-if="!isSmallScreen" />
-                </template>
-              </Carousel>
+                </button>
+              </div>
             </div>
             <div class="
               grid grid-cols-2
@@ -398,17 +394,17 @@
               " :class="{
                 'border-r-2' : index%2===0,
                 'border-l-2' : index%2===1,
-                'bg-bemkmuaj-black bg-opacity-[0%] sm:hover:bg-opacity-[50%]' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                'bg-bemkmuaj-black bg-opacity-[0%] hover:bg-opacity-[50%]' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
                 'bg-bemkmuaj-black bg-opacity-[75%]' : !is3XLScreen && returnShowValue(candidate.number, member.position),
               }">
-                <button @click="showCandidate(candidate.number, member.position)" class="
+                <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
                   w-full h-full
                   p-4
                   text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-center text-bemkmuaj-black font-Panton-BlackCaps
                   transition-all  duration-100 ease-in-out
                 " :class="{
                   'border-transparent' : is3XLScreen || returnShowValue(candidate.number, member.position),
-                  'text-bemkmuaj-black  sm:hover:text-bemkmuaj-light-gray' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                  'text-bemkmuaj-black  hover:text-bemkmuaj-light-gray' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
                   'text-bemkmuaj-white' : !is3XLScreen && returnShowValue(candidate.number, member.position),
                 }">
                   {{ member.position }} {{ candidate.number }}
@@ -549,8 +545,6 @@
 </template>
 
 <script setup lang="ts">
-import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
-
 definePageMeta({
   pageTransition: {
     name: 'slide-left',
@@ -567,26 +561,13 @@ definePageMeta({
 import { doc, onSnapshot } from 'firebase/firestore';
 
 const period = ref<any>(null);
-const electionPage = ref<any>(null);
 
-const candidateCarousel1 = ref<any>(null);
-const candidateCarousel2 = ref<any>(null);
 
 onMounted(async() => {
   const { db } = useFirebase();
   const docRef = doc(db, 'periods', 'gLUTVq5uOd7iRw2QqC7P');
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
-    nextTick(() => {
-      watch(() => candidateCarousel1.value[0].data.currentSlide.value,(newValue:any) => {
-        if (newValue===0) candidates.showPCandidate1.value=true;
-        if (newValue===1) candidates.showPCandidate1.value=false;
-      });
-      watch(() => candidateCarousel2.value[0].data.currentSlide.value,(newValue:any) => {
-        if (newValue===0) candidates.showPCandidate2.value=true;
-        if (newValue===1) candidates.showPCandidate2.value=false;
-      });
-    })
   })
 })
 
@@ -605,35 +586,7 @@ onMounted(() => {
   isXLScreen.value = window.innerWidth >= 1280;
   is3XLScreen.value = window.innerWidth >= 1920;
   window.addEventListener('resize', updateScreenSize);
-  watch(isSmallScreen.value,(newValue:any) => {
-    if (newValue===false) {
-      if (!candidates.showPCandidate1) {
-        try {
-          candidateCarousel1.value[0].data.currentSlide.value=1;
-        } catch {
-          candidateCarousel1.value[0].data.currentSlide.value=0;
-        }
-      };
-      if (!candidates.showPCandidate2) {
-        try {
-          candidateCarousel2.value[0].data.currentSlide.value=1;
-        } catch {
-          candidateCarousel2.value[0].data.currentSlide.value=0;
-        }
-      };
-    }
-  })
 });
-
-defineComponent({
-  name: 'Autoplay',
-  components: {
-    Carousel,
-    Slide,
-    Navigation,
-    Pagination,
-  }
-})
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);
@@ -646,33 +599,10 @@ const candidates = {
 }
 
 const showCandidate = (number:string, position:string) => {
-  if (number==='1' && position==='Calon Ketua') {
-    candidates.showPCandidate1.value=true;
-    candidateCarousel1.value[0].data.currentSlide.value=0;
-  }
-  if (number==='1' && position==='Calon Wakil Ketua') {
-    candidates.showPCandidate1.value=false;
-    try { 
-      candidateCarousel1.value[0].data.currentSlide.value=1;
-    }
-    catch {
-      candidateCarousel1.value[0].data.currentSlide.value=0;
-    }
-  }
-  if (number==='2' && position==='Calon Ketua') {
-    candidates.showPCandidate2.value=true;
-    candidateCarousel2.value[0].data.currentSlide.value=0;
-  };
-  if (number==='2' && position==='Calon Wakil Ketua') 
-  {
-    candidates.showPCandidate2.value=false;
-    try { 
-      candidateCarousel2.value[0].data.currentSlide.value=1;
-    }
-    catch {
-      candidateCarousel2.value[0].data.currentSlide.value=0;
-    }
-  };
+  if (number==='1' && position==='Calon Ketua') candidates.showPCandidate1.value=true;
+  if (number==='1' && position==='Calon Wakil Ketua') candidates.showPCandidate1.value=false;
+  if (number==='2' && position==='Calon Ketua') candidates.showPCandidate2.value=true;
+  if (number==='2' && position==='Calon Wakil Ketua') candidates.showPCandidate2.value=false;
 }
 
 const returnShowValue = (number:string, position:string) => {
@@ -682,18 +612,9 @@ const returnShowValue = (number:string, position:string) => {
   if (number==='2' && position==='Calon Wakil Ketua') return !candidates.showPCandidate2.value;
 }
 
-const returnShowNumber = () => {
-  if (isSmallScreen.value) return 2;
-  else return 1; 
-}
-
-const returnCandidateCarousel = (number:string) => {
-  return "candidateCarousel"+number
-}
-
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .paslon {
     &:hover {
       .paslon-number {

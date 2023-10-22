@@ -24,12 +24,12 @@
         content: "script-src 'none'"
       },
     ],
-    script: [
-      {
-        nonce:'random123',
-        src: 'https://trusted.example.com/trusted_script.js',
-      }
-    ]
+    // script: [
+    //   {
+    //     nonce:'random123',
+    //     src: 'https://trusted.example.com/trusted_script.js',
+    //   }
+    // ]
   })
 
   onMounted(() => {

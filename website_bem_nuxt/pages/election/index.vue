@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-if="period" id="title" class="
+    <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
       bg-bemkmuaj-black
@@ -18,14 +18,14 @@
       ">
         PEMILIHAN UMUM
       </h1>
-      <span class="
+      <span v-if="period" class="
         text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-white
         transition-all duration-100 ease-in-out
       ">
         PERIODE {{ period.name }}
       </span>
     </section>
-    <section v-if="period" id="intro" class="
+    <section id="intro" class="
       flex justify-center
     ">
       <div class="
@@ -39,7 +39,7 @@
           grid grid-cols-2
           w-full
         ">
-          <div v-for="candidate in period.candidates" class="
+          <div v-if="period" v-for="candidate in period.candidates" class="
             paslon
             flex flex-col items-center gap-y-8 lg:gap-y-16
             border-bemkmuaj-white
@@ -75,7 +75,7 @@
               " :class="{
                 'caket w-[50%]' : member.position==='Calon Ketua',
                 'cawaket w-[30%]' : member.position==='Calon Wakil Ketua',
-              }">
+              }" />
             </div>
             <div class="
               paslon-name
@@ -101,7 +101,7 @@
         </div>
       </div>
     </section>
-    <section v-if="period" id="vision-mission" class="
+    <section id="vision-mission" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex flex-col items-center
       shadow-bemkmuaj-black-shadow
@@ -131,7 +131,7 @@
           flex flex-col justify-center gap-8 lg:gap-16
           transition-all duration-100 ease-in-out
         ">
-          <div v-for="candidate in period.candidates" class="
+          <div v-if="period" v-for="candidate in period.candidates" class="
             flex flex-col gap-4
             transition-all duration-500 ease-in-out
           " :class="{
@@ -185,7 +185,7 @@
           flex flex-col justify-center gap-8 lg:gap-16
           transition-all duration-100 ease-in-out
         ">
-          <div v-for="candidate in period.candidates" class="
+          <div v-if="period" v-for="candidate in period.candidates" class="
             flex flex-col gap-4
             transition-all duration-500 ease-in-out
           " :class="{
@@ -215,7 +215,7 @@
         </div>
       </div>
     </section>
-    <section v-if="period" id="program" class="
+    <section id="program" class="
       flex justify-center
       ">
       <div class="
@@ -237,7 +237,7 @@
         <div class="
         flex flex-col gap-y-8 lg:gap-y-16
         ">
-          <div v-for="candidate in period.candidates" class="
+          <div v-if="period" v-for="candidate in period.candidates" class="
             flex flex-col gap-4 lg:gap-8
             transition-all duration-500 ease-in-out
           ">
@@ -327,7 +327,7 @@
         </div>
       </div>
     </section>
-    <section v-if="period" id="vote" class="
+    <section id="vote" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       bg-gradient-to-b from-bemkmuaj-dark-gray via-bemkmuaj-black to-bemkmuaj-dark-gray
@@ -350,7 +350,7 @@
         <div class="
           flex flex-col gap-8 lg:gap-16
         ">
-          <div v-for="candidate in period.candidates" :key="`candidate-${candidate.number}`" class="
+          <div v-if="period" v-for="candidate in period.candidates" :key="`candidate-${candidate.number}`" class="
             flex flex-col
             border-[0.15rem] border-bemkmuaj-gold rounded-[2rem]
             overflow-hidden
@@ -377,7 +377,7 @@
                     absolute bottom-0
                     w-[90%]
                     transition-all duration-200 ease-in-out
-                  ">
+                  " />
                 </button>
               </div>
             </div>
@@ -546,6 +546,16 @@
 </template>
 
 <script setup lang="ts">
+
+useHead({
+  title: 'Profile | BEM KM-UAJ'
+})
+
+useSeoMeta({
+  title: 'Halaman Pemilihan Umum Situs BEM KM-UAJ',
+  description: 'Halaman ini menjelaskan tentang pasangan calon Ketua dan Wakil Ketua Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya periode 2023-2025. Halaman ini menampilkan informasi tentang visi, misi, program kerja, dan biodata pasangan calon Ketua dan Wakil Ketua BEM KM-UAJ periode 2023-2025. Halaman ini memberi fitur kepada mahasiswa aktif S1 UAJ untuk melaksanakan pemilihan umum',
+})
+
 definePageMeta({
   pageTransition: {
     name: 'slide-left',

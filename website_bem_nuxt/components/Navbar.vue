@@ -130,7 +130,7 @@
         ">
           {{ nav.name }}
         </NuxtLink>
-        <NuxtLink v-else @click.prevent="toggleMSubNav(nav)" class="
+        <div v-else @click.prevent="toggleMSubNav(nav)" class="
           nuxtlink
           flex justify-center items-center gap-2
           w-full h-16
@@ -144,7 +144,7 @@
           <svg class="h-[0.65rem] transition-transform duration-100 ease-in-out overflow-hidden" :class="{ '-rotate-180' : !nav.hideSubNav }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7.4">
             <path d="m6,7.4L0,1.4,1.4,0l4.6,4.6L10.6,0l1.4,1.4-6,6Z"/>
           </svg>
-        </NuxtLink>
+        </div>
         <div v-if="nav.subnavs" class="
           h-0
           border-solid border-bemkmuaj-white

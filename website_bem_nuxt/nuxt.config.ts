@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  routeRules: {
+    '**' : { prerender: true }
+  },
   devtools: { enabled: true },
   css: ['~/assets/scss/global.scss'],
   postcss: {
@@ -8,17 +11,22 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: [
-    'vue3-carousel-nuxt',
-  ],
+  modules: ['vue3-carousel-nuxt', "@nuxt/image"],
   nitro: {
     firebase: {
       gen: 2,
-      httpsOptions: {
-        region: 'asia-southeast2',
-      }
     },
     preset: 'firebase',
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/profile',
+        '/program',
+        '/contact-us',
+        '/election',
+      ]
+    }
   },
   runtimeConfig: {
     public: {

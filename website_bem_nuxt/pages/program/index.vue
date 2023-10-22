@@ -16,7 +16,7 @@
         PROGRAM KERJA
       </h1>
     </section>
-    <section v-if="period" title="program-list" class="
+    <section title="program-list" class="
       flex justify-center
     ">
       <div class="
@@ -26,7 +26,7 @@
         shadow-bemkmuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
-        <div class="
+        <div v-if="period" class="
           flex flex-col gap-4
         ">
           <h2 class="
@@ -41,7 +41,7 @@
           <div class="
             grid grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-8 
           ">
-            <NuxtLink :to="`/program/${period.name}/${program.name}`" v-for="program in period.programs" :key="`program-${program.name}`" class="
+            <NuxtLink v-for="program in period.programs" :key="`program-${program.name}`" :to="`/program/${period.name}/${program.name}`" class="
               flex justify-center items-center justify-self-center
               w-[7rem] xs:w-[10rem] sm:w-[15rem]
               p-4
@@ -52,7 +52,7 @@
             ">
               <img :src="program.logo" alt="" class="
                 w-full h-full
-              ">
+              " />
             </NuxtLink>
           </div>
         </div>
@@ -65,6 +65,11 @@
 
 useHead({
   title: 'Program | BEM KM-UAJ'
+})
+
+useSeoMeta({
+  title: 'Halaman Program Kerja Situs BEM KM-UAJ',
+  description: 'Halaman ini menjelaskan program kerja dari Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja BEM KM-UAJ yang telah dilaksanakan atau yang akan datang',
 })
 
 definePageMeta({

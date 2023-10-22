@@ -16,14 +16,14 @@
     htmlAttrs: {
       lang: 'id',
     },
-    meta: [
-      {
-        "http-equiv": 'content-security-policy'
-      },
-      {
-        content: "script-src 'none'"
-      },
-    ],
+    // meta: [
+    //   {
+    //     "http-equiv": 'content-security-policy'
+    //   },
+    //   {
+    //     content: "script-src 'none'"
+    //   },
+    // ],
     // script: [
     //   {
     //     nonce:'random123',

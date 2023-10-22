@@ -22,10 +22,10 @@
         text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black 
         transition-all duration-100 ease-in-out
       ">
-        PERIODE 2022-2023
+        PERIODE {{ period.name }}
       </span>
     </section>
-    <section v-if="period" id="intro" class="
+    <section id="intro" class="
       flex justify-center
     ">
       <div class="
@@ -85,7 +85,7 @@
         </div>
       </div>
     </section>
-    <section v-if="period" id="ministry-structure" class="
+    <section id="ministry-structure" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       bg-bemkmuaj-black
@@ -96,7 +96,7 @@
         flex flex-col justify-center gap-16
         transition-all duration-100 ease-in-out
       ">
-        <div v-for="department in period!.departments" :key="`department-${department.name}`" class="
+        <div v-if="period" v-for="department in period.departments" :key="`department-${department.name}`" class="
           flex flex-col gap-4
         ">
           <h2 class="
@@ -139,7 +139,7 @@
                   absolute bottom-0
                   w-[90%]
                   transition-all duration-200 ease-in-out
-                ">
+                " />
               </div>
               <div class="
                 flex flex-col justify-center items-center
@@ -175,7 +175,7 @@
         </div>
       </div>
     </section>
-    <section v-if="period && boardComposition" id="board-composition" class="
+    <section id="board-composition" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       w-full
@@ -191,7 +191,7 @@
         ">
           Komposisi Pengurus
         </h2>
-        <div v-for="faculty in boardComposition.faculties" :key="`faculty-${faculty.name}`" class="
+        <div v-if="boardComposition" v-for="faculty in boardComposition.faculties" :key="`faculty-${faculty.name}`" class="
           grid grid-cols-[5rem_1fr] sm:grid-cols-[6rem_1fr] lg:grid-cols-[9rem_1fr] justify-start items-center gap-4
           w-full
         ">
@@ -231,7 +231,12 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Profile | BEM KM-UAJ'
+  title: 'Profile | BEM KM-UAJ',
+})
+
+useSeoMeta({
+  title: 'Halaman Profil Situs BEM KM-UAJ',
+  description: 'Halaman ini menjelaskan tentang profil dari Organisasi Kemahasiswaan BEM KM-UAJ. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix BEM KM-UAJ',
 })
 
 definePageMeta({

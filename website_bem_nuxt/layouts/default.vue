@@ -43,7 +43,6 @@ const promptPassword = () => {
 
 const handleVisibilityChange = () => {
   if (!document.hidden) {
-    //promptPassword();
     console.log('hello');
   }
 };
@@ -51,13 +50,9 @@ const handleVisibilityChange = () => {
 const hideToTopBtn = ref(true);
 
 onMounted(() => {
-  //promptPassword();
-
   window.addEventListener('scroll', () => {
     if(window.scrollY >= 750) hideToTopBtn.value = false;
     if (window.scrollY < 750) hideToTopBtn.value = true;
-  
-    //document.addEventListener('visibilitychange', handleVisibilityChange);
   })
 })
 

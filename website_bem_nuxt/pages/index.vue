@@ -11,9 +11,9 @@
         w-full h-full
         overflow-hidden
       ">
-        <img src="/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out">
-        <img src="/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-        <img src="/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+        <NuxtImg src="/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out" />
+        <NuxtImg src="/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
+        <NuxtImg src="/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
       </div>
       <div class="
         absolute
@@ -36,7 +36,7 @@
             max-w-[50%] h-full
             drop-shadow-bemkmuaj-black-shadow
           ">
-            <img src="/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full">
+            <NuxtImg src="/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full" />
           </div>
           <div class="
             flex flex-col justify-center items-center
@@ -47,8 +47,8 @@
               flex justify-center
               w-full max-h-full
             ">
-              <img src="/board_members/Ketua_Angel.webp" alt="" class="w-[40%]">
-              <img src="/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]">
+              <NuxtImg src="/board_members/Ketua_Angel.webp" alt="" class="w-[40%]" />
+              <NuxtImg src="/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]" />
             </div>
             <h1 class="
               w-full
@@ -168,7 +168,7 @@
           BEM KM-UAJ
         </h2>
         <div class="">
-          <img src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full">
+          <NuxtImg src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
         </div>
         <NuxtLink to="/profile" class="
           flex justify-center items-center
@@ -229,18 +229,19 @@
                 carousel__item
                 relative
                 flex flex-col
+                w-full
               ">
-                <img :src="program.documentation" alt="">
+                <img :src="program.documentation" alt="" class="w-full" />
                 <img :src="program.logo" alt="" class="
                   absolute bottom-0
                   w-[4.5rem] h-[4rem]
                   p-2 pr-4
                   rounded-r-[1.5rem] 
                   bg-bemkmuaj-white
-                ">
+                " />
                 <NuxtLink to="/program" class="
                   flex justify-center items-center
-                  h-[4rem]
+                  w-full h-[4rem]
                   px-20
                   bg-bemkmuaj-black 
                   text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold
@@ -285,6 +286,11 @@ import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
 useHead({
   title: 'BEM KM-UAJ'
+})
+
+useSeoMeta({
+  title: 'Halaman Utama Situs BEM KM-UAJ',
+  description: 'Halaman ini menjelaskan garis besar dari Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja BEM KM-UAJ',
 })
 
 definePageMeta({

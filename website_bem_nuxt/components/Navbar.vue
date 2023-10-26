@@ -68,9 +68,11 @@
           'rounded-[1.5rem]': !nav.subnavs
         }">
           {{ nav.name.toUpperCase() }}
-          <svg v-if="nav.subnavs" class="h-[0.5rem] transition-transform duration-100 ease-in-out fill-bemkmuaj-white overflow-hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7.4">
-            <path d="m6,7.4L0,1.4,1.4,0l4.6,4.6L10.6,0l1.4,1.4-6,6Z"/>
-          </svg>
+          <Icons v-if="nav.subnavs" name="expand_more" class="
+            h-[0.5rem]
+            transition-transform duration-100 ease-in-out
+            fill-bemkmuaj-white overflow-hidden
+          "/>
         </NuxtLink>
         <div v-if="nav.subnavs" class="
           absolute
@@ -99,13 +101,10 @@
         p-[0.2rem]
         border-solid border-[0.15rem] border-bemkmuaj-white rounded-[0.5rem]
         bg-bemkmuaj-black
+        fill-bemkmuaj-white
       ">
-        <svg v-if="hideMNav" class="w-[85%] fill-bemkmuaj-white stroke-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12">
-          <path d="m0,12v-2h18v2H0Zm0-5v-2h18v2H0ZM0,2V0h18v2H0Z"/>
-        </svg>
-        <svg v-else class="w-[85%] fill-bemkmuaj-white stroke-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
-          <path d="m1.4,14l-1.4-1.4,5.6-5.6L0,1.4,1.4,0l5.6,5.6L12.6,0l1.4,1.4-5.6,5.6,5.6,5.6-1.4,1.4-5.6-5.6L1.4,14Z"/>
-        </svg>
+        <Icons v-if="hideMNav" name="menu" class="w-[85%]" />
+        <Icons v-else name="close" class="w-[85%]" />
       </button>
     </nav>
 
@@ -141,9 +140,13 @@
           cursor-pointer
         ">
           {{ nav.name }}
-          <svg class="h-[0.65rem] transition-transform duration-100 ease-in-out overflow-hidden" :class="{ '-rotate-180' : !nav.hideSubNav }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7.4">
-            <path d="m6,7.4L0,1.4,1.4,0l4.6,4.6L10.6,0l1.4,1.4-6,6Z"/>
-          </svg>
+          <Icons name="expand_more" class="
+            h-[0.65rem]
+            transition-transform duration-100 ease-in-out
+            overflow-hidden
+          " :class="{
+            '-rotate-180' : !nav.hideSubNav,
+          }"/>
         </div>
         <div v-if="nav.subnavs" class="
           h-0

@@ -68,7 +68,6 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Halaman Program Kerja Situs BEM KM-UAJ',
   description: 'Halaman ini menjelaskan program kerja dari Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja BEM KM-UAJ yang telah dilaksanakan atau yang akan datang',
 })
 

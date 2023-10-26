@@ -8,7 +8,14 @@
  */
 
 const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+const {setGlobalOptions} = require('firebase-functions/v2')
+
+setGlobalOptions({ region: 'asia-southeast2' })
+
+exports.randomNumber = onRequest((request, response) => {
+  const number = Math.round(Math.random()*100);
+  response.send(number.toString());
+})
 
 // Create and deploy your first functions
 // https://firebase.google.com/docs/functions/get-started

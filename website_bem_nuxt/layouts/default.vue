@@ -16,14 +16,11 @@
         bg-bemkmuaj-black bg-opacity-[85%] hover:bg-opacity-100
         fill-bemkmuaj-white hover:fill-bemkmuaj-orange 
         transition-all duration-100 ease-in-out
-         
       " :class="{
         'opacity-0' : hideToTopBtn,
         'pointer-events-none' : hideToTopBtn 
       }">
-        <svg class="h-[1rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7.4">
-          <path d="m1.4,7.4l-1.4-1.4L6,0l6,6-1.4,1.4L6,2.8,1.4,7.4Z" style="stroke-width: 0px;"/>
-        </svg>
+        <Icons name="expand_less" class="h-[1rem]" />
       </NuxtLink>
     </main>
     <Footer />

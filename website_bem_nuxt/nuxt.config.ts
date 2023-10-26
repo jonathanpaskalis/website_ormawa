@@ -15,8 +15,10 @@ export default defineNuxtConfig({
   nitro: {
     firebase: {
       gen: 2,
+      httpsOptions: {
+        region: 'asia-southeast2',
+      }
     },
-    preset: 'firebase',
     prerender: {
       crawlLinks: true,
       routes: [

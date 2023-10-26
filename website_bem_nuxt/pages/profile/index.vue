@@ -1,13 +1,13 @@
 <template>
   <div id="body">
-    <section v-if="period" id="title" class="
+    <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
       bg-bemkmuaj-white
       shadow-bemkmuaj-black-shadow
       transition-all duration-100 ease-in-out
     ">
-      <h1 class="
+      <h1 v-if="period" class="
         text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-transparent font-Poppins-SemiBold
         [background-size:_400%]
         bg-gradient-to-r from-bemkmuaj-orange via-bemkmuaj-gold via-[25%] to-bemkmuaj-white to-[50%]
@@ -18,7 +18,7 @@
       ">
         KABINET {{ period.ministry.toUpperCase() }} #1
       </h1>
-      <span class="
+      <span v-if="period" class="
         text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black 
         transition-all duration-100 ease-in-out
       ">
@@ -93,7 +93,7 @@
     ">
       <div class="
         container-bemkmuaj
-        flex flex-col justify-center gap-16
+        flex flex-col justify-center items-center gap-16
         transition-all duration-100 ease-in-out
       ">
         <div v-if="period" v-for="department in period.departments" :key="`department-${department.name}`" class="
@@ -182,7 +182,7 @@
     ">
       <div class="
         container-bemkmuaj
-        flex flex-col gap-4 lg:gap-8
+        flex flex-col justify-center items-center gap-4 lg:gap-8
         bg-bemkmuaj-black bg-opacity-75
       ">
         <h2 class="
@@ -235,7 +235,6 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Halaman Profil Situs BEM KM-UAJ',
   description: 'Halaman ini menjelaskan tentang profil dari Organisasi Kemahasiswaan BEM KM-UAJ. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix BEM KM-UAJ',
 })
 

@@ -179,13 +179,11 @@
           hover:shadow-bemkmuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
-            <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
-          </svg>
+          <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
         </NuxtLink>
       </div>
     </section>
-    <section v-if="period" id="home-program-highlight" class="
+    <section id="home-program-highlight" class="
       flex justify-center
     ">
       <div class="
@@ -213,12 +211,10 @@
             hover:shadow-bemkmuaj-orange-shadow-sm
             transition-all duration-200 ease-in-out
           ">
-            <svg class="h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
-              <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
-            </svg>
+            <Icons name="trending_flat" class="h-[1.5rem]"/>
           </NuxtLink>
         </div>
-        <div class="
+        <div v-if="period" class="
           relative
           w-full xl:w-[60%]
           bg-bemkmuaj-black
@@ -272,9 +268,7 @@
           hover:shadow-bemkmuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <svg class="h-[1.25rem] sm:h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 9">
-            <path d="m14.5,9l-1.43-1.4,2.1-2.1H0v-2h15.18l-2.08-2.1,1.43-1.4,4.48,4.5-4.5,4.5Z" style="stroke-width: 0px;"/>
-          </svg>
+          <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
         </NuxtLink>
       </div>
     </section>
@@ -289,7 +283,6 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Halaman Utama Situs BEM KM-UAJ',
   description: 'Halaman ini menjelaskan garis besar dari Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja BEM KM-UAJ',
 })
 
@@ -384,6 +377,12 @@ onUnmounted(() => {
 
   .carousel__next{
     @apply right-4;
+  }
+
+  .carousel__pagination-button {
+    &::after{
+      @apply bg-bemkmuaj-white hover:bg-bemkmuaj-light-gray;
+    }
   }
 
   .carousel__pagination-button {

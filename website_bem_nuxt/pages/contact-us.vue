@@ -276,7 +276,6 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Halaman Hubungi Kami Situs BEM KM-UAJ',
   description: 'Halaman ini mamaparkan cara menghubungi Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi BEM KM-UAJ',
 })
 

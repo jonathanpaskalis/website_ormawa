@@ -31,7 +31,7 @@
     //   }
     // ]
   })
-
+  
   onMounted(() => {
     const { analytics } = useFirebase();
   })

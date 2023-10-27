@@ -235,7 +235,7 @@
           PROGRAM KERJA
         </h2>
         <div class="
-        flex flex-col justify-center items-center gap-y-8 lg:gap-y-16
+          flex flex-col justify-center items-center gap-y-8 lg:gap-y-16
         ">
           <div v-if="period" v-for="candidate in period.candidates" class="
             flex flex-col gap-4 lg:gap-8
@@ -546,44 +546,224 @@
       pointer-events-none
     ">
       <div class="
-        flex justify-center items-center
-        min-h-screen sm:min-h-full
+        flex justify-center items-center 
+        w-full h-full
       ">
         <div class="
           container-bemkmuaj
-          relative
-          h-max
-          border-[0.15rem] border-bemkmuaj-orange-glow rounded-[0.5rem]
-          bg-bemkmuaj-black
+          flex flex-col justify-center items-center
+          w-full h-full
         ">
-          <form @submit.prevent="submitVote" class="
-            grid grid-cols-1 justify-center gap-4
+          <button v-if="!isUploading" @click.prevent="closeVoteForm" class="
+            flex justify-center items-center gap-4
+            w-full h-8
+            border-[0.15rem] border-b-0 border-transparent hover:border-bemkmuaj-orange-glow rounded-t-[0.5rem]
+            bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
+            hover:shadow-bemkmuaj-orange-shadow-sm
+            text-[1.2rem] text-bemkmuaj-black hover:text-bemkmuaj-orange
+            fill-bemkmuaj-black hover:fill-bemkmuaj-orange
+            transition-all duration-100 ease-in-out
           ">
-            <div class="
-              flex flex-col
+            <Icons name="close" class="h-[1.2rem]" />
+            <span class="
+              font-Montserrat-Bold 
+              overflow-hidden
             ">
-              <label for="email" class="
-                text-bemkmuaj-white
-              ">
-                Email Student Microsoft:
-              </label>
-              <input type="email" id="email" v-model="voteFormData.email" required>
-              <span v-if="!formEmailIsValid && voteFormData.email!==''" class="text-red-600">
-                Masukan email yang valid
-              </span>
-            </div>
-            <div class="
-              flex flex-col
+              Tutup Form
+            </span>
+          </button>
+          <div class="
+            w-full max-h-[90%]
+            p-4
+            border-[0.15rem] border-bemkmuaj-orange-glow rounded-b-[0.5rem]
+            bg-bemkmuaj-black
+            shadow-bemkmuaj-orange-shadow-sm
+            overflow-y-auto
+            overflow-x-hidden
+          ">
+            <form @submit.prevent="submitVote" class="
+              grid grid-cols-1 justify-center gap-4
             ">
-              <span class="
-                text-bemkmuaj-white
-              ">
-                Foto KIM:
-              </span>
               <div class="
-                flex items-center gap-x-1
+                flex flex-col
               ">
-                <label for="file" class="
+                <label for="email" class="
+                  text-bemkmuaj-white
+                ">
+                  Email Student Microsoft:
+                </label>
+                <input type="email" id="email" v-model="voteFormData.email" required>
+                <span v-if="!formEmailIsValid && voteFormData.email!==''" class="text-red-600">
+                  Masukan email yang valid
+                </span>
+              </div>
+              <div class="
+                flex flex-col
+              ">
+                <span class="
+                  text-bemkmuaj-white
+                ">
+                  Foto KIM:
+                </span>
+                <div class="
+                  flex items-center gap-x-1
+                ">
+                  <label for="file" class="
+                    flex justify-center items-center
+                    w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                    border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
+                    bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
+                    hover:shadow-bemkmuaj-orange-shadow-sm
+                    text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                    transition-all duration-100 ease-in-out
+                    cursor-pointer
+                  ">
+                    Unggah
+                  </label>
+                  <input @change.prevent="checkFormFile" ref="KIMFile" type="file" id="file" name="file" accept=".jpg" required class="w-0 h-0 overflow-hidden">
+                  <span v-if="formFileIsValid" class="text-bemkmuaj-orange">
+                    {{ KIMFile.files[0].name }}
+                  </span>
+                </div>
+                <span v-if="!formFileIsValid && !formFileFirstTime" class="text-red-600">
+                  Masukan file foto KIM
+                </span>
+              </div>
+              <div class="
+                flex flex-col
+              ">
+                <label for="vote-value" class="
+                  text-bemkmuaj-white
+                ">
+                  Pilihan Paslon
+                </label>
+                <div v-if="period" class="
+                  self-center flex flex-col
+                  w-max
+                  border-[0.15rem] border-bemkmuaj-gold rounded-[2rem]
+                  transistion-all duration-100 eas-in-out
+                  overflow-hidden
+                ">
+                  <div class="
+                    grid grid-cols-2
+                    bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
+                  ">
+                    <div v-for="member in period.candidates[returnVoteValueInt(voteFormData.voteValue)].members" :key="`member-${period.candidates[returnVoteValueInt(voteFormData.voteValue)].number}-${member.name}`" class="
+                      board-member-profile
+                      flex flex-col justify-self-center
+                      w-[6rem] h-[7rem]
+                      transition-all duration-200 ease-in-out
+                    ">
+                      <div class="
+                        relative
+                        flex justify-center
+                        w-full h-full
+                      ">
+                        <img :src="member.photo" alt="" class="
+                          absolute bottom-0
+                          w-[90%]
+                          transition-all duration-200 ease-in-out
+                        " />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="
+                    grid grid-cols-2
+                    bg-gradient-to-br from-bemkmuaj-orange via-bemkmuaj-gold to-bemkmuaj-white to-[125%]
+                  ">
+                    <div class="
+                      col-span-2
+                      justify-self-center
+                      w-full
+                      border-bemkmuaj-black
+                      text-[1.2rem] xs:text-[1.5rem] text-center text-bemkmuaj-black font-Panton-BlackCaps
+                      transition-all  duration-100 ease-in-out
+                    ">
+                      PASLON {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].number }}
+                    </div>
+                    <div class="
+                      col-span-2 flex flex-col items-center gap-4
+                      w-full
+                      p-4 pt-0
+                      border-bemkmuaj-black
+                    ">
+                      <div class="
+                        grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 md:gap-4
+                      ">
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold  
+                        ">
+                          Nama Calon Ketua
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold 
+                        ">
+                          :
+                        </span>
+                        <span class="
+                          col-span-2 sm:col-span-1
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Medium
+                        ">
+                          {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[0].name }}
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold  
+                        ">
+                          NIM Calon Ketua
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold 
+                        ">
+                          :
+                        </span>
+                        <span class="
+                          col-span-2 sm:col-span-1
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Medium
+                        ">
+                          {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[0].campusID }}
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold  
+                        ">
+                          Nama Calon Wakil Ketua
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold 
+                        ">
+                          :<br>
+                        </span>
+                        <span class="
+                          col-span-2 sm:col-span-1
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Medium
+                        ">
+                          {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[1].name }}
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold  
+                        ">
+                          NIM Calon Wakil Ketua
+                        </span>
+                        <span class="
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Bold 
+                        ">
+                          :
+                        </span>
+                        <span class="
+                          col-span-2 sm:col-span-1
+                          text-[0.8rem] xs:text-[1.2rem] font-Montserrat-Medium
+                        ">
+                          {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[1].campusID }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="
+                flex justify-center
+                w-full
+              ">
+                <button v-if="!isUploading && !uploadSucess" type="submit" @click="checkFormFile" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
@@ -591,194 +771,28 @@
                   hover:shadow-bemkmuaj-orange-shadow-sm
                   text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
-                  cursor-pointer
                 ">
-                  Unggah
-                </label>
-                <input @change.prevent="checkFormFile" ref="KIMFile" type="file" id="file" name="file" accept=".jpg" required class="w-0 h-0 overflow-hidden">
-                <span v-if="formFileIsValid" class="text-bemkmuaj-orange">
-                  {{ KIMFile.files[0].name }}
-                </span>
-              </div>
-              <span v-if="!formFileIsValid && !formFileFirstTime" class="text-red-600">
-                Masukan file foto KIM
-              </span>
-            </div>
-            <div class="
-              flex flex-col
-            ">
-              <label for="vote-value" class="
-                text-bemkmuaj-white
-              ">
-                Pilihan Paslon
-              </label>
-              <div v-if="period" class="
-                self-center flex flex-col
-                w-max
-                border-[0.15rem] border-bemkmuaj-gold rounded-[2rem]
-                transistion-all duration-100 eas-in-out
-                overflow-hidden
-              ">
-                <div class="
-                  grid grid-cols-2
-                  bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
+                  Pilih
+                </button>
+                <div v-if="isUploading && !uploadSucess" class="
+                  flex justify-center items-center gap-4
+                  h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
                 ">
-                  <div v-for="member in period.candidates[returnVoteValueInt(voteFormData.voteValue)].members" :key="`member-${period.candidates[returnVoteValueInt(voteFormData.voteValue)].number}-${member.name}`" class="
-                    board-member-profile
-                    flex flex-col justify-self-center
-                    w-[6rem] h-[7rem]
-                    transition-all duration-200 ease-in-out
-                  ">
-                    <div class="
-                      relative
-                      flex justify-center
-                      w-full h-full
-                    ">
-                      <img :src="member.photo" alt="" class="
-                        absolute bottom-0
-                        w-[90%]
-                        transition-all duration-200 ease-in-out
-                      " />
-                    </div>
-                  </div>
+                  <Icons name="progress" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
+                  Mengunggah
                 </div>
-                <div class="
-                  grid grid-cols-2
-                  bg-gradient-to-br from-bemkmuaj-orange via-bemkmuaj-gold to-bemkmuaj-white to-[125%]
+                <div v-if="!isUploading && uploadSucess" class="
+                  flex justify-center items-center gap-4
+                  h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
                 ">
-                  <div class="
-                    col-span-2
-                    justify-self-center
-                    w-full
-                    border-bemkmuaj-black
-                    text-[1.2rem] xs:text-[1.5rem] text-center text-bemkmuaj-black font-Panton-BlackCaps
-                    transition-all  duration-100 ease-in-out
-                  ">
-                    PASLON {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].number }}
-                  </div>
-                  <div class="
-                    col-span-2 flex flex-col items-center gap-4
-                    w-full
-                    p-4 pt-0
-                    border-bemkmuaj-black
-                  ">
-                    <div class="
-                      grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 md:gap-4
-                    ">
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
-                      ">
-                        Nama Calon Ketua
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
-                      ">
-                        :
-                      </span>
-                      <span class="
-                        col-span-2 sm:col-span-1
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
-                      ">
-                        {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[0].name }}
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
-                      ">
-                        NIM Calon Ketua
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
-                      ">
-                        :
-                      </span>
-                      <span class="
-                        col-span-2 sm:col-span-1
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
-                      ">
-                        {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[0].campusID }}
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
-                      ">
-                        Nama Calon Wakil Ketua
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
-                      ">
-                        :<br>
-                      </span>
-                      <span class="
-                        col-span-2 sm:col-span-1
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
-                      ">
-                        {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[1].name }}
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
-                      ">
-                        NIM Calon Wakil Ketua
-                      </span>
-                      <span class="
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
-                      ">
-                        :
-                      </span>
-                      <span class="
-                        col-span-2 sm:col-span-1
-                        text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
-                      ">
-                        {{ period.candidates[returnVoteValueInt(voteFormData.voteValue)].members[1].campusID }}
-                      </span>
-                    </div>
-                  </div>
+                  <Icons name="done" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
+                  Berhasil Unggah
                 </div>
               </div>
-            </div>
-            <div class="
-              flex justify-center
-              w-full
-            ">
-              <button v-if="!isUploading && !uploadSucess" type="submit" @click="checkFormFile" class="
-                flex justify-center items-center
-                w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                hover:shadow-bemkmuaj-orange-shadow-sm
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
-                transition-all duration-100 ease-in-out
-              ">
-                Pilih
-              </button>
-              <div v-if="isUploading && !uploadSucess" class="
-                flex justify-center items-center gap-4
-                h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
-              ">
-                <Icons name="progess" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
-                Mengunggah
-              </div>
-              <div v-if="!isUploading && uploadSucess" class="
-                flex justify-center items-center gap-4
-                h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
-              ">
-                <Icons name="done" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
-                Berhasil Unggah
-              </div>
-            </div>
-            <button v-if="!isUploading" @click.prevent="closeVoteForm" class="
-              absolute top-[-1rem] right-[-1rem]
-              flex justify-center items-center
-              w-8 h-8
-              border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[0.5rem]
-              bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-              hover:shadow-bemkmuaj-orange-shadow-sm
-              fill-bemkmuaj-black hover:fill-bemkmuaj-orange
-              transition-all duration-100 ease-in-out
-            ">
-              <Icons name="close" class="h-[1.2rem]" />
-            </button>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -82,7 +82,7 @@
           transition-all duration-100 ease-in-out
           overflow-hidden
         ">
-          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" :to="{ path: nav.url, hash: subnav.hash }" class="
+          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" :to="{ path: nav.url, hash: subnav.hash }" @click.prevent="enableSmoothScroll(nav.url)" class="
             flex justify-center items-center
             w-full h-12
             p-[0.2rem 0 0.2rem 0]
@@ -194,7 +194,16 @@
     })
   }
 
-  const navs = ref([
+  const enableSmoothScroll = (url) => {
+    if (useRoute().path===url) {
+      document.documentElement.classList.add('scroll-smooth');
+      setTimeout(() => {
+        document.documentElement.classList.remove('scroll-smooth');
+      }, 300); 
+    }
+  }
+
+  const navs = [
     {
       name: 'Beranda',
       url: '/',
@@ -207,7 +216,7 @@
       subnavs: [
         {
           name: 'Tentang Kami',
-          hash: '',
+          hash: '#top',
         },
         {
           name: 'Struktur Kabinet',
@@ -238,7 +247,7 @@
       subnavs: false,
       hideSubNav: true,
     },
-  ]);
+  ];
 </script>
 
 <style lang="scss" scoped>

@@ -167,7 +167,7 @@
           Bagan Struktur Organisasi<br>
           BEM KM-UAJ
         </h2>
-        <div class="">
+        <div class="w-full">
           <NuxtImg src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
         </div>
         <NuxtLink to="/profile" class="
@@ -314,7 +314,6 @@ onMounted(async() => {
 });
 
 onMounted(() => {
-
   let currentI = 0;
 
   const welcomeCarouselImages = welcomeCarousel.value!.querySelectorAll('img')

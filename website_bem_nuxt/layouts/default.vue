@@ -8,7 +8,7 @@
       bg-gradient-to-tr from-bemkmuaj-white via-bemkmuaj-gold via-[25%] to-bemkmuaj-orange
     ">
       <slot />
-      <NuxtLink ref="toTopBtn" :to="{ hash: '#top' }" class="
+      <NuxtLink ref="toTopBtn" :to="{ hash: '#top' }" @click.prevent="enableSmoothScroll" class="
         fixed bottom-[4.5rem] right-8
         flex justify-center items-center
         w-14 h-14
@@ -37,6 +37,15 @@ onMounted(() => {
     if (window.scrollY < 750) hideToTopBtn.value = true;
   })
 })
+
+const enableSmoothScroll = () => {
+  // const routeName = ref(useRoute().name)
+  console.log(useRoute())
+  document.documentElement.classList.add('scroll-smooth');
+  setTimeout(() => {
+    document.documentElement.classList.remove('scroll-smooth');
+  }, 300);
+}
 </script>
 
 

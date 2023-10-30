@@ -9,7 +9,7 @@
     transition-all duration-100 ease-in-out
     z-10
     ">
-    <NuxtLink to="/" class="
+    <NuxtLink to="/" aria-label="Go to the home page" class="
       aspect-[1.1/1]
       flex
       h-16 xl:h-24
@@ -20,7 +20,7 @@
       <img src="/Logo_KM-UAJ.webp" alt="" class="
         h-full">
     </NuxtLink>
-    <NuxtLink to="/" class="
+    <NuxtLink to="/" aria-label="Badan Eksekutif Mahasiswa Keluarga Mahasiswa-UAJ" class="
       flex flex-col justify-center
       w-max
       p-4 xl:pl-8

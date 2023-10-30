@@ -170,7 +170,7 @@
         <div class="w-full">
           <NuxtImg src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
         </div>
-        <NuxtLink to="/profile" class="
+        <NuxtLink to="/profile" aria-label="Go to the profile page" class="
           flex justify-center items-center
           w-28 sm:w-32 h-14 sm:h-16
           border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
@@ -202,7 +202,7 @@
             Program<br v-if="isXLScreen">
             Kerja
           </h2>
-          <NuxtLink v-if="isXLScreen" to="/program" class="
+          <NuxtLink v-if="isXLScreen" to="/program" aria-label="Go to the program page" class="
             flex justify-center items-center
             w-32 h-16
             border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
@@ -235,7 +235,7 @@
                   rounded-r-[1.5rem] 
                   bg-bemkmuaj-white
                 " />
-                <NuxtLink to="/program" class="
+                <NuxtLink :to="`/program/${period.name}/${program.nickname}`" class="
                   flex justify-center items-center
                   w-full h-[4rem]
                   px-20
@@ -259,7 +259,7 @@
           ">
           </div>
         </div>
-        <NuxtLink v-if="!isXLScreen" to="/program" class="
+        <NuxtLink v-if="!isXLScreen" to="/program" aria-label="Go to the program page" class="
           flex justify-center items-center
           w-28 sm:w-32 h-14 sm:h-16
           border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]

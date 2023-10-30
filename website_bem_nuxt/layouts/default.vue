@@ -14,7 +14,7 @@
       ">
       </div>
       <slot />
-      <NuxtLink ref="toTopBtn" :to="{ hash: '#top' }" @click.prevent="enableSmoothScroll" class="
+      <NuxtLink ref="toTopBtn" :to="{ hash: '#top' }" aria-label="Go to the top of the page" @click.prevent="enableSmoothScroll" class="
         fixed bottom-[4.5rem] right-8
         flex justify-center items-center
         w-14 h-14

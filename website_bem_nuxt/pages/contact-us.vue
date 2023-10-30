@@ -188,7 +188,7 @@
               </span>
             </div>
             <div class="h-[15rem] xs:h-[20rem] sm:h-[30rem] 2xl:h-[20rem]">
-              <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!4v1690294942130!6m8!1m7!1smms5t2mTyDD8LJQi6Sk_gw!2m2!1d-6.318058307835942!2d106.6505173535916!3f205.4769897449964!4f9.82345676993208!5f1.5080392418408253" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="streetViewUAJBSD" class="w-full h-full" src="https://www.google.com/maps/embed?pb=!4v1690294942130!6m8!1m7!1smms5t2mTyDD8LJQi6Sk_gw!2m2!1d-6.318058307835942!2d106.6505173535916!3f205.4769897449964!4f9.82345676993208!5f1.5080392418408253" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -250,7 +250,7 @@
                 flex flex-col
                 w-full
               ">
-                <label for="message" class="
+                <label for="subject" class="
                   w-max
                   text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange
                   transition-all duration-100 ease-in-out

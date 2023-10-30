@@ -98,6 +98,10 @@
               </span>
             </div>
           </div>
+          <div v-else class="
+            h-[10rem] xs:h-[13rem] sm:h-[22rem] lg:h-[26rem] 2xl:h-[32rem]
+          ">
+          </div>
         </div>
       </div>
     </section>
@@ -216,6 +220,7 @@
       </div>
     </section>
     <section id="program" class="
+      scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
       ">
       <div class="
@@ -822,14 +827,29 @@ definePageMeta({
   }
 })
 
-import { addDoc, doc, onSnapshot, setDoc, collection } from 'firebase/firestore';
+// Data Fetching
+
+import { addDoc, doc, onSnapshot, collection } from 'firebase/firestore';
+import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
 
 const period = ref<any>(null);
+
+
+onMounted(async() => {
+  const { db } = useFirebase();
+  const docRef = doc(db, 'periods', 'gLUTVq5uOd7iRw2QqC7P');
+  onSnapshot(docRef, (snap) => {
+    period.value = snap.data();
+  })
+})
+
+// Form Logic
+
 const showForm = ref(false);
+const voteForm = ref<any>(null);
 
 const KIMFile = ref<any>(null);
 const voteValue = ref<string>('0');
-const voteForm = ref<any>(null);
 
 const voteFormData = ref({
   email: '',
@@ -839,6 +859,9 @@ const voteFormData = ref({
 const formEmailIsValid = ref<boolean>(false);
 const formFileIsValid = ref<boolean>(false);
 const formFileFirstTime = ref<boolean>(true);
+
+const isUploading = ref<boolean>(false);
+const uploadSucess = ref<boolean>(false);
 
 const openVoteForm = (vote:string) => {
   showForm.value = true;
@@ -850,19 +873,6 @@ const closeVoteForm = () => {
   showForm.value = false;
 }
 
-const isUploading = ref<boolean>(false);
-const uploadSucess = ref<boolean>(false);
-
-import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
-
-onMounted(async() => {
-  const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'gLUTVq5uOd7iRw2QqC7P');
-  onSnapshot(docRef, (snap) => {
-    period.value = snap.data();
-  })
-})
-
 const submitVote = async () => {
   const { emailIsValid } = checkFormEmail(voteFormData.value.email);
   formEmailIsValid.value = emailIsValid.value;
@@ -872,15 +882,15 @@ const submitVote = async () => {
     const imageRef = firebaseRef(storage, `test_text_recognition/${returnEmailPart(voteFormData.value.email)}.jpg`);
     const imageFile = KIMFile.value.files[0];
     isUploading.value=true;
-    uploadBytes(imageRef, imageFile).then((snap) => {
-      addDoc(collection(db, 'test_pemilu'), {
-        email: voteFormData.value.email,
-        voteValue: voteFormData.value.voteValue,
-      }).then((snap => {
+    addDoc(collection(db, 'test_pemilu'), {
+      email: voteFormData.value.email,
+      voteValue: voteFormData.value.voteValue,
+    }).then((snap => {
+      uploadBytes(imageRef, imageFile).then((snap) => {
         isUploading.value=false;
         uploadSucess.value=true;
-      }))
-    })
+      })
+    }))
   }
 }
 
@@ -888,49 +898,6 @@ const returnEmailPart = (email:string) => {
   const emailPart = email.split('@')[0];
   return emailPart;
 }
-
-const isSmallScreen = ref(false);
-const isXLScreen = ref(false);
-const is3XLScreen = ref(false);
-
-const updateScreenSize = () => {
-  isSmallScreen.value = window.innerWidth >= 640;
-  isXLScreen.value = window.innerWidth >= 1280;
-  is3XLScreen.value = window.innerWidth >= 1920;
-}
-
-onMounted(() => {
-  isSmallScreen.value = window.innerWidth >= 640;
-  isXLScreen.value = window.innerWidth >= 1280;
-  is3XLScreen.value = window.innerWidth >= 1920;
-  window.addEventListener('resize', updateScreenSize);
-  watch(showForm, ()=> {
-    const voteFormClasses = voteForm.value.classList;
-    if (showForm.value) {
-      voteFormClasses.add('opacity-100');
-      voteFormClasses.remove('pointer-events-none');
-      voteFormClasses.remove('opacity-0');
-      voteFormClasses.remove('translate-x-full');
-    }
-    if (!showForm.value) {
-      voteFormClasses.add('opacity-0');
-      voteFormClasses.add('pointer-events-none');
-      voteFormClasses.remove('opacity-100');
-      setTimeout(() => {
-        voteFormClasses.add('translate-x-full');
-      }, 200)
-    }
-  })
-  watch(voteFormData.value, () => {
-    const { emailIsValid } = checkFormEmail(voteFormData.value.email);
-    formEmailIsValid.value = emailIsValid.value;
-    console.log(emailIsValid.value);
-  });
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateScreenSize);
-})
 
 // P: President, VP: Vice President
 const candidates = {
@@ -958,7 +925,6 @@ const returnVoteValueInt = (number:string) => {
   else return 0;
 }
 
-
 const checkFormFile = () => {
   formFileFirstTime.value = false;
   if (KIMFile.value.files.length === 1) formFileIsValid.value = true; 
@@ -975,6 +941,52 @@ const resetForm = () => {
   isUploading.value = false;
   uploadSucess.value = false;
 }
+
+const voteFormTransition = () => {
+  const voteFormClasses = voteForm.value.classList
+  if (showForm.value) {
+      voteFormClasses.add('opacity-100');
+      voteFormClasses.remove('pointer-events-none');
+      voteFormClasses.remove('opacity-0');
+      voteFormClasses.remove('translate-x-full');
+    }
+    if (!showForm.value) {
+      voteFormClasses.add('opacity-0');
+      voteFormClasses.add('pointer-events-none');
+      voteFormClasses.remove('opacity-100');
+      setTimeout(() => {
+        voteFormClasses.add('translate-x-full');
+      }, 200)
+    }
+}
+
+// Event listeners
+
+const isSmallScreen = ref(false);
+const isXLScreen = ref(false);
+const is3XLScreen = ref(false);
+
+const updateScreenSize = () => {
+  isSmallScreen.value = window.innerWidth >= 640;
+  isXLScreen.value = window.innerWidth >= 1280;
+  is3XLScreen.value = window.innerWidth >= 1920;
+}
+
+onMounted(() => {
+  isSmallScreen.value = window.innerWidth >= 640;
+  isXLScreen.value = window.innerWidth >= 1280;
+  is3XLScreen.value = window.innerWidth >= 1920;
+  window.addEventListener('resize', updateScreenSize);
+  watch(showForm, voteFormTransition)
+  watch(voteFormData.value, () => {
+    const { emailIsValid } = checkFormEmail(voteFormData.value.email);
+    formEmailIsValid.value = emailIsValid.value;
+  });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScreenSize);
+})
 
 </script>
 

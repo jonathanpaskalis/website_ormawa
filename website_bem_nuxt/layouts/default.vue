@@ -4,9 +4,15 @@
     transition-all duration-100 ease-in-out
   ">
     <Navbar />
-    <main class="
-      bg-gradient-to-tr from-bemkmuaj-white via-bemkmuaj-gold via-[25%] to-bemkmuaj-orange
-    ">
+    <main>
+      <div class="
+        fixed top-16 xl:top-24 left-0 right-0 bottom-0
+        [background-size:_400%]
+        [background-image:_linear-gradient(45deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,1)_0%,_rgba(212,156,67,1)_12.5%,_rgba(241,90,34,1)_50%,_rgba(212,156,67,1)_87.5%,_rgba(255,255,255,1)_100%)]
+        animate-[bg-flow-animation_120s_ease-in-out_infinite] 
+        z-[-1]
+      ">
+      </div>
       <slot />
       <NuxtLink ref="toTopBtn" :to="{ hash: '#top' }" @click.prevent="enableSmoothScroll" class="
         fixed bottom-[4.5rem] right-8

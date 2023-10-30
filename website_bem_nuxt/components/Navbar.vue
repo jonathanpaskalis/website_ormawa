@@ -65,7 +65,7 @@
           transition-all duration-100 ease-in-out
         " :class="{
           'rounded-[1.5rem_1.5rem_0_0]': nav.subnavs,
-          'rounded-[1.5rem]': !nav.subnavs
+          'rounded-[1.5rem]': !nav.subnavs,
         }">
           {{ nav.name.toUpperCase() }}
           <Icons v-if="nav.subnavs" name="expand_more" class="
@@ -156,7 +156,7 @@
         " :class="{ 
           'h-36 border-b' : !nav.hideSubNav
           }">
-          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" @click.prevent="closeMNav" :to="{ path: nav.url, hash: subnav.hash }" class="
+          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" @click.prevent="closeMNav(); enableSmoothScroll(nav.url);" :to="{ path: nav.url, hash: subnav.hash }" class="
             w-full h-12
             flex justify-center items-center
             hover:bg-bemkmuaj-dark-gray
@@ -171,7 +171,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
   const hideMNav = ref(true);
 
   const toggleMNav = () => {
@@ -184,7 +184,7 @@
     closeMSubNav();
   }
 
-  const toggleMSubNav = (nav) => {
+  const toggleMSubNav = (nav:any) => {
     nav.hideSubNav = !nav.hideSubNav;
   }
 
@@ -194,7 +194,7 @@
     })
   }
 
-  const enableSmoothScroll = (url) => {
+  const enableSmoothScroll = (url:string) => {
     if (useRoute().path===url) {
       document.documentElement.classList.add('scroll-smooth');
       setTimeout(() => {
@@ -203,11 +203,10 @@
     }
   }
 
-  const navs = [
+  const navs = ref([
     {
       name: 'Beranda',
       url: '/',
-      subnavs: false,
       hideSubNav: true,
     },
     {
@@ -232,22 +231,33 @@
     {
       name: 'Program Kerja',
       url: '/program',
-      subnavs: false,
       hideSubNav: true,
     },
     {
       name: 'Hubungi Kami',
       url: '/contact-us',
-      subnavs: false,
       hideSubNav: true,
     },
     {
       name: 'Pemilu',
       url: '/election',
-      subnavs: false,
       hideSubNav: true,
+      subnavs: [
+        {
+          name: 'Profil, Visi, & Misi',
+          hash: '#top',
+        },
+        {
+          name: 'Program Kerja',
+          hash: '#program',
+        },
+        {
+          name: 'Gunakan Hak Suara',
+          hash: '#vote',
+        },
+      ]
     },
-  ];
+  ]);
 </script>
 
 <style lang="scss" scoped>

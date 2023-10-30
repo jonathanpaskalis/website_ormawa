@@ -8,6 +8,7 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
     "./app.vue",
+    "./error.vue",
   ],
   theme: {
     backgroundSize: {
@@ -107,6 +108,20 @@ module.exports = {
           "100%": {
             opacity: 1,
             filter: "drop-shadow(0 0 2rem rgba(0,0,0,0.5))"
+          }
+        },
+        "bg-flow-animation": {
+          "0%": {
+            "background-position": "center center",
+          },
+          "25%": {
+            "background-position": "left bottom",
+          },
+          "75%": {
+            "background-position": "right top",
+          },
+          "100%": {
+            "background-position": "center center",
           }
         }
       },

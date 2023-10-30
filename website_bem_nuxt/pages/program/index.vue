@@ -41,7 +41,7 @@
           <div class="
             grid grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-8 
           ">
-            <NuxtLink v-for="program in period.programs" :key="`program-${program.name}`" :to="`/program/${period.name}/${program.name}`" class="
+            <NuxtLink v-for="program in period.programs" :key="`program-${program.name}`" :to="`/program/${period.name}/${program.nickname}`" class="
               flex justify-center items-center justify-self-center
               w-[7rem] xs:w-[10rem] sm:w-[15rem]
               p-4
@@ -102,7 +102,7 @@ onMounted(async() => {
   const { db } = useFirebase();
   const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
   onSnapshot(docRef, (snap) => {
-      period.value = snap.data();
+    period.value = snap.data();
   });
 });
 

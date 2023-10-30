@@ -405,12 +405,8 @@ const uploadFail = ref<boolean>(false);
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 
 const submitForm = async () => {
-  if (formData.value.isAnAspiration) {
-    const { emailIsValid } = checkFormEmail(formData.value.email);
-    formEmailIsValid.value = emailIsValid.value;
-  }
-
-  if (formEmailIsValid.value) {
+  checkFormData();
+  if (formNameIsValid.value && formEmailIsValid.value && formSubjectIsValid.value && formMessageIsValid.value) {
     const { db } = useFirebase();
     isUploading.value=true;
     const folder = ref<string>('')

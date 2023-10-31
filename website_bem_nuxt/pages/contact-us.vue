@@ -396,7 +396,7 @@ const formData = ref({
 const formEmailIsValid = ref<boolean>(false);
 const formNameIsValid = ref<boolean>(false);
 const formSubjectIsValid = ref<boolean>(false);
-const formMessageIsValid = ref<boolean>(false)
+const formMessageIsValid = ref<boolean>(false);
 
 const isUploading = ref<boolean>(false);
 const uploadSucess = ref<boolean>(false);
@@ -471,13 +471,11 @@ const resetForm = () => {
   isUploading.value = false;
   uploadSucess.value = false;
   uploadFail.value = false;
-  formData.value = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    isAnAspiration: false,
-  }
+  formData.value.name=''; 
+  formData.value.email=''; 
+  formData.value.subject=''; 
+  formData.value.message=''; 
+  formData.value.isAnAspiration=false;
 }
 
 const email = ref<HTMLElement | null>(null);

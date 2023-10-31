@@ -25,7 +25,6 @@ export default defineNuxtConfig({
         '/profile',
         '/program',
         '/contact-us',
-        '/election',
       ]
     }
   },

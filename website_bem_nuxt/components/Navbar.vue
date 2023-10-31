@@ -238,25 +238,6 @@
       url: '/contact-us',
       hideSubNav: true,
     },
-    {
-      name: 'Pemilu',
-      url: '/election',
-      hideSubNav: true,
-      subnavs: [
-        {
-          name: 'Profil, Visi, & Misi',
-          hash: '#top',
-        },
-        {
-          name: 'Program Kerja',
-          hash: '#program',
-        },
-        {
-          name: 'Gunakan Hak Suara',
-          hash: '#vote',
-        },
-      ]
-    },
   ]);
 </script>
 

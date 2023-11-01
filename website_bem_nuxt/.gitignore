@@ -23,5 +23,8 @@ logs
 .env.*
 !.env.example
 
+#firebase
+.firebase
+
 bem-km-uaj-official-website-firebase-adminsdk-c0gmu-8c1afdb835.json
 service-account.json

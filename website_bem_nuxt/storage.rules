@@ -6,7 +6,7 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
     match /test_text_recognition/{allPaths=**} {
-      allow write: if true;
+      allow create: if true;
       allow read: if false;
     }
 

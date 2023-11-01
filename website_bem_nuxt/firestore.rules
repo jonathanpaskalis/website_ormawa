@@ -4,11 +4,21 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /test_pemilu/{document=**} {
       allow read: if false; 
-      allow write: if true;
+      allow create: if true;
+    }
+    
+    match /form_biasa/{document=**} {
+      allow read: if false; 
+      allow create: if true;
+    }
+    
+    match /form_aspirasi/{document=**} {
+      allow read: if false; 
+      allow create: if true;
     }
 
     match /periods/{document=**} {
-      allow read: if true; 
+      allow get: if true; 
       allow write: if false;
     }
     

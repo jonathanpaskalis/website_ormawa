@@ -41,7 +41,7 @@
           <div class="
             grid grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-8 
           ">
-            <NuxtLink v-for="program in period.programs" :key="`program-${program.name}`" :to="`/program/${period.name}/${program.nickname}`" class="
+            <NuxtLink v-for="program in period.programs" :key="`program-${program.name}`" :to="`/program/${period.name}/${program.nickname}`" :aria-label="`Go to ${program.name} program page`" class="
               flex justify-center items-center justify-self-center
               w-[7rem] xs:w-[10rem] sm:w-[15rem]
               p-4

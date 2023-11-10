@@ -252,8 +252,8 @@
           hash: '#program',
         },
         {
-          name: 'Gunakan Hak Suara',
-          hash: '#vote',
+          name: 'Data Diri',
+          hash: '#personal-data',
         },
       ]
     },

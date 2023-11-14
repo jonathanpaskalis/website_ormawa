@@ -86,7 +86,7 @@
                   Instagram
                 </NuxtLink>
               </div>
-              <span ref="eksternal" class="
+              <span ref="instagram" class="
                 text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
                 transition-all duration-100 ease-in-out
               ">

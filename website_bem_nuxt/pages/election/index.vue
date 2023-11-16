@@ -571,7 +571,7 @@
           ">
             <Icons name="close" class="h-[1.2rem]" />
             <span class="
-              font-Montserrat-Bold 
+              font-Panton-BlackCaps   
               overflow-hidden
             ">
               Tutup Form
@@ -579,15 +579,19 @@
           </button>
           <div class="
             w-full max-h-[90%]
-            p-4
+            p-1
             border-[0.15rem] border-bemkmuaj-orange-glow rounded-b-[0.5rem]
             bg-bemkmuaj-black
             shadow-bemkmuaj-orange-shadow-sm
-            overflow-y-auto
-            overflow-x-hidden
+            transition-all duration-100 ease-in-out
           ">
             <form @submit.prevent="submitVote" class="
               grid grid-cols-1 justify-center gap-4
+              w-full max-h-full
+              p-3
+              scrollbar scrollbar-w-[6px] scrollbar-thumb-rounded-md scrollbar-thumb-bemkmuaj-white hover:scrollbar-thumb-neutral-400 scrollbar-track-bemkmuaj-black 
+              overflow-y-auto
+              overflow-x-hidden
             ">
               <div class="
                 flex flex-col

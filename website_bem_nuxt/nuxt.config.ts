@@ -12,12 +12,12 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    firebase: {
-      gen: 2,
-      httpsOptions: {
-        region: 'asia-southeast2',
-      }
-    },
+    // firebase: {
+    //   gen: 2,
+    //   httpsOptions: {
+    //     region: 'asia-southeast2',
+    //   }
+    // },
     prerender: {
       crawlLinks: true,
       routes: [
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['vue3-carousel-nuxt', "@nuxt/image"],
+  modules: ['vue3-carousel-nuxt', '@nuxt/image', '@nuxtjs/robots'],
   runtimeConfig: {
     public: {
       FB_API_KEY: process.env.FB_API_KEY,

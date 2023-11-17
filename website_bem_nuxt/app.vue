@@ -10,7 +10,7 @@
   useHead({
     link: [
       {
-        rel: 'icon', type: 'image/webp', href:'/Logo_BEM_KM-UAJ.webp'
+        rel: 'icon', type: 'image/webp', href:'/images/organization_logos/Logo_BEM_KM-UAJ.webp'
       }
     ],
     htmlAttrs: {

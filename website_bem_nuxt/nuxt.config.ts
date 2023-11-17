@@ -12,12 +12,12 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    // firebase: {
-    //   gen: 2,
-    //   httpsOptions: {
-    //     region: 'asia-southeast2',
-    //   }
-    // },
+    firebase: {
+      gen: 2,
+      httpsOptions: {
+        region: 'asia-southeast2',
+      },
+    },
     publicAssets: [
       {
         baseURL: 'images',

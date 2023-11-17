@@ -18,6 +18,34 @@ export default defineNuxtConfig({
     //     region: 'asia-southeast2',
     //   }
     // },
+    publicAssets: [
+      {
+        baseURL: 'board_members',
+        dir: 'public/board_members',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'election_candidates',
+        dir: 'public/election_candidates',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'home_welcome_carousel',
+        dir: 'public/home_welcome_carousel',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'program_documentations',
+        dir: 'public/program_documentations',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'program_logos',
+        dir: 'program_logos',
+        maxAge: 60*60*24*7,
+      },
+    ],
+    compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
       routes: [

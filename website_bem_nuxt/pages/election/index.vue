@@ -79,8 +79,8 @@
             </div>
             <div class="
               paslon-name
-              flex flex-col items-center
-              w-full
+              flex flex-col justify-center items-center
+              w-full h-16 xs:h-24 md:h-[7.5rem]
               px-4
               bg-bemkmuaj-orange bg-opacity-0
               transition-all duration-100 ease-in-out
@@ -89,12 +89,12 @@
               'rounded-br-[1rem]' : candidate.number === '2',
             }">
               <span v-for="member in candidate.members" class="
-                text-center text-bemkmuaj-white font-Montserrat-Medium
+                text-center text-bemkmuaj-white
               " :class="{
-                'text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem]' : member.position==='Calon Ketua',
-                'text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem]' : member.position==='Calon Wakil Ketua',
+                'text-[0.75rem] 2xs:text-[0.9rem] xs:text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] font-Montserrat-Bold' : member.position==='Calon Ketua',
+                'text-[0.7rem] 2xs:text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] md:text-[1.4rem] font-Montserrat-Regular' : member.position==='Calon Wakil Ketua',
               }">
-                {{ member.name }}
+                {{ returnFirstTwoNames(member.name) }}
               </span>
             </div>
           </div>
@@ -472,7 +472,7 @@
                     col-span-2 sm:col-span-1
                     text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
                   ">
-                    Fakultas XXXX
+                    {{ member.faculty }}
                   </span>
                   <span class="
                     text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
@@ -838,7 +838,6 @@ import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
 
 const period = ref<any>(null);
 
-
 onMounted(async() => {
   const { db } = useFirebase();
   const docRef = doc(db, 'periods', 'gLUTVq5uOd7iRw2QqC7P');
@@ -903,26 +902,6 @@ const returnEmailPart = (email:string) => {
   return emailPart;
 }
 
-// P: President, VP: Vice President
-const candidates = {
-  showPCandidate1: ref(true),
-  showPCandidate2: ref(true),
-}
-
-const showCandidate = (number:string, position:string) => {
-  if (number==='1' && position==='Calon Ketua') candidates.showPCandidate1.value=true;
-  if (number==='1' && position==='Calon Wakil Ketua') candidates.showPCandidate1.value=false;
-  if (number==='2' && position==='Calon Ketua') candidates.showPCandidate2.value=true;
-  if (number==='2' && position==='Calon Wakil Ketua') candidates.showPCandidate2.value=false;
-}
-
-const returnShowValue = (number:string, position:string) => {
-  if (number==='1' && position==='Calon Ketua') return candidates.showPCandidate1.value;
-  if (number==='1' && position==='Calon Wakil Ketua') return !candidates.showPCandidate1.value;
-  if (number==='2' && position==='Calon Ketua') return candidates.showPCandidate2.value;
-  if (number==='2' && position==='Calon Wakil Ketua') return !candidates.showPCandidate2.value;
-}
-
 const returnVoteValueInt = (number:string) => {
   if (number==='1') return 0;
   else if (number==='2') return 1;
@@ -962,6 +941,33 @@ const voteFormTransition = () => {
         voteFormClasses.add('translate-x-full');
       }, 200)
     }
+}
+
+// UI logic
+
+// P: President, VP: Vice President
+const candidates = {
+  showPCandidate1: ref(true),
+  showPCandidate2: ref(true),
+}
+
+const showCandidate = (number:string, position:string) => {
+  if (number==='1' && position==='Calon Ketua') candidates.showPCandidate1.value=true;
+  if (number==='1' && position==='Calon Wakil Ketua') candidates.showPCandidate1.value=false;
+  if (number==='2' && position==='Calon Ketua') candidates.showPCandidate2.value=true;
+  if (number==='2' && position==='Calon Wakil Ketua') candidates.showPCandidate2.value=false;
+}
+
+const returnShowValue = (number:string, position:string) => {
+  if (number==='1' && position==='Calon Ketua') return candidates.showPCandidate1.value;
+  if (number==='1' && position==='Calon Wakil Ketua') return !candidates.showPCandidate1.value;
+  if (number==='2' && position==='Calon Ketua') return candidates.showPCandidate2.value;
+  if (number==='2' && position==='Calon Wakil Ketua') return !candidates.showPCandidate2.value;
+}
+
+const returnFirstTwoNames = (name:string) => {
+  const firstTwoNames = `${name.split(' ')[0]} ${name.split(' ')[1]}`;
+  return firstTwoNames;
 }
 
 // Event listeners

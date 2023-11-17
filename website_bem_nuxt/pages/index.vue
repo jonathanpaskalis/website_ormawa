@@ -11,9 +11,9 @@
         w-full h-full
         overflow-hidden
       ">
-        <NuxtImg src="/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out" />
-        <NuxtImg src="/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
-        <NuxtImg src="/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
+        <img src="/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out" />
+        <img src="/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
+        <img src="/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
       </div>
       <div class="
         absolute
@@ -36,7 +36,7 @@
             max-w-[50%] h-full
             drop-shadow-bemkmuaj-black-shadow
           ">
-            <NuxtImg src="/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full" />
+            <img src="/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full" />
           </div>
           <div class="
             flex flex-col justify-center items-center
@@ -47,8 +47,8 @@
               flex justify-center
               w-full max-h-full
             ">
-              <NuxtImg src="/board_members/Ketua_Angel.webp" alt="" class="w-[40%]" />
-              <NuxtImg src="/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]" />
+              <img src="/board_members/Ketua_Angel.webp" alt="" class="w-[40%]" />
+              <img src="/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]" />
             </div>
             <h1 class="
               w-full
@@ -168,7 +168,7 @@
           BEM KM-UAJ
         </h2>
         <div class="w-full">
-          <NuxtImg src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
+          <img src="/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
         </div>
         <NuxtLink to="/profile" aria-label="Go to the profile page" class="
           flex justify-center items-center

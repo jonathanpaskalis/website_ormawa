@@ -144,7 +144,7 @@
             </NuxtLink>
           </div>
         </div>
-        <button @click.prevent="toggleMNav" class="
+        <button @click.prevent="toggleMNav" aria-label="Mobile Navbar Button" class="
           navmbtn
           hidden sm:flex 3xl:hidden justify-center items-center
           w-10 xl:w-14 h-10 xl:h-14
@@ -273,9 +273,9 @@
           BEM KM-UAJ
         </p>
       </NuxtLink>
-      <button @click.prevent="toggleMNav" class="
+      <button @click.prevent="toggleMNav" aria-label="Mobile Navbar Button" class="
         navmbtn
-        flex justify-center items-center
+        flex sm:hidden justify-center items-center
         w-10 xl:w-14 h-10 xl:h-14
         p-[0.2rem]
         border-solid border-[0.15rem] border-bemkmuaj-white rounded-[0.5rem]

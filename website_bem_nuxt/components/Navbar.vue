@@ -48,11 +48,12 @@
       flex items-center gap-[0.1rem]
       w-full h-full
     ">
-      <div v-for="nav in navs" :key="`nav-${nav.name}`" class="
+      <div v-for="(nav, index) in navs" :key="`nav-${nav.name}`" @mouseenter="setSubNav('show', index, nav.subNavs)" @mouseleave="setSubNav('hide', index, nav.subNavs)" class="
+        selectionJS
         selection
         hidden lg:block
       " :class="{
-        'relative': nav.subnavs
+        'relative': nav.subNavs
       }">
         <NuxtLink :to="nav.url" class="
           nuxtlink
@@ -64,17 +65,17 @@
           text-bemkmuaj-white font-Poppins-SemiBold
           transition-all duration-100 ease-in-out
         " :class="{
-          'rounded-[1.5rem_1.5rem_0_0]': nav.subnavs,
-          'rounded-[1.5rem]': !nav.subnavs,
+          'rounded-[1.5rem_1.5rem_0_0]': nav.subNavs,
+          'rounded-[1.5rem]': !nav.subNavs,
         }">
           {{ nav.name.toUpperCase() }}
-          <Icons v-if="nav.subnavs" name="expand_more" class="
+          <Icons v-if="nav.subNavs" name="expand_more" class="
             h-[0.5rem]
             transition-transform duration-100 ease-in-out
             fill-bemkmuaj-white overflow-hidden
           "/>
         </NuxtLink>
-        <div v-if="nav.subnavs" class="
+        <div v-if="nav.subNavs" class="
           absolute
           flex flex-col justify-center items-center
           w-[9.5rem] h-0
@@ -82,7 +83,7 @@
           transition-all duration-100 ease-in-out
           overflow-hidden
         ">
-          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" :to="{ path: nav.url, hash: subnav.hash }" @click.prevent="enableSmoothScroll(nav.url)" class="
+          <NuxtLink v-for="subNav in nav.subNavs" :key="`subNav-${subNav.name}`" :to="{ path: nav.url, hash: subNav.hash }" @click.prevent="enableSmoothScroll(nav.url)" class="
             flex justify-center items-center
             w-full h-12
             p-[0.2rem 0 0.2rem 0]
@@ -90,7 +91,7 @@
             text-[0.8rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
             transition-all duration-100 ease-in-out
           ">
-            {{ subnav.name }}
+            {{ subNav.name }}
           </NuxtLink>
         </div>
       </div>
@@ -118,7 +119,7 @@
       <div v-for="nav in navs" class="
         mselection
       ">
-        <NuxtLink v-if="!nav.subnavs" @click.prevent="closeMNav" :to="nav.url" class="
+        <NuxtLink v-if="!nav.subNavs" @click.prevent="closeMNav" :to="nav.url" class="
           nuxtlink
           flex justify-center items-center
           w-full h-16
@@ -148,22 +149,32 @@
             '-rotate-180' : !nav.hideSubNav,
           }"/>
         </div>
-        <div v-if="nav.subnavs" class="
+        <div v-if="nav.subNavs" class="
           h-0
           border-solid border-bemkmuaj-white
           transition-all duration-100 ease-in-out
           overflow-hidden
         " :class="{ 
-          'h-36 border-b' : !nav.hideSubNav
-          }">
-          <NuxtLink v-for="subnav in nav.subnavs" :key="`subnav-${subnav.name}`" @click.prevent="closeMNav(); enableSmoothScroll(nav.url);" :to="{ path: nav.url, hash: subnav.hash }" class="
+          'border-b' : !nav.hideSubNav,
+          'h-[3rem]' : !nav.hideSubNav && nav.subNavs.length===1,
+          'h-[6rem]' : !nav.hideSubNav && nav.subNavs.length===2,
+          'h-[9rem]' : !nav.hideSubNav && nav.subNavs.length===3,
+          'h-[12rem]' : !nav.hideSubNav && nav.subNavs.length===4,
+          'h-[15rem]' : !nav.hideSubNav && nav.subNavs.length===5,
+          'h-[18rem]' : !nav.hideSubNav && nav.subNavs.length===6,
+          'h-[21rem]' : !nav.hideSubNav && nav.subNavs.length===7,
+          'h-[24rem]' : !nav.hideSubNav && nav.subNavs.length===8,
+          'h-[27rem]' : !nav.hideSubNav && nav.subNavs.length===9,
+          'h-[30rem]' : !nav.hideSubNav && nav.subNavs.length===10,
+        }">
+          <NuxtLink v-for="subNav in nav.subNavs" :key="`subNav-${subNav.name}`" @click.prevent="closeMNav(); enableSmoothScroll(nav.url);" :to="{ path: nav.url, hash: subNav.hash }" class="
             w-full h-12
             flex justify-center items-center
             hover:bg-bemkmuaj-dark-gray
             text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
             transition-all duration-100 ease-in-out
           ">
-            {{ subnav.name }}
+            {{ subNav.name }}
           </NuxtLink>
         </div>
       </div>
@@ -194,6 +205,24 @@
     })
   }
 
+  const setSubNav = (value:string, index:number, subNavData:any) => {
+    if(subNavData) {
+      const subNav = document.querySelectorAll<HTMLElement>('.selectionJS')[index].children[1] as HTMLElement;
+      if(value==='show') {
+        subNav.classList.remove('border-transparent');
+        subNav.style.height = `${2.5*subNavData.length}rem`;
+        subNav.classList.add('border-bemkmuaj-orange-glow');
+        subNav.classList.add('shadow-bemkmuaj-orange-shadow-sm');
+      }
+      else if (value==='hide') {
+        subNav.style.height = '';
+        subNav.classList.remove('border-bemkmuaj-orange-glow');
+        subNav.classList.remove('shadow-bemkmuaj-orange-shadow-sm');
+        subNav.classList.add('border-transparent');
+      }
+    } 
+  }
+
   const enableSmoothScroll = (url:string) => {
     if (useRoute().path===url) {
       document.documentElement.classList.add('scroll-smooth');
@@ -212,7 +241,7 @@
     {
       name: 'Profil',
       url: '/profile',
-      subnavs: [
+      subNavs: [
         {
           name: 'Tentang Kami',
           hash: '#top',
@@ -250,9 +279,6 @@
         svg {
           @apply -rotate-180 fill-bemkmuaj-orange
         }
-      }
-      div {
-        @apply h-[7.5rem] border-bemkmuaj-orange-glow shadow-bemkmuaj-orange-shadow-sm;
       }
     }
   }

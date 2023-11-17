@@ -1,6 +1,6 @@
 <template>
   <div id="top" class="
-    pt-16 xl:pt-24
+    sm:pt-16 xl:pt-24
     transition-all duration-100 ease-in-out
   ">
     <Navbar />
@@ -39,13 +39,12 @@ const hideToTopBtn = ref(true);
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
-    if(window.scrollY >= 750) hideToTopBtn.value = false;
+    if (window.scrollY >= 750) hideToTopBtn.value = false;
     if (window.scrollY < 750) hideToTopBtn.value = true;
   })
 })
 
 const enableSmoothScroll = () => {
-  // const routeName = ref(useRoute().name)
   console.log(useRoute())
   document.documentElement.classList.add('scroll-smooth');
   setTimeout(() => {

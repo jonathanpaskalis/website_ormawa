@@ -12,12 +12,40 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    firebase: {
-      gen: 2,
-      httpsOptions: {
-        region: 'asia-southeast2',
-      }
-    },
+    // firebase: {
+    //   gen: 2,
+    //   httpsOptions: {
+    //     region: 'asia-southeast2',
+    //   }
+    // },
+    publicAssets: [
+      {
+        baseURL: 'board_members',
+        dir: 'public/board_members',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'election_candidates',
+        dir: 'public/election_candidates',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'home_welcome_carousel',
+        dir: 'public/home_welcome_carousel',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'program_documentations',
+        dir: 'public/program_documentations',
+        maxAge: 60*60*24*7,
+      },
+      {
+        baseURL: 'program_logos',
+        dir: 'program_logos',
+        maxAge: 60*60*24*7,
+      },
+    ],
+    compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
       routes: [
@@ -28,7 +56,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['vue3-carousel-nuxt', "@nuxt/image"],
+  modules: ['vue3-carousel-nuxt', '@nuxt/image', '@nuxtjs/robots'],
   runtimeConfig: {
     public: {
       FB_API_KEY: process.env.FB_API_KEY,

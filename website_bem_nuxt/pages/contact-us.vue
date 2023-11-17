@@ -167,7 +167,7 @@
             </div>
           </div>
           <div class="
-            flex flex-col gap-8
+            flex flex-col gap-4
             w-full
           ">
             <div>
@@ -184,11 +184,11 @@
               <span class="
                 text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
               ">
-                Jl. Raya Cisauk Lapan, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345
+                Jl. Jend. Sudirman No.51, RT.004/RW.4, Karet Semanggi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12930
               </span>
             </div>
-            <div class="h-[15rem] xs:h-[20rem] sm:h-[30rem] 2xl:h-[20rem]">
-              <iframe title="streetViewUAJBSD" class="w-full h-full" src="https://www.google.com/maps/embed?pb=!4v1690294942130!6m8!1m7!1smms5t2mTyDD8LJQi6Sk_gw!2m2!1d-6.318058307835942!2d106.6505173535916!3f205.4769897449964!4f9.82345676993208!5f1.5080392418408253" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="h-[15rem] xs:h-[20rem] sm:h-[30rem] 2xl:h-[16rem]">
+              <iframe title="streetViewUAJSemanggi" class="w-full h-full" src="https://www.google.com/maps/embed?pb=!4v1700247969814!6m8!1m7!1sFYxyFO4J7KYlhQ0I2uFIrQ!2m2!1d-6.218241077231734!2d106.8143271477776!3f126.15781764782037!4f13.840668650534482!5f0.7657500284217353" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>

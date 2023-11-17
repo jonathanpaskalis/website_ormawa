@@ -22,7 +22,7 @@
             Alamat
           </p>
           <p class="text-[0.9rem] text-bemkmuaj-white">
-            Jl. Raya Cisauk Lapan, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345
+            Jl. Jend. Sudirman No.51, RT.004/RW.4, Karet Semanggi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12930
           </p>
         </div>
         <div>

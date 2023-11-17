@@ -220,7 +220,6 @@
         subNav.classList.remove('shadow-bemkmuaj-orange-shadow-sm');
         subNav.classList.add('border-transparent');
       }
-      // console.log(subNav);
     } 
   }
 

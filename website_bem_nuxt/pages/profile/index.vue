@@ -45,7 +45,7 @@
           ">
             Visi
           </h2>
-          <p class="
+          <p v-if="period" class="
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tl-none
@@ -53,10 +53,7 @@
             shadow-bemkmuaj-black-shadow
             text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
           ">
-            Mewujudkan BEM KM-UAJ sebagai organisasi yang independen 
-            dan transparan dalam menjadi penghubung seluruh civitas UNIKA Atma Jaya
-            serta memberikan manfaat kepada mahasiswa dengan berkolaborasi aktif 
-            dengan berbagai lembaga kemahasiswaan serta instansi yang terdapat di dalam maupun di luar UNIKA Atma Jaya.
+            {{ period.vision }}
           </p>
         </div>
         <div class="
@@ -69,19 +66,20 @@
           ">
             Misi
           </h2>
-          <p class="
+          <ol v-if="period" class="
+            flex flex-col gap-2
             w-full lg:w-[80%]
-            p-6
+            p-6 pl-9 sm:pl-12
             rounded-[2rem] rounded-tr-none
             bg-gradient-to-bl from-bemkmuaj-orange to-bemkmuaj-gold
             shadow-bemkmuaj-black-shadow
             text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+            list-[lower-alpha]
           ">
-            a. Menyelenggarakan kegiatan sosialisasi mengenai BEM KM-UAJ kepada mahasiswa UNIKA Atma Jaya.<br><br>
-            b. Menampung dan menindaklanjuti semua aspirasi mahasiswa UNIKA Atma Jaya melalui hubungan kerjasama dengan BPM KM - UAJ.<br><br>
-            c. Menjadi wadah berkembangnya mahasiswa UNIKA Atma Jaya dengan mengadakan kegiatan yang mengarah kepada KUPP.<br><br>
-            d. Membangun hubungan kerja yang koordinatif dan konsultatif dengan lembaga kemahasiswaan serta instansi internal maupun eksternal UNIKA Atma Jaya.
-          </p>
+            <li v-for="(mission, index) in period.missions" :key="`mission-${index}`">
+              {{ mission }}
+            </li>
+        </ol>
         </div>
       </div>
     </section>

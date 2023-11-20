@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="home-welcome" class="
+    <section id="welcome" class="
       relative
       flex
       w-full h-[20rem] md:h-[30rem] xl:h-[45rem]
@@ -63,7 +63,7 @@
         </div>
       </div>
     </section>
-    <section id="home-intro" class="
+    <section id="intro" class="
       flex justify-center
     ">
       <div class="
@@ -129,29 +129,36 @@
           ">
             Misi KM-UAJ
           </h2>
-          <p class="
+          <ol class="
+            flex flex-col gap-2
             w-full lg:w-[80%]
-            p-6
+            p-6 pl-9 sm:pl-12
             rounded-[2rem] rounded-tr-none
             bg-bemkmuaj-black bg-opacity-80
             shadow-bemkmuaj-black-shadow
             text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
+            list-[lower-alpha]
           ">
-            a. Menampung dan menindaklanjuti aspirasi mahasiswa Unika Atma Jaya.<br><br>
-            b. Menanamkan Nilai Inti Unika Atma Jaya, yaitu Kristiani, Unggul, Profesional,
-            dan Peduli (KUPP) kepada mahasiswa Unika Atma Jaya.<br><br>
-            c. Mengadakan hubungan dan kerja sama dengan lembaga-lembaga di dalam
-            maupun di luar Unika Atma Jaya dengan mengingat asas, dasar, dan visi KM–UAJ.<br><br>
-            d. Mengupayakan kegiatan kemahasiswaan Unika Atma Jaya baik secara internal
-            ataupun eksternal yang dapat meningkatkan kompetensi mahasiswa Unika
-            Atma Jaya untuk berpikir kritis secara akademik maupun non-akademik.<br><br>
-            e. Mengadakan kegiatan kemahasiswaan Unika Atma Jaya dalam bentuk
-            pengabdian masyarakat di Indonesia.
-          </p>
+            <li>
+              Menampung dan menindaklanjuti aspirasi mahasiswa Unika Atma Jaya.
+            </li>
+            <li>
+              Menanamkan Nilai Inti Unika Atma Jaya, yaitu Kristiani, Unggul, Profesional, dan Peduli (KUPP) kepada mahasiswa Unika Atma Jaya.
+            </li>
+            <li>
+              Mengadakan hubungan dan kerja sama dengan lembaga-lembaga di dalam maupun di luar Unika Atma Jaya dengan mengingat asas, dasar, dan visi KM–UAJ.
+            </li>
+            <li>
+              Mengupayakan kegiatan kemahasiswaan Unika Atma Jaya baik secara internal ataupun eksternal yang dapat meningkatkan kompetensi mahasiswa Unika Atma Jaya untuk berpikir kritis secara akademik maupun non-akademik.
+            </li>
+            <li>
+              Mengadakan kegiatan kemahasiswaan Unika Atma Jaya dalam bentuk pengabdian masyarakat di Indonesia.
+            </li>
+        </ol>
         </div>
       </div>
     </section>
-    <section id="home-organization-structure-chart" class="
+    <section id="organization-structure-chart" class="
       flex justify-center
       bg-gradient-to-b from-black to-neutral-900
       shadow-bemkmuaj-black-shadow
@@ -183,7 +190,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section id="home-program-highlight" class="
+    <section id="program-highlight" class="
       flex justify-center
     ">
       <div class="

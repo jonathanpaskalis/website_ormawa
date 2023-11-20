@@ -202,19 +202,23 @@
             ">
               Pasangan Calon {{ candidate.number }}
             </h3>
-            <p class="
+            <ol class="
+              flex flex-col gap-2
               w-full lg:w-[80%]
-              p-6
+              p-6 pl-9 sm:pl-12
               rounded-[2rem]
               from-bemkmuaj-orange to-bemkmuaj-gold
               shadow-bemkmuaj-black-shadow
               text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+              list-[lower-alpha]
             " :class="{
               'rounded-tl-none bg-gradient-to-br' : candidate.number==='1',
               'rounded-tr-none bg-gradient-to-bl' : candidate.number==='2',
             }">
-              {{ candidate.mission }}
-            </p>
+              <li v-for="mission in candidate.missions">
+                {{ mission }}
+              </li>
+          </ol>
           </div>
         </div>
       </div>
@@ -424,7 +428,7 @@
                 '3xl:border-l-2': index%2===1,
               }">
                 <div class="
-                  grid grid-cols-[max-content_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
+                  grid grid-cols-[auto_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
                 ">
                   <span class="
                     text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
@@ -502,7 +506,9 @@
                   </span>
                   <ul class="
                     col-span-2 sm:col-span-1
+                    pl-6
                     text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    list-disc
                   ">
                     <li v-for="experience in member.experiences">
                       {{ experience }}

@@ -238,15 +238,15 @@
       overflow-hidden
       transition-all duration-100 ease-in-out
     " :class="{
-      'grid-cols-[4.4rem_1fr_min-content]' : is4remFromTopPage,
-      'grid-cols-[0_1fr_min-content]' : !is4remFromTopPage,
+      'grid-cols-[4.4rem_1fr_min-content]' : is3remFromTopPage && !isXSScreen || is4remFromTopPage,
+      'grid-cols-[0_1fr_min-content]' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
     }">
       <div class="
         transition-all duration-100 ease-in-out
         overflow-hidden
       " :class="{
-        'w-[4.4rem]' : is4remFromTopPage,
-        'w-0' : !is4remFromTopPage,
+        'w-[4.4rem]' : is3remFromTopPage && !isXSScreen || is4remFromTopPage,
+        'w-0' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
       }">
         <NuxtLink to="/" aria-label="Go to the home page" class="
           flex
@@ -265,7 +265,7 @@
         p-4
         overflow-hidden
       " :class="{
-        'pl-2' : !is4remFromTopPage,
+        'pl-2' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
       }">
         <p class="
           text-[1.3rem] text-bemkmuaj-white font-Panton-BlackCaps
@@ -340,18 +340,20 @@
   }
 
   const isAtTopPage = ref(true);
+  const is3remFromTopPage = ref(false);
   const is4remFromTopPage = ref(false);
+  const isXSScreen = ref(false);
 
   onMounted(() => {
-    if (window.scrollY >= 1) isAtTopPage.value = false;
-    if (window.scrollY < 1) isAtTopPage.value = true;
-    if (window.scrollY >= 64) is4remFromTopPage.value = true;
-    if (window.scrollY < 64) is4remFromTopPage.value = false;
+    isAtTopPage.value = window.scrollY < 1;
+    is3remFromTopPage.value = window.scrollY >= 48;
+    is4remFromTopPage.value = window.scrollY >= 64;
+    isXSScreen.value = window.innerWidth >= 425;
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= 1) isAtTopPage.value = false;
-      if (window.scrollY < 1) isAtTopPage.value = true;
-      if (window.scrollY >= 64) is4remFromTopPage.value = true;
-      if (window.scrollY < 64) is4remFromTopPage.value = false;
+      isAtTopPage.value = window.scrollY < 1;
+      is3remFromTopPage.value = window.scrollY >= 48;
+      is4remFromTopPage.value = window.scrollY >= 64;
+      isXSScreen.value = window.innerWidth >= 425;
     })
   })
 

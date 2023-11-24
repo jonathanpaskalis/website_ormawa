@@ -73,7 +73,7 @@
                 h-min
                 transition-all duration-100 ease-in-out
               " :class="{
-                'caket w-[50%]' : member.position==='Calon Ketua',
+                'caket w-[40%]' : member.position==='Calon Ketua',
                 'cawaket w-[30%]' : member.position==='Calon Wakil Ketua',
               }" />
             </div>
@@ -630,7 +630,7 @@ onUnmounted(() => {
       }
       div {
         .caket {
-        @apply w-[55%];
+        @apply w-[50%];
         }
         .cawaket {
           @apply w-[35%];

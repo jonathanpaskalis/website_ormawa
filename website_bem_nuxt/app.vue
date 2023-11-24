@@ -34,7 +34,7 @@
   
   onMounted(() => {
     const { analytics } = useFirebase();
-    alert('Anda sedang mengunjungi Website Resmi BEM KM-UAJ V0.10.3-R. Website ini sedang dalam tahap open beta dan BUKAN merupakan versi full. Apabila Anda menemukan kendala atau bug atau memiliki saran, silakan menghubungi Instagram @bem_kmuaj atau menggunakan form pada halaman /contact-us. Selamat explorasi!');
+    alert('Anda sedang mengunjungi Website Resmi BEM KM-UAJ V0.11.0-R. Website ini sedang dalam tahap open beta dan BUKAN merupakan versi full. Apabila Anda menemukan kendala atau bug atau memiliki saran, silakan menghubungi Instagram @bem_kmuaj atau menggunakan form pada halaman /contact-us. Selamat explorasi!');
   })
     
 </script>

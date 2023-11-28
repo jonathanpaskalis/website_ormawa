@@ -30,10 +30,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: [
         '/',
-        '/profile',
-        '/program',
-        '/contact-us',
-        '/election',
       ]
     }
   },

@@ -1,67 +1,29 @@
 <template>
   <div>
-    <section id="welcome" class="
-      relative
-      flex
-      w-full h-[20rem] md:h-[30rem] xl:h-[45rem]
+    <section id="title" class="
+      flex flex-col justify-center items-center
+      w-full h-24 sm:h-48
+      bg-bemkmuaj-black
+      shadow-bemkmuaj-black-shadow
       transition-all duration-100 ease-in-out
     ">
-      <div ref="welcomeCarousel" class="
-        flex flex-col
-        w-full h-full
-        overflow-hidden
+      <h1 class="
+        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-transparent font-Poppins-SemiBold
+        [background-size:_400%]
+        bg-gradient-to-r from-bemkmuaj-orange via-bemkmuaj-gold via-[25%] to-bemkmuaj-black to-[50%]
+        bg-clip-text
+        drop-shadow-bemkmuaj-black-shadow 
+        transition-all duration-100 ease-in-out
+        animate-[slide-fill-animation_1s_ease-in-out] 
       ">
-        <img src="/images/home_welcome_carousel/Kampus_Semanggi.webp" alt="" class="min-w-full min-h-full object-cover transition-opacity duration-1000 ease-in-out" />
-        <img src="/images/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
-        <img src="/images/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
-      </div>
-      <div class="
-        absolute
-        flex justify-center items-center 
-        w-full h-full
-        bg-bemkmuaj-gold bg-opacity-[65%]
-        shadow-[inset_0_0_20rem_rgba(0,0,0,0.5)]
+        PEMILIHAN UMUM
+      </h1>
+      <span v-if="period" class="
+        text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-white
+        transition-all duration-100 ease-in-out
       ">
-        <div class="
-          container-bemkmuaj
-          flex justify-center items-center
-          h-[80%]
-          p-4 sm:p-8 md:p-16
-          rounded-[2.5rem] md:rounded-[5rem]
-          bg-bemkmuaj-white bg-opacity-75
-          transition-all duration-100 ease-in-out
-        ">
-          <div class="
-            flex justify-center items-center
-            max-w-[50%] h-full
-            drop-shadow-bemkmuaj-black-shadow
-          ">
-            <img src="/images/organization_logos/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full" />
-          </div>
-          <div class="
-            flex flex-col justify-center items-center
-            drop-shadow-bemkmuaj-black-shadow
-            max-w-[50%] h-full
-          ">
-            <div class="
-              flex justify-center
-              w-full max-h-full
-            ">
-              <img src="/images/board_members/Ketua_Angel.webp" alt="" class="w-[40%]" />
-              <img src="/images/board_members/Wakil_Ketua_Felix.webp" alt="" class="w-[40%]" />
-            </div>
-            <h1 class="
-              w-full
-              p-[0.5rem_10%_0.5rem_10%]
-              rounded-[1rem] sm:rounded-[2rem] 
-              bg-gradient-to-br from-bemkmuaj-white via-bemkmuaj-gold via-[25%] to-bemkmuaj-orange
-              text-[1rem] sm:text-[1.5rem] xl:text-[2.8rem] text-center text-bemkmuaj-white [text-shadow:0_0_0.5rem_rgba(255,255,255,0.5)] font-Panton-BlackCaps
-            ">
-              SELAMAT DATANG!
-            </h1>
-          </div>
-        </div>
-      </div>
+        PERIODE {{ period.name }}
+      </span>
     </section>
     <section id="intro" class="
       flex justify-center
@@ -69,295 +31,582 @@
       <div class="
         container-bemkmuaj
         flex flex-col gap-y-8 lg:gap-y-16
-        bg-bemkmuaj-white bg-opacity-75
+        bg-bemkmuaj-black bg-opacity-75
         shadow-bemkmuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div class="
-          flex flex-col items-end gap-4
-          transition-all duration-500 ease-in-out
+          grid grid-cols-2
+          w-full
         ">
-          <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-black font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
+          <div v-if="period" v-for="candidate in period.candidates" class="
+            paslon
+            flex flex-col items-center gap-y-8 lg:gap-y-16
+            border-bemkmuaj-white
+            [background-size:_200%]
+            from-bemkmuaj-white to-transparent to-[50%]
+            transition-all duration-100 ease-in-out
+          " :class="{
+            'border-r rounded-tl-[1.5rem] rounded-bl-[1.5rem] bg-left hover:bg-right bg-gradient-to-l' : candidate.number === '1',
+            'border-l rounded-tr-[1.5rem] rounded-br-[1.5rem] bg-right hover:bg-left bg-gradient-to-r' : candidate.number === '2',
+          }">
+            <span class="
+              paslon-number
+              w-full
+              px-4
+              bg-bemkmuaj-black bg-opacity-0
+              text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-white text-center font-Panton-BlackCaps
+            " :class="{
+              'rounded-tl-[1rem]' : candidate.number === '1',
+              'rounded-tr-[1rem]' : candidate.number === '2',
+            }">
+              PASLON {{ candidate.number }}
+            </span>
+            <div class="
+              flex justify-center items-end
+              h-24 xs:h-32 sm:h-48 2xl:h-72
+              transition-all duration-100 ease-in-out
+            " :class="{
+              'flex-row-reverse' : candidate.number==='1'
+            }">
+              <img v-for="member in candidate.members" :src="`/images/election_candidates/${member.photo}`" alt="" class="
+                h-min
+                transition-all duration-100 ease-in-out
+              " :class="{
+                'caket w-[40%]' : member.position==='Calon Ketua',
+                'cawaket w-[30%]' : member.position==='Calon Wakil Ketua',
+              }" />
+            </div>
+            <div class="
+              paslon-name
+              flex flex-col justify-center items-center
+              w-full h-16 xs:h-24 md:h-[7.5rem]
+              px-4
+              bg-bemkmuaj-orange bg-opacity-0
+              transition-all duration-100 ease-in-out
+            " :class="{
+              'rounded-bl-[1rem]' : candidate.number === '1',
+              'rounded-br-[1rem]' : candidate.number === '2',
+            }">
+              <span v-for="member in candidate.members" class="
+                text-center text-bemkmuaj-white
+              " :class="{
+                'text-[0.75rem] 2xs:text-[0.9rem] xs:text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] font-Montserrat-Bold' : member.position==='Calon Ketua',
+                'text-[0.7rem] 2xs:text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] md:text-[1.4rem] font-Montserrat-Regular' : member.position==='Calon Wakil Ketua',
+              }">
+                {{ returnFirstTwoNames(member.name) }}
+              </span>
+            </div>
+          </div>
+          <div v-else class="
+            h-[10rem] xs:h-[13rem] sm:h-[22rem] lg:h-[26rem] 2xl:h-[32rem]
           ">
-            BEM KM-UAJ
-          </h2>
-          <p class="
-            w-full lg:w-[80%]
-            p-6
-            rounded-[2rem] rounded-tr-none
-            bg-bemkmuaj-black bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
-          ">
-            Badan Eksekutif Mahasiswa Keluarga Mahasiswa Universitas Katolik Indonesia Atma Jaya
-            atau secara singkat BEM KM-UAJ merupakan lembaga eksekutif KM-UAJ
-            yang melaksanakan aspirasi mahasiswa Unika Atma Jaya sesuai dengan visi dan misi KM-UAJ.
-          </p>
-        </div>
-        <div class="
-          flex flex-col items-start gap-4
-          transition-all duration-500 ease-in-out
-        ">
-          <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-left text-bemkmuaj-black font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
-          ">
-            Visi KM-UAJ
-          </h2>
-          <p class="
-            w-full lg:w-[80%]
-            p-6
-            rounded-[2rem] rounded-tl-none
-            bg-bemkmuaj-black bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
-          ">
-            Terwujudnya mahasiswa Unika Atma Jaya yang sesuai dengan Nilai Inti Unika Atma Jaya
-            yang dapat aktif berkolaborasi, dengan mengembangkan kemampuan untuk berpikir kritis dan
-            peduli dengan sesama, agar dapat berguna untuk kehidupan bangsa dan masyarakat
-          </p>
-        </div>
-        <div class="
-          flex flex-col items-end gap-4
-          transition-all duration-500 ease-in-out
-        ">
-          <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-black font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
-          ">
-            Misi KM-UAJ
-          </h2>
-          <ol class="
-            flex flex-col gap-2
-            w-full lg:w-[80%]
-            p-6 pl-9 sm:pl-12
-            rounded-[2rem] rounded-tr-none
-            bg-bemkmuaj-black bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
-            list-[lower-alpha]
-          ">
-            <li>
-              Menampung dan menindaklanjuti aspirasi mahasiswa Unika Atma Jaya.
-            </li>
-            <li>
-              Menanamkan Nilai Inti Unika Atma Jaya, yaitu Kristiani, Unggul, Profesional, dan Peduli (KUPP) kepada mahasiswa Unika Atma Jaya.
-            </li>
-            <li>
-              Mengadakan hubungan dan kerja sama dengan lembaga-lembaga di dalam maupun di luar Unika Atma Jaya dengan mengingat asas, dasar, dan visi KM–UAJ.
-            </li>
-            <li>
-              Mengupayakan kegiatan kemahasiswaan Unika Atma Jaya baik secara internal ataupun eksternal yang dapat meningkatkan kompetensi mahasiswa Unika Atma Jaya untuk berpikir kritis secara akademik maupun non-akademik.
-            </li>
-            <li>
-              Mengadakan kegiatan kemahasiswaan Unika Atma Jaya dalam bentuk pengabdian masyarakat di Indonesia.
-            </li>
-        </ol>
+          </div>
         </div>
       </div>
     </section>
-    <section id="organization-structure-chart" class="
+    <section id="vision-mission" class="
+      scroll-mt-[4rem] xl:scroll-mt-[6rem]
+      flex flex-col items-center
+      shadow-bemkmuaj-black-shadow
+    ">
+      <div class="
+        w-full
+        pt-4 lg:pt-8
+        bg-bemkmuaj-black
+      ">
+        <h2 class="
+          bg-gradient-to-b from-bemkmuaj-orange to-bemkmuaj-gold
+          bg-clip-text
+          drop-shadow-bemkmuaj-orange-shadow
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          transition-all duration-100
+        ">
+          VISI
+        </h2>
+      </div>
+      <div class="
+        flex justify-center
+        w-full
+        bg-gradient-to-b from-bemkmuaj-black to-bemkmuaj-dark-gray
+      ">
+        <div class="
+          container-bemkmuaj
+          flex flex-col justify-center items-center gap-8 lg:gap-16
+          transition-all duration-100 ease-in-out
+        ">
+          <div v-if="period" v-for="candidate in period.candidates" class="
+            flex flex-col gap-4
+            transition-all duration-500 ease-in-out
+          " :class="{
+            'items-start' : candidate.number==='1',
+            'items-end' : candidate.number==='2',
+          }">
+            <h3 class="
+              text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
+              drop-shadow-bemkmuaj-white-shadow
+            ">
+              Pasangan Calon {{ candidate.number }}
+            </h3>
+            <p class="
+              w-full lg:w-[80%]
+              p-6
+              rounded-[2rem]
+              from-bemkmuaj-orange to-bemkmuaj-gold
+              shadow-bemkmuaj-black-shadow
+              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+            " :class="{
+              'rounded-tl-none bg-gradient-to-br' : candidate.number==='1',
+              'rounded-tr-none bg-gradient-to-bl' : candidate.number==='2',
+            }">
+              {{ candidate.vision }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="
+        w-full
+        pt-4 lg:pt-8
+        bg-bemkmuaj-dark-gray
+      ">
+        <h2 class="
+          bg-gradient-to-b from-bemkmuaj-orange to-bemkmuaj-gold
+          bg-clip-text
+          drop-shadow-bemkmuaj-orange-shadow
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          transition-all duration-100
+        ">
+          MISI
+        </h2>
+      </div>
+      <div class="
+        flex justify-center
+        w-full
+        bg-gradient-to-b from-bemkmuaj-dark-gray to-bemkmuaj-black
+      ">
+        <div class="
+          container-bemkmuaj
+          flex flex-col justify-center items-center gap-8 lg:gap-16
+          transition-all duration-100 ease-in-out
+        ">
+          <div v-if="period" v-for="candidate in period.candidates" class="
+            flex flex-col gap-4
+            transition-all duration-500 ease-in-out
+          " :class="{
+            'items-start' : candidate.number==='1',
+            'items-end' : candidate.number==='2',
+          }">
+            <h3 class="
+              text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
+              drop-shadow-bemkmuaj-white-shadow
+            ">
+              Pasangan Calon {{ candidate.number }}
+            </h3>
+            <ol class="
+              flex flex-col gap-2
+              w-full lg:w-[80%]
+              p-6 pl-9 sm:pl-12
+              rounded-[2rem]
+              from-bemkmuaj-orange to-bemkmuaj-gold
+              shadow-bemkmuaj-black-shadow
+              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+              list-[lower-alpha]
+            " :class="{
+              'rounded-tl-none bg-gradient-to-br' : candidate.number==='1',
+              'rounded-tr-none bg-gradient-to-bl' : candidate.number==='2',
+            }">
+              <li v-for="mission in candidate.missions">
+                {{ mission }}
+              </li>
+          </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="program" class="
+      scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
-      bg-gradient-to-b from-black to-neutral-900
+      ">
+      <div class="
+        container-bemkmuaj
+        flex flex-col gap-y-4 lg:gap-y-8
+        bg-bemkmuaj-black bg-opacity-75
+        shadow-bemkmuaj-black-shadow
+        transition-all duration-100 ease-in-out
+      ">
+        <h2 class="
+          bg-gradient-to-b from-bemkmuaj-orange to-bemkmuaj-gold
+          bg-clip-text
+          drop-shadow-bemkmuaj-orange-shadow
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          transition-all duration-100
+        ">
+          PROGRAM KERJA
+        </h2>
+        <div class="
+          flex flex-col justify-center items-center gap-y-8 lg:gap-y-16
+        ">
+          <div v-if="period" v-for="candidate in period.candidates" class="
+            flex flex-col gap-4 lg:gap-8
+            transition-all duration-500 ease-in-out
+          ">
+            <h3 class="
+              text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
+              drop-shadow-bemkmuaj-white-shadow
+            " :class="{
+              'self-start' : candidate.number==='1',
+              'self-end' : candidate.number==='2',
+            }">
+              Pasangan Calon {{ candidate.number }}
+            </h3>
+            <div v-for="(program, index) in candidate.programs" class="
+              grid grid-cols-2
+              w-full lg:w-[80%]
+              rounded-[2rem]
+              [background-size:_150%]
+              from-bemkmuaj-white
+              shadow-bemkmuaj-black-shadow
+              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+              overflow-hidden
+            " :class="{
+              'bg-gradient-to-r self-start rounded-tl-none' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
+              'bg-gradient-to-l bg-right self-end rounded-tr-none' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
+            }">
+              <div class="
+                col-span-2
+                px-6 py-2 
+                bg-bemkmuaj-black
+                text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps
+              ">
+                {{ program.name }}
+              </div>
+              <div class="
+                col-span-2
+                p-6
+                text-bemkmuaj-black
+              ">
+                {{ program.description }}
+              </div>
+              <div class="
+                col-span-2
+                px-6 py-2 
+                bg-bemkmuaj-black
+                text-center text-bemkmuaj-white font-Montserrat-ExtraBold
+              ">
+                PILAR SLJ
+              </div>
+              <div v-for="SLJPillar in program.SLJPillars" class="
+                w-full
+                col-span-2 flex
+              " :class="{
+                'flex-row-reverse' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
+              }">
+                <div class="
+                  flex
+                  w-[50%]
+                  px-6 py-2 
+                  border-bemkmuaj-black
+                  bg-bemkmuaj-orange
+                  text-[0.75rem] sm:text-[1rem] text-bemkmuaj-black font-Montserrat-ExtraBold 
+                " :class="{
+                  'border-r justify-start' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
+                  'border-l justify-end' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
+                }">
+                  {{ SLJPillar.name }}
+                </div>
+                <div class="
+                  flex justify-center items-center
+                  w-[50%]
+                  px-6 py-2 
+                  border-bemkmuaj-black
+                " :class="{
+                  'border-l' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
+                  'border-r' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
+                }">
+                  <Icons v-if="SLJPillar.isTrue" name="done" class="h-[1rem] fill-green-700" />
+                  <Icons v-else name="close" class="h-[1rem] fill-red-700 " />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="personal-data" class="
+      scroll-mt-[4rem] xl:scroll-mt-[6rem]
+      flex justify-center
+      bg-gradient-to-b from-bemkmuaj-dark-gray via-bemkmuaj-black to-bemkmuaj-dark-gray
       shadow-bemkmuaj-black-shadow
     ">
       <div class="
         container-bemkmuaj
-        flex flex-col items-center gap-y-8 lg:gap-y-16
+        flex flex-col justify-center gap-8
+        transition-all duration-100 ease-in-out
       ">
         <h2 class="
-          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-white text-center font-Montserrat-SemiBold
-          drop-shadow-[0_0_0.5rem_rgba(255,255,255,0.5)]
+          bg-gradient-to-b from-bemkmuaj-orange to-bemkmuaj-gold
+          bg-clip-text
+          drop-shadow-bemkmuaj-orange-shadow
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          transition-all duration-100 ease-in-out
         ">
-          Bagan Struktur Organisasi<br>
-          BEM KM-UAJ
+          DATA DIRI
         </h2>
-        <div class="w-full">
-          <img src="/images/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
-        </div>
-        <NuxtLink to="/profile" aria-label="Go to the profile page" class="
-          flex justify-center items-center
-          w-28 sm:w-32 h-14 sm:h-16
-          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-          bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          fill-bemkmuaj-black hover:fill-bemkmuaj-orange
-          hover:shadow-bemkmuaj-orange-shadow-sm
-          transition-all duration-200 ease-in-out
-        ">
-          <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
-        </NuxtLink>
-      </div>
-    </section>
-    <section id="program-highlight" class="
-      flex justify-center
-    ">
-      <div class="
-        container-bemkmuaj
-        flex flex-col xl:flex-row items-center xl:justify-between gap-x-8 gap-y-4
-        bg-bemkmuaj-white bg-opacity-75
-        shadow-bemkmuaj-black-shadow
-      ">
         <div class="
-          flex flex-col justify-center items-center xl:items-start xl:gap-8
+          flex flex-col justify-center items-center gap-8 lg:gap-16
         ">
-          <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-black text-center xl:text-left font-Montserrat-ExtraBold
-            drop-shadow-bemkmuaj-black-shadow 
+          <div v-if="period" v-for="candidate in period.candidates" :key="`candidate-${candidate.number}`" class="
+            flex flex-col
+            border-[0.15rem] border-bemkmuaj-gold rounded-[2rem]
+            overflow-hidden
           ">
-            Program<br v-if="isXLScreen">
-            Kerja
-          </h2>
-          <NuxtLink v-if="isXLScreen" to="/program" aria-label="Go to the program page" class="
-            flex justify-center items-center
-            w-32 h-16
-            border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-            bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-            fill-bemkmuaj-white hover:fill-bemkmuaj-orange
-            hover:shadow-bemkmuaj-orange-shadow-sm
-            transition-all duration-200 ease-in-out
-          ">
-            <Icons name="trending_flat" class="h-[1.5rem]"/>
-          </NuxtLink>
-        </div>
-        <div v-if="period" class="
-          relative
-          w-full xl:w-[60%]
-          bg-bemkmuaj-black
-        ">
-          <Carousel :wrap-around="true" :mouse-drag="false" :autoplay="5000">
-            <Slide v-for="program in period.programs" :key="`program-${program.name}`">
-              <div class="
-                carousel__item
-                relative
-                flex flex-col
-                w-full
-              ">
-                <img :src="`/images/program_documentations/${program.documentation}`" alt="" class="w-full" />
-                <img :src="`/images/program_logos/${program.logo}`" alt="" class="
-                  absolute bottom-0
-                  w-[4.5rem] h-[4rem]
-                  p-2 pr-4
-                  rounded-r-[1.5rem] 
-                  bg-bemkmuaj-white
-                " />
-                <NuxtLink :to="`/program/${period.name}/${program.nickname}`" class="
-                  flex justify-center items-center
-                  w-full h-[4rem]
-                  px-20
-                  bg-bemkmuaj-black 
-                  text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold
-                  transition-all duration-100 ease-in-out
+            <div class="
+              grid grid-cols-1 sm:grid-cols-2
+              bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
+            ">
+              <div v-for="member in candidate.members" :key="`member-${candidate.number}-${member.name}`" class="
+                board-member-profile
+                flex flex-col justify-self-center
+                w-[15rem] h-[17.5rem]
+                transition-all duration-200 ease-in-out
+              " :class="{
+                'hidden' : !isSmallScreen && !returnShowValue(candidate.number, member.position),
+                'drop-shadow-bemkmuaj-black-shadow' : !is3XLScreen && returnShowValue(candidate.number, member.position),
+              }">
+                <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
+                  relative
+                  flex justify-center
+                  w-full h-full
                 ">
-                  {{ program.nickname }}
-                </NuxtLink>
+                  <img :src="`/images/election_candidates/${member.photo}`" alt="" class="
+                    absolute bottom-0
+                    w-[90%]
+                    transition-all duration-200 ease-in-out
+                  " />
+                </button>
               </div>
-            </Slide>
-            <template #addons>
-              <Navigation />
-              <Pagination />
-            </template>
-          </Carousel>
-          <div class="
-            absolute top-0 bottom-0 left-0 right-0
-            shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
-            pointer-events-none
-          ">
+            </div>
+            <div class="
+              grid grid-cols-2
+              pb-4
+              bg-gradient-to-br from-bemkmuaj-orange via-bemkmuaj-gold to-bemkmuaj-white to-[125%]
+            ">
+              <div v-for="(member, index) in candidate.members" class="
+                justify-self-center
+                w-full
+                border-bemkmuaj-black
+                overflow-hidden
+                transition-all  duration-100 ease-in-out
+              " :class="{
+                'border-r-2' : index%2===0,
+                'border-l-2' : index%2===1,
+                'bg-bemkmuaj-black bg-opacity-[0%] hover:bg-opacity-[50%]' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                'bg-bemkmuaj-black bg-opacity-[75%]' : !is3XLScreen && returnShowValue(candidate.number, member.position),
+              }">
+                <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
+                  w-full h-full
+                  p-4
+                  text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-center text-bemkmuaj-black font-Panton-BlackCaps
+                  transition-all  duration-100 ease-in-out
+                " :class="{
+                  'border-transparent' : is3XLScreen || returnShowValue(candidate.number, member.position),
+                  'text-bemkmuaj-black  hover:text-bemkmuaj-light-gray' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                  'text-bemkmuaj-white' : !is3XLScreen && returnShowValue(candidate.number, member.position),
+                }">
+                  {{ member.position }} {{ candidate.number }}
+                </button>
+              </div>
+              <div v-for="(member, index) in candidate.members" class="
+                col-span-2 3xl:col-span-1 flex flex-col items-center gap-4
+                w-full
+                p-4
+                3xl:mb-8
+                border-bemkmuaj-black
+              " :class="{
+                'hidden' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
+                '3xl:border-r-2': index%2===0,
+                '3xl:border-l-2': index%2===1,
+              }">
+                <div class="
+                  grid grid-cols-[auto_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
+                ">
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                  ">
+                    Nama
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                  ">
+                    :
+                  </span>
+                  <span class="
+                    col-span-2 sm:col-span-1
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                  ">
+                    {{ member.name }}
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                  ">
+                    NIM
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                  ">
+                    :
+                  </span>
+                  <span class="
+                    col-span-2 sm:col-span-1
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                  ">
+                    {{ member.campusID }}
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                  ">
+                    Fakultas
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                  ">
+                    :<br>
+                  </span>
+                  <span class="
+                    col-span-2 sm:col-span-1
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                  ">
+                    {{ member.faculty }}
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                  ">
+                    Program Studi
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                  ">
+                    :
+                  </span>
+                  <span class="
+                    col-span-2 sm:col-span-1
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                  ">
+                    {{ member.major }}
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                  ">
+                    Pengalaman
+                  </span>
+                  <span class="
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                  ">
+                    :
+                  </span>
+                  <ul class="
+                    col-span-2 sm:col-span-1
+                    pl-6
+                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    list-disc
+                  ">
+                    <li v-for="experience in member.experiences">
+                      {{ experience }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <NuxtLink v-if="!isXLScreen" to="/program" aria-label="Go to the program page" class="
-          flex justify-center items-center
-          w-28 sm:w-32 h-14 sm:h-16
-          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-          bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          fill-bemkmuaj-white hover:fill-bemkmuaj-orange
-          hover:shadow-bemkmuaj-orange-shadow-sm
-          transition-all duration-200 ease-in-out
-        ">
-          <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
-        </NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
 useHead({
-  title: 'BEM KM-UAJ'
+  title: 'Pemilihan Umum Ketua dan Wakil Ketua BEM KM-UAJ'
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan garis besar dari Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja BEM KM-UAJ',
+  description: 'Halaman ini menjelaskan tentang pasangan calon Ketua dan Wakil Ketua Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya periode 2023-2025. Halaman ini menampilkan informasi tentang visi, misi, program kerja, dan biodata pasangan calon Ketua dan Wakil Ketua BEM KM-UAJ periode 2023-2025. Halaman ini memberi fitur kepada mahasiswa aktif S1 UAJ untuk melaksanakan pemilihan umum',
 })
 
 definePageMeta({
   pageTransition: {
-    name: 'slide-right',
+    name: 'slide-left',
     mode: 'out-in',
   },
   middleware(to, from) {
     if(to.meta.pageTransition) {
-      (from.meta.pageTransition as { name: string }).name = 'slide-right';
-      (to.meta.pageTransition as { name: string }).name = 'slide-right';
+      (from.meta.pageTransition as {name:string}).name = 'slide-left';
+      (to.meta.pageTransition as {name:string}).name = 'slide-left';
     }
   }
 })
 
-const welcomeCarousel = ref<HTMLDivElement | null>(null);
+// Data Fetching
 
-import { doc, onSnapshot } from "firebase/firestore";
+import { addDoc, doc, onSnapshot, collection } from 'firebase/firestore';
+import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
 
 const period = ref<any>(null);
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
+  const docRef = doc(db, 'periods', 'gLUTVq5uOd7iRw2QqC7P');
   onSnapshot(docRef, (snap) => {
-      period.value = snap.data();
-  });
-});
-
-onMounted(() => {
-  let currentI = 0;
-
-  const welcomeCarouselImages = welcomeCarousel.value!.querySelectorAll('img')
-
-  setInterval(() => {
-    welcomeCarouselImages[currentI].classList.add('opacity-0');
-    setTimeout(() => {
-      welcomeCarouselImages[currentI].classList.remove('min-h-full');
-      welcomeCarouselImages[currentI].classList.add('h-0');
-
-      currentI = currentI + 1 >= welcomeCarouselImages.length ? 0 : currentI + 1;
-
-      welcomeCarouselImages[currentI].classList.remove('opacity-0');
-      welcomeCarouselImages[currentI].classList.remove('h-0');
-      welcomeCarouselImages[currentI].classList.add('min-h-full');
-    }, 1000)
-  }, 30000)
-
-  isXLScreen.value = window.innerWidth >= 1280;
-  window.addEventListener('resize', updateScreenSize)
+    period.value = snap.data();
+  })
 })
 
-defineComponent({
-  name: 'Autoplay',
-  components: {
-    Carousel,
-    Slide,
-    Navigation,
-    Pagination,
-  }
-})
+// UI logic
 
+// P: President, VP: Vice President
+const candidates = {
+  showPCandidate1: ref(true),
+  showPCandidate2: ref(true),
+}
+
+const showCandidate = (number:string, position:string) => {
+  if (number==='1' && position==='Calon Ketua') candidates.showPCandidate1.value=true;
+  if (number==='1' && position==='Calon Wakil Ketua') candidates.showPCandidate1.value=false;
+  if (number==='2' && position==='Calon Ketua') candidates.showPCandidate2.value=true;
+  if (number==='2' && position==='Calon Wakil Ketua') candidates.showPCandidate2.value=false;
+}
+
+const returnShowValue = (number:string, position:string) => {
+  if (number==='1' && position==='Calon Ketua') return candidates.showPCandidate1.value;
+  if (number==='1' && position==='Calon Wakil Ketua') return !candidates.showPCandidate1.value;
+  if (number==='2' && position==='Calon Ketua') return candidates.showPCandidate2.value;
+  if (number==='2' && position==='Calon Wakil Ketua') return !candidates.showPCandidate2.value;
+}
+
+const returnFirstTwoNames = (name:string) => {
+  const firstTwoNames = `${name.split(' ')[0]} ${name.split(' ')[1]}`;
+  return firstTwoNames;
+}
+
+// Event listeners
+
+const isSmallScreen = ref(false);
 const isXLScreen = ref(false);
+const is3XLScreen = ref(false);
 
 const updateScreenSize = () => {
+  isSmallScreen.value = window.innerWidth >= 640;
   isXLScreen.value = window.innerWidth >= 1280;
+  is3XLScreen.value = window.innerWidth >= 1920;
 }
+
+onMounted(() => {
+  isSmallScreen.value = window.innerWidth >= 640;
+  isXLScreen.value = window.innerWidth >= 1280;
+  is3XLScreen.value = window.innerWidth >= 1920;
+  window.addEventListener('resize', updateScreenSize);
+});
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);
@@ -365,41 +614,58 @@ onUnmounted(() => {
 
 </script>
 
-<style lang="scss">
-  .carousel__next,
-  .carousel__prev {
-    @apply scale-[150%] lg:scale-[200%];
-    @apply border-solid border-[0.1rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[0.25rem];
-    @apply bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100;
-    @apply hover:shadow-bemkmuaj-orange;
-    @apply text-bemkmuaj-white hover:text-bemkmuaj-orange;
-    @apply transition-all duration-100 ease-in-out;
-    @apply opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto
-  }
+<style lang="scss" scoped>
+  .paslon {
+    &:hover {
+      .paslon-number {
+        @apply bg-opacity-100 text-bemkmuaj-orange;
+      }
 
-  .carousel__prev{
-    @apply left-4;
-  }
+      .paslon-name {
+        @apply bg-opacity-100;
 
-  .carousel__next{
-    @apply right-4;
-  }
-
-  .carousel__pagination-button {
-    &::after{
-      @apply bg-bemkmuaj-white hover:bg-bemkmuaj-light-gray;
+        span {
+          @apply text-bemkmuaj-black;
+        }
+      }
+      div {
+        .caket {
+        @apply w-[50%];
+        }
+        .cawaket {
+          @apply w-[35%];
+        }
+      }
     }
   }
 
-  .carousel__pagination-button {
-    &::after{
-      @apply bg-bemkmuaj-white hover:bg-bemkmuaj-light-gray;
+  .board-member-profile {
+    &:hover {
+      img {
+        @apply w-[95%];
+      }
+      button {
+        img {
+          @apply w-[95%];
+        }
+      }      
     }
   }
 
-  .carousel__pagination-button--active {
-    &::after{
-      @apply bg-bemkmuaj-orange hover:bg-bemkmuaj-orange-glow;
+  .vote-div {
+    &:hover {
+      .vote-btn {
+        @apply  gap-0 w-28 sm:w-32;
+        .vote-span {
+          @apply w-0 opacity-0;
+        }
+      }
     }
   }
+
+  .carousel__pagination {
+    @apply mt-0 bg-bemkmuaj-black;
+  }
+
+
 </style>

@@ -121,11 +121,13 @@
           </div>
           <div v-if="department.name!=='Ketua dan Wakil Ketua'" class="
             staffsJS
-            grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-8
+            grid grid-cols-1 sm:grid-cols-2 gap-8
             h-0
             overflow-hidden
             transition-all duration-[400ms] ease-linear
           " :class="{
+            'justify-center' : department.name==='Ketua dan Wakil Ketua',
+            '2xl:grid-cols-3 3xl:grid-cols-4' : department.name !=='Ketua dan Wakil Ketua',
             'py-4' : department.name !=='Ketua dan Wakil Ketua' && showingMores[departmentIndex],
           }">
             <MembersPanel v-for="member in department.members.slice(1)" :key="`member-${member.nickname}`" :department="department" :member="member" />
@@ -243,11 +245,16 @@ onMounted(async() => {
       })
     })
   });
+
+  window.addEventListener('resize', () => {
+    updateScreenSize();
+    period.value.departments.forEach((el:any, index:number) => {
+      if (index!==0) checkShowingMore(index);
+    })
+  });
 });
 
-const currentWidth = ref(0);
 const showingMores = ref<boolean[]>([]);
-const showingMoreFirstTime = ref(true);
 
 const toggleShowingMore = (index:number) => {
   showingMores.value[index]=!showingMores.value[index];
@@ -265,8 +272,7 @@ const checkShowingMore = (index:number) => {
   else {
     staffs.style.height = '';
     const scrollDuration = 400;
-    if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(23*mulValue + 2*(mulValue-1) + 1), scrollDuration);
-    showingMoreFirstTime.value=false;
+    enableSmoothScroll(-16*(23*mulValue + 2*(mulValue-1) + 1), scrollDuration);
   }
 }
 
@@ -305,28 +311,7 @@ const updateScreenSize = () => {
 }
 
 onMounted(() => {
-  currentWidth.value =  window.innerWidth;
-
   updateScreenSize();
-  window.addEventListener('resize', () => {
-    const newWidth = window.innerWidth;
-    if (newWidth!==currentWidth.value) {
-      currentWidth.value=newWidth;
-      updateScreenSize();
-      period.value.departments.forEach((el:any, index:number) => {
-        if (index!==0) checkShowingMore(index);
-      })
-    }
-  });
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', () => {
-    updateScreenSize();
-    period.value.departments.forEach((el:any, index:number) => {
-      if (index!==0) checkShowingMore(index);
-    })
-  });
 })
 
 const countComposition = () => {

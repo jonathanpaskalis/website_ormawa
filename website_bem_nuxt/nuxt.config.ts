@@ -20,28 +20,8 @@ export default defineNuxtConfig({
     },
     publicAssets: [
       {
-        baseURL: 'board_members',
-        dir: 'public/board_members',
-        maxAge: 60*60*24*7,
-      },
-      {
-        baseURL: 'election_candidates',
-        dir: 'public/election_candidates',
-        maxAge: 60*60*24*7,
-      },
-      {
-        baseURL: 'home_welcome_carousel',
-        dir: 'public/home_welcome_carousel',
-        maxAge: 60*60*24*7,
-      },
-      {
-        baseURL: 'program_documentations',
-        dir: 'public/program_documentations',
-        maxAge: 60*60*24*7,
-      },
-      {
-        baseURL: 'program_logos',
-        dir: 'program_logos',
+        baseURL: 'images',
+        dir: 'public/images',
         maxAge: 60*60*24*7,
       },
     ],

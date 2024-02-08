@@ -115,21 +115,60 @@
             'justify-center' : department.name==='Ketua dan Wakil Ketua',
             '2xl:grid-cols-3 3xl:grid-cols-4' : department.name !=='Ketua dan Wakil Ketua'
           }">
-            <MembersPanel v-if="department.name==='Ketua dan Wakil Ketua'" v-for="member in department.members" :key="`member-${member.nickname}`" :department="department" :member="member" />
-            <MembersPanel v-else :department="department" :member="department.members[0]" />
-          </div>
-          <div v-if="department.name!=='Ketua dan Wakil Ketua'" class="
-            staffsJS
-            grid grid-cols-1 sm:grid-cols-2 gap-8
-            h-0
-            overflow-hidden
-            transition-all duration-[400ms] ease-linear
-          " :class="{
-            'justify-center' : department.name==='Ketua dan Wakil Ketua',
-            '2xl:grid-cols-3 3xl:grid-cols-4' : department.name !=='Ketua dan Wakil Ketua',
-            'py-4' : department.name !=='Ketua dan Wakil Ketua' && showingMores[departmentIndex],
-          }">
-            <MembersPanel v-for="member in department.members.slice(1)" :key="`member-${member.nickname}`" :department="department" :member="member" />
+            <div v-for="member in department.members" :key="`member-${member.nickname}`" class="
+              board-member-profile
+              flex flex-col justify-self-center
+              w-[15rem] h-[23rem]
+              border-solid border-4 rounded-[2rem]
+            " :class="{
+              'border-bemkmuaj-gold hover:shadow-bemkmuaj-gold-shadow' : member.position==='Ketua'||member.position==='Wakil Ketua',
+              'col-start-1 sm:col-end-3 2xl:col-end-4 3xl:col-end-5 border-bemkmuaj-orange hover:shadow-bemkmuaj-orange-shadow': member.position==='Koordinator',
+              'border-transparent' : member.position==='Staf'
+            }">
+              <div class="
+                relative
+                flex justify-center
+                w-full h-[17.5rem]
+                bg-gradient-to-b from-neutral-800 to-bemkmuaj-white
+                shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
+                rounded-t-[1.6rem]
+              ">
+                <img :src="`/images/board_members/${member.photo}`" alt="" class="
+                  absolute bottom-0
+                  w-[90%]
+                  transition-all duration-200 ease-in-out
+                " />
+              </div>
+              <div class="
+                flex flex-col justify-center items-center
+                w-full h-[5.5rem]
+                rounded-b-[1.6rem]
+              " :class="{
+                'bg-gradient-to-b from-bemkmuaj-orange from-[50%] to-bemkmuaj-gold' : member.position==='Ketua',
+                'bg-gradient-to-b from-bemkmuaj-orange from-[70%] to-bemkmuaj-gold' : member.position==='Wakil Ketua',
+                'bg-bemkmuaj-orange' : member.position==='Koordinator'||member.position==='Staf'
+              }">
+                <h3 class="
+                  drop-shadow-bemkmuaj-black-shadow
+                  text-center text-bemkmuaj-white font-Panton-BlackCaps
+                  transition-all duration-200 ease-in-out
+                " :class="{
+                  'text-[1.7rem]' : department.name==='Ketua dan Wakil Ketua',
+                  'text-[1rem]' : department.name==='Kesekretariatan'||department.name==='Hubungan Masyarakat',
+                  'text-[1.1rem]' : department.name==='Keuangan'||department.name==='Internal',
+                  'text-[0.75rem]' : department.name==='Pengembangan Mutu Organisasi'
+                }">
+                  {{ member.position+(department.name!=='Ketua dan Wakil Ketua'?' Departemen '+department.name:'') }}
+                </h3>
+                <span class="
+                  drop-shadow-bemkmuaj-black-shadow
+                  text-[1.3rem] text-center text-bemkmuaj-white font-Montserrat-Medium
+                  transition-all duration-200 ease-in-out
+                ">
+                  {{ member.nickname }}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

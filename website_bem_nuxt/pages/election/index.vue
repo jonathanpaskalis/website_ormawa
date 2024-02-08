@@ -69,7 +69,7 @@
             " :class="{
               'flex-row-reverse' : candidate.number==='1'
             }">
-              <img v-for="member in candidate.members" :src="`/images/election_candidates/${member.photo}`" alt="" class="
+              <img v-for="member in candidate.members" :src="member.photo" alt="" class="
                 h-min
                 transition-all duration-100 ease-in-out
               " :class="{
@@ -378,7 +378,7 @@
                   flex justify-center
                   w-full h-full
                 ">
-                  <img :src="`/images/election_candidates/${member.photo}`" alt="" class="
+                  <img :src="member.photo" alt="" class="
                     absolute bottom-0
                     w-[90%]
                     transition-all duration-200 ease-in-out
@@ -674,7 +674,7 @@
                         flex justify-center
                         w-full h-full
                       ">
-                        <img :src="`/images/election_candidates/${member.photo}`" alt="" class="
+                        <img :src="member.photo" alt="" class="
                           absolute bottom-0
                           w-[90%]
                           transition-all duration-200 ease-in-out

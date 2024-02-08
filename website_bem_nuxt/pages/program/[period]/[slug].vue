@@ -13,7 +13,7 @@
         drop-shadow-bemkmuaj-black-shadow 
         animate-[opacity-fill-animation_1s_ease-in-out]
       ">
-        <img :src="`/images/program_logos/${program.logo}`" alt="" class="
+        <img :src="program.logo" alt="" class="
           h-full
         ">
       </div>
@@ -40,7 +40,7 @@
           relative
           w-full sm:w-[85%] lg:w-[75%]
         ">
-          <img v-if="period" :src="`/images/program_documentations/${program.documentation}`" class="
+          <img v-if="period" :src="program.documentation" class="
             w-full
           "/>
           <div class="

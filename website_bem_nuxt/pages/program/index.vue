@@ -50,7 +50,7 @@
               hover:shadow-bemkmuaj-orange-shadow
               transition-all duration-200 ease-in-out
             ">
-              <img :src="`/images/program_logos/${program.logo}`" alt="" class="
+              <img :src="program.logo" alt="" class="
                 w-full h-full
               " />
             </NuxtLink>

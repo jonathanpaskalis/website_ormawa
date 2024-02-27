@@ -8,7 +8,19 @@ html {
 }
 
 body {
-  @apply scrollbar scrollbar-w-[6px] scrollbar-thumb-rounded-md scrollbar-thumb-bemkmuaj-white hover:scrollbar-thumb-neutral-400 scrollbar-track-bemkmuaj-dark-gray transition-all duration-100 ease-in-out;
+  @apply transition-all duration-100 ease-in-out;
+  &::-webkit-scrollbar {
+    @apply w-[6px];
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-bemkmuaj-dark-gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-bemkmuaj-white hover:bg-neutral-400;
+  }
+  
 }
 
 p, span, div {

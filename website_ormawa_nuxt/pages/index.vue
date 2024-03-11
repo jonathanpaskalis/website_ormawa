@@ -173,7 +173,7 @@
           Ormawa ABC-UXYZ
         </h2>
         <div class="w-full">
-          <img src="/images/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
+          <img src="/images/Bagan_Ormawa_XYZ-UAJ.webp" alt="" class="w-full" />
         </div>
         <NuxtLink to="/profile" aria-label="Go to the profile page" class="
           flex justify-center items-center

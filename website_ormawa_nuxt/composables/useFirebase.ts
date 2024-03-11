@@ -23,11 +23,13 @@ export const useFirebase = () => {
   const analytics = getAnalytics(firebaseApp);
   const db = getFirestore(firebaseApp);
   const storage = getStorage(firebaseApp);
+  const functions = getFunctions(firebaseApp);
 
   return {
     firebaseApp,
     analytics,
     db,
     storage,
+    functions,
   }
 }

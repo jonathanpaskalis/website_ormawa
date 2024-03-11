@@ -8,57 +8,57 @@
       animate-[bg-flow-animation_120s_ease-in-out_infinite] 
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         h-full
-        bg-bemkmuaj-black bg-opacity-[75%]
+        bg-ormawaxyzuaj-black bg-opacity-[75%]
       ">
       </div>
       <div class="
         flex flex-col items-center gap-y-8
         p-4 lg:p-8
         w-full
-        bg-bemkmuaj-black
-        shadow-bemkmuaj-black-shadow
+        bg-ormawaxyzuaj-black
+        shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div class="
           flex flex-col items-center
         ">
           <h2 v-if="error" class="
-            text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-bemkmuaj-orange font-Poppins-SemiBold
-            drop-shadow-bemkmuaj-black-shadow 
+            text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-ormawaxyzuaj-orange font-Poppins-SemiBold
+            drop-shadow-ormawaxyzuaj-black-shadow 
             transition-all duration-100 ease-in-out
             animate-[opacity-fill-animation_1s_ease-in-out]
           ">
             {{ error.statusCode }}
           </h2>
           <span v-if="error" class="
-            text-bemkmuaj-white
+            text-ormawaxyzuaj-white
           ">
             {{ error.message }}
           </span>
         </div>
         <span class="
-          text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-white font-Montserrat-Bold
+          text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-ormawaxyzuaj-white font-Montserrat-Bold
         ">
           Kembali ke Beranda
         </span>
         <button @click="handleError" class="
           flex justify-center items-center
           w-28 sm:w-32 h-14 sm:h-16
-          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-          bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          fill-bemkmuaj-black hover:fill-bemkmuaj-orange
-          hover:shadow-bemkmuaj-orange-shadow-sm
+          border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
+          bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+          fill-ormawaxyzuaj-black hover:fill-ormawaxyzuaj-orange
+          hover:shadow-ormawaxyzuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
           <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
         </button>
       </div>
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         h-full
-        bg-bemkmuaj-black bg-opacity-[75%]
+        bg-ormawaxyzuaj-black bg-opacity-[75%]
       ">
       </div>
     </section>

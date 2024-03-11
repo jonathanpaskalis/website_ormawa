@@ -3,8 +3,8 @@
     sticky sm:fixed -top-12 xs:-top-16 sm:top-0 left-0 right-0
     flex flex-col
     h-28 xs:h-32 sm:h-16 xl:h-24
-    border-solid border-b-[0.15rem] border-bemkmuaj-white
-    bg-bemkmuaj-black shadow-bemkmuaj-black-shadow
+    border-solid border-b-[0.15rem] border-ormawaxyzuaj-white
+    bg-ormawaxyzuaj-black shadow-ormawaxyzuaj-black-shadow
     transition-all duration-100 ease-in-out
     z-10
   ">
@@ -29,7 +29,7 @@
           flex gap-4
           w-[16rem] xs:w-[22rem] xl:w-[30rem] h-12 xs:h-16 xl:h-24
           px-2 xs:pr-0
-          bg-bemkmuaj-white
+          bg-ormawaxyzuaj-white
           transition-all duration-100 ease-in-out
         ">
           <div class="
@@ -58,14 +58,14 @@
           flex
           w-[3.3rem] xs:w-[4.4rem] xl:w-[6.6rem] h-12 xs:h-16 xl:h-24
           rounded-br-[1.5rem] sm:rounded-r-[1.5rem] xl:rounded-r-[2rem]
-          bg-bemkmuaj-white
+          bg-ormawaxyzuaj-white
           transition-all duration-100 ease-in-out 
         ">
-          <img src="/images/organization_logos/Logo_KM-UAJ.webp" alt="" class="
+          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Simple.webp" alt="" class="
             h-full">
         </NuxtLink>
       </div>
-      <NuxtLink to="/" aria-label="Badan Eksekutif Mahasiswa Keluarga Mahasiswa-UAJ" class="
+      <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="
         flex items-center
         w-max
         sm:p-4
@@ -74,23 +74,23 @@
         <p class="
           hidden xl:block
           w-max
-          bg-gradient-to-l from-bemkmuaj-white from-50% via-bemkmuaj-gold via-75% to-bemkmuaj-orange
+          bg-gradient-to-l from-ormawaxyzuaj-white from-50% via-ormawaxyzuaj-gold via-75% to-ormawaxyzuaj-orange
           bg-200% bg-right bg-clip-text
           text-[1.3rem] text-transparent font-Panton-BlackCaps
           hover:bg-left
           transition-all duration-200 ease-in-out
           ">
-          Organisasi Mahasiswa<br>
+          Organisasi Mahasiswa ABC<br>
           Universitas XYZ
         </p>
         <p class="
           hidden sm:block xl:hidden
           h-min
-          text-[1.3rem] text-bemkmuaj-white font-Panton-BlackCaps
+          text-[1.3rem] text-ormawaxyzuaj-white font-Panton-BlackCaps
           text-clip
           overflow-hidden
         ">
-          Ormawa UXYZ
+          Ormawa ABC-UXYZ
         </p>
       </NuxtLink>
       <nav class="
@@ -110,8 +110,8 @@
             w-[9.5rem]
             p-[0.2rem_0.1rem_0.2rem_0.1rem]
             border-solid border-[0.15rem] border-transparent rounded-[1.5rem]
-            bg-bemkmuaj-black
-            text-bemkmuaj-white font-Poppins-SemiBold
+            bg-ormawaxyzuaj-black
+            text-ormawaxyzuaj-white font-Poppins-SemiBold
             transition-all duration-100 ease-in-out
           " :class="{
             'rounded-[1.5rem_1.5rem_0_0]': nav.subNavs,
@@ -121,7 +121,7 @@
             <Icons v-if="nav.subNavs" name="expand_more" class="
               h-[0.5rem]
               transition-transform duration-100 ease-in-out
-              fill-bemkmuaj-white overflow-hidden
+              fill-ormawaxyzuaj-white overflow-hidden
             "/>
           </NuxtLink>
           <div v-if="nav.subNavs" class="
@@ -136,8 +136,8 @@
               flex justify-center items-center
               w-full h-12
               p-[0.2rem 0 0.2rem 0]
-              bg-bemkmuaj-black hover:bg-bemkmuaj-dark-gray
-              text-[0.8rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
+              bg-ormawaxyzuaj-black hover:bg-ormawaxyzuaj-dark-gray
+              text-[0.8rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange font-Poppins-Medium
               transition-all duration-100 ease-in-out
             ">
               {{ subNav.name }}
@@ -149,9 +149,9 @@
           hidden sm:flex 3xl:hidden justify-center items-center
           w-10 xl:w-14 h-10 xl:h-14
           p-[0.2rem]
-          border-solid border-[0.15rem] border-bemkmuaj-white rounded-[0.5rem]
-          bg-bemkmuaj-black
-          fill-bemkmuaj-white
+          border-solid border-[0.15rem] border-ormawaxyzuaj-white rounded-[0.5rem]
+          bg-ormawaxyzuaj-black
+          fill-ormawaxyzuaj-white
         ">
           <Icons v-if="hideMNav" name="menu" class="w-[85%]" />
           <Icons v-else name="close" class="w-[85%]" />
@@ -162,7 +162,7 @@
       <nav class="
         h-screen w-screen
         mt-16 sm:mt-0
-        bg-bemkmuaj-black bg-opacity-95
+        bg-ormawaxyzuaj-black bg-opacity-95
         transition-all duration-200 ease-in-out
         3xl:-translate-x-full
         " :class="{'-translate-x-full' : hideMNav}">
@@ -173,9 +173,9 @@
             nuxtlink
             flex justify-center items-center
             w-full h-16
-            border-solid border-b border-bemkmuaj-white
-            hover:bg-bemkmuaj-dark-gray
-            text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-SemiBold
+            border-solid border-b border-ormawaxyzuaj-white
+            hover:bg-ormawaxyzuaj-dark-gray
+            text-[1.3rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange font-Poppins-SemiBold
             transition-all duration-100 ease-in-out
           ">
             {{ nav.name }}
@@ -184,9 +184,9 @@
             nuxtlink
             flex justify-center items-center gap-2
             w-full h-16
-            border-solid border-b border-bemkmuaj-white
-            hover:bg-bemkmuaj-dark-gray
-            text-[1.3rem] text-bemkmuaj-white hover:text-bemkmuaj-orange fill-bemkmuaj-white hover:fill-bemkmuaj-orange font-Poppins-SemiBold
+            border-solid border-b border-ormawaxyzuaj-white
+            hover:bg-ormawaxyzuaj-dark-gray
+            text-[1.3rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange font-Poppins-SemiBold
             transition-all duration-100 ease-in-out
             cursor-pointer
           ">
@@ -201,7 +201,7 @@
           </div>
           <div v-if="nav.subNavs" class="
             h-0
-            border-solid border-bemkmuaj-white
+            border-solid border-ormawaxyzuaj-white
             transition-all duration-100 ease-in-out
             overflow-hidden
           " :class="{ 
@@ -220,8 +220,8 @@
             <NuxtLink v-for="subNav in nav.subNavs" :key="`subNav-${subNav.name}`" @click.prevent="closeMNav(); enableSmoothScroll(nav.url);" :to="{ path: nav.url, hash: subNav.hash }" class="
               w-full h-12
               flex justify-center items-center
-              hover:bg-bemkmuaj-dark-gray
-              text-bemkmuaj-white hover:text-bemkmuaj-orange font-Poppins-Medium
+              hover:bg-ormawaxyzuaj-dark-gray
+              text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange font-Poppins-Medium
               transition-all duration-100 ease-in-out
             ">
               {{ subNav.name }}
@@ -252,14 +252,14 @@
           flex
           w-[4.4rem] h-16 xl:h-24
           rounded-[0_1.5rem_1.5rem_0] xl:rounded-[0_2rem_2rem_0]
-          bg-bemkmuaj-white
+          bg-ormawaxyzuaj-white
           transition-all duration-100
         ">
-          <img src="/images/organization_logos/Logo_KM-UAJ.webp" alt="" class="
+          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Simple.webp" alt="" class="
             h-full">
         </NuxtLink>
       </div>
-      <NuxtLink to="/" aria-label="Badan Eksekutif Mahasiswa Keluarga Mahasiswa-UAJ" class="
+      <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="
         flex flex-col justify-center
         w-max
         p-4
@@ -268,9 +268,9 @@
         'pl-2' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
       }">
         <p class="
-          text-[1.3rem] text-bemkmuaj-white font-Panton-BlackCaps
+          text-[1.3rem] text-ormawaxyzuaj-white font-Panton-BlackCaps
         ">
-          BEM KM-UAJ
+          Ormawa XYZ-UAJ
         </p>
       </NuxtLink>
       <button @click.prevent="toggleMNav" aria-label="Mobile Navbar Button" class="
@@ -278,9 +278,9 @@
         flex sm:hidden justify-center items-center
         w-10 xl:w-14 h-10 xl:h-14
         p-[0.2rem]
-        border-solid border-[0.15rem] border-bemkmuaj-white rounded-[0.5rem]
-        bg-bemkmuaj-black
-        fill-bemkmuaj-white
+        border-solid border-[0.15rem] border-ormawaxyzuaj-white rounded-[0.5rem]
+        bg-ormawaxyzuaj-black
+        fill-ormawaxyzuaj-white
       ">
         <Icons v-if="hideMNav" name="menu" class="w-[85%]" />
         <Icons v-else name="close" class="w-[85%]" />
@@ -318,13 +318,13 @@
       if(value==='show') {
         subNav.classList.remove('border-transparent');
         subNav.style.height = `${2.5*subNavData.length}rem`;
-        subNav.classList.add('border-bemkmuaj-orange-glow');
-        subNav.classList.add('shadow-bemkmuaj-orange-shadow-sm');
+        subNav.classList.add('border-ormawaxyzuaj-orange-glow');
+        subNav.classList.add('shadow-ormawaxyzuaj-orange-shadow-sm');
       }
       else if (value==='hide') {
         subNav.style.height = '';
-        subNav.classList.remove('border-bemkmuaj-orange-glow');
-        subNav.classList.remove('shadow-bemkmuaj-orange-shadow-sm');
+        subNav.classList.remove('border-ormawaxyzuaj-orange-glow');
+        subNav.classList.remove('shadow-ormawaxyzuaj-orange-shadow-sm');
         subNav.classList.add('border-transparent');
       }
     } 
@@ -419,9 +419,9 @@
   .selection {
     &:hover {
       .nuxtlink {
-        @apply border-bemkmuaj-orange-glow shadow-bemkmuaj-orange-shadow-sm text-bemkmuaj-orange;
+        @apply border-ormawaxyzuaj-orange-glow shadow-ormawaxyzuaj-orange-shadow-sm text-ormawaxyzuaj-orange;
         svg {
-          @apply -rotate-180 fill-bemkmuaj-orange
+          @apply -rotate-180 fill-ormawaxyzuaj-orange
         }
       }
     }
@@ -430,16 +430,16 @@
   .mselection {
     &:hover {
       .nuxtlink {
-        @apply bg-bemkmuaj-dark-gray text-bemkmuaj-orange fill-bemkmuaj-orange;
+        @apply bg-ormawaxyzuaj-dark-gray text-ormawaxyzuaj-orange fill-ormawaxyzuaj-orange;
       }
     }
   }
 
   .navmbtn {
     &:hover {
-      @apply border-bemkmuaj-orange-glow shadow-bemkmuaj-orange-shadow-sm;
+      @apply border-ormawaxyzuaj-orange-glow shadow-ormawaxyzuaj-orange-shadow-sm;
       svg {
-        @apply fill-bemkmuaj-orange;
+        @apply fill-ormawaxyzuaj-orange;
       }
     }
   }

@@ -18,9 +18,9 @@
         fixed bottom-[4.5rem] right-8
         flex justify-center items-center
         w-14 h-14
-        border-solid border-[0.15rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[0.5rem]
-        bg-bemkmuaj-black bg-opacity-[85%] hover:bg-opacity-100
-        fill-bemkmuaj-white hover:fill-bemkmuaj-orange 
+        border-solid border-[0.15rem] border-ormawaxyzuaj-white hover:border-ormawaxyzuaj-orange-glow rounded-[0.5rem]
+        bg-ormawaxyzuaj-black bg-opacity-[85%] hover:bg-opacity-100
+        fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange 
         transition-all duration-100 ease-in-out
       " :class="{
         'opacity-0' : hideToTopBtn,

@@ -1,253 +1,270 @@
 <template>
   <div>
-    
+    <span v-if="test">
+      {{ test }}
+    </span>
+    <span v-else>
+      Data belum ada
+    </span>
   </div>
 </template>
 
 <script setup lang="ts">
 
-  import { collection, addDoc } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 
-  const period = {
-    name: "2023-2024",
-    candidates: [
-      {
-        number: 1,
-        vision: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis porro expedita nam ea a minus, eius vel magnam veniam omnis similique quia quo sit obcaecati tempora! Suscipit ipsum voluptatibus, similique obcaecati ab unde, eaque distinctio voluptatum exercitationem provident veniam!",
-        missions: [
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-        ],
-        members: [
-          {
-            name: "Nama",
-            position: "Calon Ketua",
-            faculty: "Fakultas Ekonomi dan Bisnis",
-            major: "Manajemen",
-            campusID: "202101019999",
-            photo: "Foto_Calon_Ketua_1.webp",
-            experiences: [
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-            ]
-          },
-          {
-            name: "Nama",
-            position: "Calon Wakil Ketua",
-            faculty: "Fakultas Ilmu Administrasi Bisnis dan Ilmu Komunikasi",
-            major: "Administrasi Bisnis",
-            campusID: "202102019999",
-            photo: "Foto_Calon_Wakil_Ketua_1.webp",
-            experiences: [
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-            ]
-          },
-        ],
-        programs: [
-          {
-            name: "Program 1",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
-            XYZPillars: [
-              {
-                name: "Pilar 1",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 2",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 3",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 4",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 5",
-                isTrue: true,
-              },
-            ],
-          },
-          {
-            name: "Program 2",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
-            XYZPillars: [
-              {
-                name: "Pilar 1",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 2",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 3",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 4",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 5",
-                isTrue: false,
-              },
-            ],
-          },
-          {
-            name: "Program 3",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
-            XYZPillars: [
-              {
-                name: "Pilar 1",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 2",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 3",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 4",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 5",
-                isTrue: true,
-              },
-            ],
-          }
-        ],
-      },
-      {
-        number: 2,
-        vision: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis porro expedita nam ea a minus, eius vel magnam veniam omnis similique quia quo sit obcaecati tempora! Suscipit ipsum voluptatibus, similique obcaecati ab unde, eaque distinctio voluptatum exercitationem provident veniam!",
-        missions: [
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
-        ],
-        members: [
-          {
-            name: "Nama",
-            position: "Calon Ketua",
-            faculty: "Fakultas Pendidikan dan Bahasa",
-            major: "Pendidikan Bahasa Inggris",
-            campusID: "202103019999",
-            photo: "Foto_Calon_Ketua_2.webp",
-            experiences: [
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-            ]
-          },
-          {
-            name: "Nama",
-            position: "Calon Wakil Ketua",
-            faculty: "Fakultas Ilmu Administrasi Bisnis dan Ilmu Komunikasi",
-            major: "Teknik Industri",
-            campusID: "202104039999",
-            photo: "Foto_Calon_Wakil_Ketua_2.webp",
-            experiences: [
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-              "Lorem Ipsum Dolor Sit Amet",
-            ]
-          },
-        ],
-        programs: [
-          {
-            name: "Program 1",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
-            XYZPillars: [
-              {
-                name: "Pilar 1",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 2",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 3",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 4",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 5",
-                isTrue: false,
-              },
-            ],
-          },
-          {
-            name: "Program 2",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
-            XYZPillars: [
-              {
-                name: "Pilar 1",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 2",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 3",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 4",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 5",
-                isTrue: true,
-              },
-            ],
-          },
-          {
-            name: "Program 3",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
-            XYZPillars: [
-              {
-                name: "Pilar 1",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 2",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 3",
-                isTrue: false,
-              },
-              {
-                name: "Pilar 4",
-                isTrue: true,
-              },
-              {
-                name: "Pilar 5",
-                isTrue: false,
-              },
-            ],
-          },
-        ],
-      },
-    ],
+const test = ref<any>(null);
+
+onMounted(async() => {
+  const { db } = useFirebase();
+  const docRef = doc(db, 'testCollection', 'testDocument');
+  onSnapshot(docRef, (snap) => {
+      test.value = snap.data();
+  });
+});
+
+  // import { collection, addDoc } from "firebase/firestore";
+
+  // const period = {
+  //   name: "2023-2024",
+  //   candidates: [
+  //     {
+  //       number: 1,
+  //       vision: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis porro expedita nam ea a minus, eius vel magnam veniam omnis similique quia quo sit obcaecati tempora! Suscipit ipsum voluptatibus, similique obcaecati ab unde, eaque distinctio voluptatum exercitationem provident veniam!",
+  //       missions: [
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //       ],
+  //       members: [
+  //         {
+  //           name: "Nama",
+  //           position: "Calon Ketua",
+  //           faculty: "Fakultas Ekonomi dan Bisnis",
+  //           major: "Manajemen",
+  //           campusID: "202101019999",
+  //           photo: "Foto_Calon_Ketua_1.webp",
+  //           experiences: [
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //           ]
+  //         },
+  //         {
+  //           name: "Nama",
+  //           position: "Calon Wakil Ketua",
+  //           faculty: "Fakultas Ilmu Administrasi Bisnis dan Ilmu Komunikasi",
+  //           major: "Administrasi Bisnis",
+  //           campusID: "202102019999",
+  //           photo: "Foto_Calon_Wakil_Ketua_1.webp",
+  //           experiences: [
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //           ]
+  //         },
+  //       ],
+  //       programs: [
+  //         {
+  //           name: "Program 1",
+  //           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
+  //           XYZPillars: [
+  //             {
+  //               name: "Pilar 1",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 2",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 3",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 4",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 5",
+  //               isTrue: true,
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           name: "Program 2",
+  //           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
+  //           XYZPillars: [
+  //             {
+  //               name: "Pilar 1",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 2",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 3",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 4",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 5",
+  //               isTrue: false,
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           name: "Program 3",
+  //           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
+  //           XYZPillars: [
+  //             {
+  //               name: "Pilar 1",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 2",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 3",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 4",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 5",
+  //               isTrue: true,
+  //             },
+  //           ],
+  //         }
+  //       ],
+  //     },
+  //     {
+  //       number: 2,
+  //       vision: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis porro expedita nam ea a minus, eius vel magnam veniam omnis similique quia quo sit obcaecati tempora! Suscipit ipsum voluptatibus, similique obcaecati ab unde, eaque distinctio voluptatum exercitationem provident veniam!",
+  //       missions: [
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
+  //       ],
+  //       members: [
+  //         {
+  //           name: "Nama",
+  //           position: "Calon Ketua",
+  //           faculty: "Fakultas Pendidikan dan Bahasa",
+  //           major: "Pendidikan Bahasa Inggris",
+  //           campusID: "202103019999",
+  //           photo: "Foto_Calon_Ketua_2.webp",
+  //           experiences: [
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //           ]
+  //         },
+  //         {
+  //           name: "Nama",
+  //           position: "Calon Wakil Ketua",
+  //           faculty: "Fakultas Ilmu Administrasi Bisnis dan Ilmu Komunikasi",
+  //           major: "Teknik Industri",
+  //           campusID: "202104039999",
+  //           photo: "Foto_Calon_Wakil_Ketua_2.webp",
+  //           experiences: [
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //             "Lorem Ipsum Dolor Sit Amet",
+  //           ]
+  //         },
+  //       ],
+  //       programs: [
+  //         {
+  //           name: "Program 1",
+  //           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
+  //           XYZPillars: [
+  //             {
+  //               name: "Pilar 1",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 2",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 3",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 4",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 5",
+  //               isTrue: false,
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           name: "Program 2",
+  //           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
+  //           XYZPillars: [
+  //             {
+  //               name: "Pilar 1",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 2",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 3",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 4",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 5",
+  //               isTrue: true,
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           name: "Program 3",
+  //           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse saepe nobis optio ipsum officiis ab impedit recusandae mollitia consequuntur?",
+  //           XYZPillars: [
+  //             {
+  //               name: "Pilar 1",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 2",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 3",
+  //               isTrue: false,
+  //             },
+  //             {
+  //               name: "Pilar 4",
+  //               isTrue: true,
+  //             },
+  //             {
+  //               name: "Pilar 5",
+  //               isTrue: false,
+  //             },
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //   ],
     // vision: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis porro expedita nam ea a minus, eius vel magnam veniam omnis similique quia quo sit obcaecati tempora! Suscipit ipsum voluptatibus, similique obcaecati ab unde, eaque distinctio voluptatum exercitationem provident veniam!",
     // mission: [
     //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur quibusdam ducimus incidunt praesentium reprehenderit!",
@@ -685,12 +702,13 @@
     //     ],
     //   },
     // ],
-  }
+  // }
 
-  onMounted(async ()=> {
-    const { db } = useFirebase();
-    const docRef = addDoc(collection(db, "periods"), period)
-  })
+  // onMounted(async ()=> {
+  //   const { db } = useFirebase();
+  //   const docRef = addDoc(collection(db, "periods"), period)
+  // })
+
 </script>
 
 <style scoped>

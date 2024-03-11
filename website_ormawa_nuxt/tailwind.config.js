@@ -58,13 +58,13 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        "bemkmuaj-orange-shadow-sm": "0 0 0.5rem rgba(241,90,34,.5)",
-        "bemkmuaj-orange-shadow": "0 0 2rem rgba(241,90,34,.5)",
-        "bemkmuaj-black-shadow": "0 0 2rem rgba(0,0,0,.5)",
-        "bemkmuaj-gold-shadow": "0 0 2rem rgba(212,156,67,.5)",
+        "ormawaxyzuaj-orange-shadow-sm": "0 0 0.5rem rgba(241,90,34,.5)",
+        "ormawaxyzuaj-orange-shadow": "0 0 2rem rgba(241,90,34,.5)",
+        "ormawaxyzuaj-black-shadow": "0 0 2rem rgba(0,0,0,.5)",
+        "ormawaxyzuaj-gold-shadow": "0 0 2rem rgba(212,156,67,.5)",
       },
       colors: {
-        bemkmuaj: {
+        ormawaxyzuaj: {
           orange: "#f15a22",
           "orange-glow": "#ff7c44",
           white: "#f0f0f0",
@@ -85,9 +85,9 @@ module.exports = {
         },
       },
       dropShadow: {
-        "bemkmuaj-black-shadow": "0 0 2rem rgba(0,0,0,0.5)",
-        "bemkmuaj-white-shadow": "0 0 2rem rgba(255,255,255,0.5)",
-        "bemkmuaj-orange-shadow": "0 0 2rem rgba(241,90,34,.2)",
+        "ormawaxyzuaj-black-shadow": "0 0 2rem rgba(0,0,0,0.5)",
+        "ormawaxyzuaj-white-shadow": "0 0 2rem rgba(255,255,255,0.5)",
+        "ormawaxyzuaj-orange-shadow": "0 0 2rem rgba(241,90,34,.2)",
       },
       keyframes: {
         "slide-fill-animation": {

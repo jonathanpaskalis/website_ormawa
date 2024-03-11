@@ -3,14 +3,14 @@
     <section id="title" class="
       flex justify-center items-center gap-4 xs:gap-8 lg:gap-16
       w-full h-24 sm:h-48
-      bg-bemkmuaj-white
-      shadow-bemkmuaj-black-shadow
+      bg-ormawaxyzuaj-white
+      shadow-ormawaxyzuaj-black-shadow
       transition-all duration-100 ease-in-out
     ">
       <div v-if="period" class="
         h-full
         py-6 xs:py-4 sm:py-8
-        drop-shadow-bemkmuaj-black-shadow 
+        drop-shadow-ormawaxyzuaj-black-shadow 
         animate-[opacity-fill-animation_1s_ease-in-out]
       ">
         <img :src="`/images/program_logos/${program.logo}`" alt="" class="
@@ -18,8 +18,8 @@
         ">
       </div>
       <h1 v-if="period" class="
-        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-bemkmuaj-orange font-Poppins-SemiBold
-        drop-shadow-bemkmuaj-black-shadow 
+        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-ormawaxyzuaj-orange font-Poppins-SemiBold
+        drop-shadow-ormawaxyzuaj-black-shadow 
         transition-all duration-100 ease-in-out
         animate-[opacity-fill-animation_1s_ease-in-out]
       ">
@@ -30,10 +30,10 @@
       flex justify-center
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col items-center gap-y-8 lg:gap-y-16
-        bg-bemkmuaj-black bg-opacity-75
-        shadow-bemkmuaj-black-shadow
+        bg-ormawaxyzuaj-black bg-opacity-75
+        shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div class="
@@ -54,8 +54,8 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Deskripsi
           </h2>
@@ -63,9 +63,9 @@
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tr-none
-            bg-bemkmuaj-white bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-black font-Montserrat-Regular
+            bg-ormawaxyzuaj-white bg-opacity-80
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-black font-Montserrat-Regular
           ">
             {{ program.description }}
           </p>
@@ -75,8 +75,8 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Tujuan
           </h2>
@@ -84,9 +84,9 @@
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tr-none
-            bg-bemkmuaj-white bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-black font-Montserrat-Regular
+            bg-ormawaxyzuaj-white bg-opacity-80
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-black font-Montserrat-Regular
           ">
           <ul class="
             pl-6
@@ -139,7 +139,7 @@ const isError = ref<boolean>(false);
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', '3ncRdPx5QVn3nTq1iM4I');
+  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy');
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
     period.value.programs.forEach((el:any)=> {

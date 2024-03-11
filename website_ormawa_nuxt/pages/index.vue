@@ -19,28 +19,28 @@
         absolute
         flex justify-center items-center 
         w-full h-full
-        bg-bemkmuaj-gold bg-opacity-[65%]
+        bg-ormawaxyzuaj-gold bg-opacity-[65%]
         shadow-[inset_0_0_20rem_rgba(0,0,0,0.5)]
       ">
         <div class="
-          container-bemkmuaj
+          container-ormawaxyzuaj
           flex justify-center items-center
           h-[80%]
           p-4 sm:p-8 md:p-16
           rounded-[2.5rem] md:rounded-[5rem]
-          bg-bemkmuaj-white bg-opacity-75
+          bg-ormawaxyzuaj-white bg-opacity-75
           transition-all duration-100 ease-in-out
         ">
           <div class="
             flex justify-center items-center
             max-w-[50%] h-full
-            drop-shadow-bemkmuaj-black-shadow
+            drop-shadow-ormawaxyzuaj-black-shadow
           ">
-            <img src="/images/organization_logos/Logo_BEM_KM-UAJ.webp" alt="" class="w-full max-h-full" />
+            <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ.webp" alt="" class="w-full max-h-full" />
           </div>
           <div class="
             flex flex-col justify-center items-center
-            drop-shadow-bemkmuaj-black-shadow
+            drop-shadow-ormawaxyzuaj-black-shadow
             max-w-[50%] h-full
           ">
             <div class="
@@ -54,8 +54,8 @@
               w-full
               p-[0.5rem_10%_0.5rem_10%]
               rounded-[1rem] sm:rounded-[2rem] 
-              bg-gradient-to-br from-bemkmuaj-white via-bemkmuaj-gold via-[25%] to-bemkmuaj-orange
-              text-[1rem] sm:text-[1.5rem] xl:text-[2.8rem] text-center text-bemkmuaj-white [text-shadow:0_0_0.5rem_rgba(255,255,255,0.5)] font-Panton-BlackCaps
+              bg-gradient-to-br from-ormawaxyzuaj-white via-ormawaxyzuaj-gold via-[25%] to-ormawaxyzuaj-orange
+              text-[1rem] sm:text-[1.5rem] xl:text-[2.8rem] text-center text-ormawaxyzuaj-white [text-shadow:0_0_0.5rem_rgba(255,255,255,0.5)] font-Panton-BlackCaps
             ">
               SELAMAT DATANG!
             </h1>
@@ -67,10 +67,10 @@
       flex justify-center
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col gap-y-8 lg:gap-y-16
-        bg-bemkmuaj-white bg-opacity-75
-        shadow-bemkmuaj-black-shadow
+        bg-ormawaxyzuaj-white bg-opacity-75
+        shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div class="
@@ -78,18 +78,18 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-black font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-black-shadow
           ">
-            Ormawa UXYZ
+            Ormawa XYZ-UAJ
           </h2>
           <p class="
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tr-none
-            bg-bemkmuaj-black bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
+            bg-ormawaxyzuaj-black bg-opacity-80
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
           ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus voluptates ab blanditiis,
             sunt beatae quo perferendis, hic aspernatur odio cum. Culpa cupiditate labore dolores ex. Commodi expedita necessitatibus nulla.
@@ -100,8 +100,8 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-left text-bemkmuaj-black font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-left text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Visi Ormawa
           </h2>
@@ -109,9 +109,9 @@
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tl-none
-            bg-bemkmuaj-black bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
+            bg-ormawaxyzuaj-black bg-opacity-80
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
           ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus voluptates ab blanditiis,
             sunt beatae quo perferendis, hic aspernatur odio cum. Culpa cupiditate labore dolores ex. Commodi expedita necessitatibus nulla.
@@ -122,8 +122,8 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-black font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-black-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Misi Ormawa
           </h2>
@@ -132,9 +132,9 @@
             w-full lg:w-[80%]
             p-6 pl-9 sm:pl-12
             rounded-[2rem] rounded-tr-none
-            bg-bemkmuaj-black bg-opacity-80
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Regular
+            bg-ormawaxyzuaj-black bg-opacity-80
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
             list-[lower-alpha]
           ">
             <li>
@@ -159,18 +159,18 @@
     <section id="organization-structure-chart" class="
       flex justify-center
       bg-gradient-to-b from-black to-neutral-900
-      shadow-bemkmuaj-black-shadow
+      shadow-ormawaxyzuaj-black-shadow
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col items-center gap-y-8 lg:gap-y-16
       ">
         <h2 class="
-          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-white text-center font-Montserrat-SemiBold
+          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-ormawaxyzuaj-white text-center font-Montserrat-SemiBold
           drop-shadow-[0_0_0.5rem_rgba(255,255,255,0.5)]
         ">
           Bagan Struktur Organisasi<br>
-          Ormawa UX
+          Ormawa ABC-UXYZ
         </h2>
         <div class="w-full">
           <img src="/images/Bagan_BEM_KM-UAJ.webp" alt="" class="w-full" />
@@ -178,10 +178,10 @@
         <NuxtLink to="/profile" aria-label="Go to the profile page" class="
           flex justify-center items-center
           w-28 sm:w-32 h-14 sm:h-16
-          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-          bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          fill-bemkmuaj-black hover:fill-bemkmuaj-orange
-          hover:shadow-bemkmuaj-orange-shadow-sm
+          border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
+          bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+          fill-ormawaxyzuaj-black hover:fill-ormawaxyzuaj-orange
+          hover:shadow-ormawaxyzuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
           <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
@@ -192,17 +192,17 @@
       flex justify-center
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col xl:flex-row items-center xl:justify-between gap-x-8 gap-y-4
-        bg-bemkmuaj-white bg-opacity-75
-        shadow-bemkmuaj-black-shadow
+        bg-ormawaxyzuaj-white bg-opacity-75
+        shadow-ormawaxyzuaj-black-shadow
       ">
         <div class="
           flex flex-col justify-center items-center xl:items-start xl:gap-8
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-bemkmuaj-black text-center xl:text-left font-Montserrat-ExtraBold
-            drop-shadow-bemkmuaj-black-shadow 
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-ormawaxyzuaj-black text-center xl:text-left font-Montserrat-ExtraBold
+            drop-shadow-ormawaxyzuaj-black-shadow 
           ">
             Program<br v-if="isXLScreen">
             Kerja
@@ -210,10 +210,10 @@
           <NuxtLink v-if="isXLScreen" to="/program" aria-label="Go to the program page" class="
             flex justify-center items-center
             w-32 h-16
-            border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-            bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-            fill-bemkmuaj-white hover:fill-bemkmuaj-orange
-            hover:shadow-bemkmuaj-orange-shadow-sm
+            border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
+            bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+            fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange
+            hover:shadow-ormawaxyzuaj-orange-shadow-sm
             transition-all duration-200 ease-in-out
           ">
             <Icons name="trending_flat" class="h-[1.5rem]"/>
@@ -222,7 +222,7 @@
         <div v-if="period" class="
           relative
           w-full xl:w-[60%]
-          bg-bemkmuaj-black
+          bg-ormawaxyzuaj-black
         ">
           <Carousel :wrap-around="true" :mouse-drag="false" :autoplay="5000">
             <Slide v-for="program in period.programs" :key="`program-${program.name}`">
@@ -238,14 +238,14 @@
                   w-[4.5rem] h-[4rem]
                   p-2 pr-4
                   rounded-r-[1.5rem] 
-                  bg-bemkmuaj-white
+                  bg-ormawaxyzuaj-white
                 " />
                 <NuxtLink :to="`/program/${period.name}/${program.nickname}`" class="
                   flex justify-center items-center
                   w-full h-[4rem]
                   px-20
-                  bg-bemkmuaj-black 
-                  text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange font-Montserrat-Bold
+                  bg-ormawaxyzuaj-black 
+                  text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange font-Montserrat-Bold
                   transition-all duration-100 ease-in-out
                 ">
                   {{ program.nickname }}
@@ -267,10 +267,10 @@
         <NuxtLink v-if="!isXLScreen" to="/program" aria-label="Go to the program page" class="
           flex justify-center items-center
           w-28 sm:w-32 h-14 sm:h-16
-          border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-          bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-          fill-bemkmuaj-white hover:fill-bemkmuaj-orange
-          hover:shadow-bemkmuaj-orange-shadow-sm
+          border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
+          bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+          fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange
+          hover:shadow-ormawaxyzuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
           <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
@@ -284,11 +284,11 @@
 import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
 useHead({
-  title: 'Ormawa UXYZ'
+  title: 'Ormawa ABC-UAJ'
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan garis besar dari Organisasi Kemahasiswaan Universitas XYZ. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja Ormawa UXYZ',
+  description: 'Halaman ini menjelaskan garis besar dari Organisasi Mahasiswa XYZ Universitas Katolik Indonesia Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja Ormawa XYZ-UAJ',
 })
 
 definePageMeta({
@@ -367,10 +367,10 @@ onUnmounted(() => {
   .carousel__next,
   .carousel__prev {
     @apply scale-[150%] lg:scale-[200%];
-    @apply border-solid border-[0.1rem] border-bemkmuaj-white hover:border-bemkmuaj-orange-glow rounded-[0.25rem];
-    @apply bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100;
-    @apply hover:shadow-bemkmuaj-orange;
-    @apply text-bemkmuaj-white hover:text-bemkmuaj-orange;
+    @apply border-solid border-[0.1rem] border-ormawaxyzuaj-white hover:border-ormawaxyzuaj-orange-glow rounded-[0.25rem];
+    @apply bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100;
+    @apply hover:shadow-ormawaxyzuaj-orange;
+    @apply text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange;
     @apply transition-all duration-100 ease-in-out;
     @apply opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto
   }
@@ -385,19 +385,19 @@ onUnmounted(() => {
 
   .carousel__pagination-button {
     &::after{
-      @apply bg-bemkmuaj-white hover:bg-bemkmuaj-light-gray;
+      @apply bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-light-gray;
     }
   }
 
   .carousel__pagination-button {
     &::after{
-      @apply bg-bemkmuaj-white hover:bg-bemkmuaj-light-gray;
+      @apply bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-light-gray;
     }
   }
 
   .carousel__pagination-button--active {
     &::after{
-      @apply bg-bemkmuaj-orange hover:bg-bemkmuaj-orange-glow;
+      @apply bg-ormawaxyzuaj-orange hover:bg-ormawaxyzuaj-orange-glow;
     }
   }
 </style>

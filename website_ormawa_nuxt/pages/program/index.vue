@@ -3,13 +3,13 @@
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
-      bg-bemkmuaj-white
-      shadow-bemkmuaj-black-shadow
+      bg-ormawaxyzuaj-white
+      shadow-ormawaxyzuaj-black-shadow
       transition-all duration-100 ease-in-out
     ">
       <h1 class="
-        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-bemkmuaj-orange font-Poppins-SemiBold
-        drop-shadow-bemkmuaj-black-shadow 
+        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-ormawaxyzuaj-orange font-Poppins-SemiBold
+        drop-shadow-ormawaxyzuaj-black-shadow 
         transition-all duration-100 ease-in-out
         animate-[opacity-fill-animation_1s_ease-in-out]
       ">
@@ -20,19 +20,19 @@
       flex justify-center
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col gap-y-8 lg:gap-y-16
-        bg-bemkmuaj-black bg-opacity-75
-        shadow-bemkmuaj-black-shadow
+        bg-ormawaxyzuaj-black bg-opacity-75
+        shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div v-if="period" class="
           flex flex-col gap-4
         ">
           <h2 class="
-            bg-gradient-to-b from-bemkmuaj-orange to-bemkmuaj-gold
+            bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
             bg-clip-text
-            drop-shadow-bemkmuaj-orange-shadow
+            drop-shadow-ormawaxyzuaj-orange-shadow
             text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
             transition-all duration-100
           ">
@@ -45,9 +45,9 @@
               flex justify-center items-center justify-self-center
               w-[7rem] xs:w-[10rem] sm:w-[15rem]
               p-4
-              border-solid border-2 sm:border-4 border-transparent hover:border-bemkmuaj-orange-glow rounded-[2rem]
-              bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-              hover:shadow-bemkmuaj-orange-shadow
+              border-solid border-2 sm:border-4 border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
+              bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+              hover:shadow-ormawaxyzuaj-orange-shadow
               transition-all duration-200 ease-in-out
             ">
               <img :src="`/images/program_logos/${program.logo}`" alt="" class="
@@ -68,7 +68,7 @@ useHead({
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan program kerja dari Organisasi Kemahasiswaan Universitas XYZ. Halaman ini menampilkan informasi tentang program kerja Ormawa UXYZ yang telah dilaksanakan atau yang akan datang',
+  description: 'Halaman ini menjelaskan program kerja dari Organisasi Mahasiswa XYZ Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja Ormawa XYZ-UAJ yang telah dilaksanakan atau yang akan datang',
 })
 
 definePageMeta({

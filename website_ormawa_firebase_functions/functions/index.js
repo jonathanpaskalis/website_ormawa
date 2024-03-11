@@ -8,7 +8,10 @@
  */
 
 const {onRequest} = require("firebase-functions/v2/https");
-const {setGlobalOptions} = require('firebase-functions/v2')
+const {setGlobalOptions} = require('firebase-functions/v2');
+
+const {initializeApp} = require("firebase-admin/app");
+const {getFirestore} = require("firebase-admin/firestore")
 
 setGlobalOptions({ region: 'asia-southeast2' })
 

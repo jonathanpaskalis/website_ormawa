@@ -3,23 +3,23 @@
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
-      bg-bemkmuaj-white
-      shadow-bemkmuaj-black-shadow
+      bg-ormawaxyzuaj-white
+      shadow-ormawaxyzuaj-black-shadow
       transition-all duration-100 ease-in-out
     ">
       <h1 v-if="period" class="
         text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-transparent font-Poppins-SemiBold
         [background-size:_400%]
-        bg-gradient-to-r from-bemkmuaj-orange via-bemkmuaj-gold via-[25%] to-bemkmuaj-white to-[50%]
+        bg-gradient-to-r from-ormawaxyzuaj-orange via-ormawaxyzuaj-gold via-[25%] to-ormawaxyzuaj-white to-[50%]
         bg-clip-text
-        drop-shadow-bemkmuaj-black-shadow 
+        drop-shadow-ormawaxyzuaj-black-shadow 
         transition-all duration-100 ease-in-out
         animate-[slide-fill-animation_1s_ease-in-out] 
       ">
         KABINET {{ period.ministry.toUpperCase() }} #1
       </h1>
       <span v-if="period" class="
-        text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-bemkmuaj-black 
+        text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-ormawaxyzuaj-black 
         transition-all duration-100 ease-in-out
       ">
         PERIODE {{ period.name }}
@@ -29,10 +29,10 @@
       flex justify-center
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col gap-y-8 lg:gap-y-16
-        bg-bemkmuaj-black bg-opacity-75
-        shadow-bemkmuaj-black-shadow
+        bg-ormawaxyzuaj-black bg-opacity-75
+        shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div class="
@@ -40,18 +40,18 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-white-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-white-shadow
           ">
-            Visi
+            Visi Kabinet
           </h2>
           <p v-if="period" class="
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tl-none
-            bg-gradient-to-br from-bemkmuaj-orange to-bemkmuaj-gold
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+            bg-gradient-to-br from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
           ">
             {{ period.vision }}
           </p>
@@ -61,19 +61,19 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-bemkmuaj-white font-Montserrat-ExtraBold 
-            drop-shadow-bemkmuaj-white-shadow
+            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            drop-shadow-ormawaxyzuaj-white-shadow
           ">
-            Misi
+            Misi Kabinet
           </h2>
           <ol v-if="period" class="
             flex flex-col gap-2
             w-full lg:w-[80%]
             p-6 pl-9 sm:pl-12
             rounded-[2rem] rounded-tr-none
-            bg-gradient-to-bl from-bemkmuaj-orange to-bemkmuaj-gold
-            shadow-bemkmuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-bemkmuaj-white font-Montserrat-Medium
+            bg-gradient-to-bl from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
+            shadow-ormawaxyzuaj-black-shadow
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
             list-[lower-alpha]
           ">
             <li v-for="(mission, index) in period.missions" :key="`mission-${index}`">
@@ -86,11 +86,11 @@
     <section id="ministry-structure" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
-      bg-bemkmuaj-black
-      shadow-bemkmuaj-black-shadow
+      bg-ormawaxyzuaj-black
+      shadow-ormawaxyzuaj-black-shadow
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col justify-center items-center gap-16
         transition-all duration-100 ease-in-out
       ">
@@ -100,12 +100,12 @@
           <h2 class="
             bg-gradient-to-b 
             bg-clip-text
-            drop-shadow-bemkmuaj-orange-shadow
+            drop-shadow-ormawaxyzuaj-orange-shadow
             text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
             transition-all duration-100
           " :class="{
-            'from-bemkmuaj-orange to-bemkmuaj-gold' : department.name==='Ketua dan Wakil Ketua',
-            'from-bemkmuaj-orange to-bemkmuaj-white' : department.name!=='Ketua dan Wakil Ketua'
+            'from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold' : department.name==='Ketua dan Wakil Ketua',
+            'from-ormawaxyzuaj-orange to-ormawaxyzuaj-white' : department.name!=='Ketua dan Wakil Ketua'
           }">
             {{ (department.name!=='Ketua dan Wakil Ketua'?'Departemen ':'')+department.name }}
           </h2>
@@ -133,10 +133,10 @@
           <button v-if="department.name!=='Ketua dan Wakil Ketua'" @click.prevent="toggleShowingMore(departmentIndex)" class="
             flex justify-center items-center
             w-[12rem] xs:w-[15rem] sm:w-[18rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-            border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-            bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-            hover:shadow-bemkmuaj-orange-shadow-sm
-            text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange
+            border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+            bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+            hover:shadow-ormawaxyzuaj-orange-shadow-sm
+            text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange
             transition-all duration-100 ease-in-out
           ">
             <span v-if="showingMores[departmentIndex]" class="font-Panton-BlackCaps">Tampilkan Lebih Sedikit</span>
@@ -151,13 +151,13 @@
       w-full
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col justify-center items-center gap-4 lg:gap-8
-        bg-bemkmuaj-black bg-opacity-75
+        bg-ormawaxyzuaj-black bg-opacity-75
       ">
         <h2 class="
-          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-center text-bemkmuaj-white font-Montserrat-ExtraBold 
-          drop-shadow-bemkmuaj-white-shadow
+          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-center text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+          drop-shadow-ormawaxyzuaj-white-shadow
         ">
           Komposisi Pengurus
         </h2>
@@ -166,7 +166,7 @@
           w-full
         ">
           <h3 class="
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-bemkmuaj-white font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-ormawaxyzuaj-white font-Montserrat-Regular
           ">
             {{ faculty.name }}
           </h3>
@@ -186,8 +186,8 @@
           }">
             <span class="
               pl-2 lg:pl-4
-              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-bemkmuaj-white font-Montserrat-SemiBold
-              drop-shadow-bemkmuaj-black-shadow
+              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-ormawaxyzuaj-white font-Montserrat-SemiBold
+              drop-shadow-ormawaxyzuaj-black-shadow
             ">
               {{ faculty.members }}
             </span>
@@ -201,11 +201,11 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Profile | Ormawa UXYZ',
+  title: 'Profile | Ormawa ABC-UXYZ',
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan tentang profil dari Organisasi Kemahasiswaan UXYZ. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix Ormawa UXYZ',
+  description: 'Halaman ini menjelaskan tentang profil dari Organisasi Mahasiswa XYZ-UAJ. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix Ormawa XYZ-UAJ',
 })
 
 definePageMeta({
@@ -411,7 +411,7 @@ const boardComposition = ref<{
           @apply w-[95%];
         }
         h3, span {
-          @apply text-bemkmuaj-black;
+          @apply text-ormawaxyzuaj-black;
         }
       }      
     }

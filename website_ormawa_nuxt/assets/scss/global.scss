@@ -14,11 +14,11 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    @apply bg-bemkmuaj-dark-gray;
+    @apply bg-ormawaxyzuaj-dark-gray;
   }
 
   &::-webkit-scrollbar-thumb {
-    @apply rounded-md bg-bemkmuaj-white hover:bg-neutral-400;
+    @apply rounded-md bg-ormawaxyzuaj-white hover:bg-neutral-400;
   }
   
 }
@@ -27,7 +27,7 @@ p, span, div {
   @apply font-Montserrat-Regular;
 }
 
-.container-bemkmuaj {
+.container-ormawaxyzuaj {
   @apply w-[90%] md:w-[75%] lg:w-[60%] min-w-[15rem];
   @apply p-4 lg:p-8;
 }

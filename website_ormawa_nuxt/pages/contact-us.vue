@@ -3,13 +3,13 @@
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
-      bg-bemkmuaj-white
-      shadow-bemkmuaj-black-shadow
+      bg-ormawaxyzuaj-white
+      shadow-ormawaxyzuaj-black-shadow
       transition-all duration-100 ease-in-out
     ">
       <h1 class="
-        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-bemkmuaj-orange font-Poppins-SemiBold
-        drop-shadow-bemkmuaj-black-shadow 
+        text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-ormawaxyzuaj-orange font-Poppins-SemiBold
+        drop-shadow-ormawaxyzuaj-black-shadow 
         transition-all duration-100 ease-in-out
         animate-[opacity-fill-animation_1s_ease-in-out]
       ">
@@ -21,10 +21,10 @@
       w-full
     ">
       <div class="
-        container-bemkmuaj
+        container-ormawaxyzuaj
         flex flex-col justify-center gap-8
-        bg-bemkmuaj-black bg-opacity-75
-        shadow-bemkmuaj-black-shadow 
+        bg-ormawaxyzuaj-black bg-opacity-75
+        shadow-ormawaxyzuaj-black-shadow 
       ">
         
         <div class="
@@ -36,11 +36,11 @@
             w-full
           "> 
             <h2 class="
-              bg-gradient-to-r from-bemkmuaj-orange from-[25%] to-transparent to-50%
+              bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
               [background-size:_400%]
               bg-clip-text
               text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-transparent font-Montserrat-Bold
-              drop-shadow-bemkmuaj-black-shadow 
+              drop-shadow-ormawaxyzuaj-black-shadow 
               animate-[slide-fill-animation_1s_ease-in-out]
             ">
               KONTAK
@@ -50,20 +50,20 @@
               w-full
             ">
               <div @mouseenter="changeColor(email,'change-to')" @mouseleave="changeColor(email,'change-back')">
-                <NuxtLink to="mailto: ormawa@uxyz.ac.id" class="
+                <NuxtLink to="mailto: ormawa.abc@uxyz.ac.id" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Email
                 </NuxtLink>
               </div>
               <span ref="email" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
+                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 ormawa@uxyz.ac.id
@@ -74,20 +74,20 @@
               w-full
             ">
               <div @mouseenter="changeColor(instagram,'change-to')" @mouseleave="changeColor(instagram,'change-back')">
-                <NuxtLink to="https://instagram.com/ormawa.uxyz" target="_blank" class="
+                <NuxtLink to="https://instagram.com/ormawaabc.uxyz" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Instagram
                 </NuxtLink>
               </div>
               <span ref="instagram" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
+                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 ormawa.uxyz
@@ -101,17 +101,17 @@
                 <NuxtLink to="https://wa.me/628000000000" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Eksternal
                 </NuxtLink>
               </div>
               <span ref="eksternal" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
+                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 +62 8000000000 (Lorem)
@@ -125,17 +125,17 @@
                 <NuxtLink to="https://wa.me/628000000000" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Internal
                 </NuxtLink>
               </div>
               <span ref="internal" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
+                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 +62 8000000000 (Ipsum)
@@ -149,17 +149,17 @@
                 <NuxtLink to="https://wa.me/628000000000" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Aspirasi
                 </NuxtLink>
               </div>
               <span ref="aspirasi" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
+                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 +62 8000000000 (Dolor)
@@ -172,17 +172,17 @@
           ">
             <div>
               <h2 class="
-                bg-gradient-to-r from-bemkmuaj-orange from-[25%] to-transparent to-50%
+                bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
                 [background-size:_400%]
                 bg-clip-text
                 text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-transparent font-Montserrat-Bold
-                drop-shadow-bemkmuaj-black-shadow 
+                drop-shadow-ormawaxyzuaj-black-shadow 
                 animate-[slide-fill-animation_1s_ease-in-out]
               ">
                 ALAMAT
               </h2>
               <span class="
-                text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white
+                text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
               ">
                 Jl. Lorem No. 0, Kelurahan Ipsum, Kecamatan Dolor, Kota Sit Amet, 0000
               </span>
@@ -194,11 +194,11 @@
         </div>
         <div>
           <h2 class="
-            bg-gradient-to-r from-bemkmuaj-orange from-[25%] to-transparent to-50%
+            bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
             [background-size:_400%]
             bg-clip-text
             text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-transparent font-Montserrat-Bold
-            drop-shadow-bemkmuaj-black-shadow 
+            drop-shadow-ormawaxyzuaj-black-shadow 
             animate-[slide-fill-animation_1s_ease-in-out]
           ">
             FORM
@@ -215,7 +215,7 @@
               ">
                 <label for="name" class="
                   w-max
-                  text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange
+                  text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange
                   transition-all duration-100 ease-in-out
                 ">
                   Nama
@@ -232,7 +232,7 @@
               ">
                 <label for="email" class="
                   w-max
-                  text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange
+                  text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange
                   transition-all duration-100 ease-in-out
                 ">
                   Email
@@ -252,7 +252,7 @@
               ">
                 <label for="subject" class="
                   w-max
-                  text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange
+                  text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange
                   transition-all duration-100 ease-in-out
                 ">
                   Subjek
@@ -269,7 +269,7 @@
               ">
                 <label for="message" class="
                   w-max
-                  text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange
+                  text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange
                   transition-all duration-100 ease-in-out
                 ">
                   Pesan
@@ -288,9 +288,9 @@
                 flex justify-start items-center
                 w-full
               ">
-                <input type="checkbox" id="isAnAspiration" v-model="formData.isAnAspiration" class="w-5 h-5 accent-bemkmuaj-orange">
+                <input type="checkbox" id="isAnAspiration" v-model="formData.isAnAspiration" class="w-5 h-5 accent-ormawaxyzuaj-orange">
                 <label for="isAnAspiration" class="
-                  text-[1rem] sm:text-[1.2rem] text-bemkmuaj-white hover:text-bemkmuaj-orange
+                  text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange
                   transition-all duration-100 ease-in-out
                 ">
                   Pesan adalah aspirasi mahasiswa UAJ
@@ -304,10 +304,10 @@
                 <button v-if="!isUploading && !uploadSucess && !uploadFail" type="submit" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Kirim
@@ -315,7 +315,7 @@
                 <div v-if="isUploading && !uploadSucess" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
                 ">
                   <Icons name="progress" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
                   Mengirim
@@ -323,7 +323,7 @@
                 <div v-if="!isUploading && uploadSucess" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
                 ">
                   <Icons name="done" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
                   Berhasil Kirim
@@ -331,7 +331,7 @@
                 <div v-if="!isUploading && uploadFail" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-orange font-Panton-BlackCaps fill-bemkmuaj-white
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
                 ">
                   <Icons name="close" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
                   Gagal Kirim
@@ -339,10 +339,10 @@
                 <button v-if="uploadSucess || uploadFail" @click.prevent="resetForm" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                  border-solid border-[0.15rem] border-transparent hover:border-bemkmuaj-orange-glow rounded-[1.5rem]
-                  bg-bemkmuaj-white hover:bg-bemkmuaj-black bg-opacity-75 hover:bg-opacity-100
-                  hover:shadow-bemkmuaj-orange-shadow-sm
-                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-bemkmuaj-black hover:text-bemkmuaj-orange font-Panton-BlackCaps
+                  border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
+                  bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                  hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                  text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
                   transition-all duration-100 ease-in-out
                 ">
                   Atur Ulang
@@ -359,11 +359,11 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Contact Us | Ormawa UXYZ'
+  title: 'Contact Us | Ormawa XYZ-UAJ'
 })
 
 useSeoMeta({
-  description: 'Halaman ini mamaparkan cara menghubungi Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi Ormawa UXYZ',
+  description: 'Halaman ini mamaparkan cara menghubungi Ormawa XYZ Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi Ormawa XYZ-UAJ',
 })
 
 definePageMeta({
@@ -486,12 +486,12 @@ const aspirasi = ref<HTMLElement | null>(null);
 
 const changeColor = (element: HTMLElement | null, changeOptions: string) => {
   if(changeOptions==='change-to') {
-    element!.classList.add('text-bemkmuaj-orange');
-    element!.classList.remove('text-bemkmuaj-white');
+    element!.classList.add('text-ormawaxyzuaj-orange');
+    element!.classList.remove('text-ormawaxyzuaj-white');
   }
   if(changeOptions==='change-back') {
-    element!.classList.add('text-bemkmuaj-white');
-    element!.classList.remove('text-bemkmuaj-orange');
+    element!.classList.add('text-ormawaxyzuaj-white');
+    element!.classList.remove('text-ormawaxyzuaj-orange');
   }
 }
 

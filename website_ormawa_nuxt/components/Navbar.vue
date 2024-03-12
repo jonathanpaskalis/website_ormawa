@@ -80,8 +80,8 @@
           hover:bg-left
           transition-all duration-200 ease-in-out
           ">
-          Organisasi Mahasiswa ABC<br>
-          Universitas XYZ
+          Organisasi Mahasiswa XYZ<br>
+          Unika Atma Jaya
         </p>
         <p class="
           hidden sm:block xl:hidden
@@ -90,7 +90,7 @@
           text-clip
           overflow-hidden
         ">
-          Ormawa ABC-UXYZ
+          Ormawa XYZ-UAJ
         </p>
       </NuxtLink>
       <nav class="

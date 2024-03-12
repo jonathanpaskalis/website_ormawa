@@ -64,11 +64,11 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Program | Ormawa UXYZ'
+  title: 'Program | Ormawa XYZ-UAJ'
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan program kerja dari Organisasi Mahasiswa XYZ Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja Ormawa XYZ-UAJ yang telah dilaksanakan atau yang akan datang',
+  description: 'Halaman ini menjelaskan program kerja dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja Ormawa XYZ-UAJ yang telah dilaksanakan atau yang akan datang',
 })
 
 definePageMeta({

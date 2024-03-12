@@ -30,7 +30,7 @@
             Email
           </p>
           <p class="text-[0.9rem] text-ormawaxyzuaj-white">
-            ormawa.abc@uxyz.ac.id
+            ormawa.xyz@atmajaya.ac.id
           </p>
         </div>
         <div>
@@ -83,5 +83,5 @@
 </script>
 
 <style lang="scss" scoped>
-
+  
 </style>

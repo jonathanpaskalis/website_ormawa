@@ -64,7 +64,6 @@ export const checkFormEmail = (email:string) => {
             }
             if (validMajorCode.value) {
               emailIsValid.value=true;
-              console.log(emailIsValid.value)
             }
             else emailIsValid.value=false;
           }
@@ -74,7 +73,6 @@ export const checkFormEmail = (email:string) => {
       }
       else emailIsValid.value=false;
     } catch (error) {
-      console.log(error)
       emailIsValid.value=false;
     }
   }

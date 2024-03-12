@@ -17,10 +17,13 @@ const test = ref<any>(null);
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'testCollection', 'testDocument');
+  const docRef = doc(db, 'voted_clients', 'test');
   onSnapshot(docRef, (snap) => {
       test.value = snap.data();
   });
+  watch(test, () => {
+    console.log('test');
+  })
 });
 
   // import { collection, addDoc } from "firebase/firestore";

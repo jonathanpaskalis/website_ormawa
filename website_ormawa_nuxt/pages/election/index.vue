@@ -565,7 +565,7 @@
           flex flex-col justify-center items-center
           w-full h-full
         ">
-          <button v-if="!isUploading" @click.prevent="closeVoteForm" class="
+          <button v-if="!isUploading && !isValidating" @click.prevent="closeVoteForm" class="
             flex justify-center items-center gap-4
             w-full h-8
             border-[0.15rem] border-b-0 border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-t-[0.5rem]
@@ -635,7 +635,7 @@
                   ">
                     Unggah
                   </label>
-                  <input @change.prevent="checkFormFile" ref="KIMFile" type="file" id="file" name="file" accept=".jpg" required class="w-0 h-0 overflow-hidden">
+                  <input @change.prevent="checkFormFile" ref="KIMFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required class="w-0 h-0 overflow-hidden">
                   <span v-if="formFileIsValid" class="text-ormawaxyzuaj-orange">
                     {{ KIMFile.files[0].name }}
                   </span>
@@ -789,7 +789,7 @@
                 ">
                   Pilih
                 </button>
-                <div v-if="isUploading && !uploadSucess" class="
+                <div v-if="isUploading && !uploadSucess && !isValidating && !voteIsValid" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
@@ -797,13 +797,56 @@
                   <Icons name="progress" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
                   Mengunggah
                 </div>
-                <div v-if="!isUploading && uploadSucess" class="
+                <div v-if="!isUploading && uploadSucess && isValidating && !voteIsValid" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
                 ">
-                  <Icons name="done" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
-                  Berhasil Unggah
+                  <Icons name="progress" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
+                  Memvalidasi
+                </div>
+                <div v-if="!isUploading && uploadSucess  && !isValidating && voteIsValid" class="
+                  flex flex-col items-center
+                  w-full
+                ">
+                  <div class="
+                    flex justify-center items-center gap-4
+                    h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                    fill-ormawaxyzuaj-white
+                  ">
+                    <Icons v-if="voteIsValid.isValid" name="done" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
+                    <Icons v-else name="close" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
+                    <span v-if="voteIsValid.isValid" class="
+                      text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps 
+                    ">Suara valid</span>
+                    <span v-else class="
+                      text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps 
+                    ">Suara tidak valid</span>
+                  </div>
+                  <span v-if="voteIsValid.code==='0'" class="
+                    w-[75%]
+                    text-center text-green-700 font-Montserrat-Bold
+                  ">
+                    Anda berhasil menggunakan hak suara anda!
+                  </span>
+                  <span v-else-if="voteIsValid.code==='1'" class="
+                    w-[75%]
+                    text-center text-red-700 font-Montserrat-Bold
+                  ">
+                    Anda telah menggunakan hak suara anda pada kesempatan sebelumnya. Jika anda merasa ini merupakan sebuah kesalahan silakan menghubungi nara hubung Internal
+                  </span>
+                  <span v-else-if="voteIsValid.code==='2'" class="
+                    w-[75%]
+                    text-center text-red-700 font-Montserrat-Bold
+                  ">
+                    Validasi email mahasiswa dan kartu identitas mahasiswa anda gagal. Pastikan email dan kartu identitas yang anda gunakan memiliki identitas yang sama!
+                  </span>
+                  <span v-else-if="voteIsValid.code==='3'" class="
+                    w-[75%]
+                    text-center text-red-700 font-Montserrat-Bold
+                  ">
+                    Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!
+                  </span>
                 </div>
               </div>
             </form>
@@ -821,7 +864,7 @@ useHead({
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan tentang pasangan calon Ketua dan Wakil Ketua Organisasi Kemahasiswaan Badan Ekekutif Mahasiswa Keluarga Mahasiwa-Unika Atma Jaya periode 2023-2025. Halaman ini menampilkan informasi tentang visi, misi, program kerja, dan biodata pasangan calon Ketua dan Wakil Ketua BEM KM-UAJ periode 2023-2025. Halaman ini memberi fitur kepada mahasiswa aktif S1 UAJ untuk melaksanakan pemilihan umum',
+  description: 'Halaman ini menjelaskan tentang pasangan calon Ketua dan Wakil Ketua Organisasi Mahasiswa XYZ-Unika Atma Jaya periode 2023-2025. Halaman ini menampilkan informasi tentang visi, misi, program kerja, dan biodata pasangan calon Ketua dan Wakil Ketua Ormawa XYZ-UAJ periode 2023-2025. Halaman ini memberi fitur kepada mahasiswa aktif S1 UAJ untuk melaksanakan pemilihan umum',
 })
 
 definePageMeta({
@@ -839,7 +882,7 @@ definePageMeta({
 
 // Data Fetching
 
-import { addDoc, doc, onSnapshot, collection } from 'firebase/firestore';
+import { addDoc, setDoc, doc, onSnapshot, collection, serverTimestamp } from 'firebase/firestore';
 import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
 
 const period = ref<any>(null);
@@ -849,6 +892,13 @@ onMounted(async() => {
   const docRef = doc(db, 'periods', 'm7N11UF5rp5Lf2YshfLX');
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
+  })
+  watch(voteIsValid, () => {
+    console.log('test');
+    if (voteIsValid) {
+      console.log(voteIsValid.value.isValid);
+      isValidating.value = false;
+    }
   })
 })
 
@@ -871,6 +921,8 @@ const formFileFirstTime = ref<boolean>(true);
 
 const isUploading = ref<boolean>(false);
 const uploadSucess = ref<boolean>(false);
+const isValidating = ref<boolean>(false);
+const voteIsValid = ref<any>(null);
 
 const openVoteForm = (vote:string) => {
   showForm.value = true;
@@ -888,25 +940,36 @@ const submitVote = async () => {
   checkFormFile();
   if (formEmailIsValid.value && formFileIsValid.value) {
     const { db, storage } = useFirebase();
-    const imageRef = firebaseRef(storage, `test_text_recognition/${returnEmailPart(voteFormData.value.email)}.jpg`);
     const imageFile = KIMFile.value.files[0];
     isUploading.value=true;
-    addDoc(collection(db, 'test_pemilu'), {
+    addDoc(collection(db, 'voter_emails'), {
       email: voteFormData.value.email,
-      voteValue: voteFormData.value.voteValue,
+      timeCreated: serverTimestamp(),
     }).then((snap => {
-      uploadBytes(imageRef, imageFile).then((snap) => {
-        isUploading.value=false;
-        uploadSucess.value=true;
+      const emailDocID = snap.id;
+      setDoc(doc(db, 'voter_votes', emailDocID), {
+        voteValue: voteFormData.value.voteValue,
+        timeCreated: serverTimestamp(),
+      }).then(() => {
+        const imageRef = firebaseRef(storage, `student_card_images/${emailDocID}.jpg`);
+        uploadBytes(imageRef, imageFile).then(() => {
+          isUploading.value = false;
+          uploadSucess.value = true;
+          isValidating.value = true;
+          const docRef = doc(db, 'voted_clients', emailDocID);
+          onSnapshot(docRef, (snap) => {
+            voteIsValid.value = snap.data();
+          })
+        });
       })
     }))
-  }
+  };
 }
 
-const returnEmailPart = (email:string) => {
-  const emailPart = email.split('@')[0];
-  return emailPart;
-}
+// const returnEmailPart = (email:string) => {
+//   const emailPart = email.split('@')[0];
+//   return emailPart;
+// }
 
 const returnVoteValueInt = (number:string) => {
   if (number==='1') return 0;
@@ -929,6 +992,8 @@ const resetForm = () => {
   formFileFirstTime.value = true;
   isUploading.value = false;
   uploadSucess.value = false;
+  isValidating.value = false;
+  voteIsValid.value = null;
 }
 
 const voteFormTransition = () => {
@@ -998,6 +1063,7 @@ onMounted(() => {
     const { emailIsValid } = checkFormEmail(voteFormData.value.email);
     formEmailIsValid.value = emailIsValid.value;
   });
+  
 });
 
 onUnmounted(() => {

@@ -50,7 +50,7 @@
               w-full
             ">
               <div @mouseenter="changeColor(email,'change-to')" @mouseleave="changeColor(email,'change-back')">
-                <NuxtLink to="mailto: ormawa.abc@uxyz.ac.id" class="
+                <NuxtLink to="mailto: ormawa.xyz@atmajaya.ac.id" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
@@ -66,7 +66,7 @@
                 text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
-                ormawa@uxyz.ac.id
+                ormawa.xyz@atmajaya.ac.id
               </span>
             </div>
             <div class="
@@ -74,7 +74,7 @@
               w-full
             ">
               <div @mouseenter="changeColor(instagram,'change-to')" @mouseleave="changeColor(instagram,'change-back')">
-                <NuxtLink to="https://instagram.com/ormawaabc.uxyz" target="_blank" class="
+                <NuxtLink to="https://instagram.com/ormawaxyz.uaj" target="_blank" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
@@ -90,7 +90,7 @@
                 text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
-                ormawa.uxyz
+                ormawaxyz.uaj
               </span>
             </div>
             <div class="
@@ -359,11 +359,11 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Contact Us | Ormawa XYZ-UAJ'
+  title: 'Hubungi Kami | Ormawa XYZ-UAJ'
 })
 
 useSeoMeta({
-  description: 'Halaman ini mamaparkan cara menghubungi Ormawa XYZ Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi Ormawa XYZ-UAJ',
+  description: 'Halaman ini mamaparkan cara menghubungi Ormawa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi Ormawa XYZ-UAJ',
 })
 
 definePageMeta({

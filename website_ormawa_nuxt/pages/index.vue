@@ -284,11 +284,11 @@
 import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
 useHead({
-  title: 'Ormawa ABC-UAJ'
+  title: 'Ormawa XYZ-UAJ'
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan garis besar dari Organisasi Mahasiswa XYZ Universitas Katolik Indonesia Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja Ormawa XYZ-UAJ',
+  description: 'Halaman ini menjelaskan garis besar dari Organisasi Mahasiswa XYZ-Universitas Katolik Indonesia Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja Ormawa XYZ-UAJ',
 })
 
 definePageMeta({

@@ -201,11 +201,11 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Profile | Ormawa ABC-UXYZ',
+  title: 'Profil | Ormawa XYZ-UAJ',
 })
 
 useSeoMeta({
-  description: 'Halaman ini menjelaskan tentang profil dari Organisasi Mahasiswa XYZ-UAJ. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix Ormawa XYZ-UAJ',
+  description: 'Halaman ini menjelaskan tentang profil dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix Ormawa XYZ-UAJ',
 })
 
 definePageMeta({

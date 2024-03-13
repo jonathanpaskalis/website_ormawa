@@ -23,6 +23,10 @@ body {
   
 }
 
+h2, h3 {
+  @apply leading-none
+}
+
 p, span, div {
   @apply font-Montserrat-Regular;
 }

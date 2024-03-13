@@ -68,61 +68,61 @@
     ">
       <div class="
         container-ormawaxyzuaj
-        flex flex-col gap-y-8 lg:gap-y-16
+        flex flex-col gap-y-8
         bg-ormawaxyzuaj-white bg-opacity-75
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
         <div class="
-          flex flex-col items-end gap-4
+          flex flex-col items-end gap-2
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Ormawa XYZ-UAJ
           </h2>
           <p class="
             w-full lg:w-[80%]
-            p-6
-            rounded-[2rem] rounded-tr-none
+            p-4
+            rounded-[1.5rem] rounded-tr-none
             bg-ormawaxyzuaj-black bg-opacity-80
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
           ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus voluptates ab blanditiis,
             sunt beatae quo perferendis, hic aspernatur odio cum. Culpa cupiditate labore dolores ex. Commodi expedita necessitatibus nulla.
           </p>
         </div>
         <div class="
-          flex flex-col items-start gap-4
+          flex flex-col items-start gap-2
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-left text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-left text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Visi Ormawa
           </h2>
           <p class="
             w-full lg:w-[80%]
-            p-6
-            rounded-[2rem] rounded-tl-none
+            p-4
+            rounded-[1.5rem] rounded-tl-none
             bg-ormawaxyzuaj-black bg-opacity-80
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
           ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus voluptates ab blanditiis,
             sunt beatae quo perferendis, hic aspernatur odio cum. Culpa cupiditate labore dolores ex. Commodi expedita necessitatibus nulla.
           </p>
         </div>
         <div class="
-          flex flex-col items-end gap-4
+          flex flex-col items-end gap-2
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Misi Ormawa
@@ -130,11 +130,11 @@
           <ol class="
             flex flex-col gap-2
             w-full lg:w-[80%]
-            p-6 pl-9 sm:pl-12
-            rounded-[2rem] rounded-tr-none
+            p-4 pl-7 sm:pl-10
+            rounded-[1.5rem] rounded-tr-none
             bg-ormawaxyzuaj-black bg-opacity-80
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Regular
             list-[lower-alpha]
           ">
             <li>
@@ -163,10 +163,10 @@
     ">
       <div class="
         container-ormawaxyzuaj
-        flex flex-col items-center gap-y-8 lg:gap-y-16
+        flex flex-col items-center gap-y-8
       ">
         <h2 class="
-          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-ormawaxyzuaj-white text-center font-Montserrat-SemiBold
+          text-[1.5rem] sm:text-[2rem] text-ormawaxyzuaj-white text-center font-Montserrat-SemiBold
           drop-shadow-[0_0_0.5rem_rgba(255,255,255,0.5)]
         ">
           Bagan Struktur Organisasi<br>
@@ -177,14 +177,14 @@
         </div>
         <NuxtLink to="/profile" aria-label="Go to the profile page" class="
           flex justify-center items-center
-          w-28 sm:w-32 h-14 sm:h-16
+          w-28 h-14
           border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
           bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
           fill-ormawaxyzuaj-black hover:fill-ormawaxyzuaj-orange
           hover:shadow-ormawaxyzuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
+          <Icons name="trending_flat" class="h-[1.2rem]"/>
         </NuxtLink>
       </div>
     </section>
@@ -198,10 +198,10 @@
         shadow-ormawaxyzuaj-black-shadow
       ">
         <div class="
-          flex flex-col justify-center items-center xl:items-start xl:gap-8
+          flex flex-col justify-center items-center xl:items-start xl:gap-4
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-ormawaxyzuaj-black text-center xl:text-left font-Montserrat-ExtraBold
+            text-[1.5rem] sm:text-[2rem] text-ormawaxyzuaj-black text-center xl:text-left font-Montserrat-ExtraBold
             drop-shadow-ormawaxyzuaj-black-shadow 
           ">
             Program<br v-if="isXLScreen">
@@ -209,14 +209,14 @@
           </h2>
           <NuxtLink v-if="isXLScreen" to="/program" aria-label="Go to the program page" class="
             flex justify-center items-center
-            w-32 h-16
+            w-28 h-14
             border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
             bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
             fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange
             hover:shadow-ormawaxyzuaj-orange-shadow-sm
             transition-all duration-200 ease-in-out
           ">
-            <Icons name="trending_flat" class="h-[1.5rem]"/>
+            <Icons name="trending_flat" class="h-[1.2rem]"/>
           </NuxtLink>
         </div>
         <div v-if="period" class="
@@ -266,14 +266,14 @@
         </div>
         <NuxtLink v-if="!isXLScreen" to="/program" aria-label="Go to the program page" class="
           flex justify-center items-center
-          w-28 sm:w-32 h-14 sm:h-16
+          w-28 h-14
           border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
           bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
           fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange
           hover:shadow-ormawaxyzuaj-orange-shadow-sm
           transition-all duration-200 ease-in-out
         ">
-          <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]"/>
+          <Icons name="trending_flat" class="h-[1.2rem]"/>
         </NuxtLink>
       </div>
     </section>

@@ -18,7 +18,7 @@ import { logger } from "firebase-functions/v2";
 initializeApp();
 setGlobalOptions({ region: 'asia-southeast2' });
 
-const db = getFirestore()
+const db = getFirestore();
 
 export const votingValidator = onDocumentCreated("student_card_texts/{docID}", async (event) => {
   const snapshot = event.data;
@@ -29,7 +29,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
   
   const emailDocID = file.split('/')[4].split('.')[0];
 
-  // First Validation Function checking if the student card text format is valid
+  // First Validation Function checking if the student card is valid
   const firstLineIsValid = textSplitted[0]==='UNIVERSITAS KATOLIK INDONESIA' ? true : false;
   const SecondtLineIsValid = textSplitted[1]==='ATMA JAYA' ? true : false;
   const FifthLineIsValid = textSplitted[4]==='www.atmajaya.ac.id | Telp: +62215703306' ? true : false;
@@ -39,6 +39,8 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
   let isValid = false;
 
   if (firstLineIsValid && SecondtLineIsValid && FifthLineIsValid && SixthLineIsValid && EighthLineIsValid) {
+
+    //Second Validation Function checking if the information from the student card matches the student email
     const returnCampusID = () => {
       let campusID = '';
       textSplitted[2].split(' ').forEach((item) => {
@@ -46,16 +48,17 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
       });
       return campusID;
     }
-    const campusID = returnCampusID();
     
+    const campusID = returnCampusID();
     const firstName = textSplitted[3].split(' ')[0].toLowerCase();
     const first7Letters = firstName.length <= 7 ? firstName : firstName.substring(0,7);
-  
     const emailUsername = `${first7Letters}.${campusID}`;
   
     db.collection('voter_emails').doc(emailDocID).get().then(snap => {
       const email = snap.data().email;
       if (email.split('@')[0]===emailUsername) {
+  
+        //Third Validation Function checking if the voter already voted based on the student email username information
         db.collection('voted_server').doc(emailUsername).get().then(snap => {
           if (!snap.exists) {
             isValid = true;

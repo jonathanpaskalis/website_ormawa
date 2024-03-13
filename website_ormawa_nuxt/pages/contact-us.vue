@@ -32,14 +32,14 @@
           w-[100%]
         ">
           <div class="
-            flex flex-col gap-4 2xl:gap-8
+            flex flex-col gap-4 2xl:gap-6
             w-full
           "> 
             <h2 class="
               bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
               [background-size:_400%]
               bg-clip-text
-              text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-transparent font-Montserrat-Bold
+              text-[1.5rem] sm:text-[2rem] text-transparent font-Montserrat-Bold
               drop-shadow-ormawaxyzuaj-black-shadow 
               animate-[slide-fill-animation_1s_ease-in-out]
             ">
@@ -52,7 +52,7 @@
               <div @mouseenter="changeColor(email,'change-to')" @mouseleave="changeColor(email,'change-back')">
                 <NuxtLink to="mailto: ormawa.xyz@atmajaya.ac.id" class="
                   flex justify-center items-center
-                  w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  w-[5.75rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
                   bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-ormawaxyzuaj-orange-shadow-sm
@@ -63,7 +63,7 @@
                 </NuxtLink>
               </div>
               <span ref="email" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
+                text-[0.75rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 ormawa.xyz@atmajaya.ac.id
@@ -76,7 +76,7 @@
               <div @mouseenter="changeColor(instagram,'change-to')" @mouseleave="changeColor(instagram,'change-back')">
                 <NuxtLink to="https://instagram.com/ormawaxyz.uaj" target="_blank" class="
                   flex justify-center items-center
-                  w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  w-[5.75rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
                   bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-ormawaxyzuaj-orange-shadow-sm
@@ -87,7 +87,7 @@
                 </NuxtLink>
               </div>
               <span ref="instagram" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
+                text-[0.75rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 ormawaxyz.uaj
@@ -100,7 +100,7 @@
               <div @mouseenter="changeColor(eksternal,'change-to')" @mouseleave="changeColor(eksternal,'change-back')">
                 <NuxtLink to="https://wa.me/628000000000" target="_blank" class="
                   flex justify-center items-center
-                  w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  w-[5.75rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
                   bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-ormawaxyzuaj-orange-shadow-sm
@@ -111,7 +111,7 @@
                 </NuxtLink>
               </div>
               <span ref="eksternal" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
+                text-[0.75rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 +62 8000000000 (Lorem)
@@ -124,7 +124,7 @@
               <div @mouseenter="changeColor(internal,'change-to')" @mouseleave="changeColor(internal,'change-back')">
                 <NuxtLink to="https://wa.me/628000000000" target="_blank" class="
                   flex justify-center items-center
-                  w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  w-[5.75rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
                   bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-ormawaxyzuaj-orange-shadow-sm
@@ -135,7 +135,7 @@
                 </NuxtLink>
               </div>
               <span ref="internal" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
+                text-[0.75rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 +62 8000000000 (Ipsum)
@@ -148,7 +148,7 @@
               <div @mouseenter="changeColor(aspirasi,'change-to')" @mouseleave="changeColor(aspirasi,'change-back')">
                 <NuxtLink to="https://wa.me/628000000000" target="_blank" class="
                   flex justify-center items-center
-                  w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                  w-[5.75rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
                   bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
                   hover:shadow-ormawaxyzuaj-orange-shadow-sm
@@ -159,7 +159,7 @@
                 </NuxtLink>
               </div>
               <span ref="aspirasi" class="
-                text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
+                text-[0.75rem] xs:text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
                 transition-all duration-100 ease-in-out
               ">
                 +62 8000000000 (Dolor)
@@ -175,7 +175,7 @@
                 bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
                 [background-size:_400%]
                 bg-clip-text
-                text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-transparent font-Montserrat-Bold
+                text-[1.5rem] sm:text-[2rem] text-transparent font-Montserrat-Bold
                 drop-shadow-ormawaxyzuaj-black-shadow 
                 animate-[slide-fill-animation_1s_ease-in-out]
               ">
@@ -197,7 +197,7 @@
             bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
             [background-size:_400%]
             bg-clip-text
-            text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-transparent font-Montserrat-Bold
+            text-[1.5rem] sm:text-[2rem] text-transparent font-Montserrat-Bold
             drop-shadow-ormawaxyzuaj-black-shadow 
             animate-[slide-fill-animation_1s_ease-in-out]
           ">

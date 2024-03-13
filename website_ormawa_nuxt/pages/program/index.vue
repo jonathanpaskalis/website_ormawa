@@ -33,7 +33,7 @@
             bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
             bg-clip-text
             drop-shadow-ormawaxyzuaj-orange-shadow
-            text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+            text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] text-center text-transparent font-Panton-BlackCaps
             transition-all duration-100
           ">
             {{ period.name }}
@@ -64,7 +64,7 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Program | Ormawa XYZ-UAJ'
+  title: 'Program Kerja | Ormawa XYZ-UAJ'
 })
 
 useSeoMeta({

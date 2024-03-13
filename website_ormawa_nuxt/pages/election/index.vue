@@ -119,7 +119,7 @@
           bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
           bg-clip-text
           drop-shadow-ormawaxyzuaj-orange-shadow
-          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] text-center text-transparent font-Panton-BlackCaps
           transition-all duration-100
         ">
           VISI
@@ -132,7 +132,7 @@
       ">
         <div class="
           container-ormawaxyzuaj
-          flex flex-col justify-center items-center gap-8 lg:gap-16
+          flex flex-col justify-center items-center gap-8
           transition-all duration-100 ease-in-out
         ">
           <div v-if="period" v-for="candidate in period.candidates" class="
@@ -143,7 +143,7 @@
             'items-end' : candidate.number==='2',
           }">
             <h3 class="
-              text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+              text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
               drop-shadow-ormawaxyzuaj-white-shadow
             ">
               Pasangan Calon {{ candidate.number }}
@@ -154,7 +154,7 @@
               rounded-[2rem]
               from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
               shadow-ormawaxyzuaj-black-shadow
-              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
+              text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
             " :class="{
               'rounded-tl-none bg-gradient-to-br' : candidate.number==='1',
               'rounded-tr-none bg-gradient-to-bl' : candidate.number==='2',
@@ -173,7 +173,7 @@
           bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
           bg-clip-text
           drop-shadow-ormawaxyzuaj-orange-shadow
-          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] text-center text-transparent font-Panton-BlackCaps
           transition-all duration-100
         ">
           MISI
@@ -186,7 +186,7 @@
       ">
         <div class="
           container-ormawaxyzuaj
-          flex flex-col justify-center items-center gap-8 lg:gap-16
+          flex flex-col justify-center items-center gap-8
           transition-all duration-100 ease-in-out
         ">
           <div v-if="period" v-for="candidate in period.candidates" class="
@@ -197,7 +197,7 @@
             'items-end' : candidate.number==='2',
           }">
             <h3 class="
-              text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+              text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
               drop-shadow-ormawaxyzuaj-white-shadow
             ">
               Pasangan Calon {{ candidate.number }}
@@ -209,7 +209,7 @@
               rounded-[2rem]
               from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
               shadow-ormawaxyzuaj-black-shadow
-              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
+              text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
               list-[lower-alpha]
             " :class="{
               'rounded-tl-none bg-gradient-to-br' : candidate.number==='1',
@@ -238,20 +238,20 @@
           bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
           bg-clip-text
           drop-shadow-ormawaxyzuaj-orange-shadow
-          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] text-center text-transparent font-Panton-BlackCaps
           transition-all duration-100
         ">
           PROGRAM KERJA
         </h2>
         <div class="
-          flex flex-col justify-center items-center gap-y-8 lg:gap-y-16
+          flex flex-col justify-center items-center gap-y-8
         ">
           <div v-if="period" v-for="candidate in period.candidates" class="
             flex flex-col gap-4 lg:gap-8
             transition-all duration-500 ease-in-out
           ">
             <h3 class="
-              text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+              text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
               drop-shadow-ormawaxyzuaj-white-shadow
             " :class="{
               'self-start' : candidate.number==='1',
@@ -266,7 +266,7 @@
               [background-size:_150%]
               from-ormawaxyzuaj-white
               shadow-ormawaxyzuaj-black-shadow
-              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
+              text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
               overflow-hidden
             " :class="{
               'bg-gradient-to-r self-start rounded-tl-none' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
@@ -276,13 +276,13 @@
                 col-span-2
                 px-6 py-2 
                 bg-ormawaxyzuaj-black
-                text-[1rem] xs:text-[1.5rem] sm:text-[2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps
+                text-[1rem] xs:text-[1.5rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps
               ">
                 {{ program.name }}
               </div>
               <div class="
                 col-span-2
-                p-6
+                px-2 xs:px-6 py-6
                 text-ormawaxyzuaj-black
               ">
                 {{ program.description }}
@@ -293,9 +293,9 @@
                 bg-ormawaxyzuaj-black
                 text-center text-ormawaxyzuaj-white font-Montserrat-ExtraBold
               ">
-                PILAR XYZ
+                PILAR SLJ
               </div>
-              <div v-for="XYZPillar in program.XYZPillars" class="
+              <div v-for="SLJPillar in program.SLJPillars" class="
                 w-full
                 col-span-2 flex
               " :class="{
@@ -304,26 +304,26 @@
                 <div class="
                   flex
                   w-[50%]
-                  px-6 py-2 
+                  px-2 xs:px-6 py-2
                   border-ormawaxyzuaj-black
                   bg-ormawaxyzuaj-orange
-                  text-[0.75rem] sm:text-[1rem] text-ormawaxyzuaj-black font-Montserrat-ExtraBold 
+                  text-[0.75rem] sm:text-[1rem] text-ormawaxyzuaj-black font-Montserrat-ExtraBold
                 " :class="{
                   'border-r justify-start' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
-                  'border-l justify-end' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
+                  'border-l justify-end text-right' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
                 }">
-                  {{ XYZPillar.name }}
+                  {{ SLJPillar.name }}
                 </div>
                 <div class="
                   flex justify-center items-center
                   w-[50%]
-                  px-6 py-2 
+                  px-6 py-2
                   border-ormawaxyzuaj-black
                 " :class="{
                   'border-l' : (index%2===0 && candidate.number==='1') || (index%2===1 && candidate.number==='2'),
                   'border-r' : (index%2===1 && candidate.number==='1') || (index%2===0 && candidate.number==='2'),
                 }">
-                  <Icons v-if="XYZPillar.isTrue" name="done" class="h-[1rem] fill-green-700" />
+                  <Icons v-if="SLJPillar.isTrue" name="done" class="h-[1rem] fill-green-700" />
                   <Icons v-else name="close" class="h-[1rem] fill-red-700 " />
                 </div>
               </div>
@@ -347,7 +347,7 @@
           bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
           bg-clip-text
           drop-shadow-ormawaxyzuaj-orange-shadow
-          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+          text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] text-center text-transparent font-Panton-BlackCaps
           transition-all duration-100 ease-in-out
         ">
           PILIH
@@ -367,7 +367,7 @@
               <div v-for="member in candidate.members" :key="`member-${candidate.number}-${member.name}`" class="
                 board-member-profile
                 flex flex-col justify-self-center
-                w-[15rem] h-[17.5rem]
+                w-[11rem] h-[12rem]
                 transition-all duration-200 ease-in-out
               " :class="{
                 'hidden' : !isSmallScreen && !returnShowValue(candidate.number, member.position),
@@ -405,8 +405,8 @@
               }">
                 <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
                   w-full h-full
-                  p-4
-                  text-[1.2rem] xs:text-[1.5rem] sm:text-[2rem] text-center text-ormawaxyzuaj-black font-Panton-BlackCaps
+                  px-4 py-3
+                  text-[1.2rem] xs:text-[1.5rem] text-center text-ormawaxyzuaj-black font-Panton-BlackCaps
                   transition-all  duration-100 ease-in-out
                 " :class="{
                   'border-transparent' : is3XLScreen || returnShowValue(candidate.number, member.position),
@@ -419,8 +419,8 @@
               <div v-for="(member, index) in candidate.members" class="
                 col-span-2 3xl:col-span-1 flex flex-col items-center gap-4
                 w-full
-                p-4
-                3xl:mb-8
+                px-4 py-3
+                3xl:mb-4
                 border-ormawaxyzuaj-black
               " :class="{
                 'hidden' : !is3XLScreen && !returnShowValue(candidate.number, member.position),
@@ -431,83 +431,83 @@
                   grid grid-cols-[auto_min-content] sm:grid-cols-[max-content_min-content_1fr] justify-center gap-2 sm:gap-4
                 ">
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
                   ">
                     Nama
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
                   ">
                     :
                   </span>
                   <span class="
                     col-span-2 sm:col-span-1
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
                   ">
                     {{ member.name }}
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
                   ">
                     NIM
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
                   ">
                     :
                   </span>
                   <span class="
                     col-span-2 sm:col-span-1
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
                   ">
                     {{ member.campusID }}
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
                   ">
                     Fakultas
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
                   ">
                     :<br>
                   </span>
                   <span class="
                     col-span-2 sm:col-span-1
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
                   ">
                     {{ member.faculty }}
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
                   ">
                     Program Studi
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
                   ">
                     :
                   </span>
                   <span class="
                     col-span-2 sm:col-span-1
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
                   ">
                     {{ member.major }}
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold  
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold  
                   ">
                     Pengalaman
                   </span>
                   <span class="
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Bold 
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Bold 
                   ">
                     :
                   </span>
                   <ul class="
                     col-span-2 sm:col-span-1
                     pl-6
-                    text-[1rem] xs:text-[1.2rem] sm:text-[1.5rem] font-Montserrat-Medium
+                    text-[1rem] xs:text-[1.2rem] font-Montserrat-Medium
                     list-disc
                   ">
                     <li v-for="experience in member.experiences">
@@ -524,7 +524,7 @@
                 <button @click.prevent="openVoteForm(candidate.number)" class="
                   vote-btn
                   flex justify-center items-center gap-10
-                  w-56 sm:w-64 h-14 sm:h-16
+                  w-56 h-14
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
                   bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
                   text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange fill-ormawaxyzuaj-white hover:fill-ormawaxyzuaj-orange
@@ -533,13 +533,13 @@
                 ">
                   <span class="
                     vote-span
-                    text-[2.5rem]
+                    text-[2rem]
                     transition-all duration-100 ease-in-out
                     overflow-hidden
                   ">
                     Pilih
                   </span>
-                  <Icons name="trending_flat" class="h-[1.25rem] sm:h-[1.5rem]" />
+                  <Icons name="trending_flat" class="h-[1.2rem] sm:h-[1.5rem]" />
                 </button>
               </div>
             </div>

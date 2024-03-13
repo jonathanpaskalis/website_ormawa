@@ -57,18 +57,19 @@
         <NuxtLink to="/" aria-label="Go to the home page" class="
           flex
           w-[3.3rem] xs:w-[4.4rem] xl:w-[6.6rem] h-12 xs:h-16 xl:h-24
+          p-2
           rounded-br-[1.5rem] sm:rounded-r-[1.5rem] xl:rounded-r-[2rem]
           bg-ormawaxyzuaj-white
           transition-all duration-100 ease-in-out 
         ">
-          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Simple.webp" alt="" class="
+          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="
             h-full">
         </NuxtLink>
       </div>
       <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="
         flex items-center
         w-max
-        sm:p-4
+        sm:px-2 md:p-4
         transition-all duration-200 ease-in-out
       ">
         <p class="
@@ -86,8 +87,9 @@
         <p class="
           hidden sm:block xl:hidden
           h-min
-          text-[1.3rem] text-ormawaxyzuaj-white font-Panton-BlackCaps
+          text-[1rem] md:text-[1.3rem] text-ormawaxyzuaj-white font-Panton-BlackCaps
           text-clip
+          transition-all duration-200 ease-in-out
           overflow-hidden
         ">
           Ormawa XYZ-UAJ
@@ -251,11 +253,12 @@
         <NuxtLink to="/" aria-label="Go to the home page" class="
           flex
           w-[4.4rem] h-16 xl:h-24
+          p-2
           rounded-[0_1.5rem_1.5rem_0] xl:rounded-[0_2rem_2rem_0]
           bg-ormawaxyzuaj-white
-          transition-all duration-100
+          transition-all duration-100 ease-in-out 
         ">
-          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Simple.webp" alt="" class="
+          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="
             h-full">
         </NuxtLink>
       </div>
@@ -268,7 +271,8 @@
         'pl-2' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
       }">
         <p class="
-          text-[1.3rem] text-ormawaxyzuaj-white font-Panton-BlackCaps
+          text-[1.1rem] 2xs:text-[1.3rem] text-ormawaxyzuaj-white font-Panton-BlackCaps
+          transition-all duration-100 ease-in-out 
         ">
           Ormawa XYZ-UAJ
         </p>

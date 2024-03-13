@@ -54,18 +54,18 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Deskripsi
           </h2>
           <p v-if="period" class="
             w-full lg:w-[80%]
-            p-6
-            rounded-[2rem] rounded-tr-none
+            p-4
+            rounded-[1.5rem] rounded-tr-none
             bg-ormawaxyzuaj-white bg-opacity-80
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-black font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-black font-Montserrat-Regular
           ">
             {{ program.description }}
           </p>
@@ -75,18 +75,18 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-black-shadow
           ">
             Tujuan
           </h2>
           <p v-if="period" class="
             w-full lg:w-[80%]
-            p-6
-            rounded-[2rem] rounded-tr-none
+            p-4
+            rounded-[1.5rem] rounded-tr-none
             bg-ormawaxyzuaj-white bg-opacity-80
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-black font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-black font-Montserrat-Regular
           ">
           <ul class="
             pl-6
@@ -104,6 +104,14 @@
 </template>
 
 <script setup lang="ts">
+
+useHead({
+  title: 'Program Kerja | Ormawa XYZ-UAJ'
+})
+
+useSeoMeta({
+  description: 'Halaman ini menjelaskan program kerja dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja Ormawa XYZ-UAJ yang telah dilaksanakan atau yang akan datang',
+})
 
 definePageMeta({
   pageTransition: {
@@ -149,6 +157,17 @@ onMounted(async() => {
     })
     if (!program.value) isError.value=true;
   });
+  watch(period, () => {
+    if (period) {
+      useHead({
+        title: `${program.value.nickname} | Ormawa XYZ-UAJ'`
+      })
+
+      useSeoMeta({
+        description: `Halaman ini menjelaskan program kerja ${program.value.name} dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. ${program.value.description}`,
+      })
+    }
+  })
 });
 
 watch(isError, ()=> {

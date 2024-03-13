@@ -30,7 +30,7 @@
     ">
       <div class="
         container-ormawaxyzuaj
-        flex flex-col gap-y-8 lg:gap-y-16
+        flex flex-col gap-y-8
         bg-ormawaxyzuaj-black bg-opacity-75
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
@@ -40,7 +40,7 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-white-shadow
           ">
             Visi Kabinet
@@ -51,7 +51,7 @@
             rounded-[2rem] rounded-tl-none
             bg-gradient-to-br from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
           ">
             {{ period.vision }}
           </p>
@@ -61,7 +61,7 @@
           transition-all duration-500 ease-in-out
         ">
           <h2 class="
-            text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+            text-[1.5rem] sm:text-[2rem] text-right text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
             drop-shadow-ormawaxyzuaj-white-shadow
           ">
             Misi Kabinet
@@ -73,7 +73,7 @@
             rounded-[2rem] rounded-tr-none
             bg-gradient-to-bl from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
             shadow-ormawaxyzuaj-black-shadow
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
+            text-[1rem] sm:text-[1.2rem] text-justify text-ormawaxyzuaj-white font-Montserrat-Medium
             list-[lower-alpha]
           ">
             <li v-for="(mission, index) in period.missions" :key="`mission-${index}`">
@@ -91,7 +91,7 @@
     ">
       <div class="
         container-ormawaxyzuaj
-        flex flex-col justify-center items-center gap-16
+        flex flex-col justify-center items-center gap-8
         transition-all duration-100 ease-in-out
       ">
         <div v-if="period" v-for="(department, departmentIndex) in period.departments" :key="`department-${department.name}`" class="
@@ -101,7 +101,7 @@
             bg-gradient-to-b 
             bg-clip-text
             drop-shadow-ormawaxyzuaj-orange-shadow
-            text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.5rem] text-center text-transparent font-Panton-BlackCaps
+            text-[1.7rem] xs:text-[2.4rem] sm:text-[3rem] text-center text-transparent font-Panton-BlackCaps
             transition-all duration-100
           " :class="{
             'from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold' : department.name==='Ketua dan Wakil Ketua',
@@ -110,18 +110,17 @@
             {{ (department.name!=='Ketua dan Wakil Ketua'?'Departemen ':'')+department.name }}
           </h2>
           <div class="
-            grid grid-cols-1 sm:grid-cols-2 gap-8
+            
             transition-all duration-[400ms] ease-linear
           " :class="{
-            'justify-center' : department.name==='Ketua dan Wakil Ketua',
-            '2xl:grid-cols-3 3xl:grid-cols-4' : department.name !=='Ketua dan Wakil Ketua',
+            'grid grid-cols-2 justify-center gap-8' : department.name==='Ketua dan Wakil Ketua',
           }">
             <MembersPanel v-if="department.name==='Ketua dan Wakil Ketua'" v-for="member in department.members" :key="`member-${member.nickname}`" :department="department" :member="member" />
             <MembersPanel v-else :department="department" :member="department.members[0]" />
           </div>
           <div v-if="department.name!=='Ketua dan Wakil Ketua'" class="
             staffsJS
-            grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-8
+            grid grid-cols-2 sm:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-8
             h-0
             overflow-hidden
             transition-all duration-[400ms] ease-linear
@@ -152,11 +151,11 @@
     ">
       <div class="
         container-ormawaxyzuaj
-        flex flex-col justify-center items-center gap-4 lg:gap-8
+        flex flex-col justify-center items-center gap-4
         bg-ormawaxyzuaj-black bg-opacity-75
       ">
         <h2 class="
-          text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] text-center text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
+          text-[1.5rem] sm:text-[2rem] text-center text-ormawaxyzuaj-white font-Montserrat-ExtraBold 
           drop-shadow-ormawaxyzuaj-white-shadow
         ">
           Komposisi Pengurus
@@ -166,13 +165,13 @@
           w-full
         ">
           <h3 class="
-            text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-ormawaxyzuaj-white font-Montserrat-Regular
+            text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white font-Montserrat-Regular
           ">
             {{ faculty.name }}
           </h3>
           <div :style="`width: calc(${faculty.members}/${boardComposition.maxMembers}*100%)`" class="
             flex items-center
-            h-6 sm:h-8 lg:h-12
+            h-6 sm:h-8
             transition-all duration-500 ease-in-out
           " :class="{
             'bg-uaj-feb' : faculty.name==='FEB',
@@ -186,7 +185,7 @@
           }">
             <span class="
               pl-2 lg:pl-4
-              text-[1rem] sm:text-[1.2rem] lg:text-[1.5rem] text-ormawaxyzuaj-white font-Montserrat-SemiBold
+              text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white font-Montserrat-SemiBold
               drop-shadow-ormawaxyzuaj-black-shadow
             ">
               {{ faculty.members }}
@@ -257,15 +256,16 @@ const toggleShowingMore = (index:number) => {
 const checkShowingMore = (index:number) => {
   const showingMore = showingMores.value[index];
 
-  const divValue = is3XLScreen.value ? 4 : is2XLScreen.value ? 3 : isSmallScreen.value ? 2 : 1;
+  const divValue = is3XLScreen.value ? 5 : is2XLScreen.value ? 4 : isSmallScreen.value ? 3 : 2;
   const mulValue = Math.ceil((period.value.departments[index].members.length-1)/divValue);
+  const heightValue = isSmallScreen.value ? 17 : 12;
   const staffs = document.querySelectorAll<HTMLElement>('.staffsJS')[index-1] as HTMLElement;
 
-  if (showingMore) staffs.style.height = `${23*mulValue + 2*(mulValue-1) + 1}rem`;
+  if (showingMore) staffs.style.height = `${heightValue*mulValue + 2*(mulValue-1) + 1}rem`;
   else {
     staffs.style.height = '';
     const scrollDuration = 400;
-    if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(23*mulValue + 2*(mulValue-1) + 1), scrollDuration);
+    if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(heightValue*mulValue + 2*(mulValue-1) + 1), scrollDuration);
     showingMoreFirstTime.value=false;
   }
 }

@@ -38,7 +38,7 @@
             Instagram
           </p>
           <p class="text-[0.9rem] text-ormawaxyzuaj-white">
-            ormawaabc.uxyz
+            ormawaxyz.uaj
           </p>
         </div>
         <div>
@@ -73,7 +73,7 @@
       bg-ormawaxyzuaj-white
       text-[0.9rem] text-center text-ormawaxyzuaj-black
     ">
-      © 2024 <span class="text-ormawaxyzuaj-orange font-Montserrat-Bold">Ormawa ABC-UXYZ</span>
+      © 2024 <span class="text-ormawaxyzuaj-orange font-Montserrat-Bold">Ormawa XYZ-UAJ</span>
     </div>
   </footer>  
 </template>

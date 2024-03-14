@@ -32,7 +32,7 @@
     // ]
   })
   
-  onMounted(() => {
+  onMounted(async () => {
     const { analytics } = useFirebase();
   })
     

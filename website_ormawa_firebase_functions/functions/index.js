@@ -28,13 +28,15 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
   const textSplitted = data.text.split(/\r?\n|\r|\n/g);
   
   const emailDocID = file.split('/')[4].split('.')[0];
+  
+  const textSplittedCleaned = textSplitted[0]==='UNIVERSITAS KATOLIK INDONESIA' ? textSplitted : textSplitted.slice(1);
 
   // First Validation Function checking if the student card is valid
-  const firstLineIsValid = textSplitted[0]==='UNIVERSITAS KATOLIK INDONESIA' ? true : false;
-  const SecondtLineIsValid = textSplitted[1]==='ATMA JAYA' ? true : false;
-  const FifthLineIsValid = textSplitted[4]==='www.atmajaya.ac.id | Telp: +62215703306' ? true : false;
-  const SixthLineIsValid = textSplitted[5]==='Exp. Date' ? true : false;
-  const EighthLineIsValid = textSplitted[7]==='Flazz' ? true : false;
+  const firstLineIsValid = textSplittedCleaned[0]==='UNIVERSITAS KATOLIK INDONESIA' ? true : false;
+  const SecondtLineIsValid = textSplittedCleaned[1]==='ATMA JAYA' ? true : false;
+  const FifthLineIsValid = textSplittedCleaned[4]==='www.atmajaya.ac.id | Telp: +62215703306' ? true : false;
+  const SixthLineIsValid = textSplittedCleaned[5]==='Exp. Date' ? true : false;
+  const EighthLineIsValid = textSplittedCleaned[7]==='Flazz' ? true : false;
 
   let isValid = false;
 
@@ -43,14 +45,14 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
     //Second Validation Function checking if the information from the student card matches the student email
     const returnCampusID = () => {
       let campusID = '';
-      textSplitted[2].split(' ').forEach((item) => {
+      textSplittedCleaned[2].split(' ').forEach((item) => {
         campusID = campusID + item;
       });
       return campusID;
     }
     
     const campusID = returnCampusID();
-    const firstName = textSplitted[3].split(' ')[0].toLowerCase();
+    const firstName = textSplittedCleaned[3].split(' ')[0].toLowerCase();
     const first7Letters = firstName.length <= 7 ? firstName : firstName.substring(0,7);
     const emailUsername = `${first7Letters}.${campusID}`;
   
@@ -71,7 +73,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
               code: '0',
               timeCreated: FieldValue.serverTimestamp(),
             }).then(() => logger.log(emailDocID, '0'));
-            logger.log(emailDocID, '0');
+            logger.log(emailDocID, '0', emailUsername);
           }
           else {
             db.collection('voter_votes').doc(emailDocID).delete();
@@ -89,7 +91,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
           isValid: isValid,
           code: '2',
           timeCreated: FieldValue.serverTimestamp(),
-        }).then(() => logger.log(emailDocID, '2'));
+        }).then(() => logger.log(emailDocID, '2', email, emailUsername, textSplitted, textSplittedCleaned));
       }
     })
   }
@@ -99,7 +101,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
       isValid: isValid,
       code: '3',
       timeCreated: FieldValue.serverTimestamp(),
-    }).then(() => logger.log(emailDocID, '3'));
+    }).then(() => logger.log(emailDocID, '3', textSplitted, textSplittedCleaned));
   }
 })
 

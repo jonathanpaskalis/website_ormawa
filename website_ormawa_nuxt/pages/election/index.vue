@@ -847,6 +847,12 @@
                   ">
                     Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!
                   </span>
+                  <span v-else-if="voteIsValid.code==='4'" class="
+                    w-[75%]
+                    text-center text-red-700 font-Montserrat-Bold
+                  ">
+                    Pastikan anda menggunakan foto kartu identitas mahasiswa!
+                  </span>
                 </div>
               </div>
             </form>

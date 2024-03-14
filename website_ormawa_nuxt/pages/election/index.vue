@@ -900,7 +900,7 @@ onMounted(async() => {
     period.value = snap.data();
   })
   watch(voteIsValid, () => {
-    if (voteIsValid) {
+    if (voteIsValid.value) {
       isValidating.value = false;
     }
   })

@@ -900,9 +900,7 @@ onMounted(async() => {
     period.value = snap.data();
   })
   watch(voteIsValid, () => {
-    console.log('test');
     if (voteIsValid) {
-      console.log(voteIsValid.value.isValid);
       isValidating.value = false;
     }
   })
@@ -1069,7 +1067,7 @@ onMounted(() => {
     const { emailIsValid } = checkFormEmail(voteFormData.value.email);
     formEmailIsValid.value = emailIsValid.value;
   });
-  
+  FileList
 });
 
 onUnmounted(() => {

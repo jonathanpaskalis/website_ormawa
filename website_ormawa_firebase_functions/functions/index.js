@@ -27,6 +27,8 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
   const file = data.file;
   const emailDocID = file.split('/')[4].split('.')[0];
 
+  let isValid = false;
+
   if (data.text) {
     const textSplitted = data.text.split(/\r?\n|\r|\n/g);
     
@@ -39,8 +41,6 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
       const FifthLineIsValid = textSplittedCleaned[4]==='www.atmajaya.ac.id | Telp: +62215703306' ? true : false;
       const SixthLineIsValid = textSplittedCleaned[5]==='Exp. Date' ? true : false;
       const EighthLineIsValid = textSplittedCleaned[7]==='Flazz' ? true : false;
-
-      let isValid = false;
 
       if (firstLineIsValid && SecondtLineIsValid && FifthLineIsValid && SixthLineIsValid && EighthLineIsValid) {
 

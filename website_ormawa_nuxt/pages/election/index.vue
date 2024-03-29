@@ -592,6 +592,7 @@
             transition-all duration-100 ease-in-out
           ">
             <form @submit.prevent="submitVote" class="
+              vote-form
               grid grid-cols-1 justify-center gap-4
               w-full max-h-full
               p-3
@@ -823,35 +824,11 @@
                       text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps 
                     ">Suara tidak valid</span>
                   </div>
-                  <span v-if="voteIsValid.code==='0'" class="
+                  <span class="
                     w-[75%]
                     text-center text-green-700 font-Montserrat-Bold
                   ">
-                    Anda berhasil menggunakan hak suara anda!
-                  </span>
-                  <span v-else-if="voteIsValid.code==='1'" class="
-                    w-[75%]
-                    text-center text-red-700 font-Montserrat-Bold
-                  ">
-                    Anda telah menggunakan hak suara anda pada kesempatan sebelumnya. Jika anda merasa ini merupakan sebuah kesalahan silakan menghubungi nara hubung Internal
-                  </span>
-                  <span v-else-if="voteIsValid.code==='2'" class="
-                    w-[75%]
-                    text-center text-red-700 font-Montserrat-Bold
-                  ">
-                    Validasi email mahasiswa dan kartu identitas mahasiswa anda gagal. Pastikan email dan kartu identitas yang anda gunakan memiliki identitas yang sama!
-                  </span>
-                  <span v-else-if="voteIsValid.code==='3'" class="
-                    w-[75%]
-                    text-center text-red-700 font-Montserrat-Bold
-                  ">
-                    Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!
-                  </span>
-                  <span v-else-if="voteIsValid.code==='4'" class="
-                    w-[75%]
-                    text-center text-red-700 font-Montserrat-Bold
-                  ">
-                    Pastikan anda menggunakan foto kartu identitas mahasiswa!
+                    {{ voteMessage }}
                   </span>
                 </div>
               </div>
@@ -866,7 +843,7 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Pemilu | Ormawa ABC-UXYZ'
+  title: 'Pemilu | Ormawa XYZ-UAJ'
 })
 
 useSeoMeta({
@@ -902,6 +879,11 @@ onMounted(async() => {
   watch(voteIsValid, () => {
     if (voteIsValid.value) {
       isValidating.value = false;
+      if (voteIsValid.value.code === '0') voteMessage.value = 'Anda berhasil menggunakan hak suara anda!';
+      else if (voteIsValid.value.code === '1') voteMessage.value = 'Anda telah menggunakan hak suara anda pada kesempatan sebelumnya. Jika anda merasa ini merupakan sebuah kesalahan silakan menghubungi nara hubung Internal';
+      else if (voteIsValid.value.code === '2') voteMessage.value = 'Validasi email mahasiswa dan kartu identitas mahasiswa anda gagal. Pastikan email dan kartu identitas yang anda gunakan memiliki identitas yang sama!';
+      else if (voteIsValid.value.code === '3') voteMessage.value = 'Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!';
+      else if (voteIsValid.value.code === '4') voteMessage.value = 'Pastikan anda menggunakan foto kartu identitas mahasiswa!';
     }
   })
 })
@@ -927,10 +909,13 @@ const isUploading = ref<boolean>(false);
 const uploadSucess = ref<boolean>(false);
 const isValidating = ref<boolean>(false);
 const voteIsValid = ref<any>(null);
+const voteMessage = ref<string>('');
 
 const openVoteForm = (vote:string) => {
   showForm.value = true;
   voteFormData.value.voteValue = vote;
+  document.body.classList.add('overflow-hidden');
+  document.body.classList.add('pr-[6px]');
 }
 
 const closeVoteForm = () => {
@@ -970,11 +955,6 @@ const submitVote = async () => {
   };
 }
 
-// const returnEmailPart = (email:string) => {
-//   const emailPart = email.split('@')[0];
-//   return emailPart;
-// }
-
 const returnVoteValueInt = (number:string) => {
   if (number==='1') return 0;
   else if (number==='2') return 1;
@@ -998,6 +978,9 @@ const resetForm = () => {
   uploadSucess.value = false;
   isValidating.value = false;
   voteIsValid.value = null;
+  voteMessage.value = '';
+  document.body.classList.remove('overflow-hidden');
+  document.body.classList.remove('pr-[6px]');
 }
 
 const voteFormTransition = () => {
@@ -1008,14 +991,14 @@ const voteFormTransition = () => {
       voteFormClasses.remove('opacity-0');
       voteFormClasses.remove('translate-x-full');
     }
-    if (!showForm.value) {
-      voteFormClasses.add('opacity-0');
-      voteFormClasses.add('pointer-events-none');
-      voteFormClasses.remove('opacity-100');
-      setTimeout(() => {
-        voteFormClasses.add('translate-x-full');
-      }, 200)
-    }
+  if (!showForm.value) {
+    voteFormClasses.add('opacity-0');
+    voteFormClasses.add('pointer-events-none');
+    voteFormClasses.remove('opacity-100');
+    setTimeout(() => {
+      voteFormClasses.add('translate-x-full');
+    }, 200)
+  }
 }
 
 // UI logic
@@ -1125,9 +1108,18 @@ onUnmounted(() => {
     }
   }
 
-  .carousel__pagination {
-    @apply mt-0 bg-ormawaxyzuaj-black;
-  }
+  .vote-form {
+    &::-webkit-scrollbar {
+      @apply w-[6px];
+    }
 
+    &::-webkit-scrollbar-track {
+      @apply bg-ormawaxyzuaj-dark-gray;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-md bg-ormawaxyzuaj-white hover:bg-neutral-400;
+    }
+  }
 
 </style>

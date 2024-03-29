@@ -32,7 +32,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
   if (data.text) {
     const textSplitted = data.text.split(/\r?\n|\r|\n/g);
     
-    if (textSplitted.length === 8) {
+    if (textSplitted.length >= 7) {
       const textSplittedCleaned = textSplitted[0]==='UNIVERSITAS KATOLIK INDONESIA' ? textSplitted : textSplitted.slice(1);
 
       // First Validation Function checking if the student card is valid
@@ -112,7 +112,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
         isValid: isValid,
         code: '3',
         timeCreated: FieldValue.serverTimestamp(),
-      }).then(() => logger.log(emailDocID, '3', textSplitted, textSplittedCleaned));
+      }).then(() => logger.log(emailDocID, '3', textSplitted));
     }
   }
   else {
@@ -121,7 +121,7 @@ export const votingValidator = onDocumentCreated("student_card_texts/{docID}", a
       isValid: isValid,
       code: '4',
       timeCreated: FieldValue.serverTimestamp(),
-    }).then(() => logger.log(emailDocID, '4', textSplitted, textSplittedCleaned));
+    }).then(() => logger.log(emailDocID, '4', data.text));
   }
 })
 

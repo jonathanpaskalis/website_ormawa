@@ -888,8 +888,6 @@ onMounted(async() => {
   })
 })
 
-console.log('test');
-
 // Form Logic
 
 const showForm = ref(false);

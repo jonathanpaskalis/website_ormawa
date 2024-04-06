@@ -8,6 +8,8 @@ html {
 }
 
 body {
+  @apply overflow-x-hidden;
+
   &::-webkit-scrollbar {
     @apply w-[6px];
   }

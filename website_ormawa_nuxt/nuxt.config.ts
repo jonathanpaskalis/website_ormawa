@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   routeRules: {
-    '**' : { prerender: true }
+    '**' : { 
+      prerender: true,
+      cache: {
+        maxAge: 60*60*24*7,
+      }
+    }
   },
   devtools: { enabled: true },
   css: ['~/assets/scss/global.scss'],
@@ -18,13 +23,13 @@ export default defineNuxtConfig({
         region: 'asia-southeast2',
       },
     },
-    publicAssets: [
-      {
-        baseURL: 'images',
-        dir: 'public/images',
-        maxAge: 60*60*24*7,
-      },
-    ],
+    // publicAssets: [
+    //   {
+    //     baseURL: 'images',
+    //     dir: 'public/images',
+    //     maxAge: 60*60*24*7,
+    //   },
+    // ],
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
@@ -37,7 +42,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['vue3-carousel-nuxt', '@nuxt/image', '@nuxtjs/robots'],
+  modules: ['vue3-carousel-nuxt', '@nuxtjs/robots'],
   runtimeConfig: {
     public: {
       FB_API_KEY: process.env.FB_API_KEY,

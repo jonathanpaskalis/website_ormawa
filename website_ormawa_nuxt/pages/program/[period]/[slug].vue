@@ -15,7 +15,7 @@
       ">
         <img :src="`/images/program_logos/${program.logo}`" alt="" class="
           h-full
-        ">
+        " />
       </div>
       <h1 v-if="period" class="
         text-[2rem] xs:text-[2.5rem] sm:text-[4rem] text-center text-ormawaxyzuaj-orange font-Poppins-SemiBold
@@ -40,9 +40,7 @@
           relative
           w-full sm:w-[85%] lg:w-[75%]
         ">
-          <img v-if="period" :src="`/images/program_documentations/${program.documentation}`" class="
-            w-full
-          "/>
+          <img v-if="period" :src="`/images/program_documentations/${program.documentation}`" class="w-full" />
           <div class="
             absolute inset-0
             shadow-[inset_0_0_2rem_rgba(0,0,0,0.7)]

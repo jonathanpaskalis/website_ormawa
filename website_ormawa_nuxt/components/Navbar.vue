@@ -35,19 +35,13 @@
           <div class="
             pt-2 xs:pt-3 xl:pt-4 pb-3 xs:pb-4 xl:pb-6
           ">
-            <img src="/images/required_logos/Logo_UAJ.webp" alt="" class="
-              h-full
-            ">
+            <img src="/images/required_logos/Logo_UAJ.webp" alt="" class="h-full" />
           </div>
           <div class="py-2 xs:py-3 xl:py-5">
-            <img src="/images/required_logos/Universitas_Terakreditasi_Unggul.webp" alt="" class="
-              h-full
-            ">
+            <img src="/images/required_logos/Universitas_Terakreditasi_Unggul.webp" alt="" class="h-full" />
           </div>
           <div class="py-3 xl:py-5">
-            <img src="/images/required_logos/QS_WUR.webp" alt="" class="
-              h-full
-            ">
+            <img src="/images/required_logos/QS_WUR.webp" alt="" class="h-full" />
           </div>
         </div>
       </div>
@@ -62,8 +56,7 @@
           bg-ormawaxyzuaj-white
           transition-all duration-100 ease-in-out 
         ">
-          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="
-            h-full">
+          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="h-full" />
         </NuxtLink>
       </div>
       <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="
@@ -258,8 +251,7 @@
           bg-ormawaxyzuaj-white
           transition-all duration-100 ease-in-out 
         ">
-          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="
-            h-full">
+          <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="h-full" />
         </NuxtLink>
       </div>
       <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="

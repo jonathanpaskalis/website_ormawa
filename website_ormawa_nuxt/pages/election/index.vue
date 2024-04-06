@@ -888,6 +888,8 @@ onMounted(async() => {
   })
 })
 
+console.log('test');
+
 // Form Logic
 
 const showForm = ref(false);
@@ -914,8 +916,8 @@ const voteMessage = ref<string>('');
 const openVoteForm = (vote:string) => {
   showForm.value = true;
   voteFormData.value.voteValue = vote;
-  document.body.classList.add('overflow-hidden');
-  document.body.classList.add('pr-[6px]');
+  document.body.classList.add('overflow-clip');
+  document.body.classList.add('mr-[6px]');
 }
 
 const closeVoteForm = () => {
@@ -979,8 +981,8 @@ const resetForm = () => {
   isValidating.value = false;
   voteIsValid.value = null;
   voteMessage.value = '';
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('pr-[6px]');
+  document.body.classList.remove('overflow-clip');
+  document.body.classList.remove('mr-[6px]');
 }
 
 const voteFormTransition = () => {
@@ -1050,7 +1052,6 @@ onMounted(() => {
     const { emailIsValid } = checkFormEmail(voteFormData.value.email);
     formEmailIsValid.value = emailIsValid.value;
   });
-  FileList
 });
 
 onUnmounted(() => {

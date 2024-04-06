@@ -23,13 +23,13 @@ export default defineNuxtConfig({
         region: 'asia-southeast2',
       },
     },
-    publicAssets: [
-      {
-        baseURL: 'images',
-        dir: 'public/images',
-        maxAge: 60*60*24*7,
-      },
-    ],
+    // publicAssets: [
+    //   {
+    //     baseURL: 'images',
+    //     dir: 'public/images',
+    //     maxAge: 60*60*24*7,
+    //   },
+    // ],
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,

@@ -281,7 +281,6 @@
 </template>
 
 <script setup lang="ts">
-import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
 useHead({
   title: 'Ormawa XYZ-UAJ'
@@ -319,6 +318,9 @@ onMounted(async() => {
 });
 
 onMounted(() => {
+  document.body.classList.remove('overflow-hidden');
+  document.body.classList.remove('mr-[6px]');
+
   let currentI = 0;
 
   const welcomeCarouselImages = welcomeCarousel.value!.querySelectorAll('img')
@@ -339,16 +341,6 @@ onMounted(() => {
 
   isXLScreen.value = window.innerWidth >= 1280;
   window.addEventListener('resize', updateScreenSize)
-})
-
-defineComponent({
-  name: 'Autoplay',
-  components: {
-    Carousel,
-    Slide,
-    Navigation,
-    Pagination,
-  }
 })
 
 const isXLScreen = ref(false);

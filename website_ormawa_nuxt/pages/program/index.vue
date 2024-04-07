@@ -106,6 +106,11 @@ onMounted(async() => {
   });
 });
 
+onMounted(() => {
+  document.body.classList.remove('overflow-hidden');
+  document.body.classList.remove('mr-[6px]');
+})
+
 </script>
 
 <style lang="scss" scoped>

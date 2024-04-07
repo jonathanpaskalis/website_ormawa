@@ -305,6 +305,9 @@ const updateScreenSize = () => {
 }
 
 onMounted(() => {
+  document.body.classList.remove('overflow-hidden');
+  document.body.classList.remove('mr-[6px]');
+
   currentWidth.value =  window.innerWidth;
 
   updateScreenSize();

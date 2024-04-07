@@ -914,7 +914,7 @@ const voteMessage = ref<string>('');
 const openVoteForm = (vote:string) => {
   showForm.value = true;
   voteFormData.value.voteValue = vote;
-  document.body.classList.add('overflow-clip');
+  document.body.classList.add('overflow-hidden');
   document.body.classList.add('mr-[6px]');
 }
 
@@ -979,7 +979,7 @@ const resetForm = () => {
   isValidating.value = false;
   voteIsValid.value = null;
   voteMessage.value = '';
-  document.body.classList.remove('overflow-clip');
+  document.body.classList.remove('overflow-hidden');
   document.body.classList.remove('mr-[6px]');
 }
 
@@ -1041,6 +1041,9 @@ const updateScreenSize = () => {
 }
 
 onMounted(() => {
+  document.body.classList.remove('overflow-hidden');
+  document.body.classList.remove('mr-[6px]');
+
   isSmallScreen.value = window.innerWidth >= 640;
   isXLScreen.value = window.innerWidth >= 1280;
   is3XLScreen.value = window.innerWidth >= 1920;

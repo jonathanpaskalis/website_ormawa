@@ -496,6 +496,9 @@ const changeColor = (element: HTMLElement | null, changeOptions: string) => {
 }
 
 onMounted(() => {
+  document.body.classList.remove('overflow-hidden');
+  document.body.classList.remove('mr-[6px]');
+
   watch(formData.value, () => {
     checkFormData();
     console.log('test')

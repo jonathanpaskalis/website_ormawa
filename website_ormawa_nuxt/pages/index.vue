@@ -307,7 +307,7 @@ const welcomeCarousel = ref<HTMLDivElement | null>(null);
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-const period = ref<any>(null);
+const { data : period } = useFetch('/api/period') as any;
 
 onMounted(async() => {
   const { db } = useFirebase();

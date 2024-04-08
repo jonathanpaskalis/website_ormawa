@@ -244,8 +244,8 @@
         'w-0' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
       }">
         <NuxtLink to="/" aria-label="Go to the home page" class="
-          flex
-          w-[4.4rem] h-16 xl:h-24
+          flex sm:hidden
+          w-[4.4rem] h-16
           p-2
           rounded-[0_1.5rem_1.5rem_0] xl:rounded-[0_2rem_2rem_0]
           bg-ormawaxyzuaj-white

@@ -23,16 +23,6 @@ export default defineNuxtConfig({
       },
     ],
     compressPublicAssets: true,
-    prerender: {
-      crawlLinks: true,
-      routes: [
-        '/',
-        '/profile',
-        '/program',
-        '/contact-us',
-        '/election',
-      ]
-    }
   },
   modules: ['vue3-carousel-nuxt', '@nuxtjs/robots', "@nuxtjs/tailwindcss"],
   runtimeConfig: {

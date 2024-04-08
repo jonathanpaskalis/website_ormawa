@@ -138,7 +138,8 @@ const { slug } = useRoute().params;
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-const period = ref<any>(null);
+const { data : period } = useFetch('/api/period') as any;
+
 const program = ref<any>(null);
 
 const isError = ref<boolean>(false);

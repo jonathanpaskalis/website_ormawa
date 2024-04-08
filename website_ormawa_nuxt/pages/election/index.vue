@@ -868,7 +868,7 @@ definePageMeta({
 import { addDoc, setDoc, doc, onSnapshot, collection, serverTimestamp } from 'firebase/firestore';
 import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
 
-const period = ref<any>(null);
+const { data : period } = useFetch('/api/period') as any;
 
 onMounted(async() => {
   const { db } = useFirebase();

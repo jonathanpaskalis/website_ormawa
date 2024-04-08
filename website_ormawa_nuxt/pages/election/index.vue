@@ -827,7 +827,10 @@
                   <span class="
                     w-[75%]
                     text-center text-green-700 font-Montserrat-Bold
-                  ">
+                  " :class="{
+                    'text-green-700' : voteIsValid.code==='0',
+                    'text-red-700' : voteIsValid.code!=='0'
+                  }">
                     {{ voteMessage }}
                   </span>
                 </div>
@@ -882,8 +885,9 @@ onMounted(async() => {
       if (voteIsValid.value.code === '0') voteMessage.value = 'Anda berhasil menggunakan hak suara anda!';
       else if (voteIsValid.value.code === '1') voteMessage.value = 'Anda telah menggunakan hak suara anda pada kesempatan sebelumnya. Jika anda merasa ini merupakan sebuah kesalahan silakan menghubungi nara hubung Internal';
       else if (voteIsValid.value.code === '2') voteMessage.value = 'Validasi email mahasiswa dan kartu identitas mahasiswa anda gagal. Pastikan email dan kartu identitas yang anda gunakan memiliki identitas yang sama!';
-      else if (voteIsValid.value.code === '3') voteMessage.value = 'Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!';
-      else if (voteIsValid.value.code === '4') voteMessage.value = 'Pastikan anda menggunakan foto kartu identitas mahasiswa!';
+      else if (voteIsValid.value.code === '3') voteMessage.value = 'Terdeteksi dua atau lebih wajah. Pastikan pada foto yang anda gunakan hanya terdapat kartu identitas mahasiswa saja';
+      else if (voteIsValid.value.code === '4') voteMessage.value = 'Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!';
+      else if (voteIsValid.value.code === '5') voteMessage.value = 'Pastikan anda menggunakan foto kartu identitas mahasiswa!';
     }
   })
 })

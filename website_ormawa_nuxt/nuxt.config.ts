@@ -14,6 +14,7 @@ export default defineNuxtConfig({
         region: 'asia-southeast2',
       },
     },
+    preset: 'firebase',
     publicAssets: [
       {
         baseURL: 'images',
@@ -28,7 +29,6 @@ export default defineNuxtConfig({
         '/',
         '/profile',
         '/program',
-        '/program/[period]/[slug]',
         '/contact-us',
         '/election',
       ]

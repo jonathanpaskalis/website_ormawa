@@ -366,25 +366,6 @@ useSeoMeta({
   description: 'Halaman ini mamaparkan cara menghubungi Ormawa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi Ormawa XYZ-UAJ',
 })
 
-definePageMeta({
-  pageTransition: {
-    name: 'slide-right',
-    mode: 'out-in'
-  },
-  middleware(to, from) {
-    if(to.meta.pageTransition) {
-      if (from.fullPath === '/' || from.fullPath === '/profile' || from.fullPath.slice(0,8) ==='/program') {
-        (from.meta.pageTransition as {name:string}).name = 'slide-left';
-        (to.meta.pageTransition as {name:string}).name = 'slide-left';
-      }
-      else {
-        (from.meta.pageTransition as {name:string}).name = 'slide-right';
-        (to.meta.pageTransition as {name:string}).name = 'slide-right';
-      }
-    }
-  }
-})
-
 const formData = ref({
   name: '',
   email: '',

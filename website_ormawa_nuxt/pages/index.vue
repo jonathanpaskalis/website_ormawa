@@ -175,7 +175,7 @@
         <div class="w-full">
           <img src="/images/Bagan_Ormawa_XYZ-UAJ.webp" alt="" class="w-full" />
         </div>
-        <NuxtLink to="/profile" aria-label="Go to the profile page" class="
+        <NuxtLink to="/profile#ministry-structure" aria-label="Go to the profile page" class="
           flex justify-center items-center
           w-28 h-14
           border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
@@ -290,24 +290,11 @@ useSeoMeta({
   description: 'Halaman ini menjelaskan garis besar dari Organisasi Mahasiswa XYZ-Universitas Katolik Indonesia Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja Ormawa XYZ-UAJ',
 })
 
-definePageMeta({
-  pageTransition: {
-    name: 'slide-right',
-    mode: 'out-in',
-  },
-  middleware(to, from) {
-    if(to.meta.pageTransition) {
-      (from.meta.pageTransition as { name: string }).name = 'slide-right';
-      (to.meta.pageTransition as { name: string }).name = 'slide-right';
-    }
-  }
-})
-
 const welcomeCarousel = ref<HTMLDivElement | null>(null);
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-const { data : period } = useFetch('/api/period') as any;
+const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any;
 
 onMounted(async() => {
   const { db } = useFirebase();
@@ -320,6 +307,14 @@ onMounted(async() => {
 onMounted(() => {
   document.body.classList.remove('overflow-hidden');
   document.body.classList.remove('mr-[6px]');
+  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  const isMobile = regex.test(navigator.userAgent);
+  if (isMobile) {
+    isXLScreen.value = document.body.clientWidth >= 1280;
+  }
+  else {
+    isXLScreen.value = window.innerWidth >= 1280;
+  }
 
   let currentI = 0;
 

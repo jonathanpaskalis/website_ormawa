@@ -35,5 +35,7 @@ export default defineNuxtConfig({
       FB_APP_ID: process.env.FB_APP_ID,
       FB_MEASUREMENT_ID: process.env.FB_MEASUREMENT_ID,
     },
+    FB_CLIENT_EMAIL: process.env.FB_CLIENT_EMAIL,
+    FB_PRIVATE_KEY: process.env.FB_PRIVATE_KEY,
   },
 })

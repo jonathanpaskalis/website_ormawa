@@ -544,6 +544,10 @@
               </div>
             </div>
           </div>
+          <div v-else class="
+            h-screen
+          ">
+          </div>
         </div>
       </div>
     </section>
@@ -853,25 +857,12 @@ useSeoMeta({
   description: 'Halaman ini menjelaskan tentang pasangan calon Ketua dan Wakil Ketua Organisasi Mahasiswa XYZ-Unika Atma Jaya periode 2023-2025. Halaman ini menampilkan informasi tentang visi, misi, program kerja, dan biodata pasangan calon Ketua dan Wakil Ketua Ormawa XYZ-UAJ periode 2023-2025. Halaman ini memberi fitur kepada mahasiswa aktif S1 UAJ untuk melaksanakan pemilihan umum',
 })
 
-definePageMeta({
-  pageTransition: {
-    name: 'slide-left',
-    mode: 'out-in',
-  },
-  middleware(to, from) {
-    if(to.meta.pageTransition) {
-      (from.meta.pageTransition as {name:string}).name = 'slide-left';
-      (to.meta.pageTransition as {name:string}).name = 'slide-left';
-    }
-  }
-})
-
 // Data Fetching
 
 import { addDoc, setDoc, doc, onSnapshot, collection, serverTimestamp } from 'firebase/firestore';
 import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
 
-const { data : period } = useFetch('/api/period') as any;
+const { data : period } = useFetch('/api/period?id=m7N11UF5rp5Lf2YshfLX') as any;
 
 onMounted(async() => {
   const { db } = useFirebase();
@@ -1027,6 +1018,7 @@ const returnShowValue = (number:string, position:string) => {
   if (number==='2' && position==='Calon Wakil Ketua') return !candidates.showPCandidate2.value;
 }
 
+
 const returnFirstTwoNames = (name:string) => {
   const firstTwoNames = `${name.split(' ')[0]} ${name.split(' ')[1]}`;
   return firstTwoNames;
@@ -1047,10 +1039,18 @@ const updateScreenSize = () => {
 onMounted(() => {
   document.body.classList.remove('overflow-hidden');
   document.body.classList.remove('mr-[6px]');
-
-  isSmallScreen.value = window.innerWidth >= 640;
-  isXLScreen.value = window.innerWidth >= 1280;
-  is3XLScreen.value = window.innerWidth >= 1920;
+  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  const isMobile = regex.test(navigator.userAgent);
+  if (isMobile) {
+    isSmallScreen.value = document.body.clientWidth >= 640;
+    isXLScreen.value = document.body.clientWidth >= 1280;
+    is3XLScreen.value = document.body.clientWidth >= 1920;
+  }
+  else {
+    isSmallScreen.value = window.innerWidth >= 640;
+    isXLScreen.value = window.innerWidth >= 1280;
+    is3XLScreen.value = window.innerWidth >= 1920;
+  }
   window.addEventListener('resize', updateScreenSize);
   watch(showForm, voteFormTransition)
   watch(voteFormData.value, () => {

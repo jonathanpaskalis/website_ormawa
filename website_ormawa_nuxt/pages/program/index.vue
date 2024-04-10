@@ -71,32 +71,9 @@ useSeoMeta({
   description: 'Halaman ini menjelaskan program kerja dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja Ormawa XYZ-UAJ yang telah dilaksanakan atau yang akan datang',
 })
 
-definePageMeta({
-  pageTransition: {
-    name: 'slide-right',
-    mode: 'out-in'
-  },
-  middleware(to, from) {
-    if(to.meta.pageTransition) {
-      if (from.fullPath === '/' || from.fullPath === '/profile') {
-        (from.meta.pageTransition as {name:string}).name = 'slide-left';
-        (to.meta.pageTransition as {name:string}).name = 'slide-left';
-      }
-      else if (from.fullPath.slice(0,8) ==='/program') {
-        (from.meta.pageTransition as {name:string}).name = 'fade';
-        (to.meta.pageTransition as {name:string}).name = 'fade';
-      }
-      else {
-        (from.meta.pageTransition as {name:string}).name = 'slide-right';
-        (to.meta.pageTransition as {name:string}).name = 'slide-right';
-      }
-    }
-  }
-})
-
 import { doc, onSnapshot } from "firebase/firestore";
 
-const { data : period } = useFetch('/api/period') as any;
+const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any;
 
 onMounted(async() => {
   const { db } = useFirebase();

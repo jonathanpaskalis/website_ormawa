@@ -35,7 +35,7 @@
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
-        <div class="
+        <div v-if="period" class="
           flex flex-col items-start gap-4
           transition-all duration-500 ease-in-out
         ">
@@ -45,7 +45,7 @@
           ">
             Visi Kabinet
           </h2>
-          <p v-if="period" class="
+          <p class="
             w-full lg:w-[80%]
             p-6
             rounded-[2rem] rounded-tl-none
@@ -56,7 +56,7 @@
             {{ period.vision }}
           </p>
         </div>
-        <div class="
+        <div v-if="period" class="
           flex flex-col items-end gap-4
           transition-all duration-500 ease-in-out
         ">
@@ -66,7 +66,7 @@
           ">
             Misi Kabinet
           </h2>
-          <ol v-if="period" class="
+          <ol class="
             flex flex-col gap-2
             w-full lg:w-[80%]
             p-6 pl-9 sm:pl-12
@@ -192,6 +192,10 @@
             </span>
           </div>
         </div>
+        <div v-else class="
+          h-[7rem] xs:h-[9rem] sm:h-[17rem] lg:h-[19rem] 2xl:h-[24rem]
+        ">
+        </div>
       </div>
     </section>
   </div>
@@ -207,40 +211,24 @@ useSeoMeta({
   description: 'Halaman ini menjelaskan tentang profil dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix Ormawa XYZ-UAJ',
 })
 
-definePageMeta({
-  pageTransition: {
-    name: 'slide-right',
-    mode: 'out-in',
-  },
-  middleware(to, from) {
-    if(to.meta.pageTransition) {
-      if (from.fullPath === '/') {
-        (from.meta.pageTransition as {name:string}).name = 'slide-left';
-        (to.meta.pageTransition as {name:string}).name = 'slide-left';
-      }
-      else {
-        (from.meta.pageTransition as {name:string}).name = 'slide-right';
-        (to.meta.pageTransition as {name:string}).name = 'slide-right';
-      }
-    }
-  }
-})
-
 import { doc, onSnapshot } from "firebase/firestore";
 
-const { data : period } = useFetch('/api/period') as any;
+const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any;
+
+watch(period, async ()=> {
+  if (period.value) {
+    boardComposition.value = countComposition();
+    period.value.departments.forEach(() => {
+      showingMores.value.push(false);
+    })
+  }
+})
 
 onMounted(async() => {
   const { db } = useFirebase();
   const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy');
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
-    boardComposition.value = countComposition();
-    nextTick(() => {
-      period.value.departments.forEach(() => {
-        showingMores.value.push(false);
-      })
-    })
   });
 });
 
@@ -263,10 +251,12 @@ const checkShowingMore = (index:number) => {
 
   if (showingMore) staffs.style.height = `${heightValue*mulValue + 2*(mulValue-1) + 1}rem`;
   else {
-    staffs.style.height = '';
-    const scrollDuration = 400;
-    if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(heightValue*mulValue + 2*(mulValue-1) + 1), scrollDuration);
-    showingMoreFirstTime.value=false;
+    if (staffs) {
+      staffs.style.height = '';
+      const scrollDuration = 400;
+      if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(heightValue*mulValue + 2*(mulValue-1) + 1), scrollDuration);
+      showingMoreFirstTime.value=false;
+    }
   }
 }
 
@@ -308,9 +298,20 @@ onMounted(() => {
   document.body.classList.remove('overflow-hidden');
   document.body.classList.remove('mr-[6px]');
 
-  currentWidth.value =  window.innerWidth;
-
-  updateScreenSize();
+  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  const isMobile = regex.test(navigator.userAgent);
+  if (isMobile) {
+    isSmallScreen.value = document.body.clientWidth >= 640;
+    is2XLScreen.value = document.body.clientWidth >= 1536;
+    is3XLScreen.value = document.body.clientWidth >= 1920;
+    currentWidth.value =  document.body.clientWidth;
+  }
+  else {
+    isSmallScreen.value = window.innerWidth >= 640;
+    is2XLScreen.value = window.innerWidth >= 1536;
+    is3XLScreen.value = window.innerWidth >= 1920;
+    currentWidth.value =  window.innerWidth;
+  }
   window.addEventListener('resize', () => {
     const newWidth = window.innerWidth;
     if (newWidth!==currentWidth.value) {
@@ -325,10 +326,14 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('resize', () => {
-    updateScreenSize();
-    period.value.departments.forEach((el:any, index:number) => {
-      if (index!==0) checkShowingMore(index);
-    })
+    const newWidth = window.innerWidth;
+    if (newWidth!==currentWidth.value) {
+      currentWidth.value=newWidth;
+      updateScreenSize();
+      period.value.departments.forEach((el:any, index:number) => {
+        if (index!==0) checkShowingMore(index);
+      })
+    }
   });
 })
 

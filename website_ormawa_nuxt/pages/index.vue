@@ -47,8 +47,8 @@
               flex justify-center
               w-full max-h-full
             ">
-              <img src="/images/board_members/Foto_Pengurus.webp" alt="" class="w-[40%]" />
-              <img src="/images/board_members/Foto_Pengurus.webp" alt="" class="w-[40%]" />
+              <img src="/images/board_members/Foto_Ketua.webp" alt="" class="w-[40%]" />
+              <img src="/images/board_members/Foto_Wakil_Ketua.webp" alt="" class="w-[40%]" />
             </div>
             <h1 class="
               w-full

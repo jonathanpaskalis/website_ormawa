@@ -8,6 +8,7 @@
     transition-all duration-100 ease-in-out
     z-10
   ">
+    <!-- Start >= 640p display header -->
     <div class="
       grid  grid-cols-[16rem_3.3rem_0_0] xs:grid-cols-[22rem_4.4rem_1fr_min-content] 
       w-full h-12 xs:h-16 xl:h-24
@@ -17,6 +18,8 @@
       'xl:grid-cols-[30rem_6.6rem_1fr_min-content]' : isAtTopPage,
       'sm:grid-cols-[0_4.4rem_1fr_min-content] xl:grid-cols-[0_6.6rem_1fr_min-content]' : !isAtTopPage,
     }">
+    
+      <!-- Start >= 640p display required logos -->
       <div class="
         w-[16rem] xs:w-[22rem] h-12 xs:h-16 xl:h-24
         overflow-hidden
@@ -45,6 +48,9 @@
           </div>
         </div>
       </div>
+      <!-- End >= 640p display required logos -->
+
+      <!-- Start >= 640p display Ormawa XYZ-UAJ logo -->
       <div class="
         w-[3.3rem] xs:w-[4.4rem] lg:w-[6.6rem]
       ">
@@ -59,6 +65,9 @@
           <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="h-full" />
         </NuxtLink>
       </div>
+      <!-- End >= 640p display Ormawa XYZ-UAJ logo -->
+
+      <!-- Start >= 640p display Ormawa XYZ-UAJ text -->
       <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="
         flex items-center
         w-max
@@ -88,6 +97,9 @@
           Ormawa XYZ-UAJ
         </p>
       </NuxtLink>
+      <!-- End >= 640p display Ormawa XYZ-UAJ text -->
+      
+      <!-- Start desktop navigation bar -->
       <nav class="
         flex items-center gap-[0.1rem]
         w-full h-full
@@ -99,6 +111,8 @@
         " :class="{
           'relative': nav.subNavs
         }">
+
+          <!-- Start desktop navs -->
           <NuxtLink :to="nav.url" class="
             nuxtlink
             flex justify-center items-center gap-2
@@ -119,6 +133,9 @@
               fill-ormawaxyzuaj-white overflow-hidden
             "/>
           </NuxtLink>
+          <!-- End desktop navs -->
+
+          <!-- Start desktop sub navs -->
           <div v-if="nav.subNavs" class="
             absolute
             flex flex-col justify-center items-center
@@ -138,7 +155,11 @@
               {{ subNav.name }}
             </NuxtLink>
           </div>
+          <!-- End desktop sub navs -->
+
         </div>
+
+        <!-- Start >= 640p display mobile nav toggle button -->
         <button @click.prevent="toggleMNav" aria-label="Mobile Navbar Button" class="
           navmbtn
           hidden sm:flex 3xl:hidden justify-center items-center
@@ -151,9 +172,12 @@
           <Icons v-if="hideMNav" name="menu" class="w-[85%]" />
           <Icons v-else name="close" class="w-[85%]" />
         </button>
-      </nav>
+        <!-- End >= 640p display mobile nav toggle button -->
 
-      <!-- Navbar Mobile -->
+      </nav>
+      <!-- End desktop navigation bar -->
+
+      <!-- Start mobile navigation bar -->
       <nav class="
         h-screen w-screen
         mt-16 sm:mt-0
@@ -164,6 +188,8 @@
         <div v-for="nav in navs" class="
           mselection
         ">
+
+          <!-- Start mobile navs -->
           <NuxtLink v-if="!nav.subNavs" @click.prevent="closeMNav" :to="nav.url" class="
             nuxtlink
             flex justify-center items-center
@@ -194,6 +220,9 @@
               '-rotate-180' : !nav.hideSubNav,
             }"/>
           </div>
+          <!-- End mobile navs -->
+
+          <!-- Start mobile sub navs -->
           <div v-if="nav.subNavs" class="
             h-0
             border-solid border-ormawaxyzuaj-white
@@ -222,9 +251,16 @@
               {{ subNav.name }}
             </NuxtLink>
           </div>
+          <!-- End mobile sub navs -->
+
         </div>
       </nav>
+      <!-- End mobile navigation bar -->
+
     </div>
+    <!-- End >= 640p display header -->
+
+    <!-- Start < 640p display header -->
     <div class="
       grid items-center
       w-full
@@ -236,6 +272,8 @@
       'grid-cols-[4.4rem_1fr_min-content]' : is3remFromTopPage && !isXSScreen || is4remFromTopPage,
       'grid-cols-[0_1fr_min-content]' : !(is3remFromTopPage && !isXSScreen || is4remFromTopPage),
     }">
+
+      <!-- Start < 640p display Ormawa XYZ-UAJ logo -->
       <div class="
         transition-all duration-100 ease-in-out
         overflow-hidden
@@ -254,6 +292,9 @@
           <img src="/images/organization_logos/Logo_Ormawa_XYZ-UAJ_Navbar.webp" alt="" class="h-full" />
         </NuxtLink>
       </div>
+      <!-- End < 640p display Ormawa XYZ-UAJ logo -->
+
+      <!-- Start < 640p display Ormawa XYZ-UAJ text -->
       <NuxtLink to="/" aria-label="Organisasi Mahasiswa XYZ-UAJ" class="
         flex flex-col justify-center
         w-max
@@ -269,6 +310,9 @@
           Ormawa XYZ-UAJ
         </p>
       </NuxtLink>
+      <!-- End < 640p display Ormawa XYZ-UAJ text -->
+      
+      <!-- Start < 640p display mobile nav toggle button -->
       <button @click.prevent="toggleMNav" aria-label="Mobile Navbar Button" class="
         navmbtn
         flex sm:hidden justify-center items-center
@@ -281,34 +325,40 @@
         <Icons v-if="hideMNav" name="menu" class="w-[85%]" />
         <Icons v-else name="close" class="w-[85%]" />
       </button>
+      <!-- End < 640p display mobile nav toggle button -->
+
     </div>
+    <!-- End < 640p display header -->
+
   </header>
 </template>
 
 <script setup lang="ts">
+
+  // --Start mobile navigation bar logic--
   const hideMNav = ref(true);
 
-  const toggleMNav = () => {
+  const toggleMNav = () => { // Function for toggling mobile navigation bar
     hideMNav.value = !hideMNav.value;
     closeMSubNav();
   }
 
-  const closeMNav = () => {
+  const closeMNav = () => { // Function for closing mobile navigation bar
     hideMNav.value = true;
     closeMSubNav();
   }
 
-  const toggleMSubNav = (nav:any) => {
+  const toggleMSubNav = (nav:any) => { // Function for toggling mobile navigation bar sub navs
     nav.hideSubNav = !nav.hideSubNav;
   }
 
-  const closeMSubNav = () => {
+  const closeMSubNav = () => { // Function for closing mobile navigation bar sub navs
     navs.value.forEach((nav) => {
       nav.hideSubNav = true;
     })
   }
 
-  const setSubNav = (value:string, index:number, subNavData:any) => {
+  const setSubNav = (value:string, index:number, subNavData:any) => { // Function for setting mobile navigation bar sub navigation heigth
     if(subNavData) {
       const subNav = document.querySelectorAll<HTMLElement>('.selectionJS')[index].children[1] as HTMLElement;
       if(value==='show') {
@@ -325,8 +375,9 @@
       }
     } 
   }
+  // --End mobile navigation bar logic--
 
-  const enableSmoothScroll = (url:string) => {
+  const enableSmoothScroll = (url:string) => { // Function for enabling smooth scroll when navigating to a hash in the same page
     if (useRoute().path===url) {
       document.documentElement.classList.add('scroll-smooth');
       setTimeout(() => {
@@ -335,24 +386,51 @@
     }
   }
 
+  // --Start Y scroll value size variable(s)--
   const isAtTopPage = ref(true);
   const is3remFromTopPage = ref(false);
   const is4remFromTopPage = ref(false);
+  // --End Y scroll value size variable(s)--
+
+  // --Start screen size variable and function--
   const isXSScreen = ref(false);
 
+  const updateScreenSize = () => {
+    isXSScreen.value = window.innerWidth >= 425;
+  }
+  // --End screen size variable and function--
+
   onMounted(() => {
+
+    // --Start X scroll value detection--
     isAtTopPage.value = window.scrollY < 1;
     is3remFromTopPage.value = window.scrollY >= 48;
     is4remFromTopPage.value = window.scrollY >= 64;
-    isXSScreen.value = window.innerWidth >= 425;
+    
     window.addEventListener('scroll', () => {
       isAtTopPage.value = window.scrollY < 1;
       is3remFromTopPage.value = window.scrollY >= 48;
       is4remFromTopPage.value = window.scrollY >= 64;
-      isXSScreen.value = window.innerWidth >= 425;
     })
-  })
+    // --End X scroll value detection--
 
+    // --Start screen size detection--
+    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    const isMobile = regex.test(navigator.userAgent);
+
+    if (isMobile) {
+      isXSScreen.value = document.body.clientWidth >= 425;
+    }
+    else {
+      isXSScreen.value = window.innerWidth >= 425;
+    }
+    
+    window.addEventListener('resize', () => updateScreenSize())
+    // --End screen size detection--
+
+  }) 
+
+  // --Start navigation bar navs object--
   const navs = ref([
     {
       name: 'Beranda',
@@ -408,6 +486,8 @@
       ]
     },
   ]);
+  // --End navigation bar navs object--
+
 </script>
 
 <style lang="scss" scoped>

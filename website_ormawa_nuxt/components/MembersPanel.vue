@@ -9,6 +9,8 @@
     'col-start-1 sm:col-end-3 2xl:col-end-4 3xl:col-end-5 border-ormawaxyzuaj-orange hover:shadow-ormawaxyzuaj-orange-shadow': member.position==='Koordinator',
     'border-transparent' : member.position==='Staf'
   }">
+  
+    <!-- Start panel photo -->
     <div class="
       relative
       flex justify-center
@@ -23,6 +25,9 @@
         transition-all duration-200 ease-in-out
       " />
     </div>
+    <!-- End panel photo -->
+
+    <!-- Start panel text -->
     <div class="
       flex flex-col justify-center items-center
       w-full h-[4.5rem] sm:h-[5.5rem]
@@ -55,6 +60,8 @@
         {{ member.nickname }}
       </span>
     </div>
+    <!-- End panel text -->
+
   </div>
 </template>
 

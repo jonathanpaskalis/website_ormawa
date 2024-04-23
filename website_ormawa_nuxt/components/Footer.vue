@@ -3,6 +3,8 @@
     flex flex-col justify-center items-center
     bg-ormawaxyzuaj-black shadow-ormawaxyzuaj-black
   ">
+  
+    <!-- Start footer info -->
     <div class="
       container-ormawaxyzuaj
       grid grid-cols-1 sm:grid-cols-[6rem_1fr] justify-center items-center gap-x-8
@@ -22,7 +24,7 @@
             Alamat
           </p>
           <p class="text-[0.9rem] text-ormawaxyzuaj-white">
-            Jl. Lorem No. 0, Kelurahan Ipsum, Kecamatan Dolor, Kota Sit Amet, 0000
+            Jl. Jend. Sudirman No.51, RT.004/RW.4, Karet Semanggi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12930
           </p>
         </div>
         <div>
@@ -67,6 +69,9 @@
         </div>
       </div>
     </div>
+    <!-- End footer info -->
+
+    <!-- Start Copyright -->
     <div class="
       w-full
       p-[0.5rem_1rem_0.5rem_1rem]
@@ -75,6 +80,8 @@
     ">
       © 2024 <span class="text-ormawaxyzuaj-orange font-Montserrat-Bold">Ormawa XYZ-UAJ</span>
     </div>
+    <!-- End Copyright -->
+
   </footer>  
 </template>
 

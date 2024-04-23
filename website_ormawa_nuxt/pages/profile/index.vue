@@ -1,5 +1,7 @@
 <template>
   <div id="body">
+
+    <!-- Start profile page title section -->
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
@@ -25,6 +27,9 @@
         PERIODE {{ period.name }}
       </span>
     </section>
+    <!-- End profile page title section -->
+
+    <!-- Start profile page intro section -->
     <section id="intro" class="
       flex justify-center
     ">
@@ -35,6 +40,8 @@
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
+
+        <!-- Start ministry vision -->
         <div v-if="period" class="
           flex flex-col items-start gap-4
           transition-all duration-500 ease-in-out
@@ -56,6 +63,9 @@
             {{ period.vision }}
           </p>
         </div>
+        <!-- End ministry vision -->
+
+        <!-- Start ministry mission -->
         <div v-if="period" class="
           flex flex-col items-end gap-4
           transition-all duration-500 ease-in-out
@@ -81,8 +91,13 @@
             </li>
         </ol>
         </div>
+        <!-- End ministry mission -->
+
       </div>
     </section>
+    <!-- End profile page intro section -->
+    
+    <!-- Start profile page ministry structure section -->
     <section id="ministry-structure" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
@@ -94,6 +109,8 @@
         flex flex-col justify-center items-center gap-8
         transition-all duration-100 ease-in-out
       ">
+
+        <!-- Start ministry departments -->
         <div v-if="period" v-for="(department, departmentIndex) in period.departments" :key="`department-${department.name}`" class="
           flex flex-col items-center gap-4
         ">
@@ -142,8 +159,13 @@
             <span v-else class="font-Panton-BlackCaps">Tampilkan Lebih Banyak</span>
           </button>
         </div>
+        <!-- End ministry departments -->
+
       </div>
     </section>
+    <!-- End profile page ministry structure section -->
+
+    <!-- Start profile page board composition section -->
     <section id="board-composition" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
@@ -160,6 +182,8 @@
         ">
           Komposisi Pengurus
         </h2>
+
+        <!-- Start board composition graph -->
         <div v-if="boardComposition" v-for="faculty in boardComposition.faculties" :key="`faculty-${faculty.name}`" class="
           grid grid-cols-[5rem_1fr] sm:grid-cols-[6rem_1fr] lg:grid-cols-[9rem_1fr] justify-start items-center gap-4
           w-full
@@ -196,13 +220,18 @@
           h-[7rem] xs:h-[9rem] sm:h-[17rem] lg:h-[19rem] 2xl:h-[24rem]
         ">
         </div>
+        <!-- End board composition graph -->
+
       </div>
     </section>
+    <!-- End profile page board composition section -->
+
   </div>
 </template>
 
 <script setup lang="ts">
 
+// --Start adding head information--
 useHead({
   title: 'Profil | Ormawa XYZ-UAJ',
 })
@@ -210,12 +239,15 @@ useHead({
 useSeoMeta({
   description: 'Halaman ini menjelaskan tentang profil dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, pengurus aktif, dan komposisi pengurus Kabinet Asix Ormawa XYZ-UAJ',
 })
+// --End adding head information--
+
+
+// --Start data fetching--
+const { data : period } = useFetch<any>('/api/period?id=rhgFoCvNiLTSr8M3Tpgy'); // Server side fetching
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any;
-
-watch(period, async ()=> {
+watch(period, async () => { // Board composition data watcher
   if (period.value) {
     boardComposition.value = countComposition();
     period.value.departments.forEach(() => {
@@ -226,117 +258,14 @@ watch(period, async ()=> {
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy');
+  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); // Client side fetching
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
   });
 });
+// --End data fetching--
 
-const currentWidth = ref(0);
-const showingMores = ref<boolean[]>([]);
-const showingMoreFirstTime = ref(true);
-
-const toggleShowingMore = (index:number) => {
-  showingMores.value[index]=!showingMores.value[index];
-  checkShowingMore(index);
-}
-
-const checkShowingMore = (index:number) => {
-  const showingMore = showingMores.value[index];
-
-  const divValue = is3XLScreen.value ? 5 : is2XLScreen.value ? 4 : isSmallScreen.value ? 3 : 2;
-  const mulValue = Math.ceil((period.value.departments[index].members.length-1)/divValue);
-  const heightValue = isSmallScreen.value ? 17 : 12;
-  const staffs = document.querySelectorAll<HTMLElement>('.staffsJS')[index-1] as HTMLElement;
-
-  if (showingMore) staffs.style.height = `${heightValue*mulValue + 2*(mulValue-1) + 1}rem`;
-  else {
-    if (staffs) {
-      staffs.style.height = '';
-      const scrollDuration = 400;
-      if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(heightValue*mulValue + 2*(mulValue-1) + 1), scrollDuration);
-      showingMoreFirstTime.value=false;
-    }
-  }
-}
-
-const enableSmoothScroll = (offsetY:number, duration:number) => {
-  const startingY = window.scrollY;
-  const targetY = startingY + offsetY;
-  const diff = targetY - startingY;
-  let start:number;
-
-  function step(timestamp:number) {
-    if (!start) {
-      start = timestamp;
-    }
-
-    const time = timestamp - start;
-    const percent = Math.min(time / duration, 1);
-
-    window.scrollTo(0, startingY + diff * percent);
-
-    if (time < duration) {
-      requestAnimationFrame(step);
-    }
-  }
-
-  requestAnimationFrame(step);
-}
-
-const isSmallScreen = ref(false);
-const is2XLScreen = ref(false);
-const is3XLScreen = ref(false);
-
-const updateScreenSize = () => {
-  isSmallScreen.value = window.innerWidth >= 640;
-  is2XLScreen.value = window.innerWidth >= 1536;
-  is3XLScreen.value = window.innerWidth >= 1920;
-}
-
-onMounted(() => {
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('mr-[6px]');
-
-  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-  const isMobile = regex.test(navigator.userAgent);
-  if (isMobile) {
-    isSmallScreen.value = document.body.clientWidth >= 640;
-    is2XLScreen.value = document.body.clientWidth >= 1536;
-    is3XLScreen.value = document.body.clientWidth >= 1920;
-    currentWidth.value =  document.body.clientWidth;
-  }
-  else {
-    isSmallScreen.value = window.innerWidth >= 640;
-    is2XLScreen.value = window.innerWidth >= 1536;
-    is3XLScreen.value = window.innerWidth >= 1920;
-    currentWidth.value =  window.innerWidth;
-  }
-  window.addEventListener('resize', () => {
-    const newWidth = window.innerWidth;
-    if (newWidth!==currentWidth.value) {
-      currentWidth.value=newWidth;
-      updateScreenSize();
-      period.value.departments.forEach((el:any, index:number) => {
-        if (index!==0) checkShowingMore(index);
-      })
-    }
-  });
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', () => {
-    const newWidth = window.innerWidth;
-    if (newWidth!==currentWidth.value) {
-      currentWidth.value=newWidth;
-      updateScreenSize();
-      period.value.departments.forEach((el:any, index:number) => {
-        if (index!==0) checkShowingMore(index);
-      })
-    }
-  });
-})
-
+// --Start board composition logic--
 const countComposition = () => {
   const boardComposition = {
     faculties: [
@@ -408,20 +337,123 @@ const boardComposition = ref<{
   faculties: { name: string; members: number; widthClass: string }[];
   maxMembers: number;
 } | null>(null);
+// --End board composition logic--
+
+// --Start board members display logic--
+const currentWidth = ref(0);
+const showingMores = ref<boolean[]>([]);
+const showingMoreFirstTime = ref(true);
+
+const toggleShowingMore = (index:number) => { // Function for toggling board members display
+  showingMores.value[index]=!showingMores.value[index];
+  checkShowingMore(index);
+}
+
+const checkShowingMore = (index:number) => { // Function for checking board members display height
+  const showingMore = showingMores.value[index];
+
+  const divValue = is3XLScreen.value ? 5 : is2XLScreen.value ? 4 : isSmallScreen.value ? 3 : 2;
+  const mulValue = Math.ceil((period.value.departments[index].members.length-1)/divValue);
+  const heightValue = isSmallScreen.value ? 17 : 12;
+  const staffs = document.querySelectorAll<HTMLElement>('.staffsJS')[index-1] as HTMLElement;
+
+  if (showingMore) staffs.style.height = `${heightValue*mulValue + 2*(mulValue-1) + 1}rem`;
+  else {
+    if (staffs) {
+      staffs.style.height = '';
+      const scrollDuration = 400;
+      if (!showingMoreFirstTime.value) enableSmoothScroll(-16*(heightValue*mulValue + 2*(mulValue-1) + 1), scrollDuration);
+      showingMoreFirstTime.value=false;
+    }
+  }
+}
+
+const enableSmoothScroll = (offsetY:number, duration:number) => { // Function for smooth animation when board members display toggled
+  const startingY = window.scrollY;
+  const targetY = startingY + offsetY;
+  const diff = targetY - startingY;
+  let start:number;
+
+  function step(timestamp:number) {
+    if (!start) {
+      start = timestamp;
+    }
+
+    const time = timestamp - start;
+    const percent = Math.min(time / duration, 1);
+
+    window.scrollTo(0, startingY + diff * percent);
+
+    if (time < duration) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+// --Start screen size variable(s) and function--
+const isSmallScreen = ref(false);
+const is2XLScreen = ref(false);
+const is3XLScreen = ref(false);
+
+const updateScreenSize = () => {
+  isSmallScreen.value = window.innerWidth >= 640;
+  is2XLScreen.value = window.innerWidth >= 1536;
+  is3XLScreen.value = window.innerWidth >= 1920;
+}
+// --End screen size variable(s) and function--
+
+onMounted(() => {
+
+  // --Start screen size detection--
+  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  const isMobile = regex.test(navigator.userAgent);
+
+  if (isMobile) {
+    isSmallScreen.value = document.body.clientWidth >= 640;
+    is2XLScreen.value = document.body.clientWidth >= 1536;
+    is3XLScreen.value = document.body.clientWidth >= 1920;
+    currentWidth.value =  document.body.clientWidth;
+  }
+  else {
+    isSmallScreen.value = window.innerWidth >= 640;
+    is2XLScreen.value = window.innerWidth >= 1536;
+    is3XLScreen.value = window.innerWidth >= 1920;
+    currentWidth.value =  window.innerWidth;
+  }
+
+  window.addEventListener('resize', () => {
+    const newWidth = window.innerWidth;
+    if (newWidth!==currentWidth.value) {
+      currentWidth.value=newWidth;
+      updateScreenSize();
+      period.value.departments.forEach((el:any, index:number) => {
+        if (index!==0) checkShowingMore(index);
+      })
+    }
+  });
+  // --End screen size detection--
+
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', () => {
+    const newWidth = window.innerWidth;
+    if (newWidth!==currentWidth.value) {
+      currentWidth.value=newWidth;
+      updateScreenSize();
+      period.value.departments.forEach((el:any, index:number) => {
+        if (index!==0) checkShowingMore(index);
+      })
+    }
+  });
+})
+
+
 
 </script>
 
 <style lang="scss" scoped>
-  .board-member-profile {
-    &:hover {
-      div {
-        img {
-          @apply w-[95%];
-        }
-        h3, span {
-          @apply text-ormawaxyzuaj-black;
-        }
-      }      
-    }
-  }
+
 </style>

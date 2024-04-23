@@ -5,6 +5,7 @@
   ">
     <Navbar />
     <main>
+      <!-- Start page background -->
       <div class="
         fixed top-16 xl:top-24 left-0 right-0 bottom-0
         [background-size:_400%]
@@ -13,7 +14,11 @@
         z-[-1]
       ">
       </div>
+      <!-- End page background -->
+
       <slot />
+
+      <!-- Start to top button -->
       <NuxtLink ref="toTopBtn" :to="{ hash: '#top' }" aria-label="Go to the top of the page" @click.prevent="enableSmoothScroll" class="
         fixed bottom-[4.5rem] right-8
         flex justify-center items-center
@@ -28,6 +33,8 @@
       }">
         <Icons name="expand_less" class="h-[1rem]" />
       </NuxtLink>
+      <!-- End to top button -->
+
     </main>
     <Footer />
   </div>
@@ -35,6 +42,7 @@
 
 <script setup lang="ts">
 
+// --Start to top button UI logic--
 const hideToTopBtn = ref(true);
 
 onMounted(() => {
@@ -43,8 +51,9 @@ onMounted(() => {
     if (window.scrollY < 750) hideToTopBtn.value = true;
   })
 })
+// --Start to top button UI logic--
 
-const enableSmoothScroll = () => {
+const enableSmoothScroll = () => { // Function for enabling smooth scrool when using to top button
   console.log(useRoute())
   document.documentElement.classList.add('scroll-smooth');
   setTimeout(() => {

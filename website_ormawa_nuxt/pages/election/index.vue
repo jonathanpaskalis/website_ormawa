@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <!-- Start election page title section -->
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
@@ -25,6 +27,9 @@
         PERIODE {{ period.name }}
       </span>
     </section>
+    <!-- End election page title section -->
+
+    <!-- Start election page intro section -->
     <section id="intro" class="
       flex justify-center
     ">
@@ -39,8 +44,10 @@
           grid grid-cols-2
           w-full
         ">
+
+          <!-- Start candidates intro section -->
           <div v-if="period" v-for="candidate in period.candidates" class="
-            paslon
+            candidates
             flex flex-col items-center gap-y-8 lg:gap-y-16
             border-ormawaxyzuaj-white
             [background-size:_200%]
@@ -51,7 +58,7 @@
             'border-l rounded-tr-[1.5rem] rounded-br-[1.5rem] bg-right hover:bg-left bg-gradient-to-r' : candidate.number === '2',
           }">
             <span class="
-              paslon-number
+              candidates-number
               w-full
               px-4
               bg-ormawaxyzuaj-black bg-opacity-0
@@ -78,7 +85,7 @@
               }" />
             </div>
             <div class="
-              paslon-name
+              candidates-name
               flex flex-col justify-center items-center
               w-full h-16 xs:h-24 md:h-[7.5rem]
               px-4
@@ -102,14 +109,21 @@
             h-[10rem] xs:h-[13rem] sm:h-[22rem] lg:h-[26rem] 2xl:h-[32rem]
           ">
           </div>
+          <!-- End candidates intro section -->
+
         </div>
       </div>
     </section>
+    <!-- End election page title section -->
+
+    <!-- Start election page vision mision section -->
     <section id="vision-mission" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex flex-col items-center
       shadow-ormawaxyzuaj-black-shadow
     ">
+
+      <!-- Start candidates vision -->
       <div class="
         w-full
         pt-4 lg:pt-8
@@ -164,6 +178,9 @@
           </div>
         </div>
       </div>
+      <!-- End candidates vision -->
+
+      <!-- Start candidates mission -->
       <div class="
         w-full
         pt-4 lg:pt-8
@@ -222,7 +239,12 @@
           </div>
         </div>
       </div>
+      <!-- End candidates mission -->
+
     </section>
+    <!-- End election page vision mision section -->
+
+    <!-- Start election page program section -->
     <section id="program" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
@@ -234,6 +256,8 @@
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
+
+        <!-- Start candidates programs -->
         <h2 class="
           bg-gradient-to-b from-ormawaxyzuaj-orange to-ormawaxyzuaj-gold
           bg-clip-text
@@ -330,8 +354,13 @@
             </div>
           </div>
         </div>
+        <!-- End candidates programs -->
+
       </div>
     </section>
+    <!-- End election page program section -->
+
+    <!-- Start election page vote section -->
     <section id="vote" class="
       scroll-mt-[4rem] xl:scroll-mt-[6rem]
       flex justify-center
@@ -355,6 +384,8 @@
         <div class="
           flex flex-col justify-center items-center gap-8 lg:gap-16
         ">
+
+          <!-- Start candidates vote panel -->
           <div v-if="period" v-for="candidate in period.candidates" :key="`candidate-${candidate.number}`" class="
             flex flex-col
             border-[0.15rem] border-ormawaxyzuaj-gold rounded-[2rem]
@@ -548,9 +579,14 @@
             h-screen
           ">
           </div>
+          <!-- End candidates vote panel -->
+
         </div>
       </div>
     </section>
+    <!-- End election page vote section -->
+
+    <!-- Start election page vote form modal -->
     <div ref="voteForm" class="
       fixed top-16 xl:top-24 left-0 right-0 bottom-0
       bg-ormawaxyzuaj-black bg-opacity-95
@@ -569,6 +605,8 @@
           flex flex-col justify-center items-center
           w-full h-full
         ">
+
+          <!-- Start vote form close button -->
           <button v-if="!isUploading && !isValidating" @click.prevent="closeVoteForm" class="
             flex justify-center items-center gap-4
             w-full h-8
@@ -587,6 +625,9 @@
               Tutup Form
             </span>
           </button>
+          <!-- End vote form close button -->
+
+          <!-- Start vote form wrapper -->
           <div class="
             w-full max-h-[90%]
             p-1
@@ -595,6 +636,8 @@
             shadow-ormawaxyzuaj-orange-shadow-sm
             transition-all duration-100 ease-in-out
           ">
+
+            <!-- Start vote form -->
             <form @submit.prevent="submitVote" class="
               vote-form
               grid grid-cols-1 justify-center gap-4
@@ -604,6 +647,8 @@
               overflow-y-auto
               overflow-x-hidden
             ">
+
+              <!-- Start vote form email input -->
               <div class="
                 flex flex-col
               ">
@@ -612,11 +657,17 @@
                 ">
                   Email Student Microsoft:
                 </label>
-                <input type="email" id="email" v-model="voteFormData.email" required>
+                <input v-if="!(isUploading || uploadSucess || uploadFail || isValidating || voteIsValid)" type="email" id="email" v-model="voteFormData.email" required>
+                <span v-else class="h-6 text-ormawaxyzuaj-orange">
+                  {{ voteFormData.email }}
+                </span>
                 <span v-if="!formEmailIsValid && voteFormData.email!==''" class="text-red-600">
                   Masukan email yang valid
                 </span>
               </div>
+              <!-- End vote form email input -->
+
+              <!-- Start vote form file input -->
               <div class="
                 flex flex-col
               ">
@@ -631,24 +682,43 @@
                   <label for="file" class="
                     flex justify-center items-center
                     w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
-                    border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
-                    bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
-                    hover:shadow-ormawaxyzuaj-orange-shadow-sm
-                    text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black hover:text-ormawaxyzuaj-orange font-Panton-BlackCaps
+                    border-solid border-[0.15rem] border-transparent  rounded-[1.5rem]
+                    bg-ormawaxyzuaj-white
+                    text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black font-Panton-BlackCaps
                     transition-all duration-100 ease-in-out
-                    cursor-pointer
-                  ">
+                  " :class="{
+                    ' bg-opacity-75 hover:border-ormawaxyzuaj-orange-glow hover:bg-ormawaxyzuaj-black hover:bg-opacity-100 hover:shadow-ormawaxyzuaj-orange-shadow-sm hover:text-ormawaxyzuaj-orange cursor-pointer': !formFileIsValid,
+                    ' bg-opacity-25' : formFileIsValid,
+                  }">
                     Unggah
                   </label>
-                  <input @change.prevent="checkFormFile" ref="KIMFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required class="w-0 h-0 overflow-hidden">
-                  <span v-if="formFileIsValid" class="text-ormawaxyzuaj-orange">
-                    {{ KIMFile.files[0].name }}
-                  </span>
+                  <input @change.prevent="checkFormFile" ref="studentCardFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required :disabled="formFileIsValid" class="w-0 h-0 overflow-hidden" :class="'disabled:cursor-default'">
+                  <div v-if="formFileIsValid" class="
+                    flex gap-x-2
+                  ">
+                    <span class="text-ormawaxyzuaj-orange">
+                      {{ studentCardFile.files[0].name }}
+                    </span>
+                    <button v-if="!(isUploading || uploadSucess || uploadFail || isValidating || voteIsValid)" @click.prevent="clearFormFile" class="
+                      flex justify-center items-center gap-4
+                      w-6 h-6
+                      border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[0.25rem]
+                      bg-ormawaxyzuaj-white hover:bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
+                      hover:shadow-ormawaxyzuaj-orange-shadow-sm
+                      fill-ormawaxyzuaj-black hover:fill-ormawaxyzuaj-orange
+                      transition-all duration-100 ease-in-out
+                    ">
+                      <Icons name="close" class="h-[1rem]" />
+                    </button>
+                  </div>
                 </div>
                 <span v-if="!formFileIsValid && !formFileFirstTime" class="text-red-600">
                   Masukan file foto KIM
                 </span>
               </div>
+              <!-- End vote form file input -->
+
+              <!-- Start vote form mini candidates panel -->
               <div class="
                 flex flex-col
               ">
@@ -668,7 +738,7 @@
                     grid grid-cols-2
                     bg-gradient-to-b from-neutral-800 to-ormawaxyzuaj-white
                   ">
-                    <div v-for="member in period.candidates[returnVoteValueInt(voteFormData.voteValue)].members" :key="`member-${period.candidates[returnVoteValueInt(voteFormData.voteValue)].number}-${member.name}`" class="
+                    <div v-for="member in period.candidates[returnVoteValueInt(voteFormData.voteValue)].members" :key="`member-${period.candidates[returnVoteValueInt(voteFormData.voteValue)].number}-${member.name}-${member.campusID}`" class="
                       board-member-profile
                       flex flex-col justify-self-center
                       w-[6rem] h-[7rem]
@@ -779,11 +849,14 @@
                   </div>
                 </div>
               </div>
+              <!-- End vote form mini candidates panel -->
+
+              <!-- Start vote form submit button and status indicator -->
               <div class="
                 flex justify-center
                 w-full
               ">
-                <button v-if="!isUploading && !uploadSucess" type="submit" @click="checkFormFile" class="
+                <button v-if="!isUploading && !uploadSucess && !uploadFail" type="submit" @click="checkFormFile" class="
                   flex justify-center items-center
                   w-[6rem] xs:w-[7rem] sm:w-[9rem] h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   border-solid border-[0.15rem] border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[1.5rem]
@@ -794,7 +867,7 @@
                 ">
                   Pilih
                 </button>
-                <div v-if="isUploading && !uploadSucess && !isValidating && !voteIsValid" class="
+                <div v-if="isUploading && !uploadSucess && !uploadFail && !isValidating && !voteIsValid" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
@@ -802,7 +875,29 @@
                   <Icons name="progress" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
                   Mengunggah
                 </div>
-                <div v-if="!isUploading && uploadSucess && isValidating && !voteIsValid" class="
+                <div v-if="!isUploading && !uploadSucess && uploadFail && !isValidating && !voteIsValid" class="
+                  flex flex-col items-center
+                  w-full
+                ">
+                  <div class="
+                    flex justify-center items-center gap-4
+                    h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
+                    fill-ormawaxyzuaj-white
+                  ">
+                    <Icons name="close" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
+                    <span class="
+                      text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps 
+                    ">
+                      Gagal Unggah
+                    </span>
+                  </div>
+                  <span class="
+                    w-[75%]
+                    text-center font-Montserrat-Bold text-red-700">
+                    {{ uploadMessage }}
+                  </span>
+                </div>
+                <div v-if="!isUploading && uploadSucess && !uploadFail && isValidating && !voteIsValid" class="
                   flex justify-center items-center gap-4
                   h-[1.5rem] xs:h-[2rem] sm:h-[2.5rem]
                   text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps fill-ormawaxyzuaj-white
@@ -810,7 +905,7 @@
                   <Icons name="progress" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem] animate-spin"/>
                   Memvalidasi
                 </div>
-                <div v-if="!isUploading && uploadSucess  && !isValidating && voteIsValid" class="
+                <div v-if="!isUploading && uploadSucess && !uploadFail && !isValidating && voteIsValid" class="
                   flex flex-col items-center
                   w-full
                 ">
@@ -823,14 +918,18 @@
                     <Icons v-else name="close" class="h-[0.8rem] xs:h-[1rem] sm:h-[1.2rem]"/>
                     <span v-if="voteIsValid.isValid" class="
                       text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps 
-                    ">Suara valid</span>
+                    ">
+                      Suara valid
+                    </span>
                     <span v-else class="
                       text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-orange font-Panton-BlackCaps 
-                    ">Suara tidak valid</span>
+                    ">
+                      Suara tidak valid
+                    </span>
                   </div>
                   <span class="
                     w-[75%]
-                    text-center text-green-700 font-Montserrat-Bold
+                    text-center font-Montserrat-Bold
                   " :class="{
                     'text-green-700' : voteIsValid.code==='0',
                     'text-red-700' : voteIsValid.code!=='0'
@@ -839,16 +938,24 @@
                   </span>
                 </div>
               </div>
+              <!-- End vote form submit button and status indicator -->
+
             </form>
+            <!-- End vote form -->
           </div>
+          <!-- End vote form wrapper -->
+
         </div>
       </div>
     </div>
+    <!-- End election page vote form modal -->
+
   </div>
 </template>
 
 <script setup lang="ts">
 
+// --Start adding head information--
 useHead({
   title: 'Pemilu | Ormawa XYZ-UAJ'
 })
@@ -856,126 +963,35 @@ useHead({
 useSeoMeta({
   description: 'Halaman ini menjelaskan tentang pasangan calon Ketua dan Wakil Ketua Organisasi Mahasiswa XYZ-Unika Atma Jaya periode 2023-2025. Halaman ini menampilkan informasi tentang visi, misi, program kerja, dan biodata pasangan calon Ketua dan Wakil Ketua Ormawa XYZ-UAJ periode 2023-2025. Halaman ini memberi fitur kepada mahasiswa aktif S1 UAJ untuk melaksanakan pemilihan umum',
 })
+// --End adding head information--
 
-// Data Fetching
+// --Start data fetching--
+const { data : period } = useFetch<any>('/api/period?id=m7N11UF5rp5Lf2YshfLX'); // Server side fetching
 
-import { addDoc, setDoc, doc, onSnapshot, collection, serverTimestamp } from 'firebase/firestore';
-import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
-
-const { data : period } = useFetch('/api/period?id=m7N11UF5rp5Lf2YshfLX') as any;
+import { doc, onSnapshot } from "firebase/firestore";
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'm7N11UF5rp5Lf2YshfLX');
+  const docRef = doc(db, 'periods', 'm7N11UF5rp5Lf2YshfLX'); // Client side fetching
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
   })
-  watch(voteIsValid, () => {
-    if (voteIsValid.value) {
-      isValidating.value = false;
-      if (voteIsValid.value.code === '0') voteMessage.value = 'Anda berhasil menggunakan hak suara anda!';
-      else if (voteIsValid.value.code === '1') voteMessage.value = 'Anda telah menggunakan hak suara anda pada kesempatan sebelumnya. Jika anda merasa ini merupakan sebuah kesalahan silakan menghubungi nara hubung Internal';
-      else if (voteIsValid.value.code === '2') voteMessage.value = 'Validasi email mahasiswa dan kartu identitas mahasiswa anda gagal. Pastikan email dan kartu identitas yang anda gunakan memiliki identitas yang sama!';
-      else if (voteIsValid.value.code === '3') voteMessage.value = 'Terdeteksi dua atau lebih wajah. Pastikan pada foto yang anda gunakan hanya terdapat kartu identitas mahasiswa saja';
-      else if (voteIsValid.value.code === '4') voteMessage.value = 'Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!';
-      else if (voteIsValid.value.code === '5') voteMessage.value = 'Pastikan anda menggunakan foto kartu identitas mahasiswa!';
-    }
-  })
 })
+// --End data fetching--
 
-// Form Logic
-
+// --Start form UI logic--
 const showForm = ref(false);
 const voteForm = ref<any>(null);
 
-const KIMFile = ref<any>(null);
-const voteValue = ref<string>('0');
-
-const voteFormData = ref({
-  email: '',
-  voteValue: voteValue.value,
-})
-
-const formEmailIsValid = ref<boolean>(false);
-const formFileIsValid = ref<boolean>(false);
-const formFileFirstTime = ref<boolean>(true);
-
-const isUploading = ref<boolean>(false);
-const uploadSucess = ref<boolean>(false);
-const isValidating = ref<boolean>(false);
-const voteIsValid = ref<any>(null);
-const voteMessage = ref<string>('');
-
-const openVoteForm = (vote:string) => {
+const openVoteForm = (vote:string) => { // Function for openning vote form
   showForm.value = true;
   voteFormData.value.voteValue = vote;
   document.body.classList.add('overflow-hidden');
-  document.body.classList.add('mr-[6px]');
 }
 
-const closeVoteForm = () => {
+const closeVoteForm = () => { // Function for closing vote form
   resetForm();
   showForm.value = false;
-}
-
-const submitVote = async () => {
-  const { emailIsValid } = checkFormEmail(voteFormData.value.email);
-  formEmailIsValid.value = emailIsValid.value;
-  checkFormFile();
-  if (formEmailIsValid.value && formFileIsValid.value) {
-    const { db, storage } = useFirebase();
-    const imageFile = KIMFile.value.files[0];
-    isUploading.value=true;
-    addDoc(collection(db, 'voter_emails'), {
-      email: voteFormData.value.email,
-      timeCreated: serverTimestamp(),
-    }).then((snap => {
-      const emailDocID = snap.id;
-      setDoc(doc(db, 'voter_votes', emailDocID), {
-        voteValue: voteFormData.value.voteValue,
-        timeCreated: serverTimestamp(),
-      }).then(() => {
-        const imageRef = firebaseRef(storage, `student_card_images/${emailDocID}.jpg`);
-        uploadBytes(imageRef, imageFile).then(() => {
-          isUploading.value = false;
-          uploadSucess.value = true;
-          isValidating.value = true;
-          const docRef = doc(db, 'voted_clients', emailDocID);
-          onSnapshot(docRef, (snap) => {
-            voteIsValid.value = snap.data();
-          })
-        });
-      })
-    }))
-  };
-}
-
-const returnVoteValueInt = (number:string) => {
-  if (number==='1') return 0;
-  else if (number==='2') return 1;
-  else return 0;
-}
-
-const checkFormFile = () => {
-  formFileFirstTime.value = false;
-  if (KIMFile.value.files.length === 1) formFileIsValid.value = true; 
-  else formFileIsValid.value = false;
-}
-
-const resetForm = () => {
-  voteFormData.value.email='';
-  KIMFile.value.value='';
-  voteFormData.value.voteValue = '0';
-  formEmailIsValid.value = false;
-  formFileIsValid.value = false;
-  formFileFirstTime.value = true;
-  isUploading.value = false;
-  uploadSucess.value = false;
-  isValidating.value = false;
-  voteIsValid.value = null;
-  voteMessage.value = '';
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('mr-[6px]');
 }
 
 const voteFormTransition = () => {
@@ -996,10 +1012,137 @@ const voteFormTransition = () => {
   }
 }
 
-// UI logic
+const returnVoteValueInt = (number:string) => { // Function returning candidate number in number data type
+  if (number==='1') return 0;
+  else if (number==='2') return 1;
+  else return 0;
+}
 
-// P: President, VP: Vice President
-const candidates = {
+watch(showForm, voteFormTransition); // Form display watcher
+// --End form UI logic--
+
+// --Start form data logic--
+// -Start form data variables-
+const studentCardFile = ref<any>(null);
+const voteValue = ref<string>('0');
+
+const voteFormData = ref({
+  email: '',
+  voteValue: voteValue.value,
+})
+// -End form data variables-
+
+// -Start validation variables-
+const formEmailIsValid = ref<boolean>(false);
+const formFileIsValid = ref<boolean>(false);
+const formFileFirstTime = ref<boolean>(true);
+// -End validation variables-
+
+// -Start submited form status variables-
+const isUploading = ref<boolean>(false);
+const uploadSucess = ref<boolean>(false);
+const uploadFail = ref<boolean>(false);
+const uploadMessage = ref<string>('');
+const isValidating = ref<boolean>(false);
+const voteIsValid = ref<any>(null);
+const voteMessage = ref<string>('');
+// -End submited form status variables-
+
+watch(voteIsValid, async () => { // Form vote status watcher
+  if (voteIsValid.value) {
+    isValidating.value = false;
+    if (voteIsValid.value.code === '0') voteMessage.value = 'Anda berhasil menggunakan hak suara anda!';
+    else if (voteIsValid.value.code === '1') voteMessage.value = 'Anda telah menggunakan hak suara anda pada kesempatan sebelumnya. Jika anda merasa ini merupakan sebuah kesalahan silakan menghubungi nara hubung Internal';
+    else if (voteIsValid.value.code === '2') voteMessage.value = 'Validasi email mahasiswa dan kartu identitas mahasiswa anda gagal. Pastikan email dan kartu identitas yang anda gunakan memiliki identitas yang sama!';
+    else if (voteIsValid.value.code === '3') voteMessage.value = 'Terdeteksi dua atau lebih wajah. Pastikan pada foto yang anda gunakan hanya terdapat kartu identitas mahasiswa saja';
+    else if (voteIsValid.value.code === '4') voteMessage.value = 'Validasi kartu identitas mahasiswa anda gagal. Pastikan foto kartu identitas yang anda gunakan jelas!';
+    else if (voteIsValid.value.code === '5') voteMessage.value = 'Pastikan anda menggunakan foto kartu identitas mahasiswa!';
+  }
+})
+
+import { addDoc, setDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { ref as firebaseRef, uploadBytes } from 'firebase/storage';
+
+const submitVote = async () => { // Function for submiting form
+  const { emailIsValid } = checkFormEmail(voteFormData.value.email);
+  formEmailIsValid.value = emailIsValid.value;
+  checkFormFile();
+  if (formEmailIsValid.value && formFileIsValid.value) {
+    const { db, storage } = useFirebase();
+    const imageFile = studentCardFile.value.files[0];
+    isUploading.value=true;
+    addDoc(collection(db, 'voter_emails'), { // Uploading email
+      email: voteFormData.value.email,
+      timeCreated: serverTimestamp(),
+    }).then(snap => {
+      const emailDocID = snap.id;
+      setDoc(doc(db, 'voter_votes', emailDocID), { // Uploading vote value
+        voteValue: voteFormData.value.voteValue,
+        timeCreated: serverTimestamp(),
+      }).then(() => {
+        const imageRef = firebaseRef(storage, `student_card_images/${emailDocID}.jpg`);
+        uploadBytes(imageRef, imageFile).then(() => { // Uploading student card image file
+          isUploading.value = false;
+          uploadSucess.value = true;
+          isValidating.value = true;
+          const docRef = doc(db, 'voted_clients', emailDocID);
+          onSnapshot(docRef, (snap) => {
+            voteIsValid.value = snap.data();
+          })
+        }).catch(() => {
+          isUploading.value=false;
+          uploadFail.value=true;
+          uploadMessage.value='Pengunggahan foto KIM gagal, harap atur ulang formulir dan coba lagi';
+        });
+      }).catch(() => {
+        isUploading.value=false;
+        uploadFail.value=true;
+        uploadMessage.value='Pengunggahan nomor pasangan calon gagal, harap atur ulang formulir dan coba lagi';
+      })
+    }).catch(() => {
+      isUploading.value=false;
+      uploadFail.value=true;
+      uploadMessage.value='Pengunggahan email gagal, harap atur ulang formulir dan coba lagi';
+    }) 
+  };
+}
+
+const checkFormFile = () => { // Function for validating jpg/jpeg file
+  formFileFirstTime.value = false;
+  if (studentCardFile.value.files.length === 1) formFileIsValid.value = true; 
+  else formFileIsValid.value = false;
+}
+
+const clearFormFile = () => { // Function for clearing file input
+  studentCardFile.value.value='';
+  checkFormFile();
+}
+
+const resetForm = () => { // Function for reseting form data
+  voteFormData.value.email='';
+  studentCardFile.value.value='';
+  voteFormData.value.voteValue = '0';
+  formEmailIsValid.value = false;
+  formFileIsValid.value = false;
+  formFileFirstTime.value = true;
+  isUploading.value = false;
+  uploadSucess.value = false;
+  uploadFail.value = false;
+  uploadMessage.value = '';
+  isValidating.value = false;
+  voteIsValid.value = null;
+  voteMessage.value = '';
+  document.body.classList.remove('overflow-hidden');
+}
+
+watch(voteFormData.value, () => { // Form data watcher
+  const { emailIsValid } = checkFormEmail(voteFormData.value.email);
+  formEmailIsValid.value = emailIsValid.value;
+});
+// --End form data logic--
+
+// --Start candidates vote panel UI logic--
+const candidates = { // P: President, VP: Vice President
   showPCandidate1: ref(true),
   showPCandidate2: ref(true),
 }
@@ -1018,14 +1161,13 @@ const returnShowValue = (number:string, position:string) => {
   if (number==='2' && position==='Calon Wakil Ketua') return !candidates.showPCandidate2.value;
 }
 
-
 const returnFirstTwoNames = (name:string) => {
   const firstTwoNames = `${name.split(' ')[0]} ${name.split(' ')[1]}`;
   return firstTwoNames;
 }
+// --End candidates vote panel UI logic--
 
-// Event listeners
-
+// --Start screen size variable(s) and function--
 const isSmallScreen = ref(false);
 const isXLScreen = ref(false);
 const is3XLScreen = ref(false);
@@ -1035,10 +1177,11 @@ const updateScreenSize = () => {
   isXLScreen.value = window.innerWidth >= 1280;
   is3XLScreen.value = window.innerWidth >= 1920;
 }
+// --End screen size variable(s) and function--
 
 onMounted(() => {
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('mr-[6px]');
+
+  // --Start screen size detection--
   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
   const isMobile = regex.test(navigator.userAgent);
   if (isMobile) {
@@ -1052,27 +1195,27 @@ onMounted(() => {
     is3XLScreen.value = window.innerWidth >= 1920;
   }
   window.addEventListener('resize', updateScreenSize);
-  watch(showForm, voteFormTransition)
-  watch(voteFormData.value, () => {
-    const { emailIsValid } = checkFormEmail(voteFormData.value.email);
-    formEmailIsValid.value = emailIsValid.value;
-  });
+  // --End screen size detection--
+
 });
 
 onUnmounted(() => {
+  document.body.classList.remove('overflow-hidden');
   window.removeEventListener('resize', updateScreenSize);
 })
 
 </script>
 
 <style lang="scss" scoped>
-  .paslon {
+
+  // --Start candidates intro styles--
+  .candidates {
     &:hover {
-      .paslon-number {
+      .candidates-number {
         @apply bg-opacity-100 text-ormawaxyzuaj-orange;
       }
 
-      .paslon-name {
+      .candidates-name {
         @apply bg-opacity-100;
 
         span {
@@ -1089,7 +1232,9 @@ onUnmounted(() => {
       }
     }
   }
+  // --End candidates intro styles--
 
+  // --Start candidates vote panel styles--
   .board-member-profile {
     &:hover {
       img {
@@ -1113,7 +1258,9 @@ onUnmounted(() => {
       }
     }
   }
+  // --End candidates vote panel styles--
 
+  // --Start vote form styles--
   .vote-form {
     &::-webkit-scrollbar {
       @apply w-[6px];
@@ -1127,5 +1274,6 @@ onUnmounted(() => {
       @apply rounded-md bg-ormawaxyzuaj-white hover:bg-neutral-400;
     }
   }
+  // --End vote form styles--
 
 </style>

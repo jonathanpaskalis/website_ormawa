@@ -1,11 +1,15 @@
 <template>
   <div>
+
+    <!-- Start home page welcome section -->
     <section id="welcome" class="
       relative
       flex
       w-full h-[20rem] md:h-[30rem] xl:h-[45rem]
       transition-all duration-100 ease-in-out
     ">
+
+      <!-- Start welcome carousel -->
       <div ref="welcomeCarousel" class="
         flex flex-col
         w-full h-full
@@ -15,6 +19,9 @@
         <img src="/images/home_welcome_carousel/Kampus_Pluit.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
         <img src="/images/home_welcome_carousel/Kampus_BSD.webp" alt="" class="min-w-full min-h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
       </div>
+      <!-- End welcome carousel -->
+
+      <!-- Start welcome carousel cover -->
       <div class="
         absolute
         flex justify-center items-center 
@@ -62,7 +69,12 @@
           </div>
         </div>
       </div>
+      <!-- End welcome carousel cover -->
+
     </section>
+    <!-- End home page welcome section -->
+
+    <!-- Start home page intro section -->
     <section id="intro" class="
       flex justify-center
     ">
@@ -73,6 +85,8 @@
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
+      
+        <!-- Start Ormawa XYZ-UAJ description -->
         <div class="
           flex flex-col items-end gap-2
           transition-all duration-500 ease-in-out
@@ -95,6 +109,9 @@
             sunt beatae quo perferendis, hic aspernatur odio cum. Culpa cupiditate labore dolores ex. Commodi expedita necessitatibus nulla.
           </p>
         </div>
+        <!-- End Ormawa XYZ-UAJ description -->
+
+        <!-- Start Ormawa XYZ-UAJ vision -->
         <div class="
           flex flex-col items-start gap-2
           transition-all duration-500 ease-in-out
@@ -117,6 +134,9 @@
             sunt beatae quo perferendis, hic aspernatur odio cum. Culpa cupiditate labore dolores ex. Commodi expedita necessitatibus nulla.
           </p>
         </div>
+        <!-- End Ormawa XYZ-UAJ vision -->
+
+        <!-- Start Ormawa XYZ-UAJ mission -->
         <div class="
           flex flex-col items-end gap-2
           transition-all duration-500 ease-in-out
@@ -152,10 +172,15 @@
             <li>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, tempora. Modi suscipit sed cumque maiores.
             </li>
-        </ol>
+          </ol>
         </div>
+        <!-- End Ormawa XYZ-UAJ mission -->
+
       </div>
     </section>
+    <!-- End home page intro section -->
+
+    <!-- Start home page organization structure chart section -->
     <section id="organization-structure-chart" class="
       flex justify-center
       bg-gradient-to-b from-black to-neutral-900
@@ -165,6 +190,8 @@
         container-ormawaxyzuaj
         flex flex-col items-center gap-y-8
       ">
+
+        <!-- Start organization structure chart -->
         <h2 class="
           text-[1.5rem] sm:text-[2rem] text-ormawaxyzuaj-white text-center font-Montserrat-SemiBold
           drop-shadow-[0_0_0.5rem_rgba(255,255,255,0.5)]
@@ -186,8 +213,13 @@
         ">
           <Icons name="trending_flat" class="h-[1.2rem]"/>
         </NuxtLink>
+        <!-- End organization structure chart -->
+
       </div>
     </section>
+    <!-- End home page organization structure chart section -->
+
+    <!-- Start home page program highlight section -->
     <section id="program-highlight" class="
       flex justify-center
     ">
@@ -219,6 +251,8 @@
             <Icons name="trending_flat" class="h-[1.2rem]"/>
           </NuxtLink>
         </div>
+
+        <!-- Start program carousel -->
         <div v-if="period" class="
           relative
           w-full xl:w-[60%]
@@ -264,6 +298,8 @@
           ">
           </div>
         </div>
+        <!-- End program carousel -->
+
         <NuxtLink v-if="!isXLScreen" to="/program" aria-label="Go to the program page" class="
           flex justify-center items-center
           w-28 h-14
@@ -277,11 +313,14 @@
         </NuxtLink>
       </div>
     </section>
+    <!-- End home page program highlight section -->
+
   </div>
 </template>
 
 <script setup lang="ts">
 
+// --Start adding head information--
 useHead({
   title: 'Ormawa XYZ-UAJ'
 })
@@ -289,26 +328,38 @@ useHead({
 useSeoMeta({
   description: 'Halaman ini menjelaskan garis besar dari Organisasi Mahasiswa XYZ-Universitas Katolik Indonesia Atma Jaya. Halaman ini menampilkan informasi tentang visi, misi, bagan organisasi, hingga program kerja Ormawa XYZ-UAJ',
 })
+// --End adding head information--
 
-const welcomeCarousel = ref<HTMLDivElement | null>(null);
+// --Start data fetching--
+const { data : period } = useFetch<any>('/api/period?id=rhgFoCvNiLTSr8M3Tpgy'); // Server side fetching
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any;
-
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy');
+  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); // Client side fetching
   onSnapshot(docRef, (snap) => {
       period.value = snap.data();
   });
 });
+// --End data fetching--
+
+const welcomeCarousel = ref<HTMLDivElement | null>(null); // Welcome carousel reference
+
+// --Start screen size variable(s) and function--
+const isXLScreen = ref(false);
+
+const updateScreenSize = () => { // 
+  isXLScreen.value = window.innerWidth >= 1280;
+}
+// --End screen size variable(s) function--
 
 onMounted(() => {
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('mr-[6px]');
+  
+  // --Start screen size detection--
   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
   const isMobile = regex.test(navigator.userAgent);
+  
   if (isMobile) {
     isXLScreen.value = document.body.clientWidth >= 1280;
   }
@@ -316,6 +367,10 @@ onMounted(() => {
     isXLScreen.value = window.innerWidth >= 1280;
   }
 
+  window.addEventListener('resize', updateScreenSize);
+  // --End screen size detection--
+
+  // --Start welcome carousel logic--
   let currentI = 0;
 
   const welcomeCarouselImages = welcomeCarousel.value!.querySelectorAll('img')
@@ -333,16 +388,8 @@ onMounted(() => {
       welcomeCarouselImages[currentI].classList.add('min-h-full');
     }, 1000)
   }, 30000)
-
-  isXLScreen.value = window.innerWidth >= 1280;
-  window.addEventListener('resize', updateScreenSize)
+  // --End welcome carousel logic--
 })
-
-const isXLScreen = ref(false);
-
-const updateScreenSize = () => {
-  isXLScreen.value = window.innerWidth >= 1280;
-}
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);
@@ -351,6 +398,8 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
+
+  // --Start program carousel style--
   .carousel__next,
   .carousel__prev {
     @apply scale-[150%] lg:scale-[200%];
@@ -387,4 +436,6 @@ onUnmounted(() => {
       @apply bg-ormawaxyzuaj-orange hover:bg-ormawaxyzuaj-orange-glow;
     }
   }
+  // --End program carousel style--
+
 </style>

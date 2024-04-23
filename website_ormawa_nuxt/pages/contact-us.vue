@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <!-- Start contact us page title section -->
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
@@ -16,6 +18,9 @@
         HUBUNGI KAMI
       </h1>
     </section>
+    <!-- End contact us page title section -->
+    
+    <!-- Start contact us page contact and info section -->
     <section id="contact-and-info" class="
       flex justify-center 
       w-full
@@ -45,6 +50,8 @@
             ">
               KONTAK
             </h2>
+            
+            <!-- Start email link -->
             <div class="
               flex justify-self-left items-center gap-2 xs:gap-4
               w-full
@@ -69,6 +76,9 @@
                 ormawa.xyz@atmajaya.ac.id
               </span>
             </div>
+            <!-- End email link -->
+
+            <!-- Start Instagram link -->
             <div class="
               flex justify-self-left items-center gap-2 xs:gap-4
               w-full
@@ -93,6 +103,9 @@
                 ormawaxyz.uaj
               </span>
             </div>
+            <!-- End Instagram link -->
+
+            <!-- Start external contact link -->
             <div class="
               flex justify-self-left items-center gap-2 xs:gap-4
               w-full
@@ -117,6 +130,9 @@
                 +62 8000000000 (Lorem)
               </span>
             </div>
+            <!-- End external contact link -->
+
+            <!-- Start internal contact link -->
             <div class="
               flex justify-self-left items-center gap-2 xs:gap-4
               w-full
@@ -141,6 +157,9 @@
                 +62 8000000000 (Ipsum)
               </span>
             </div>
+            <!-- End internal contact link -->
+
+            <!-- Start aspiration contact link -->
             <div class="
               flex justify-self-left items-center gap-2 xs:gap-4
               w-full
@@ -165,11 +184,14 @@
                 +62 8000000000 (Dolor)
               </span>
             </div>
+            <!-- End aspiration contact link -->
+
           </div>
           <div class="
             flex flex-col gap-4
             w-full
           ">
+            <!-- Start address information -->
             <div>
               <h2 class="
                 bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
@@ -184,14 +206,18 @@
               <span class="
                 text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white
               ">
-                Jl. Lorem No. 0, Kelurahan Ipsum, Kecamatan Dolor, Kota Sit Amet, 0000
+                Jl. Jend. Sudirman No.51, RT.004/RW.4, Karet Semanggi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12930
               </span>
             </div>
             <div class="h-[15rem] xs:h-[20rem] sm:h-[30rem] 2xl:h-[16rem]">
-              <iframe title="streetViewUXYZ" class="w-full h-full" src="https://www.google.com/maps/embed?pb=!4v1709462052151!6m8!1m7!1sCAoSLEFGMVFpcE93d3RTRDRwYVBqOFA1X0hLcFgxWGd4TVRCSXl5STMza0NEVERR!2m2!1d-64.2543795!2d-56.6833253!3f226.55193529847827!4f8.009682844650754!5f0.7820865974627469" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="streetViewXYZUAJ" class="w-full h-full" src="https://www.google.com/maps/embed?pb=!4v1713802401584!6m8!1m7!1sFYxyFO4J7KYlhQ0I2uFIrQ!2m2!1d-6.218241077231734!2d106.8143271477776!3f127.92120722638042!4f8.982766091315966!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            <!-- End address information -->
+
           </div>
         </div>
+
+        <!-- Start contact form -->
         <div>
           <h2 class="
             bg-gradient-to-r from-ormawaxyzuaj-orange from-[25%] to-transparent to-50%
@@ -208,6 +234,7 @@
               grid grid-cols-2 gap-x-8 gap-y-4
               w-full
             ">
+              <!-- Start name text input -->
               <div class="
                 col-span-2 sm:col-span-1
                 flex flex-col
@@ -220,11 +247,17 @@
                 ">
                   Nama
                 </label>
-                <input type="text" id="name" v-model="formData.name" required minlength="3" maxlength="100">
+                <input v-if="!(isUploading || uploadSucess || uploadFail)" type="text" id="name" v-model="formData.name" required minlength="3" maxlength="100">
+                <span v-else class="h-8 bg-ormawaxyzuaj-black text-ormawaxyzuaj-orange">
+                  {{ formData.name }}
+                </span>
                 <span v-if="!formNameIsValid && formData.name!==''" class="text-red-600">
                   Format nama minimal 3 karakter dan tidak mengandung simbol atau angka
                 </span>
               </div>
+              <!-- End name text input -->
+
+              <!-- Start email text input -->
               <div class="
                 col-span-2 sm:col-span-1
                 flex flex-col
@@ -237,7 +270,10 @@
                 ">
                   Email
                 </label>
-                <input type="email" id="email" v-model="formData.email" required>
+                <input v-if="!(isUploading || uploadSucess || uploadFail)" type="email" id="email" v-model="formData.email" required>
+                <span v-else class="h-8 bg-ormawaxyzuaj-black text-ormawaxyzuaj-orange">
+                  {{ formData.email }}
+                </span>
                 <span v-if="!formEmailIsValid && formData.email!=='' && !formData.isAnAspiration" class="text-red-600">
                   Masukan format email yang benar
                 </span>
@@ -245,6 +281,9 @@
                   Masukan format email mahasiswa UAJ yang benar
                 </span>
               </div>
+              <!-- End email text input -->
+
+              <!-- Start subject text input -->
               <div class="
                 col-span-2
                 flex flex-col
@@ -257,11 +296,17 @@
                 ">
                   Subjek
                 </label>
-                <input type="text" id="subject" v-model="formData.subject" required>
+                <input v-if="!(isUploading || uploadSucess || uploadFail)" type="text" id="subject" v-model="formData.subject" required>
+                <span v-else class="h-8 bg-ormawaxyzuaj-black text-ormawaxyzuaj-orange">
+                  {{ formData.subject }}
+                </span>
                 <span v-if="!formSubjectIsValid && formData.subject!==''" class="text-red-600">
                   Format nama minimal 10 karakter dan tidak mengandung simbol
                 </span>
               </div>
+              <!-- End subject text input -->
+
+              <!-- Start message text input -->
               <div class="
                 col-span-2
                 flex flex-col
@@ -274,21 +319,28 @@
                 ">
                   Pesan
                 </label>
-                <textarea type="text" id="message" v-model="formData.message" required minlength="100" maxlength="2000" class="
-                  h-[5rem]
+                <textarea v-if="!(isUploading || uploadSucess || uploadFail)" type="text" id="message" v-model="formData.message" required minlength="100" maxlength="2000" class="
+                  h-20
                   resize-none
                 ">
                 </textarea>
+                <p v-else class="h-20 bg-ormawaxyzuaj-black text-ormawaxyzuaj-orange">
+                  {{ formData.message }}
+                </p>
                 <span v-if="!formMessageIsValid && formData.message!==''" class="text-red-600">
                   Format pesan minimal 100 karakter
                 </span>
               </div>
+              <!-- End message text input -->
+
+              <!-- Start message category checkbox input -->
               <div class="
                 col-span-2 gap-2
                 flex justify-start items-center
                 w-full
               ">
-                <input type="checkbox" id="isAnAspiration" v-model="formData.isAnAspiration" class="w-5 h-5 accent-ormawaxyzuaj-orange">
+                <input :disabled="isUploading || uploadSucess || uploadFail" type="checkbox" id="isAnAspiration" v-model="formData.isAnAspiration" class="w-5 h-5 accent-ormawaxyzuaj-orange">
+                <!-- <Icons v-else-if="formData.isAnAspiration" name="done" class="w-5 h-5 fill-ormawaxyzuaj-orange" />  -->
                 <label for="isAnAspiration" class="
                   text-[1rem] sm:text-[1.2rem] text-ormawaxyzuaj-white hover:text-ormawaxyzuaj-orange
                   transition-all duration-100 ease-in-out
@@ -296,6 +348,8 @@
                   Pesan adalah aspirasi mahasiswa UAJ
                 </label>
               </div>
+              <!-- Start message category checkbox input -->
+
               <div class="
                 col-span-2
                 flex flex-col items-center gap-4
@@ -351,13 +405,18 @@
             </div>
           </form>
         </div>
+        <!-- End contact form -->
+        
       </div>
     </section>
+    <!-- End contact us page contact and info section -->
+
   </div>
 </template>
 
 <script setup lang="ts">
 
+// --Start adding head information--
 useHead({
   title: 'Hubungi Kami | Ormawa XYZ-UAJ'
 })
@@ -365,7 +424,28 @@ useHead({
 useSeoMeta({
   description: 'Halaman ini mamaparkan cara menghubungi Ormawa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang informasi kontak dan alamat lokasi Ormawa XYZ-UAJ',
 })
+// --End adding head information--
 
+// --Start links UI logic--
+const email = ref<HTMLElement | null>(null);
+const instagram = ref<HTMLElement | null>(null);
+const eksternal = ref<HTMLElement | null>(null);
+const internal = ref<HTMLElement | null>(null);
+const aspirasi = ref<HTMLElement | null>(null);
+
+const changeColor = (element: HTMLElement | null, changeOptions: string) => {
+  if(changeOptions==='change-to') {
+    element!.classList.add('text-ormawaxyzuaj-orange');
+    element!.classList.remove('text-ormawaxyzuaj-white');
+  }
+  if(changeOptions==='change-back') {
+    element!.classList.add('text-ormawaxyzuaj-white');
+    element!.classList.remove('text-ormawaxyzuaj-orange');
+  }
+}
+// --End links UI logic--
+
+// --Start form logic--
 const formData = ref({
   name: '',
   email: '',
@@ -374,25 +454,29 @@ const formData = ref({
   isAnAspiration: false,
 })
 
+// -Start validation variables-
 const formEmailIsValid = ref<boolean>(false);
 const formNameIsValid = ref<boolean>(false);
 const formSubjectIsValid = ref<boolean>(false);
 const formMessageIsValid = ref<boolean>(false);
+// -End validation variables-
 
+// -Start submited form status variables-
 const isUploading = ref<boolean>(false);
 const uploadSucess = ref<boolean>(false);
 const uploadFail = ref<boolean>(false);
+// -End submited form status variables-
 
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 
-const submitForm = async () => {
+const submitForm = async () => { // Function for submiting form
   checkFormData();
   if (formNameIsValid.value && formEmailIsValid.value && formSubjectIsValid.value && formMessageIsValid.value) {
     const { db } = useFirebase();
     isUploading.value=true;
     const folder = ref<string>('')
-    if (formData.value.isAnAspiration) folder.value = 'form_aspirasi';
-    else if (!formData.value.isAnAspiration) folder.value = 'form_biasa';
+    if (formData.value.isAnAspiration) folder.value = 'aspiration_form_data';
+    else if (!formData.value.isAnAspiration) folder.value = 'regular_form_data';
 
     addDoc(collection(db, folder.value), {
       name: formData.value.name,
@@ -410,17 +494,16 @@ const submitForm = async () => {
   }
 }
 
-const checkFormData = () => {
-  // Validate name
-  if (formData.value.name.length >=3) {
+const checkFormData = () => { // Function for validating form data
+
+  if (formData.value.name.length >=3) { // Validate name
     const onlyLetters = /^[a-zA-Z ]+$/.test(formData.value.name);
     if (onlyLetters) formNameIsValid.value=true;
     else formNameIsValid.value=false;
   }
   else formNameIsValid.value=false;
 
-  // Validate email
-  if (formData.value.isAnAspiration) {
+  if (formData.value.isAnAspiration) { // Validate name
     const { emailIsValid } = checkFormEmail(formData.value.email);  
     formEmailIsValid.value = emailIsValid.value;
   }
@@ -435,20 +518,18 @@ const checkFormData = () => {
   }
   else formEmailIsValid.value=false;
 
-  // Validate subject
-  if (formData.value.subject.length >=10) {
+  if (formData.value.subject.length >=10) { // Validate subject
     const onlyLetters = /^[a-z0-9 ]+$/i.test(formData.value.subject);;
     if (onlyLetters) formSubjectIsValid.value=true;
     else formSubjectIsValid.value=false;
   }
   else formSubjectIsValid.value=false;
 
-  // Validate message
-  if (formData.value.message.length >= 100) formMessageIsValid.value=true;
+  if (formData.value.message.length >= 100) formMessageIsValid.value=true; // Validate message
   else formMessageIsValid.value=false;
 }
 
-const resetForm = () => {
+const resetForm = () => { // Function for reseting form data
   isUploading.value = false;
   uploadSucess.value = false;
   uploadFail.value = false;
@@ -459,32 +540,8 @@ const resetForm = () => {
   formData.value.isAnAspiration=false;
 }
 
-const email = ref<HTMLElement | null>(null);
-const instagram = ref<HTMLElement | null>(null);
-const eksternal = ref<HTMLElement | null>(null);
-const internal = ref<HTMLElement | null>(null);
-const aspirasi = ref<HTMLElement | null>(null);
-
-const changeColor = (element: HTMLElement | null, changeOptions: string) => {
-  if(changeOptions==='change-to') {
-    element!.classList.add('text-ormawaxyzuaj-orange');
-    element!.classList.remove('text-ormawaxyzuaj-white');
-  }
-  if(changeOptions==='change-back') {
-    element!.classList.add('text-ormawaxyzuaj-white');
-    element!.classList.remove('text-ormawaxyzuaj-orange');
-  }
-}
-
-onMounted(() => {
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('mr-[6px]');
-
-  watch(formData.value, () => {
-    checkFormData();
-    console.log('test')
-  })
-})
+watch(formData.value, () => checkFormData()); // Form data watcher
+// --End form logic--
 
 </script>
 

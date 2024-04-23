@@ -1,25 +1,22 @@
 export const checkFormEmail = (email:string) => {
   const emailIsValid = ref<boolean>(false);
 
-  if (email) {
+  if (email) { // Checking if email isn't an empty string
     try {
       const firstPart = email.split('@')[0];
       const secondPart = email.split('@')[1];
 
-      // Checking the address length email host
-      if (firstPart!=='' && firstPart.length<=20 && secondPart==='student.atmajaya.ac.id') {
+      if (firstPart!=='' && firstPart.length<=20 && secondPart==='student.atmajaya.ac.id') { // Checking the address length email host
         const name = firstPart.split('.')[0];
         const campusID = firstPart.split('.')[1];
         const dots = (firstPart.match(/\./g) || []).length;
-
-        //Checking if name length max characters and campus ID characters
-        if (name.length<=7 && campusID.length===12 && dots===1) {
+        
+        if (name.length<=7 && campusID.length===12 && dots===1) { //Checking if name length max characters and campus ID characters
           const onlyLetters = /^[a-z]+$/.test(name);
           const onlyNumbers = /^\d+$/.test(campusID);
           const batchOf = campusID.substring(0,4);
 
-          //Checking if name only contains letters, campus ID only contains numbers, and the batch is from the year 2018-2023
-          if (onlyLetters && onlyNumbers && batchOf === '2018' || batchOf === '2019' || batchOf === '2020' || batchOf === '2021' || batchOf === '2022' || batchOf === '2023') {
+          if (onlyLetters && onlyNumbers && batchOf === '2018' || batchOf === '2019' || batchOf === '2020' || batchOf === '2021' || batchOf === '2022' || batchOf === '2023') { //Checking if name only contains letters, campus ID only contains numbers, and the batch is from the year 2018-2023
             const majorCode = campusID.substring(4,8);
             const validMajorCode = ref(false);
             switch(majorCode) {

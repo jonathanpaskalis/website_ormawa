@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <!-- Start program page titile section -->
     <section id="title" class="
       flex flex-col justify-center items-center
       w-full h-24 sm:h-48
@@ -16,6 +18,9 @@
         PROGRAM KERJA
       </h1>
     </section>
+    <!-- End program page titile section -->
+    
+    <!-- Start program page program list section -->
     <section title="program-list" class="
       flex justify-center
     ">
@@ -26,6 +31,8 @@
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
+
+        <!-- Start program list -->
         <div v-if="period" class="
           flex flex-col gap-4
         ">
@@ -56,13 +63,18 @@
             </NuxtLink>
           </div>
         </div>
+        <!-- End program list -->
+
       </div>
     </section>
+    <!-- End program page program list section -->
+
   </div>
 </template>
 
 <script setup lang="ts">
 
+// --Start adding head information--
 useHead({
   title: 'Program Kerja | Ormawa XYZ-UAJ'
 })
@@ -70,23 +82,21 @@ useHead({
 useSeoMeta({
   description: 'Halaman ini menjelaskan program kerja dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. Halaman ini menampilkan informasi tentang program kerja Ormawa XYZ-UAJ yang telah dilaksanakan atau yang akan datang',
 })
+// --End adding head information--
+
+// --Start data fetching--
+const { data : period } = useFetch<any>('/api/period?id=rhgFoCvNiLTSr8M3Tpgy'); //Server side fetching
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any;
-
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy');
+  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); //Client side fetching
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
   });
 });
-
-onMounted(() => {
-  document.body.classList.remove('overflow-hidden');
-  document.body.classList.remove('mr-[6px]');
-})
+// --End data fetching--
 
 </script>
 

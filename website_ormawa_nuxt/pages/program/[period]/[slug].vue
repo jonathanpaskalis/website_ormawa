@@ -47,7 +47,7 @@
           relative
           w-full sm:w-[85%] lg:w-[75%]
         ">
-          <img :src="`/images/periods/${period.name}/program_documentations/${program.documentation}`" class="w-full" />
+          <img :src="`/images/periods/${period.name}/program_documentations/${program.documentation}`" alt="" class="w-full" />
           <div class="
             absolute inset-0
             shadow-[inset_0_0_2rem_rgba(0,0,0,0.7)]

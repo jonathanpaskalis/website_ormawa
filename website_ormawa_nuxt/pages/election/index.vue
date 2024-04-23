@@ -404,7 +404,7 @@
                 'hidden' : !isSmallScreen && !returnShowValue(candidate.number, member.position),
                 'drop-shadow-ormawaxyzuaj-black-shadow' : !is3XLScreen && returnShowValue(candidate.number, member.position),
               }">
-                <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" class="
+                <button :disabled="is3XLScreen" @click="showCandidate(candidate.number, member.position)" :aria-label="`Show candidates number ${candidate.number} ${member.position}`" class="
                   relative
                   flex justify-center
                   w-full h-full

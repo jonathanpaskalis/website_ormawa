@@ -132,8 +132,8 @@
           " :class="{
             'grid grid-cols-2 justify-center gap-8' : department.name==='Ketua dan Wakil Ketua',
           }">
-            <MembersPanel v-if="department.name==='Ketua dan Wakil Ketua'" v-for="member in department.members" :key="`member-${member.nickname}`" :department="department" :member="member" />
-            <MembersPanel v-else :department="department" :member="department.members[0]" />
+            <MembersPanel v-if="department.name==='Ketua dan Wakil Ketua'" v-for="member in department.members" :key="`member-${member.nickname}`" :name="period.name" :department="department" :member="member" />
+            <MembersPanel v-else :name="period.name" :department="department" :member="department.members[0]" />
           </div>
           <div v-if="department.name!=='Ketua dan Wakil Ketua'" class="
             staffsJS
@@ -144,7 +144,7 @@
           " :class="{
             'py-4' : department.name !=='Ketua dan Wakil Ketua' && showingMores[departmentIndex],
           }">
-            <MembersPanel v-for="member in department.members.slice(1)" :key="`member-${member.nickname}`" :department="department" :member="member" />
+            <MembersPanel v-for="member in department.members.slice(1)" :key="`member-${member.nickname}`" :name="period.name" :department="department" :member="member" />
           </div>
           <button v-if="department.name!=='Ketua dan Wakil Ketua'" @click.prevent="toggleShowingMore(departmentIndex)" class="
             flex justify-center items-center
@@ -243,7 +243,7 @@ useSeoMeta({
 
 
 // --Start data fetching--
-const { data : period } = useFetch<any>('/api/period?id=rhgFoCvNiLTSr8M3Tpgy'); // Server side fetching
+const { data : period } = useFetch<any>('/api/period?id=2022-2023'); // Server side fetching
 
 import { doc, onSnapshot } from "firebase/firestore";
 
@@ -258,7 +258,7 @@ watch(period, async () => { // Board composition data watcher
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); // Client side fetching
+  const docRef = doc(db, 'periods', '2022-2023'); // Client side fetching
   onSnapshot(docRef, (snap) => {
     period.value = snap.data();
   });

@@ -50,12 +50,12 @@
             drop-shadow-ormawaxyzuaj-black-shadow
             max-w-[50%] h-full
           ">
-            <div class="
+            <div v-if="period" class="
               flex justify-center
               w-full max-h-full
             ">
-              <img src="/images/board_members/Foto_Ketua.webp" alt="" class="w-[40%]" />
-              <img src="/images/board_members/Foto_Wakil_Ketua.webp" alt="" class="w-[40%]" />
+              <img :src="`/images/periods/${period.name}/board_members/Foto_Ketua.webp`" alt="" class="w-[40%]" />
+              <img :src="`/images/periods/${period.name}/board_members/Foto_Wakil_Ketua.webp`" alt="" class="w-[40%]" />
             </div>
             <h1 class="
               w-full
@@ -266,8 +266,8 @@
                 flex flex-col
                 w-full
               ">
-                <img :src="`/images/program_documentations/${program.documentation}`" alt="" class="w-full" />
-                <img :src="`/images/program_logos/${program.logo}`" alt="" class="
+                <img :src="`/images/periods/${period.name}/program_documentations/${program.documentation}`" alt="" class="w-full" />
+                <img :src="`/images/periods/${period.name}/program_logos/${program.logo}`" alt="" class="
                   absolute bottom-0
                   w-[4.5rem] h-[4rem]
                   p-2 pr-4
@@ -331,13 +331,13 @@ useSeoMeta({
 // --End adding head information--
 
 // --Start data fetching--
-const { data : period } = useFetch<any>('/api/period?id=rhgFoCvNiLTSr8M3Tpgy'); // Server side fetching
+const { data : period } = useFetch<any>('/api/period?id=2022-2023'); // Server side fetching
 
 import { doc, onSnapshot } from "firebase/firestore";
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); // Client side fetching
+  const docRef = doc(db, 'periods', '2022-2023'); // Client side fetching
   onSnapshot(docRef, (snap) => {
       period.value = snap.data();
   });

@@ -15,7 +15,7 @@
         drop-shadow-ormawaxyzuaj-black-shadow 
         animate-[opacity-fill-animation_1s_ease-in-out]
       ">
-        <img :src="`/images/program_logos/${program.logo}`" alt="" class="
+        <img :src="`/images/periods/${period.name}/program_logos/${program.logo}`" alt="" class="
           h-full
         " />
       </div>
@@ -47,7 +47,7 @@
           relative
           w-full sm:w-[85%] lg:w-[75%]
         ">
-          <img :src="`/images/program_documentations/${program.documentation}`" class="w-full" />
+          <img :src="`/images/periods/${period.name}/program_documentations/${program.documentation}`" class="w-full" />
           <div class="
             absolute inset-0
             shadow-[inset_0_0_2rem_rgba(0,0,0,0.7)]
@@ -137,29 +137,42 @@ useSeoMeta({
 // --End adding head information--
 
 // --Start data fetching--
-const { data : period } = useFetch('/api/period?id=rhgFoCvNiLTSr8M3Tpgy') as any; // Server side fetching
+const periodName = useRoute().path.split('/')[2];
+const { data : period } = await useFetch<any>(`/api/period?id=${periodName}`); // Server side fetching
+
+// -Start validating period-
+if (!period.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found',
+    message: `Page Not Found:${useRoute().fullPath}`,
+    fatal: true,
+  })
+}
+// -End validating period-
 
 import { doc, onSnapshot } from "firebase/firestore";
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); // Client side fetching
+  const docRef = doc(db, 'periods', periodName); // Client side fetching
   onSnapshot(docRef, (snap) => {
-    period.value = snap.data();
+    if (snap.exists()) period.value = snap.data();
+    else isError.value=true;
   });
 });
 // --End data fetching--
 
 // --Start validating program--
 const program = ref<any>(null);
-const { slug } = useRoute().params;
+const { slug : programName } = useRoute().params;
 const isError = ref<boolean>(false);
 
 watch(period, async () => { // Program data watcher
   if (period.value) {
     for (let i=0; i < period.value.programs.length; i++) {
       const el = period.value.programs[i];
-      if (el.nickname===slug) {
+      if (el.nickname===programName) {
         program.value = el;
       }
     }
@@ -175,13 +188,13 @@ watch(period, async () => { // Program data watcher
 
 watch(isError, () => { // Program error watcher
   if (!program.value) {
-      throw createError({
-        statusCode: 404,
-        statusMessage: 'Page Not Found',
-        message: `Page Not Found:${useRoute().fullPath}`,
-        fatal: true,
-      })
-    }
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Page Not Found',
+      message: `Page Not Found:${useRoute().fullPath}`,
+      fatal: true,
+    })
+  }
 })
 // --End validating program--
 

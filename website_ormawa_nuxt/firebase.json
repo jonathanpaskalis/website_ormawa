@@ -2,7 +2,7 @@
   "functions": [
     {
       "source": ".output/server",
-      "runtime": "nodejs18",
+      "runtime": "nodejs20",
       "codebase": "default",
       "ignore": [
         "node_modules",

@@ -19,7 +19,7 @@
       shadow-[inset_0_0_2rem_rgba(0,0,0,0.5)]
       rounded-t-[0.65rem] sm:rounded-t-[1.6rem]
     ">
-      <img :src="`/images/board_members/${member.photo}`" alt="" class="
+      <img :src="`/images/periods/${name}/board_members/${member.photo}`" alt="" class="
         absolute bottom-0
         w-[90%]
         transition-all duration-200 ease-in-out
@@ -66,7 +66,8 @@
 </template>
 
 <script setup lang="ts">
-  const { member, department } = defineProps({
+  const { name, member, department } = defineProps({
+    name: String,
     member: {
       type: Object,
       required: true,

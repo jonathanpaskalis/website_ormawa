@@ -26,14 +26,14 @@
     ">
       <div class="
         container-ormawaxyzuaj
-        flex flex-col gap-y-8 lg:gap-y-16
+        flex flex-col-reverse gap-y-8 lg:gap-y-16
         bg-ormawaxyzuaj-black bg-opacity-75
         shadow-ormawaxyzuaj-black-shadow
         transition-all duration-100 ease-in-out
       ">
 
         <!-- Start program list -->
-        <div v-if="period" class="
+        <div v-if="periods" v-for="period in periods" class="
           flex flex-col gap-4
         ">
           <h2 class="
@@ -55,9 +55,9 @@
               border-solid border-2 sm:border-4 border-transparent hover:border-ormawaxyzuaj-orange-glow rounded-[2rem]
               bg-ormawaxyzuaj-black bg-opacity-75 hover:bg-opacity-100
               hover:shadow-ormawaxyzuaj-orange-shadow
-              transition-all duration-200 ease-in-out
+              transition-all duration-100 ease-in-out
             ">
-              <img :src="`/images/program_logos/${program.logo}`" alt="" class="
+              <img :src="`/images/periods/${period.name}/program_logos/${program.logo}`" alt="" class="
                 w-full h-full
               " />
             </NuxtLink>
@@ -85,16 +85,18 @@ useSeoMeta({
 // --End adding head information--
 
 // --Start data fetching--
-const { data : period } = useFetch<any>('/api/period?id=rhgFoCvNiLTSr8M3Tpgy'); //Server side fetching
+const { data : periods } = useFetch<any>('/api/periods'); //Server side fetching
 
-import { doc, onSnapshot } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const docRef = doc(db, 'periods', 'rhgFoCvNiLTSr8M3Tpgy'); //Client side fetching
-  onSnapshot(docRef, (snap) => {
-    period.value = snap.data();
-  });
+  const colSnap = await getDocs(collection(db, 'periods')); //Client side fetching
+  const periodsTmp = ref<any>([]);  
+  colSnap.forEach(doc => {
+    if (doc.data().programs) periodsTmp.value.push(doc.data())
+  })
+  periods.value = periodsTmp.value;
 });
 // --End data fetching--
 

@@ -85,18 +85,23 @@ useSeoMeta({
 // --End adding head information--
 
 // --Start data fetching--
+// const periods = ref<any>(null);
 const { data : periods } = useFetch<any>('/api/periods'); //Server side fetching
 
-import { getDocs, collection } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 
 onMounted(async() => {
   const { db } = useFirebase();
-  const colSnap = await getDocs(collection(db, 'periods')); //Client side fetching
-  const periodsTmp = ref<any>([]);  
-  colSnap.forEach(doc => {
-    if (doc.data().programs) periodsTmp.value.push(doc.data())
+  const colRef = collection(db, 'periods');
+  onSnapshot(colRef, snap => {
+    const periodsClient = ref<Object[]>([]);
+    snap.forEach(doc => {
+      if (doc.data().programs) {
+        periodsClient.value.push(doc.data())
+      }
+    periods.value = periodsClient.value;
+    })
   })
-  periods.value = periodsTmp.value;
 });
 // --End data fetching--
 

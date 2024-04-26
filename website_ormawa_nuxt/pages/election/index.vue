@@ -692,7 +692,7 @@
                   }">
                     Unggah
                   </label>
-                  <input @change.prevent="checkFormFile" ref="studentCardFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required :disabled="formFileIsValid" class="w-0 h-0 overflow-hidden" :class="'disabled:cursor-default'">
+                  <input @change.prevent="checkFormFile" ref="studentCardFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required :disabled="formFileIsValid" class="w-0 h-0 overflow-hidden disabled:cursor-default">
                   <div v-if="formFileIsValid" class="
                     flex gap-x-2
                   ">
@@ -1048,7 +1048,7 @@ const voteIsValid = ref<any>(null);
 const voteMessage = ref<string>('');
 // -End submited form status variables-
 
-watch(voteIsValid, async () => { // Form vote status watcher
+watchEffect(() => { // Form vote status watcher
   if (voteIsValid.value) {
     isValidating.value = false;
     if (voteIsValid.value.code === '0') voteMessage.value = 'Anda berhasil menggunakan hak suara anda!';
@@ -1135,10 +1135,10 @@ const resetForm = () => { // Function for reseting form data
   document.body.classList.remove('overflow-hidden');
 }
 
-watch(voteFormData.value, () => { // Form data watcher
+watchEffect(() => { // Form data watcher
   const { emailIsValid } = checkFormEmail(voteFormData.value.email);
   formEmailIsValid.value = emailIsValid.value;
-});
+})
 // --End form data logic--
 
 // --Start candidates vote panel UI logic--

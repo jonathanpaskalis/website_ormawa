@@ -241,30 +241,6 @@ useSeoMeta({
 })
 // --End adding head information--
 
-
-// --Start data fetching--
-const { data : period } = useFetch<any>('/api/period?id=2022-2023'); // Server side fetching
-
-import { doc, onSnapshot } from "firebase/firestore";
-
-watch(period, async () => { // Board composition data watcher
-  if (period.value) {
-    boardComposition.value = countComposition();
-    period.value.departments.forEach(() => {
-      showingMores.value.push(false);
-    })
-  }
-})
-
-onMounted(async() => {
-  const { db } = useFirebase();
-  const docRef = doc(db, 'periods', '2022-2023'); // Client side fetching
-  onSnapshot(docRef, (snap) => {
-    period.value = snap.data();
-  });
-});
-// --End data fetching--
-
 // --Start board composition logic--
 const countComposition = () => {
   const boardComposition = {
@@ -391,6 +367,30 @@ const enableSmoothScroll = (offsetY:number, duration:number) => { // Function fo
 
   requestAnimationFrame(step);
 }
+// --End board members display logic--
+
+// --Start data fetching--
+const { data: period } = useFetch<any>('/api/period?id=2022-2023'); // Server side fetching
+
+watchEffect(() => { // Board composition data watcher
+  if (period.value) {
+    boardComposition.value = countComposition();
+    period.value.departments.forEach(() => {
+      showingMores.value.push(false);
+    })
+  }
+})
+
+import { doc, onSnapshot } from "firebase/firestore";
+
+onMounted(async() => {
+  const { db } = useFirebase();
+  const docRef = doc(db, 'periods', '2022-2023'); // Client side fetching
+  onSnapshot(docRef, (snap) => {
+    period.value = snap.data();
+  });
+});
+// --End data fetching--
 
 // --Start screen size variable(s) and function--
 const isSmallScreen = ref(false);

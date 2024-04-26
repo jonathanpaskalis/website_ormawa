@@ -335,11 +335,11 @@ const { data : period } = useFetch<any>('/api/period?id=2022-2023'); // Server s
 
 import { doc, onSnapshot } from "firebase/firestore";
 
-onMounted(async() => {
+onMounted( async () => {
   const { db } = useFirebase();
   const docRef = doc(db, 'periods', '2022-2023'); // Client side fetching
   onSnapshot(docRef, (snap) => {
-      period.value = snap.data();
+    period.value = snap.data();
   });
 });
 // --End data fetching--

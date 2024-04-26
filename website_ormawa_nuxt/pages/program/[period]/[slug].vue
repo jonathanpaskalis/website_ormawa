@@ -138,40 +138,21 @@ useSeoMeta({
 
 // --Start data fetching--
 const periodName = useRoute().path.split('/')[2];
-const { data : period } = await useFetch<any>(`/api/period?id=${periodName}`); // Server side fetching
+const { slug: programName } = useRoute().params;
+const { data : program } = useFetch<any>(`/api/program?id=${periodName}&programName=${programName}`); // Server side fetching
+const { data : period } = useFetch<any>(`/api/period?id=${periodName}`); // Server side fetching
 
-// -Start validating period-
-const validatePeriod = () => { // Function for validating period url
-  if (!period.value) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'Page Not Found',
-      message: `Page Not Found:${useRoute().fullPath}`,
-      fatal: true,
-    })
-  }
-}
+const throw404Error = () => {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found',
+    message: `Page Not Found:${useRoute().fullPath}`,
+    fatal: true,
+  })
+} 
 
-validatePeriod();
-
-const isError = ref<boolean>(false);
-
-watch(isError, async () => validatePeriod()); // Program error watcher
-// -End validating period-
-
-// -Start validating program-
-const program = ref<any>(null);
-const { slug : programName } = useRoute().params;
-
-const validateProgram = () => { // Function for validating program url
-  if (period.value) {
-    for (let i=0; i < period.value.programs.length; i++) {
-      const el = period.value.programs[i];
-      if (el.nickname===programName) {
-        program.value = el;
-      }
-    }
-    if (!program.value) isError.value=true;
+watchEffect(() => {
+  if (program.value) {
     useHead({
       title: `${program.value.nickname} | Ormawa XYZ-UAJ`,
     })
@@ -179,12 +160,10 @@ const validateProgram = () => { // Function for validating program url
       description: `Halaman ini menjelaskan program kerja ${program.value.name} dari Organisasi Mahasiswa XYZ-Unika Atma Jaya. ${program.value.description}`,
     })
   }
-}
-
-validateProgram();
-
-watch(period, async () => validateProgram()); // Program data watcher
-// -End validating program-
+  else if (program.value === undefined || period.value === undefined) {
+    throw404Error();
+  }
+})
 
 import { doc, onSnapshot } from "firebase/firestore";
 
@@ -192,8 +171,19 @@ onMounted(async() => {
   const { db } = useFirebase();
   const docRef = doc(db, 'periods', periodName); // Client side fetching
   onSnapshot(docRef, (snap) => {
-    if (snap.exists()) period.value = snap.data();
-    else isError.value=true;
+    if (snap.exists()) {
+      period.value = snap.data();
+      const programs = period.value.programs;
+      const programTmp = ref<any>(null);
+      for (let i=0; i < programs.length; i++) {
+        if (programName===programs[i].name) programTmp.value = programs[i];
+      }
+      if (!programTmp) throw404Error();
+      program.value = programTmp.value;
+    }
+    else {
+      throw404Error();
+    }
   });
 });
 // --End data fetching--

@@ -289,7 +289,7 @@ const countComposition = () => {
     maxMembers: 0,
   }
 
-    period.value?.departments.forEach((department:any) => {
+    period.value.departments.forEach((department:any) => {
       department.members.forEach((member:any) => {
         if (member.faculty === 'FEB') boardComposition.faculties[0].members++;
         if (member.faculty === 'FIABIKOM') boardComposition.faculties[1].members++;
@@ -309,10 +309,7 @@ const countComposition = () => {
   return boardComposition;
 }
 
-const boardComposition = ref<{
-  faculties: { name: string; members: number; widthClass: string }[];
-  maxMembers: number;
-} | null>(null);
+const boardComposition = ref<any>(null);
 // --End board composition logic--
 
 // --Start board members display logic--

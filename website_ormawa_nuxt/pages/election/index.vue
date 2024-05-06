@@ -693,7 +693,7 @@
                     Unggah
                   </label>
                   <input @change.prevent="checkFormFile" ref="studentCardFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required :disabled="formFileIsValid" class="w-0 h-0 overflow-hidden disabled:cursor-default">
-                  <div v-if="formFileIsValid" class="
+                  <div v-if="formFileExist" class="
                     flex gap-x-2
                   ">
                     <span class="text-ormawaxyzuaj-orange">
@@ -712,7 +712,13 @@
                     </button>
                   </div>
                 </div>
-                <span v-if="!formFileIsValid && !formFileFirstTime" class="text-red-600">
+                <span :class="{
+                  'text-red-600' : formFileTooLarge,
+                  'text-ormawaxyzuaj-light-gray font-Montserrat-LightItalic' : !formFileTooLarge,
+                }">
+                  Ukuran file maksimal 500KB
+                </span>
+                <span v-if="!formFileExist && !formFileFirstTime" class="text-red-600">
                   Masukan file foto KIM
                 </span>
               </div>
@@ -1034,6 +1040,8 @@ const voteFormData = ref({
 
 // -Start validation variables-
 const formEmailIsValid = ref<boolean>(false);
+const formFileTooLarge = ref<boolean>(false);
+const formFileExist = ref<boolean>(false);
 const formFileIsValid = ref<boolean>(false);
 const formFileFirstTime = ref<boolean>(true);
 // -End validation variables-
@@ -1109,8 +1117,18 @@ const submitVote = async () => { // Function for submiting form
 
 const checkFormFile = () => { // Function for validating jpg/jpeg file
   formFileFirstTime.value = false;
-  if (studentCardFile.value.files.length === 1) formFileIsValid.value = true; 
-  else formFileIsValid.value = false;
+  if (studentCardFile.value.files.length === 1) {
+    formFileExist.value = true;
+    if (studentCardFile.value.files[0].size > 500000) formFileTooLarge.value=true;
+    else formFileTooLarge.value=false;
+    console.log(studentCardFile.value.files[0]);
+  }
+  else {
+    formFileExist.value=false;
+    formFileTooLarge.value=false;
+  }
+  if (formFileExist.value && !formFileTooLarge.value) formFileIsValid.value=true;
+  else formFileIsValid.value=false;
 }
 
 const clearFormFile = () => { // Function for clearing file input
@@ -1124,6 +1142,7 @@ const resetForm = () => { // Function for reseting form data
   voteFormData.value.voteValue = '0';
   formEmailIsValid.value = false;
   formFileIsValid.value = false;
+  formFileTooLarge.value = false;
   formFileFirstTime.value = true;
   isUploading.value = false;
   uploadSucess.value = false;

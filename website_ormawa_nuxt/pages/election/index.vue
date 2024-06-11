@@ -1121,7 +1121,6 @@ const checkFormFile = () => { // Function for validating jpg/jpeg file
     formFileExist.value = true;
     if (studentCardFile.value.files[0].size > 500000) formFileTooLarge.value=true;
     else formFileTooLarge.value=false;
-    console.log(studentCardFile.value.files[0]);
   }
   else {
     formFileExist.value=false;
@@ -1143,6 +1142,7 @@ const resetForm = () => { // Function for reseting form data
   formEmailIsValid.value = false;
   formFileIsValid.value = false;
   formFileTooLarge.value = false;
+  formFileExist.value = false;
   formFileFirstTime.value = true;
   isUploading.value = false;
   uploadSucess.value = false;

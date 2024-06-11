@@ -75,13 +75,13 @@ export const votingValidator = onObjectFinalized(async (object) => { // Function
     const text = annotation ? annotation.description : null;
 
     // --Start second validation--
-    // Check if there is any text extracted from the image
+    // Check if there are any texts extracted from the image
     // Can be seen in the front end: Code 5 (if text is null)
     if (text) {
       const textSplitted = text.split(/\r?\n|\r|\n/g);
 
       // --Start third validation--
-      // Check if the text array is either has a length of 7 or 8 (since sometimes there is one string item that is false detected in the beginning of the array)
+      // Check if the text array is either has a length of 8 or 9 (since sometimes there is one string item that is false detected in the beginning of the array)
       // Can be seen in the front end: Code 5 (if text array length is less than 7 or more than 8)
       if (textSplitted.length>=8 && textSplitted.length <=9) {
         const textSplittedCleaned = textSplitted[0]==='UNIVERSITAS KATOLIK INDONESIA' ? textSplitted : textSplitted.slice(1);

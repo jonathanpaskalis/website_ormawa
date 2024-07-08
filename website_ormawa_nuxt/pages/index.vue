@@ -197,7 +197,7 @@
           drop-shadow-[0_0_0.5rem_rgba(255,255,255,0.5)]
         ">
           Bagan Struktur Organisasi<br>
-          Ormawa ABC-UXYZ
+          Ormawa XYZ-UAJ
         </h2>
         <div class="w-full">
           <img src="/images/Bagan_Ormawa_XYZ-UAJ.webp" alt="" class="w-full" />

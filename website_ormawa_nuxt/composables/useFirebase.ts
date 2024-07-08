@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getFunctions } from "firebase/functions";
 
 export const useFirebase = () => {
   
@@ -23,13 +22,10 @@ export const useFirebase = () => {
   const analytics = getAnalytics(firebaseApp);
   const db = getFirestore(firebaseApp);
   const storage = getStorage(firebaseApp);
-  const functions = getFunctions(firebaseApp);
 
   return {
-    firebaseApp,
     analytics,
     db,
     storage,
-    functions,
   }
 }

@@ -53,8 +53,8 @@ const returnEmailUsername = (textSplittedCleaned) => { // Functionn for returnin
   return emailUsername;
 }
 
-// --Start votingValidator Function--
-export const votingValidator = onObjectFinalized(async (object) => { // Function triggered when a new file uploaded to the storage bucket
+// --Start voteValidator Function--
+export const voteValidator = onObjectFinalized(async (object) => { // Function triggered when a new file uploaded to the storage bucket
   const data = object.data;
   const fileBucket = data.bucket;
   const filePath = data.name;
@@ -70,7 +70,7 @@ export const votingValidator = onObjectFinalized(async (object) => { // Function
   if ((contentType==='image/jpg' || contentType==='image/jpeg') && fileDir==='student_card_images') {
     const client = new vision.ImageAnnotatorClient();
 
-    const [textDetection] = await client.textDetection(`gs://${fileBucket}/${filePath}`);      
+    const [textDetection] = await client.textDetection(`gs://${fileBucket}/${filePath}`);
     const [annotation] = textDetection.textAnnotations;
     const text = annotation ? annotation.description : null;
 
@@ -211,7 +211,7 @@ export const votingValidator = onObjectFinalized(async (object) => { // Function
   // --End first validation--
 
 })
-// --End votingValidator Function--
+// --End voteValidator Function--
 
 // --Start voteCounter Function--
 export const voteCounter = onDocumentCreated("voted_server/{docID}", (event) => {

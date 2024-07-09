@@ -390,12 +390,15 @@ watch(successfulSubmissions, () => { // Test submission watcher
 
 watch(voteIsValidArray, () => {
   let successfulValidationsTemp = 0;
+  let failedValidationsTemp = 0;
   const numberOfSubmissions = voteFormData.value.testSubmissions;
   if (voteIsValidArray.value.length===numberOfSubmissions) {
     voteIsValidArray.value.forEach(el => {
       if (el) successfulValidationsTemp++;
+      else failedValidationsTemp++;
     })
     successfulValidations.value = successfulValidationsTemp;
+    failedValidations.value = failedValidationsTemp;
   }
 }, {deep:true})
 

@@ -687,12 +687,12 @@
                     text-[0.8rem] xs:text-[1rem] sm:text-[1.2rem] text-center text-ormawaxyzuaj-black font-Panton-BlackCaps
                     transition-all duration-100 ease-in-out
                   " :class="{
-                    ' bg-opacity-75 hover:border-ormawaxyzuaj-orange-glow hover:bg-ormawaxyzuaj-black hover:bg-opacity-100 hover:shadow-ormawaxyzuaj-orange-shadow-sm hover:text-ormawaxyzuaj-orange cursor-pointer': !formFileIsValid,
-                    ' bg-opacity-25' : formFileIsValid,
+                    ' bg-opacity-75 hover:border-ormawaxyzuaj-orange-glow hover:bg-ormawaxyzuaj-black hover:bg-opacity-100 hover:shadow-ormawaxyzuaj-orange-shadow-sm hover:text-ormawaxyzuaj-orange cursor-pointer': !formFileExist,
+                    ' bg-opacity-25' : formFileExist,
                   }">
                     Unggah
                   </label>
-                  <input @change.prevent="checkFormFile" ref="studentCardFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required :disabled="formFileIsValid" class="w-0 h-0 overflow-hidden disabled:cursor-default">
+                  <input @change.prevent="checkFormFile" ref="studentCardFile" type="file" id="file" name="file" accept=".jpg, .jpeg" required :disabled="formFileExist" class="w-0 h-0 overflow-hidden disabled:cursor-default">
                   <div v-if="formFileExist" class="
                     flex gap-x-2
                   ">

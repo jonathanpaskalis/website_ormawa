@@ -54,7 +54,6 @@ onMounted(() => {
 // --Start to top button UI logic--
 
 const enableSmoothScroll = () => { // Function for enabling smooth scrool when using to top button
-  console.log(useRoute())
   document.documentElement.classList.add('scroll-smooth');
   setTimeout(() => {
     document.documentElement.classList.remove('scroll-smooth');
